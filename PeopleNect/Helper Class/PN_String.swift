@@ -146,7 +146,9 @@ let ColorseperatorDarkYellow = UIColor(red:196.0/255.0, green:146.0/255.0 ,blue:
 let ColorseperatorDarkRed = UIColor(red:183.0/255.0, green:28.0/255.0 ,blue:28.0/255.0 , alpha:1.00)
 
 
-
+let kLanguage = "Language"
+let kFR = "pt-BR"
+let kEN = "en"
 
 
 

@@ -26,6 +26,30 @@ class StartingVC: UIViewController {
         UIApplication.shared.statusBarStyle = .lightContent
         
         appdel.initLocation()
+        
+        let language = NSLocale.preferredLanguages[0]
+        
+        print("language is",language)
+        
+        if language == "pt-BR"
+        {
+            self.setUserDefault(ObjectToSave: kFR as AnyObject?, KeyToSave: kLanguage)
+            _ = SetLanguage(language: Localisator.sharedInstance.availableLanguagesArray[1])
+        }
+        else
+        {
+            self.setUserDefault(ObjectToSave: kEN as AnyObject?, KeyToSave: kLanguage)
+            _ = SetLanguage(language: Localisator.sharedInstance.availableLanguagesArray[0])
+        }
+        
+        
+        print("FIND A JOB in portuguese",Localization(string: "FIND A JOB"))
+
+        
+        
+        
+//
+        
         // Do any additional setup after loading the view.
     }
 
@@ -59,4 +83,17 @@ class StartingVC: UIViewController {
     }
     */
 
+    func setUserDefault(ObjectToSave : AnyObject?  , KeyToSave : String)
+    {
+        let defaults = UserDefaults.standard
+        
+        if (ObjectToSave != nil)
+        {
+            defaults.set(ObjectToSave!, forKey: KeyToSave)
+        }
+        
+        UserDefaults.standard.synchronize()
+    }
+
+    
 }

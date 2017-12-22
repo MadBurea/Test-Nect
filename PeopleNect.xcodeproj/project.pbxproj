@@ -129,6 +129,9 @@
 		345ECA171F625C7B00F9715B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345ECA161F625C7B00F9715B /* ViewController.swift */; };
 		34B186511F948DE30057DCCE /* PN_TextFieldGlobalMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B186501F948DE30057DCCE /* PN_TextFieldGlobalMethod.m */; };
 		34B186551F948FA80057DCCE /* addBalance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B186541F948FA80057DCCE /* addBalance.swift */; };
+		34D1CAF11FEBE28A00EB1055 /* Localisator.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D1CAEF1FEBE28A00EB1055 /* Localisator.m */; };
+		34D1CAF21FEBE28A00EB1055 /* Localisator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D1CAF01FEBE28A00EB1055 /* Localisator.swift */; };
+		34D1CAF51FEBE5AF00EB1055 /* localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 34D1CAF71FEBE5AF00EB1055 /* localizable.strings */; };
 		34E182E21FE1451800A62F94 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 342B37AC1FBB282B0031341E /* GoogleMaps.framework */; };
 		34E51E601FB5B54600E2E6F5 /* CustomChatScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E51E5F1FB5B54600E2E6F5 /* CustomChatScene.swift */; };
 		34F583891FAC4655007E312B /* EmpJobSeekerStatusVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F583881FAC4655007E312B /* EmpJobSeekerStatusVC.swift */; };
@@ -393,6 +396,13 @@
 		34B1864F1F948DE30057DCCE /* PN_TextFieldGlobalMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PN_TextFieldGlobalMethod.h; sourceTree = "<group>"; };
 		34B186501F948DE30057DCCE /* PN_TextFieldGlobalMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PN_TextFieldGlobalMethod.m; sourceTree = "<group>"; };
 		34B186541F948FA80057DCCE /* addBalance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addBalance.swift; sourceTree = "<group>"; };
+		34D1CADF1FEBD98100EB1055 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "pt-BR"; path = "pt-BR.lproj/LaunchScreen.storyboard"; sourceTree = "<group>"; };
+		34D1CAE01FEBD98100EB1055 /* en-US */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "en-US"; path = "en-US.lproj/LaunchScreen.storyboard"; sourceTree = "<group>"; };
+		34D1CAEE1FEBE28A00EB1055 /* Localisator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Localisator.h; sourceTree = "<group>"; };
+		34D1CAEF1FEBE28A00EB1055 /* Localisator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Localisator.m; sourceTree = "<group>"; };
+		34D1CAF01FEBE28A00EB1055 /* Localisator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localisator.swift; sourceTree = "<group>"; };
+		34D1CAF61FEBE5AF00EB1055 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/localizable.strings"; sourceTree = "<group>"; };
+		34D1CAF91FEBE5D000EB1055 /* en-US */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-US"; path = "en-US.lproj/localizable.strings"; sourceTree = "<group>"; };
 		34E51E5F1FB5B54600E2E6F5 /* CustomChatScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomChatScene.swift; sourceTree = "<group>"; };
 		34F4EF011FB06E30000B1CBA /* PeopleNect.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PeopleNect.entitlements; sourceTree = "<group>"; };
 		34F583881FAC4655007E312B /* EmpJobSeekerStatusVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmpJobSeekerStatusVC.swift; sourceTree = "<group>"; };
@@ -946,11 +956,23 @@
 				18E22DDF1F669722001F0546 /* MVPlaceSearchTextField */,
 				18599BD51F6296A2007246FF /* TPKeyboard */,
 				18599BC41F6276BC007246FF /* Font Resources */,
+				34D1CAED1FEBE28A00EB1055 /* Localisator */,
 				18E22DFD1F66AEAE001F0546 /* WebServicesClass.swift */,
 				18B4E79D1F62A9800022D15E /* PN_String.swift */,
 				34FBFBB51FB7135D0004F095 /* UIImage+Gif.swift */,
+				34D1CAF71FEBE5AF00EB1055 /* localizable.strings */,
 			);
 			path = "Helper Class";
+			sourceTree = "<group>";
+		};
+		34D1CAED1FEBE28A00EB1055 /* Localisator */ = {
+			isa = PBXGroup;
+			children = (
+				34D1CAEE1FEBE28A00EB1055 /* Localisator.h */,
+				34D1CAEF1FEBE28A00EB1055 /* Localisator.m */,
+				34D1CAF01FEBE28A00EB1055 /* Localisator.swift */,
+			);
+			path = Localisator;
 			sourceTree = "<group>";
 		};
 		34F7ABD81FB1E38600F8BF69 /* Notification */ = {
@@ -1093,6 +1115,8 @@
 			knownRegions = (
 				en,
 				Base,
+				"pt-BR",
+				"en-US",
 			);
 			mainGroup = 3416ABEC1F6018EA00F1E09C;
 			productRefGroup = 3416ABF61F6018EA00F1E09C /* Products */;
@@ -1124,6 +1148,7 @@
 				18599BD01F6277A0007246FF /* Montserrat-Hairline.otf in Resources */,
 				4FA0F80D1F8FA16500B2FC03 /* .travis.yml in Resources */,
 				184DE6E21F755A9200920501 /* slider-metal-handle@2x.png in Resources */,
+				34D1CAF51FEBE5AF00EB1055 /* localizable.strings in Resources */,
 				4F920DE81F7A293D00B3A5BC /* menu-button@2x.png in Resources */,
 				188261831F72A60100B33E0E /* index_pt.html in Resources */,
 				18D18AC81F7228F7003CDEE2 /* EmpDashboardMainCell.xib in Resources */,
@@ -1394,6 +1419,7 @@
 				34F583891FAC4655007E312B /* EmpJobSeekerStatusVC.swift in Sources */,
 				18B4E79E1F62A9800022D15E /* PN_String.swift in Sources */,
 				18B4E7A01F62D1F70022D15E /* EmpAddCompanyDetailsVC.swift in Sources */,
+				34D1CAF11FEBE28A00EB1055 /* Localisator.m in Sources */,
 				18599BBF1F626558007246FF /* StartingVC.swift in Sources */,
 				18DCC28B1F6A992B0021EB8F /* GMUGeoJSONParser.m in Sources */,
 				18E22DFC1F669DC8001F0546 /* NSString+TextDirectionality.m in Sources */,
@@ -1411,6 +1437,7 @@
 				187237381F6C1F7C005B7442 /* JobResetPasswordVC.swift in Sources */,
 				4FC061DE1F834F8200403465 /* JobHistoryCollectionCell.swift in Sources */,
 				34F7ABDC1FB1F01000F8BF69 /* gotInvitationNotifyVC.swift in Sources */,
+				34D1CAF21FEBE28A00EB1055 /* Localisator.swift in Sources */,
 				18E22DFA1F669DC8001F0546 /* CustomPlaceHolderTextField.m in Sources */,
 				18599BC31F6266F8007246FF /* EmpSignUpVC.swift in Sources */,
 				4FC061E01F834F8200403465 /* JobHistoryMainCell.swift in Sources */,
@@ -1435,8 +1462,19 @@
 			isa = PBXVariantGroup;
 			children = (
 				3416AC021F6018EA00F1E09C /* Base */,
+				34D1CADF1FEBD98100EB1055 /* pt-BR */,
+				34D1CAE01FEBD98100EB1055 /* en-US */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		34D1CAF71FEBE5AF00EB1055 /* localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				34D1CAF61FEBE5AF00EB1055 /* pt-BR */,
+				34D1CAF91FEBE5D000EB1055 /* en-US */,
+			);
+			name = localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1446,6 +1484,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -1501,6 +1540,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
