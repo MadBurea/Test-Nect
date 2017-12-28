@@ -60,7 +60,7 @@
                                         <rect key="frame" x="64.5" y="34.5" width="71" height="71"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FIND   A JOB" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Zg5-Ks-WXx">
-                                        <rect key="frame" x="76.5" y="113.5" width="47" height="35"/>
+                                        <rect key="frame" x="41" y="113.5" width="118" height="17.5"/>
                                         <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="15"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -73,7 +73,7 @@
                                     <constraint firstItem="c3o-17-YqO" firstAttribute="centerX" secondItem="eLz-CW-7tb" secondAttribute="centerX" id="IkC-9H-AOl"/>
                                     <constraint firstAttribute="bottom" secondItem="yZe-2S-fLJ" secondAttribute="bottom" id="J3r-lz-b9P"/>
                                     <constraint firstAttribute="width" secondItem="eLz-CW-7tb" secondAttribute="height" multiplier="1:1" id="Skq-5t-xQ4"/>
-                                    <constraint firstItem="Zg5-Ks-WXx" firstAttribute="width" secondItem="eLz-CW-7tb" secondAttribute="width" multiplier="40:170" id="Vfm-V4-ENI"/>
+                                    <constraint firstItem="Zg5-Ks-WXx" firstAttribute="width" secondItem="eLz-CW-7tb" secondAttribute="width" multiplier="100:170" id="Vfm-V4-ENI"/>
                                     <constraint firstItem="yZe-2S-fLJ" firstAttribute="top" secondItem="eLz-CW-7tb" secondAttribute="top" id="YDi-cf-yAj"/>
                                     <constraint firstItem="c3o-17-YqO" firstAttribute="centerY" secondItem="eLz-CW-7tb" secondAttribute="centerY" constant="-30" id="djb-Mn-Ku2"/>
                                     <constraint firstAttribute="trailing" secondItem="yZe-2S-fLJ" secondAttribute="trailing" id="gOE-N3-UTL"/>
@@ -141,6 +141,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Rjq-A7-XQb"/>
+                    <connections>
+                        <outlet property="findJobLbl" destination="Zg5-Ks-WXx" id="bwk-cP-N2h"/>
+                        <outlet property="findProfessionalLbl" destination="RsP-Vi-li9" id="vbH-35-khe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -205,7 +209,7 @@
                                 <rect key="frame" x="72.5" y="70" width="230" height="70"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="POST YOUR JOB" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="YgT-P5-Hix">
-                                <rect key="frame" x="112" y="426" width="150" height="18"/>
+                                <rect key="frame" x="127.5" y="426" width="119.5" height="18"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="15"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -263,7 +267,6 @@
                             <constraint firstItem="sLE-ET-0qX" firstAttribute="top" secondItem="ysr-FN-y8H" secondAttribute="bottom" id="ZF4-Qv-3yd"/>
                             <constraint firstItem="ahu-SG-g30" firstAttribute="height" secondItem="pwS-r5-XBb" secondAttribute="height" multiplier="24:44" id="auP-oF-2DO"/>
                             <constraint firstItem="0k8-u7-gPL" firstAttribute="leading" secondItem="imU-8c-DpB" secondAttribute="leading" id="bKV-AU-Kxk"/>
-                            <constraint firstItem="YgT-P5-Hix" firstAttribute="width" secondItem="imU-8c-DpB" secondAttribute="width" multiplier="150:375" id="cks-Wb-J8H"/>
                             <constraint firstItem="ysr-FN-y8H" firstAttribute="top" secondItem="pav-QR-EJo" secondAttribute="bottom" constant="20" id="emq-2h-MC2"/>
                             <constraint firstItem="sLE-ET-0qX" firstAttribute="centerX" secondItem="ysr-FN-y8H" secondAttribute="centerX" id="f8d-HN-Uat"/>
                             <constraint firstItem="Smw-Jl-erk" firstAttribute="centerX" secondItem="imU-8c-DpB" secondAttribute="centerX" id="ge3-y7-ptO"/>
@@ -279,6 +282,7 @@
                     <connections>
                         <outlet property="btnAlreadyRegister" destination="ysr-FN-y8H" id="lLO-Rg-b4Z"/>
                         <outlet property="btnRegister" destination="pav-QR-EJo" id="Xjz-iv-wtB"/>
+                        <outlet property="postJobLbl" destination="YgT-P5-Hix" id="T4f-T0-UE6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wBL-bv-2PH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2836,8 +2840,8 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FIND OPPORTUNITIES NEAR YOU" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Vnd-fP-2J4">
-                                <rect key="frame" x="87.5" y="426" width="200" height="18"/>
-                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="15"/>
+                                <rect key="frame" x="85.5" y="426" width="205" height="16"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="13"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -2859,13 +2863,12 @@
                             <constraint firstItem="DC4-eP-aDk" firstAttribute="height" secondItem="9o9-Wa-TXC" secondAttribute="height" multiplier="24:44" id="21l-HK-WAJ"/>
                             <constraint firstItem="jmT-VC-mWG" firstAttribute="centerX" secondItem="dLE-Po-I0e" secondAttribute="centerX" id="5jL-1D-6lR"/>
                             <constraint firstItem="xFC-oe-dZ3" firstAttribute="top" secondItem="jmT-VC-mWG" secondAttribute="bottom" constant="20" id="DNc-Sn-Omb"/>
-                            <constraint firstItem="Vnd-fP-2J4" firstAttribute="width" secondItem="r3K-da-261" secondAttribute="width" multiplier="200:375" id="DjA-XO-yaR"/>
                             <constraint firstItem="YTF-zc-XSI" firstAttribute="centerX" secondItem="r3K-da-261" secondAttribute="centerX" id="DlD-hE-33v"/>
                             <constraint firstItem="jmT-VC-mWG" firstAttribute="height" secondItem="r3K-da-261" secondAttribute="height" multiplier="50:667" id="EQs-Wm-F3q"/>
                             <constraint firstItem="dLE-Po-I0e" firstAttribute="centerX" secondItem="r3K-da-261" secondAttribute="centerX" id="KNh-yH-Qex"/>
                             <constraint firstItem="YTF-zc-XSI" firstAttribute="width" secondItem="r3K-da-261" secondAttribute="width" multiplier="230:375" id="LPt-X4-fTF"/>
                             <constraint firstItem="Vnd-fP-2J4" firstAttribute="centerX" secondItem="g6l-El-y2T" secondAttribute="centerX" id="M0h-wp-vRv"/>
-                            <constraint firstItem="jmT-VC-mWG" firstAttribute="top" secondItem="Vnd-fP-2J4" secondAttribute="bottom" constant="40" id="MAU-Z5-YLy"/>
+                            <constraint firstItem="jmT-VC-mWG" firstAttribute="top" secondItem="Vnd-fP-2J4" secondAttribute="bottom" constant="42" id="MAU-Z5-YLy"/>
                             <constraint firstAttribute="trailing" secondItem="cxB-Bb-qsr" secondAttribute="trailing" id="ML2-VF-437"/>
                             <constraint firstItem="cxB-Bb-qsr" firstAttribute="leading" secondItem="r3K-da-261" secondAttribute="leading" id="OMC-P9-Qrf"/>
                             <constraint firstItem="qBe-EP-zNa" firstAttribute="top" secondItem="cxB-Bb-qsr" secondAttribute="bottom" id="PsZ-Xo-mZ1"/>
@@ -2889,6 +2892,7 @@
                     <connections>
                         <outlet property="btnAlreadyRegister" destination="xFC-oe-dZ3" id="oGE-RS-2xy"/>
                         <outlet property="btnRegister" destination="jmT-VC-mWG" id="tgR-Wt-uY1"/>
+                        <outlet property="findOpportunityLbl" destination="Vnd-fP-2J4" id="vhY-UN-jI6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="obF-EM-XP6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2991,13 +2995,13 @@
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="With          Facebook" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="4vc-yu-Ifr">
-                                                        <rect key="frame" x="226" y="21" width="109" height="37.5"/>
+                                                        <rect key="frame" x="226" y="21.5" width="109" height="37.5"/>
                                                         <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="16"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="With                  Google" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="mEa-Uu-P7I">
-                                                        <rect key="frame" x="46" y="21.5" width="109" height="37.5"/>
+                                                        <rect key="frame" x="46" y="22" width="109" height="37.5"/>
                                                         <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="16"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
@@ -5070,7 +5074,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f7b-bx-nKB">
-                                <rect key="frame" x="132" y="64" width="112" height="112"/>
+                                <rect key="frame" x="131.5" y="64" width="112" height="112"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mgD-hV-ypi">
                                         <rect key="frame" x="0.5" y="0.0" width="112" height="112"/>
@@ -5079,7 +5083,7 @@
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo" translatesAutoresizingMaskIntoConstraints="NO" id="3MQ-fc-y4z">
-                                        <rect key="frame" x="39" y="38.5" width="35" height="35"/>
+                                        <rect key="frame" x="39.5" y="38.5" width="34" height="34.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="3MQ-fc-y4z" secondAttribute="height" multiplier="1:1" id="dad-eo-xPr"/>
                                         </constraints>
@@ -5110,7 +5114,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pick What Fits best" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tVl-O4-CNe">
-                                <rect key="frame" x="114.5" y="210" width="147.5" height="20"/>
+                                <rect key="frame" x="114" y="210" width="147.5" height="20"/>
                                 <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="17"/>
                                 <color key="textColor" red="0.16619415579999999" green="0.16618919369999999" blue="0.16619202490000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -5249,7 +5253,7 @@
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo" translatesAutoresizingMaskIntoConstraints="NO" id="5gJ-A3-fJ5">
-                                        <rect key="frame" x="39" y="38" width="35" height="35"/>
+                                        <rect key="frame" x="39.5" y="38" width="34" height="34.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="5gJ-A3-fJ5" secondAttribute="height" multiplier="1:1" id="TJt-2n-9Kq"/>
                                         </constraints>

@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  PeopleNect
+
+  Created by BAPS on 28/12/17.
+  Copyright © 2017 InexTure. All rights reserved.
+*/
+
+// Starting View Controller
+"FIND A JOB"                            = "FIND A JOB";
+"FIND PROFESSIONALS"                    = "FIND PROFESSIONALS";
+"FIND OPPORTUNITIES NEAR YOU"           = "FIND OPPORTUNITIES NEAR YOU";
+"REGISTER"                              = "REGISTER";
+"I'M ALREADY REGISTERED"                = "I'M ALREADY REGISTERED";
+"POST YOUR JOB"                         = "POST YOUR JOB";

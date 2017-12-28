@@ -10,6 +10,7 @@ import UIKit
 
 class EmpRegisterVC: UIViewController {
 
+    @IBOutlet weak var postJobLbl: UILabel!
     @IBOutlet var btnAlreadyRegister: UIButton!
     
     @IBOutlet var btnRegister: UIButton!
@@ -18,11 +19,15 @@ class EmpRegisterVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        btnAlreadyRegister.setTitle("I'M ALREADY REGISTERED", for: .normal)
+       // btnAlreadyRegister.setTitle("I'M ALREADY REGISTERED", for: .normal)
         // set up view
         self.setupView()
         
         self.navigationController?.navigationBar.isHidden = true
+        
+        postJobLbl.text = Localization(string: "POST YOUR JOB")
+        btnRegister.setTitle(Localization(string: "REGISTER"), for: .normal)
+        btnAlreadyRegister.setTitle(Localization(string: "I'M ALREADY REGISTERED"), for: .normal)
         // Do any additional setup after loading the view.
     }
     

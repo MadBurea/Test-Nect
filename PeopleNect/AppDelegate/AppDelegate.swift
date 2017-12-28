@@ -32,7 +32,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate,CLLocat
     var userLocationLat = ""
     var userLocationLng = ""
     var loginUserDict: NSDictionary!
-    
+    var deviceLanguage = ""
+
     var isNotificationCome = false
    
     /* Common Badge For Both Dash */
@@ -199,6 +200,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate,CLLocat
             
             self.window!.rootViewController = navigationController
         }
+        
+        self.checkDevicelanguage()
         
         return true
     }
@@ -733,5 +736,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate,CLLocat
             }
         }
         return nil
+    }
+    
+    // MARK:- Check Device Language -
+    func checkDevicelanguage()  {
+        appdel.deviceLanguage = NSLocale.preferredLanguages[0]
+        print("language is",deviceLanguage)
+
+        if appdel.deviceLanguage == "pt-BR"
+        {
+            self.setUserDefault(ObjectToSave: kFR as AnyObject?, KeyToSave: kLanguage)
+            _ = SetLanguage(language: Localisator.sharedInstance.availableLanguagesArray[1])
+        }
+        else
+        {
+            self.setUserDefault(ObjectToSave: kEN as AnyObject?, KeyToSave: kLanguage)
+            _ = SetLanguage(language: Localisator.sharedInstance.availableLanguagesArray[0])
+        }
+    }
+    func setUserDefault(ObjectToSave : AnyObject?  , KeyToSave : String)
+    {
+        let defaults = UserDefaults.standard
+        
+        if (ObjectToSave != nil)
+        {
+            defaults.set(ObjectToSave!, forKey: KeyToSave)
+        }
+        
+        UserDefaults.standard.synchronize()
     }
 }

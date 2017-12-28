@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		180F60EE1F88AD6800706B0F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 180F60ED1F88AD6800706B0F /* Main.storyboard */; };
 		1811DC8A1F8C9C6A00085009 /* JobChooseProfilePicVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1811DC891F8C9C6A00085009 /* JobChooseProfilePicVC.swift */; };
 		18380F961F6BA52F00A07957 /* TermsUseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18380F951F6BA52F00A07957 /* TermsUseVC.swift */; };
 		184DE6CD1F755A9200920501 /* slider-default-handle-highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 184DE6AF1F755A9200920501 /* slider-default-handle-highlighted.png */; };
@@ -122,17 +121,18 @@
 		340649141FB446CD008FE06B /* MatchJobNotifyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340649131FB446CD008FE06B /* MatchJobNotifyVC.swift */; };
 		3407E7A31FC42CCA004D0279 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 3407E7A21FC42CCA004D0279 /* index.html */; };
 		3416AC001F6018EA00F1E09C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3416ABFF1F6018EA00F1E09C /* Assets.xcassets */; };
-		3416AC031F6018EA00F1E09C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3416AC011F6018EA00F1E09C /* LaunchScreen.storyboard */; };
 		342B37AD1FBB282B0031341E /* GoogleMaps.framework in Resources */ = {isa = PBXBuildFile; fileRef = 342B37AC1FBB282B0031341E /* GoogleMaps.framework */; };
 		342B37AF1FBC02AD0031341E /* chatList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342B37AE1FBC02AD0031341E /* chatList.swift */; };
 		345ECA121F625C3700F9715B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345ECA111F625C3700F9715B /* AppDelegate.swift */; };
 		345ECA171F625C7B00F9715B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345ECA161F625C7B00F9715B /* ViewController.swift */; };
 		34B06D451FF4BF9500BB43CA /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 34B06D441FF4BF9500BB43CA /* GoogleMaps.bundle */; };
+		34B06D4E1FF4D03400BB43CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34B06D501FF4D03400BB43CA /* LaunchScreen.storyboard */; };
+		34B06D591FF4D0EB00BB43CA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 34B06D5B1FF4D0EB00BB43CA /* Localizable.strings */; };
+		34B06D631FF4DBC500BB43CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34B06D621FF4DBC500BB43CA /* Main.storyboard */; };
 		34B186511F948DE30057DCCE /* PN_TextFieldGlobalMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B186501F948DE30057DCCE /* PN_TextFieldGlobalMethod.m */; };
 		34B186551F948FA80057DCCE /* addBalance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B186541F948FA80057DCCE /* addBalance.swift */; };
 		34D1CAF11FEBE28A00EB1055 /* Localisator.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D1CAEF1FEBE28A00EB1055 /* Localisator.m */; };
 		34D1CAF21FEBE28A00EB1055 /* Localisator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D1CAF01FEBE28A00EB1055 /* Localisator.swift */; };
-		34D1CAF51FEBE5AF00EB1055 /* localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 34D1CAF71FEBE5AF00EB1055 /* localizable.strings */; };
 		34E182E21FE1451800A62F94 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 342B37AC1FBB282B0031341E /* GoogleMaps.framework */; };
 		34E51E601FB5B54600E2E6F5 /* CustomChatScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E51E5F1FB5B54600E2E6F5 /* CustomChatScene.swift */; };
 		34F583891FAC4655007E312B /* EmpJobSeekerStatusVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F583881FAC4655007E312B /* EmpJobSeekerStatusVC.swift */; };
@@ -219,7 +219,6 @@
 /* Begin PBXFileReference section */
 		0386605455CFA5987588C371 /* Pods-PeopleNect.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PeopleNect.release.xcconfig"; path = "Pods/Target Support Files/Pods-PeopleNect/Pods-PeopleNect.release.xcconfig"; sourceTree = "<group>"; };
 		1722977DBFAD03126CE65A6E /* Pods_PeopleNect.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PeopleNect.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		180F60ED1F88AD6800706B0F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		1811DC891F8C9C6A00085009 /* JobChooseProfilePicVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobChooseProfilePicVC.swift; sourceTree = "<group>"; };
 		18380F951F6BA52F00A07957 /* TermsUseVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermsUseVC.swift; sourceTree = "<group>"; };
 		184DE6AF1F755A9200920501 /* slider-default-handle-highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider-default-handle-highlighted.png"; sourceTree = "<group>"; };
@@ -388,23 +387,25 @@
 		3407E7A21FC42CCA004D0279 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		3416ABF51F6018EA00F1E09C /* PeopleNect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PeopleNect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3416ABFF1F6018EA00F1E09C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		3416AC021F6018EA00F1E09C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3416AC041F6018EA00F1E09C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		342B37AC1FBB282B0031341E /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
 		342B37AE1FBC02AD0031341E /* chatList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = chatList.swift; sourceTree = "<group>"; };
 		345ECA111F625C3700F9715B /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		345ECA161F625C7B00F9715B /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		34B06D441FF4BF9500BB43CA /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = GoogleMaps.framework/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
+		34B06D511FF4D04800BB43CA /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "pt-BR"; path = "pt-BR.lproj/LaunchScreen.storyboard"; sourceTree = "<group>"; };
+		34B06D521FF4D06A00BB43CA /* en-US */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "en-US"; path = "en-US.lproj/LaunchScreen.storyboard"; sourceTree = "<group>"; };
+		34B06D531FF4D06E00BB43CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		34B06D5A1FF4D0EB00BB43CA /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		34B06D5C1FF4D0F200BB43CA /* en-US */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-US"; path = "en-US.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		34B06D621FF4DBC500BB43CA /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		34B06D641FF4E1D200BB43CA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		34B1864F1F948DE30057DCCE /* PN_TextFieldGlobalMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PN_TextFieldGlobalMethod.h; sourceTree = "<group>"; };
 		34B186501F948DE30057DCCE /* PN_TextFieldGlobalMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PN_TextFieldGlobalMethod.m; sourceTree = "<group>"; };
 		34B186541F948FA80057DCCE /* addBalance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addBalance.swift; sourceTree = "<group>"; };
-		34D1CADF1FEBD98100EB1055 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "pt-BR"; path = "pt-BR.lproj/LaunchScreen.storyboard"; sourceTree = "<group>"; };
-		34D1CAE01FEBD98100EB1055 /* en-US */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "en-US"; path = "en-US.lproj/LaunchScreen.storyboard"; sourceTree = "<group>"; };
 		34D1CAEE1FEBE28A00EB1055 /* Localisator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Localisator.h; sourceTree = "<group>"; };
 		34D1CAEF1FEBE28A00EB1055 /* Localisator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Localisator.m; sourceTree = "<group>"; };
 		34D1CAF01FEBE28A00EB1055 /* Localisator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localisator.swift; sourceTree = "<group>"; };
-		34D1CAF61FEBE5AF00EB1055 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/localizable.strings"; sourceTree = "<group>"; };
-		34D1CAF91FEBE5D000EB1055 /* en-US */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-US"; path = "en-US.lproj/localizable.strings"; sourceTree = "<group>"; };
 		34E51E5F1FB5B54600E2E6F5 /* CustomChatScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomChatScene.swift; sourceTree = "<group>"; };
 		34F4EF011FB06E30000B1CBA /* PeopleNect.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PeopleNect.entitlements; sourceTree = "<group>"; };
 		34F583881FAC4655007E312B /* EmpJobSeekerStatusVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmpJobSeekerStatusVC.swift; sourceTree = "<group>"; };
@@ -895,9 +896,10 @@
 			isa = PBXGroup;
 			children = (
 				34F4EF011FB06E30000B1CBA /* PeopleNect.entitlements */,
-				180F60ED1F88AD6800706B0F /* Main.storyboard */,
+				34B06D621FF4DBC500BB43CA /* Main.storyboard */,
 				4F77AA531F792DC200606419 /* Employee.storyboard */,
 				4F77AA551F79302E00606419 /* JobSeeker.storyboard */,
+				34B06D501FF4D03400BB43CA /* LaunchScreen.storyboard */,
 				34FBFBB31FB710A30004F095 /* rollingthin.gif */,
 				18F14E441F681511008019B2 /* nature_pic_1.jpeg */,
 				34FBFBB71FB7151B0004F095 /* sendRoll.gif */,
@@ -906,9 +908,9 @@
 				345ECA181F625CCD00F9715B /* Helper Class */,
 				3416ABFF1F6018EA00F1E09C /* Assets.xcassets */,
 				18E22DDA1F666ADD001F0546 /* PeopleNect-Bridging-Header.h */,
-				3416AC011F6018EA00F1E09C /* LaunchScreen.storyboard */,
 				18E22DCF1F66576C001F0546 /* GoogleService-Info.plist */,
 				3416AC041F6018EA00F1E09C /* Info.plist */,
+				34B06D5B1FF4D0EB00BB43CA /* Localizable.strings */,
 			);
 			path = PeopleNect;
 			sourceTree = "<group>";
@@ -963,7 +965,6 @@
 				18E22DFD1F66AEAE001F0546 /* WebServicesClass.swift */,
 				18B4E79D1F62A9800022D15E /* PN_String.swift */,
 				34FBFBB51FB7135D0004F095 /* UIImage+Gif.swift */,
-				34D1CAF71FEBE5AF00EB1055 /* localizable.strings */,
 			);
 			path = "Helper Class";
 			sourceTree = "<group>";
@@ -1117,9 +1118,9 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
 				"pt-BR",
 				"en-US",
+				Base,
 			);
 			mainGroup = 3416ABEC1F6018EA00F1E09C;
 			productRefGroup = 3416ABF61F6018EA00F1E09C /* Products */;
@@ -1144,15 +1145,14 @@
 				18599BCE1F6277A0007246FF /* Montserrat-Bold.otf in Resources */,
 				184DE6CF1F755A9200920501 /* slider-default-handle.png in Resources */,
 				18EEAF1B1F711C1D00FFA7EA /* PostCell.xib in Resources */,
-				180F60EE1F88AD6800706B0F /* Main.storyboard in Resources */,
 				18F394881F726EE600F102F5 /* JobDashBoardInnerViewCell.xib in Resources */,
 				18599BCF1F6277A0007246FF /* Montserrat-ExtraBold.otf in Resources */,
 				184DE6D21F755A9200920501 /* slider-default-track@2x.png in Resources */,
 				4FA0F80C1F8FA16500B2FC03 /* .swiftlint.yml in Resources */,
 				18599BD01F6277A0007246FF /* Montserrat-Hairline.otf in Resources */,
 				4FA0F80D1F8FA16500B2FC03 /* .travis.yml in Resources */,
+				34B06D591FF4D0EB00BB43CA /* Localizable.strings in Resources */,
 				184DE6E21F755A9200920501 /* slider-metal-handle@2x.png in Resources */,
-				34D1CAF51FEBE5AF00EB1055 /* localizable.strings in Resources */,
 				4F920DE81F7A293D00B3A5BC /* menu-button@2x.png in Resources */,
 				188261831F72A60100B33E0E /* index_pt.html in Resources */,
 				18D18AC81F7228F7003CDEE2 /* EmpDashboardMainCell.xib in Resources */,
@@ -1177,7 +1177,6 @@
 				3407E7A31FC42CCA004D0279 /* index.html in Resources */,
 				184DE6CD1F755A9200920501 /* slider-default-handle-highlighted.png in Resources */,
 				184DE6E11F755A9200920501 /* slider-metal-handle.png in Resources */,
-				3416AC031F6018EA00F1E09C /* LaunchScreen.storyboard in Resources */,
 				4F77AA561F79302E00606419 /* JobSeeker.storyboard in Resources */,
 				184DE6E41F755A9200920501 /* slider-metal-track@2x.png in Resources */,
 				184DE6E51F755A9200920501 /* slider-metal-trackBackground.png in Resources */,
@@ -1185,11 +1184,13 @@
 				3416AC001F6018EA00F1E09C /* Assets.xcassets in Resources */,
 				184DE6E01F755A9200920501 /* slider-metal-handle-highlighted@2x.png in Resources */,
 				184DE6DF1F755A9200920501 /* slider-metal-handle-highlighted.png in Resources */,
+				34B06D4E1FF4D03400BB43CA /* LaunchScreen.storyboard in Resources */,
 				18F14E451F681511008019B2 /* nature_pic_1.jpeg in Resources */,
 				184DE6D81F755A9200920501 /* slider-default7-handle@2x.png in Resources */,
 				18F3948C1F726F1B00F102F5 /* InnerCollectionCell.xib in Resources */,
 				184DE6E61F755A9200920501 /* slider-metal-trackBackground@2x.png in Resources */,
 				18F394841F726ECD00F102F5 /* JobDashBoardMainCell.xib in Resources */,
+				34B06D631FF4DBC500BB43CA /* Main.storyboard in Resources */,
 				34FBFBB81FB7151B0004F095 /* sendRoll.gif in Resources */,
 				184DE6DA1F755A9200920501 /* slider-default7-track@2x.png in Resources */,
 				4F920DE71F7A293D00B3A5BC /* menu-button.png in Resources */,
@@ -1461,23 +1462,24 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		3416AC011F6018EA00F1E09C /* LaunchScreen.storyboard */ = {
+		34B06D501FF4D03400BB43CA /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				3416AC021F6018EA00F1E09C /* Base */,
-				34D1CADF1FEBD98100EB1055 /* pt-BR */,
-				34D1CAE01FEBD98100EB1055 /* en-US */,
+				34B06D511FF4D04800BB43CA /* pt-BR */,
+				34B06D521FF4D06A00BB43CA /* en-US */,
+				34B06D531FF4D06E00BB43CA /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
-		34D1CAF71FEBE5AF00EB1055 /* localizable.strings */ = {
+		34B06D5B1FF4D0EB00BB43CA /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				34D1CAF61FEBE5AF00EB1055 /* pt-BR */,
-				34D1CAF91FEBE5D000EB1055 /* en-US */,
+				34B06D5A1FF4D0EB00BB43CA /* pt-BR */,
+				34B06D5C1FF4D0F200BB43CA /* en-US */,
+				34B06D641FF4E1D200BB43CA /* en */,
 			);
-			name = localizable.strings;
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
