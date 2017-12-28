@@ -280,7 +280,7 @@ class JobPendingAppVC: UIViewController, UITableViewDelegate, UITableViewDataSou
                             mainCell.lblPerHour.text = "/job"
                         }
                         else{
-                            mainCell.lblPerHour.text = "/day"
+                            mainCell.lblPerHour.text = "/month"
             }
             
             mainCell.viewLeft.isHidden = false

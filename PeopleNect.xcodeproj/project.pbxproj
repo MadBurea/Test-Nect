@@ -127,6 +127,7 @@
 		342B37AF1FBC02AD0031341E /* chatList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342B37AE1FBC02AD0031341E /* chatList.swift */; };
 		345ECA121F625C3700F9715B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345ECA111F625C3700F9715B /* AppDelegate.swift */; };
 		345ECA171F625C7B00F9715B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345ECA161F625C7B00F9715B /* ViewController.swift */; };
+		34B06D451FF4BF9500BB43CA /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 34B06D441FF4BF9500BB43CA /* GoogleMaps.bundle */; };
 		34B186511F948DE30057DCCE /* PN_TextFieldGlobalMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B186501F948DE30057DCCE /* PN_TextFieldGlobalMethod.m */; };
 		34B186551F948FA80057DCCE /* addBalance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B186541F948FA80057DCCE /* addBalance.swift */; };
 		34D1CAF11FEBE28A00EB1055 /* Localisator.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D1CAEF1FEBE28A00EB1055 /* Localisator.m */; };
@@ -393,6 +394,7 @@
 		342B37AE1FBC02AD0031341E /* chatList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = chatList.swift; sourceTree = "<group>"; };
 		345ECA111F625C3700F9715B /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		345ECA161F625C7B00F9715B /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		34B06D441FF4BF9500BB43CA /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = GoogleMaps.framework/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
 		34B1864F1F948DE30057DCCE /* PN_TextFieldGlobalMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PN_TextFieldGlobalMethod.h; sourceTree = "<group>"; };
 		34B186501F948DE30057DCCE /* PN_TextFieldGlobalMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PN_TextFieldGlobalMethod.m; sourceTree = "<group>"; };
 		34B186541F948FA80057DCCE /* addBalance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addBalance.swift; sourceTree = "<group>"; };
@@ -872,6 +874,7 @@
 		3416ABEC1F6018EA00F1E09C = {
 			isa = PBXGroup;
 			children = (
+				34B06D441FF4BF9500BB43CA /* GoogleMaps.bundle */,
 				342B37AC1FBB282B0031341E /* GoogleMaps.framework */,
 				3416ABF71F6018EA00F1E09C /* PeopleNect */,
 				3416ABF61F6018EA00F1E09C /* Products */,
@@ -1133,6 +1136,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34B06D451FF4BF9500BB43CA /* GoogleMaps.bundle in Resources */,
 				342B37AD1FBB282B0031341E /* GoogleMaps.framework in Resources */,
 				184DE6D31F755A9200920501 /* slider-default-trackBackground.png in Resources */,
 				18599BCD1F6277A0007246FF /* Montserrat-Black.otf in Resources */,
@@ -1267,7 +1271,6 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-PeopleNect/Pods-PeopleNect-resources.sh",
-				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle",
 				"${PODS_ROOT}/GooglePlacePicker/Frameworks/GooglePlacePicker.framework/Versions/A/Resources/GooglePlacePicker.bundle",
 				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Versions/A/Resources/GooglePlaces.bundle",
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",

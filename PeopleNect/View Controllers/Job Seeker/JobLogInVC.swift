@@ -56,8 +56,8 @@ class JobLogInVC: UIViewController,UITextFieldDelegate,GIDSignInDelegate,GIDSign
         
         GIDSignIn.sharedInstance().delegate = self
         
-//        txtEmail.text = "nirav.inexture@gmail.com"
-//        txtPassword.text = "123456"
+        txtEmail.text = "nirav.inexture@gmail.com"
+       txtPassword.text = "123456"
     }
     
     override func viewWillAppear(_ animated: Bool) {

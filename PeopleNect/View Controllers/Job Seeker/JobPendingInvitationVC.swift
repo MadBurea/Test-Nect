@@ -269,7 +269,7 @@ class JobPendingInvitationVC: UIViewController, UITableViewDataSource , UITableV
                 mainCell.lblPerHour.text = "/job"
             }
             else{
-                mainCell.lblPerHour.text = "/day"
+                mainCell.lblPerHour.text = "/month"
             }
 
             mainCell.viewLeft.isHidden = false

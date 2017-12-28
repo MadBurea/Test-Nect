@@ -164,8 +164,6 @@ class EmpJobProgressVC: UIViewController, UITableViewDelegate, UITableViewDataSo
             
             let perDay = tempDict.object(forKey: "payment_type") as! String
             
-            
-            
             if perDay == "1"
             {
                 expandcell.lblPerHour.text = "/hour"
@@ -173,6 +171,8 @@ class EmpJobProgressVC: UIViewController, UITableViewDelegate, UITableViewDataSo
             else if perDay == "2"
             {
                 expandcell.lblPerHour.text = "/job"
+            } else{
+                expandcell.lblPerHour.text = "/month"
             }
             
             
@@ -281,6 +281,9 @@ class EmpJobProgressVC: UIViewController, UITableViewDelegate, UITableViewDataSo
             else if perDay == "2"
             {
                 mainCell.lblPerHour.text = "/job"
+            }
+            else{
+                mainCell.lblPerHour.text = "/month"
             }
             
             

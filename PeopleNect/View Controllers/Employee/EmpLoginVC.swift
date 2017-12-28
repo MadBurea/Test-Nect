@@ -27,8 +27,8 @@ class EmpLoginVC: UIViewController,UITextFieldDelegate {
         
         super.viewDidLoad()
         
-//       txtEmail.text = "nirav.parmar@inexture.in"
-//        txtPassword.text = "123456"
+       txtEmail.text = "nirav.parmar@inexture.in"
+        txtPassword.text = "123456"
         
         
         alertMessage = self.storyboard?.instantiateViewController(withIdentifier: "AlertMessageVC") as! AlertMessageVC

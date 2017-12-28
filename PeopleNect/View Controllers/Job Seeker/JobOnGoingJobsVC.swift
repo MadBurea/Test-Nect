@@ -256,7 +256,7 @@ class JobOnGoingJobsVC: UIViewController, UITableViewDataSource , UITableViewDel
                 mainCell.lblPerHour.text = "/job"
             }
             else{
-                mainCell.lblPerHour.text = "/day"
+                mainCell.lblPerHour.text = "/month"
             }
             
             mainCell.viewLeft.isHidden = false

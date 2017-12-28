@@ -139,6 +139,8 @@ class EmpHistoryVC: UIViewController, UITableViewDelegate, UITableViewDataSource
             else if perDay == "2"
             {
                 expandcell.lblPerHour.text = "/job"
+            }else{
+                expandcell.lblPerHour.text = "/month"
             }
       
         
@@ -255,6 +257,8 @@ class EmpHistoryVC: UIViewController, UITableViewDelegate, UITableViewDataSource
             else if perDay == "2"
             {
                 mainCell.lblPerHour.text = "/job"
+            }else{
+                mainCell.lblPerHour.text = "/month"
             }
             
             

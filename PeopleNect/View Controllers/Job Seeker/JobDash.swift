@@ -1103,7 +1103,7 @@ class JobDash: UIViewController,GMUClusterManagerDelegate, GMSMapViewDelegate,CL
         {
             cell.lblPaymentPerHour.text =   "$" + "\(dict.value(forKey: "JobHourlyRate")!)/job"
         }else{
-            cell.lblPaymentPerHour.text =   "$" + "\(dict.value(forKey: "JobHourlyRate")!)/day"
+            cell.lblPaymentPerHour.text =   "$" + "\(dict.value(forKey: "JobHourlyRate")!)/month"
         }
         
         cell.lblRating.text = "\(dict.value(forKey: "rating")!)"

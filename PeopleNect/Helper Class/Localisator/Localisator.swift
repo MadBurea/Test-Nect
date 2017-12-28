@@ -90,7 +90,9 @@ class Localisator {
         
         for ext in arrayExt {
             
-            print("path is",Bundle(for:object_getClass(self)).url(forResource: "Localizable", withExtension: "strings", subdirectory: nil, localization: ext)?.path)
+            var pathForFile = Bundle(for:object_getClass(self)).url(forResource: "Localizable", withExtension: "strings", subdirectory: nil, localization: ext)?.path
+            
+            print("path is",pathForFile)
             
             if let path = Bundle(for:object_getClass(self)).url(forResource: "Localizable", withExtension: "strings", subdirectory: nil, localization: ext)?.path {
                 if FileManager.default.fileExists(atPath: path) {

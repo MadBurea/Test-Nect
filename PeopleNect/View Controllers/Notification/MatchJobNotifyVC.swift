@@ -147,7 +147,7 @@ class MatchJobNotifyVC: UIViewController, UITableViewDelegate,UITableViewDataSou
         {
             expandcell.lblPerHour.text = "/job"
         }else{
-            expandcell.lblPerHour.text = "/day"
+            expandcell.lblPerHour.text = "/month"
         }
         
         
