@@ -219,7 +219,7 @@ class chatList: UIViewController , UITableViewDelegate,UITableViewDataSource {
             SwiftLoader.show(animated: true)
         }
         self.chatArray = NSMutableArray()
-        let param =  [WebServicesClass.METHOD_NAME: "chatHistory","userType":userType,"recieverId": recieverId,"language":"en"] as [String : Any]
+        let param =  [WebServicesClass.METHOD_NAME: "chatHistory","userType":userType,"recieverId": recieverId,"language":appdel.userLanguage] as [String : Any]
         
         global.callWebService(parameter: param as AnyObject!) { (Response:AnyObject, error:NSError?) in
             

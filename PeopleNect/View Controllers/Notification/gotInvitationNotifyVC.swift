@@ -111,7 +111,7 @@ class gotInvitationNotifyVC: UIViewController {
         
         
         let param =  [WebServicesClass.METHOD_NAME: "acceptJobInvitation",
-            "language":"en",
+            "language":appdel.userLanguage,
             "jobId":jobId,
             "userId":userId,
             "accept":accept] as [String : Any]
@@ -152,7 +152,7 @@ class gotInvitationNotifyVC: UIViewController {
         let param =  [WebServicesClass.METHOD_NAME: "jobDetailbyId",
                       "jobId":self.jobId,
                       "userId":self.userId,
-            "language":"en"] as [String : Any]
+            "language":appdel.userLanguage] as [String : Any]
         
         print("paramjobDetailbyIdApi",param)
         

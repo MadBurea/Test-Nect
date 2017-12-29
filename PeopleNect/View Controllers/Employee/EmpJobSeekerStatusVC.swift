@@ -799,7 +799,7 @@ class EmpJobSeekerStatusVC: UIViewController, UICollectionViewDelegate,UICollect
         let loginDict = UserDefaults.standard.object(forKey: kEmpLoginDict) as! NSDictionary
         let param =  [WebServicesClass.METHOD_NAME: "prodeclinedEmployee",
                       "employerId":"\(loginDict.object(forKey: "employerId")!)",
-                      "language":"en","userId":"\(tempDict.object(forKey: "userId")!)","jobId":self.jobID,"type":"\(tempDict.object(forKey: "type")!)"] as [String : Any]
+                      "language":appdel.userLanguage,"userId":"\(tempDict.object(forKey: "userId")!)","jobId":self.jobID,"type":"\(tempDict.object(forKey: "type")!)"] as [String : Any]
 
         print("parameter for ProfessionalDecline is ",param)
         

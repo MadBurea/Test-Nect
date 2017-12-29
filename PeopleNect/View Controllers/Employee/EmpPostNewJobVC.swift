@@ -244,7 +244,7 @@ func categoryListApi()
      
      */
     
-    let param =  [WebServicesClass.METHOD_NAME: "categoryList","userId":"\(appdel.loginUserDict.object(forKey: "employerId")!)","language":"en"] as [String : Any]
+    let param =  [WebServicesClass.METHOD_NAME: "categoryList","userId":"\(appdel.loginUserDict.object(forKey: "employerId")!)","language":appdel.userLanguage] as [String : Any]
     
     
     global.callWebService(parameter: param as AnyObject!) { (Response:AnyObject, error:NSError?) in

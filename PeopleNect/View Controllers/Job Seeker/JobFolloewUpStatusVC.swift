@@ -60,7 +60,7 @@ class JobFolloewUpStatusVC: UIViewController {
         let param =  [WebServicesClass.METHOD_NAME: "jobDetailbyId",
                       "jobId":self.jobID,
                       "userId":"\(appdel.loginUserDict.object(forKey: "userId")!)",
-            "language":"en"] as [String : Any]
+            "language":appdel.userLanguage] as [String : Any]
         
         print("paramjobDetailbyIdApi",param)
         

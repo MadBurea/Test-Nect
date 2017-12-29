@@ -77,7 +77,9 @@ class LastDetailsVC: UIViewController, UITextFieldDelegate, UITextViewDelegate, 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //
         
+        tfDescibeYourProfile.placeholder = Localization(string: "Describe your profile")
         lblLastEmployers.isHidden = true
         
         
@@ -175,7 +177,8 @@ class LastDetailsVC: UIViewController, UITextFieldDelegate, UITextViewDelegate, 
         
         if btnprofilePic.imageView?.image == nil
         {
-            self.view.makeToast("Please Select an Image", duration: 3.0, position: .bottom)
+            
+            self.view.makeToast(Localization(string: "Please Select an Image"), duration: 3.0, position: .bottom)
             isApiCall = false
         }
 
@@ -366,11 +369,12 @@ class LastDetailsVC: UIViewController, UITextFieldDelegate, UITextViewDelegate, 
         
         //last employer
         
-        let alert = UIAlertController(title: "Add Employer", message: "", preferredStyle: .alert)
+
+        let alert = UIAlertController(title: Localization(string: "Add Employer"), message: "", preferredStyle: .alert)
         
         alert.addTextField { (textField) in
-            textField.placeholder = "Enter Your Last Employer"
-            alert.addAction(UIAlertAction(title: "ADD", style: .default, handler: { [weak alert] (_) in
+            textField.placeholder = Localization(string: "Enter Your Last Employer")
+            alert.addAction(UIAlertAction(title:Localization(string: "Add"), style: .default, handler: { [weak alert] (_) in
                 
                 if(textField.text?.characters.count != 0)
                 {
@@ -383,7 +387,7 @@ class LastDetailsVC: UIViewController, UITextFieldDelegate, UITextViewDelegate, 
             
         }
         
-        alert.addAction(UIAlertAction(title: "CANCEL", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title:  Localization(string: "CANCEL"), style: .cancel, handler: nil))
         self.present(alert, animated: true, completion: nil)
         
            }
@@ -451,7 +455,6 @@ class LastDetailsVC: UIViewController, UITextFieldDelegate, UITextViewDelegate, 
     func userHasChosen(image: UIImage){
         
         if image.isEqual(nil){
-            print("Choose An Image!")
         }
         else{
             
@@ -503,7 +506,7 @@ class LastDetailsVC: UIViewController, UITextFieldDelegate, UITextViewDelegate, 
             "rate":"\((txtHourly.text)!)",
             "subCategoryId":"\(subCatagoryIDs)",
             "userId":"\(userDic.object(forKey: "userId")!)",
-            "language":"en",
+            "language":appdel.userLanguage,
             "profilePic":""] as [String : Any]
         
         print("param",param)

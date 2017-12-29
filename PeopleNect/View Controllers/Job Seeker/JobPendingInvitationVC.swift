@@ -342,7 +342,7 @@ class JobPendingInvitationVC: UIViewController, UITableViewDataSource , UITableV
         
         let param =  [WebServicesClass.METHOD_NAME: "getPendingInvitations",
                       "userId":"\(appdel.loginUserDict.object(forKey: "userId")!)",
-                      "language":"en"] as [String : Any]
+                      "language":appdel.userLanguage] as [String : Any]
         
         
         print("paramgetInvitationJobsApi",param)
@@ -412,7 +412,7 @@ class JobPendingInvitationVC: UIViewController, UITableViewDataSource , UITableV
                       "accept": accept,
                       "userId":"\(appdel.loginUserDict.object(forKey: "userId")!)",
                     "jobId": jobID,
-                    "language":"en"] as [String : Any]
+                    "language":appdel.userLanguage] as [String : Any]
         
         
         print("ParamacceptJobInvitationAPI",param)

@@ -98,7 +98,7 @@ class EmpPostJob: UIViewController  {
         
         let param =  [WebServicesClass.METHOD_NAME: "jobPostingPriceAndBalance",
                       "employerId":"\(appdel.loginUserDict.object(forKey: "employerId")!)",
-            "language":"en"] as [String : Any]
+            "language":appdel.userLanguage] as [String : Any]
         
         global.callWebService(parameter: param as AnyObject!) { (Response:AnyObject, error:NSError?) in
             SwiftLoader.hide()
@@ -138,7 +138,7 @@ class EmpPostJob: UIViewController  {
         SwiftLoader.show(animated: true)
         
         
-        let param =  [WebServicesClass.METHOD_NAME: "publishJob","employerId":"\(appdel.loginUserDict.object(forKey: "employerId")!)","language":"en","jobId":self.jobId] as [String : Any]
+        let param =  [WebServicesClass.METHOD_NAME: "publishJob","employerId":"\(appdel.loginUserDict.object(forKey: "employerId")!)","language":appdel.userLanguage,"jobId":self.jobId] as [String : Any]
         
         global.callWebService(parameter: param as AnyObject!) { (Response:AnyObject, error:NSError?) in
             SwiftLoader.hide()

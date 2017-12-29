@@ -44,7 +44,8 @@ class JobSelectExpertisesVC: UIViewController,UICollectionViewDelegate,UICollect
         
         self.lblNoData.isHidden = true
         
-        self.lblNoData.text = "No expertise found for this business"
+        self.lblNoData.text = Localization(string: "No expertise found for this business")
+
         
         let layout = KTCenterFlowLayout()
         layout.minimumInteritemSpacing = 10.0
@@ -271,7 +272,7 @@ class JobSelectExpertisesVC: UIViewController,UICollectionViewDelegate,UICollect
         let param =  [WebServicesClass.METHOD_NAME: "subCategoryList",
                       "categoryId":"\(categoryId)",
                        "userId":"\(userDic.object(forKey: "userId")!)",
-                       "language":"en"] as [String : Any]
+                       "language":appdel.userLanguage] as [String : Any]
         
         
         global.callWebService(parameter: param as AnyObject!) { (Response:AnyObject, error:NSError?) in

@@ -36,7 +36,9 @@ class JobSelectCatagoryVC: UIViewController, UICollectionViewDelegate, UICollect
         collectionCatagory.dataSource = self
 
         self.lblNoData.isHidden = true
-        self.lblPickProfilePic.text = "Pick what fits best"
+      
+        // self.lblPickProfilePic.text = "Pick what fits best"
+        
         //let layout = KTCenterFlowLayout()
 //        layout.minimumInteritemSpacing = 10.0
 //        layout.minimumLineSpacing = 10.0
@@ -81,13 +83,12 @@ class JobSelectCatagoryVC: UIViewController, UICollectionViewDelegate, UICollect
         
    //     _ = self.navigationController?.popViewController(animated: true)
         
-        self.alertMessage.strMessage = "Please, complete your profile. You may edit it later."
-        
+        self.alertMessage.strMessage = Localization(string: "Please, complete your profile. You may edit it later.")
+
         self.alertMessage.modalPresentationStyle = .overCurrentContext
         
         self.present(self.alertMessage, animated: false, completion: nil)
 
-        
     }
 
     
@@ -258,7 +259,7 @@ class JobSelectCatagoryVC: UIViewController, UICollectionViewDelegate, UICollect
         
        // let param =  [WebServicesClass.METHOD_NAME: "categoryList","userId":"64","language":"en"] as [String : Any]
         
-        let param =  [WebServicesClass.METHOD_NAME: "categoryList","userId":"\(userDic.object(forKey: "userId")!)","language":"en"] as [String : Any]
+        let param =  [WebServicesClass.METHOD_NAME: "categoryList","userId":"\(userDic.object(forKey: "userId")!)","language":appdel.userLanguage] as [String : Any]
   
         
         global.callWebService(parameter: param as AnyObject!) { (Response:AnyObject, error:NSError?) in

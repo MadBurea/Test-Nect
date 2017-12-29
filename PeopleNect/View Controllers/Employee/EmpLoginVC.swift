@@ -71,7 +71,8 @@ class EmpLoginVC: UIViewController,UITextFieldDelegate {
         
         if (txtEmail.text?.isBlank)!
         {
-            lblEmailValidation.text = strEmailEmpty
+            lblEmailValidation.text = Localization(string: "Enter email")
+
             isApiCall = false
         }
             
@@ -88,7 +89,8 @@ class EmpLoginVC: UIViewController,UITextFieldDelegate {
         
         if(txtPassword.text?.isBlank)!
         {
-            lblPasswordValidation.text = strPasswordEmpty
+            lblPasswordValidation.text = Localization(string: "Enter password")
+
             isApiCall = false
         }
         else if(txtPassword.text?.characters.count)! < 6
@@ -309,7 +311,8 @@ class EmpLoginVC: UIViewController,UITextFieldDelegate {
         {
             if (txtEmail.text?.isBlank)!
             {
-                lblEmailValidation.text = strEmailEmpty
+                lblEmailValidation.text = Localization(string: "Enter email")
+
             }
                 
             else if !(txtEmail.text?.isEmail)!
@@ -328,7 +331,8 @@ class EmpLoginVC: UIViewController,UITextFieldDelegate {
         {
             if(txtPassword.text?.isBlank)!
             {
-                lblPasswordValidation.text = strPasswordEmpty
+                lblPasswordValidation.text = Localization(string: "Enter password")
+
             }
             else if(txtPassword.text?.characters.count)! < 6
             {

@@ -360,7 +360,7 @@ class EmpHistoryVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         
         let param =  [WebServicesClass.METHOD_NAME: "closedJobs",
                       "employerId":"\(loginDict.object(forKey: "employerId")!)",
-                        "language":"en"] as [String : Any]
+                        "language":appdel.userLanguage] as [String : Any]
         
         
         print("paramclosedJobsApi",param)

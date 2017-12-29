@@ -258,7 +258,8 @@ class EmpAddCompanyDetailsVC: UIViewController, UITextFieldDelegate,PlaceSearchT
         
             if (txtCompanyName.text?.isBlank)!
             {
-                lblCompanyValidation.text = strCompanyNameEmpty
+                lblCompanyValidation.text = Localization(string: "Enter company name")
+
                 isApiCall = false
 
             }
@@ -269,7 +270,8 @@ class EmpAddCompanyDetailsVC: UIViewController, UITextFieldDelegate,PlaceSearchT
         
             if (txtAddress.text?.isBlank)!
             {
-                lblAdressValidation.text = strAddressEmpty
+                lblAdressValidation.text = Localization(string: "Enter address")
+
                 isApiCall = false
 
             }
@@ -280,7 +282,8 @@ class EmpAddCompanyDetailsVC: UIViewController, UITextFieldDelegate,PlaceSearchT
        
             if (txtStreetName.text?.isBlank)!
             {
-                lblStreetValidation.text = strStreetEmpty
+                lblStreetValidation.text = Localization(string: "Enter street")
+
                 isApiCall = false
 
             }
@@ -291,7 +294,8 @@ class EmpAddCompanyDetailsVC: UIViewController, UITextFieldDelegate,PlaceSearchT
        
             if(txtNumber.text?.isBlank)!
             {
-                lblNumberValidation.text = strNumberEmpty
+                lblNumberValidation.text = Localization(string: "Enter number")
+
                 isApiCall = false
 
             }
@@ -302,7 +306,8 @@ class EmpAddCompanyDetailsVC: UIViewController, UITextFieldDelegate,PlaceSearchT
        
             if(txtComplement.text?.isBlank)!
             {
-                lblComplementValidation.text = strComplementEmpty
+                lblComplementValidation.text = Localization(string: "Enter complement")
+
                 isApiCall = false
 
             }
@@ -313,7 +318,8 @@ class EmpAddCompanyDetailsVC: UIViewController, UITextFieldDelegate,PlaceSearchT
        
             if(txtCity.text?.isBlank)!
             {
-                lblCityValidation.text = strCityEmpty
+                lblCityValidation.text = Localization(string: "Enter City")
+
                 isApiCall = false
 
             }
@@ -324,7 +330,8 @@ class EmpAddCompanyDetailsVC: UIViewController, UITextFieldDelegate,PlaceSearchT
       
             if(txtZipCode.text?.isBlank)!
             {
-                lblZipCodeValidation.text = strZipcodeEmpty
+                lblZipCodeValidation.text = Localization(string: "Enter Zipcode")
+
                 isApiCall = false
             }
             else
@@ -334,7 +341,8 @@ class EmpAddCompanyDetailsVC: UIViewController, UITextFieldDelegate,PlaceSearchT
        
             if(txtState.text?.isBlank)!
             {
-                lblStateValidation.text = strStateEmpty
+                lblStateValidation.text = Localization(string: "Enter State")
+
                 isApiCall = false
             }
             else
@@ -344,7 +352,8 @@ class EmpAddCompanyDetailsVC: UIViewController, UITextFieldDelegate,PlaceSearchT
        
             if(txtCountry.text?.isBlank)!
             {
-                lblCountryValidation.text = strCountryEmpty
+                lblCountryValidation.text = Localization(string: "Enter Country")
+
                 isApiCall = false
             }
             else
@@ -776,7 +785,8 @@ class EmpAddCompanyDetailsVC: UIViewController, UITextFieldDelegate,PlaceSearchT
         {
             if (txtCompanyName.text?.isBlank)!
             {
-                lblCompanyValidation.text = strCompanyNameEmpty
+                lblCompanyValidation.text = Localization(string: "Enter company name")
+
             }
             else
             {
@@ -788,7 +798,8 @@ class EmpAddCompanyDetailsVC: UIViewController, UITextFieldDelegate,PlaceSearchT
         {
             if (txtAddress.text?.isBlank)!
             {
-                lblAdressValidation.text = strAddressEmpty
+                lblAdressValidation.text = Localization(string: "Enter address")
+
             }
             else
             {
@@ -800,7 +811,8 @@ class EmpAddCompanyDetailsVC: UIViewController, UITextFieldDelegate,PlaceSearchT
         {
             if (txtStreetName.text?.isBlank)!
             {
-                lblStreetValidation.text = strStreetEmpty
+                lblStreetValidation.text = Localization(string: "Enter street")
+
             }
             else
             {
@@ -812,7 +824,8 @@ class EmpAddCompanyDetailsVC: UIViewController, UITextFieldDelegate,PlaceSearchT
         {
             if(txtNumber.text?.isBlank)!
             {
-                lblNumberValidation.text = strNumberEmpty
+                lblNumberValidation.text = Localization(string: "Enter number")
+
             }
             else
             {
@@ -826,7 +839,8 @@ class EmpAddCompanyDetailsVC: UIViewController, UITextFieldDelegate,PlaceSearchT
         {
             if(txtComplement.text?.isBlank)!
             {
-                lblComplementValidation.text = strComplementEmpty
+                lblComplementValidation.text = Localization(string: "Enter complement")
+
             }
             else
             {
@@ -838,7 +852,8 @@ class EmpAddCompanyDetailsVC: UIViewController, UITextFieldDelegate,PlaceSearchT
         {
             if(txtCity.text?.isBlank)!
             {
-                lblCityValidation.text = strCityEmpty
+                lblCityValidation.text = Localization(string: "Enter City")
+
             }
             else
             {
@@ -850,7 +865,8 @@ class EmpAddCompanyDetailsVC: UIViewController, UITextFieldDelegate,PlaceSearchT
         {
             if(txtZipCode.text?.isBlank)!
             {
-                lblZipCodeValidation.text = strZipcodeEmpty
+                lblZipCodeValidation.text = Localization(string: "Enter Zipcode")
+
             }
             else
             {
@@ -862,7 +878,8 @@ class EmpAddCompanyDetailsVC: UIViewController, UITextFieldDelegate,PlaceSearchT
         {
             if(txtState.text?.isBlank)!
             {
-                lblStateValidation.text = strStateEmpty
+                lblStateValidation.text = Localization(string: "Enter State")
+
             }
             else
             {
@@ -873,7 +890,8 @@ class EmpAddCompanyDetailsVC: UIViewController, UITextFieldDelegate,PlaceSearchT
         {
             if(txtCountry.text?.isBlank)!
             {
-                lblCountryValidation.text = strCountryEmpty
+                lblCountryValidation.text = Localization(string: "Enter Country")
+
             }
             else
             {

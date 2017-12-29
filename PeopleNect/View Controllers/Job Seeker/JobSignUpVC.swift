@@ -144,7 +144,8 @@ class JobSignUpVC: UIViewController, UITextFieldDelegate, UITableViewDelegate,Pl
         
         if (txtName.text?.isBlank)!
         {
-            lblValidateName.text = strNameEmpty
+            lblValidateName.text = Localization(string: "Enter name")
+
             isApiCall = false
         }
         else
@@ -154,7 +155,8 @@ class JobSignUpVC: UIViewController, UITextFieldDelegate, UITableViewDelegate,Pl
         
         if (txtSurname.text?.isBlank)!
         {
-            lblValidateSurname.text = strSurnameEmpty
+            lblValidateSurname.text = Localization(string: "Enter surname")
+
             isApiCall = false
         }
         else
@@ -164,7 +166,8 @@ class JobSignUpVC: UIViewController, UITextFieldDelegate, UITableViewDelegate,Pl
         
         if (txtEmail.text?.isBlank)!
         {
-            lblValidateEmail.text = strEmailEmpty
+            lblValidateEmail.text = Localization(string: "Enter email")
+
             isApiCall = false
         }
             
@@ -181,7 +184,8 @@ class JobSignUpVC: UIViewController, UITextFieldDelegate, UITableViewDelegate,Pl
         
         if(txtCountryCode.text?.isBlank)!
         {
-            lblValidateCountryCode.text = strCountryCodeEmpty
+            lblValidateCountryCode.text = Localization(string: "Enter country code")
+
             isApiCall = false
         }
         else
@@ -192,7 +196,8 @@ class JobSignUpVC: UIViewController, UITextFieldDelegate, UITableViewDelegate,Pl
         
         if(txtPhoneNo.text?.isBlank)!
         {
-            lblValidatePhoneNo.text = strMobileEmpty
+            lblValidatePhoneNo.text = Localization(string: "Enter mobile")
+
             isApiCall = false
         }
         else if((txtPhoneNo.text?.characters.count)! < 10)
@@ -207,7 +212,8 @@ class JobSignUpVC: UIViewController, UITextFieldDelegate, UITableViewDelegate,Pl
         
         if(txtPassword.text?.isBlank)!
         {
-            lblValidatePassword.text = strPasswordEmpty
+            lblValidatePassword.text = Localization(string: "Enter password")
+
             isApiCall = false
         }
         else if(txtPassword.text?.characters.count)! < 6
@@ -222,7 +228,8 @@ class JobSignUpVC: UIViewController, UITextFieldDelegate, UITableViewDelegate,Pl
         
         if (txtCountry.text?.isBlank)!
         {
-            lblValidateCountry.text = strCountryEmpty
+            lblValidateCountry.text = Localization(string: "Enter Country")
+
             isApiCall = false
         }
         else
@@ -232,7 +239,8 @@ class JobSignUpVC: UIViewController, UITextFieldDelegate, UITableViewDelegate,Pl
         
         if (txtState.text?.isBlank)!
         {
-            lblValidateState.text = strStateEmpty
+            lblValidateState.text = Localization(string: "Enter State")
+
             isApiCall = false
         }
         else
@@ -242,7 +250,8 @@ class JobSignUpVC: UIViewController, UITextFieldDelegate, UITableViewDelegate,Pl
         
         if (txtZipCode.text?.isBlank)!
         {
-            lblValidateZipCode.text = strZipcodeEmpty
+            lblValidateZipCode.text = Localization(string: "Enter Zipcode")
+
             isApiCall = false
         }
         else
@@ -252,7 +261,8 @@ class JobSignUpVC: UIViewController, UITextFieldDelegate, UITableViewDelegate,Pl
         
         if (txtCity.text?.isBlank)!
         {
-            lblValidateCity.text = strCityEmpty
+            lblValidateCity.text = Localization(string: "Enter City")
+
             isApiCall = false
         }
         else
@@ -262,7 +272,8 @@ class JobSignUpVC: UIViewController, UITextFieldDelegate, UITableViewDelegate,Pl
         
         if (txtComplement.text?.isBlank)!
         {
-            lblValidateComplement.text = strComplementEmpty
+            lblValidateComplement.text = Localization(string: "Enter complement")
+
             isApiCall = false
         }
         else
@@ -272,7 +283,8 @@ class JobSignUpVC: UIViewController, UITextFieldDelegate, UITableViewDelegate,Pl
         
         if (txtNumber.text?.isBlank)!
         {
-            lblValidateNumber.text = strNumberEmpty
+            lblValidateNumber.text = Localization(string: "Enter number")
+
             isApiCall = false
         }
         else
@@ -282,7 +294,8 @@ class JobSignUpVC: UIViewController, UITextFieldDelegate, UITableViewDelegate,Pl
         
         if (txtStreetName.text?.isBlank)!
         {
-            lblValidateStreetName.text = strStreetEmpty
+            lblValidateStreetName.text = Localization(string: "Enter street")
+
             isApiCall = false
         }
         else
@@ -291,7 +304,8 @@ class JobSignUpVC: UIViewController, UITextFieldDelegate, UITableViewDelegate,Pl
         }
         if (txtAddress.text?.isBlank)!
         {
-            lblValidateStartTypingAdd.text = strAddressEmpty
+            lblValidateStartTypingAdd.text = Localization(string: "Enter address")
+
             isApiCall = false
         }
         else
@@ -533,7 +547,8 @@ class JobSignUpVC: UIViewController, UITextFieldDelegate, UITableViewDelegate,Pl
         {
             if (txtName.text?.isBlank)!
             {
-                lblValidateName.text = strNameEmpty
+                lblValidateName.text = Localization(string: "Enter name")
+
             }
             else
             {
@@ -545,7 +560,8 @@ class JobSignUpVC: UIViewController, UITextFieldDelegate, UITableViewDelegate,Pl
         {
             if (txtSurname.text?.isBlank)!
             {
-                lblValidateSurname.text = strSurnameEmpty
+                lblValidateSurname.text = Localization(string: "Enter surname")
+
             }
             else
             {
@@ -557,7 +573,8 @@ class JobSignUpVC: UIViewController, UITextFieldDelegate, UITableViewDelegate,Pl
         {
             if (txtEmail.text?.isBlank)!
             {
-                lblValidateEmail.text = strEmailEmpty
+                lblValidateEmail.text = Localization(string: "Enter email")
+
             }
             else if !(txtEmail.text?.isEmail)!
             {
@@ -574,7 +591,8 @@ class JobSignUpVC: UIViewController, UITextFieldDelegate, UITableViewDelegate,Pl
         {
             if(txtCountryCode.text?.isBlank)!
             {
-                lblValidateCountryCode.text = strCountryCodeEmpty
+                lblValidateCountryCode.text = Localization(string: "Enter country code")
+
             }
             else
             {
@@ -588,7 +606,8 @@ class JobSignUpVC: UIViewController, UITextFieldDelegate, UITableViewDelegate,Pl
         {
             if(txtPhoneNo.text?.isBlank)!
             {
-                lblValidatePhoneNo.text = strMobileEmpty
+                lblValidatePhoneNo.text = Localization(string: "Enter mobile")
+
             }
             else if((txtPhoneNo.text?.characters.count)! < 14)
             {
@@ -618,7 +637,8 @@ class JobSignUpVC: UIViewController, UITextFieldDelegate, UITableViewDelegate,Pl
         {
             if(txtPassword.text?.isBlank)!
             {
-                lblValidatePassword.text = strPasswordEmpty
+                lblValidatePassword.text = Localization(string: "Enter password")
+
             }
             else if(txtPassword.text?.characters.count)! < 6
             {
@@ -634,7 +654,8 @@ class JobSignUpVC: UIViewController, UITextFieldDelegate, UITableViewDelegate,Pl
         {
             if (txtCity.text?.isBlank)!
             {
-                lblValidateCity.text = strCityEmpty
+                lblValidateCity.text = Localization(string: "Enter City")
+
             }
             else
             {
@@ -646,7 +667,8 @@ class JobSignUpVC: UIViewController, UITextFieldDelegate, UITableViewDelegate,Pl
         {
             if (txtState.text?.isBlank)!
             {
-                lblValidateState.text = strStateEmpty
+                lblValidateState.text = Localization(string: "Enter State")
+
             }
             else
             {
@@ -658,7 +680,8 @@ class JobSignUpVC: UIViewController, UITextFieldDelegate, UITableViewDelegate,Pl
         {
             if (txtNumber.text?.isBlank)!
             {
-                lblValidateNumber.text = strNumberEmpty
+                lblValidateNumber.text = Localization(string: "Enter number")
+
             }
             else
             {
@@ -670,7 +693,8 @@ class JobSignUpVC: UIViewController, UITextFieldDelegate, UITableViewDelegate,Pl
         {
             if (txtCountry.text?.isBlank)!
             {
-                lblValidateCountry.text = strCountryEmpty
+                lblValidateCountry.text = Localization(string: "Enter Country")
+
             }
             else
             {
@@ -681,7 +705,8 @@ class JobSignUpVC: UIViewController, UITextFieldDelegate, UITableViewDelegate,Pl
         {
             if (txtZipCode.text?.isBlank)!
             {
-                lblValidateZipCode.text = strZipcodeEmpty
+                lblValidateZipCode.text = Localization(string: "Enter Zipcode")
+
             }
             else
             {
@@ -692,7 +717,8 @@ class JobSignUpVC: UIViewController, UITextFieldDelegate, UITableViewDelegate,Pl
         {
             if (txtComplement.text?.isBlank)!
             {
-                lblValidateComplement.text = strComplementEmpty
+                lblValidateComplement.text = Localization(string: "Enter complement")
+
             }
             else
             {
@@ -703,7 +729,8 @@ class JobSignUpVC: UIViewController, UITextFieldDelegate, UITableViewDelegate,Pl
         {
             if (txtStreetName.text?.isBlank)!
             {
-                lblValidateStreetName.text = strStreetEmpty
+                lblValidateStreetName.text = Localization(string: "Enter street")
+
             }
             else
             {
@@ -714,7 +741,8 @@ class JobSignUpVC: UIViewController, UITextFieldDelegate, UITableViewDelegate,Pl
         {
             if (txtAddress.text?.isBlank)!
             {
-                lblValidateStartTypingAdd.text = strAddressEmpty
+                lblValidateStartTypingAdd.text = Localization(string: "Enter address")
+
             }
             else
             {
@@ -1001,12 +1029,19 @@ class JobSignUpVC: UIViewController, UITextFieldDelegate, UITableViewDelegate,Pl
         let formatter = DateFormatter()
         formatter.dateFormat = "HH:mm"
         
+        
         let startTimeLocal = formatter.date(from: StartTime)
         let EndTimeLocal = formatter.date(from: EndTime)
         
+        
+        let startAvailabilityTime = startTimeLocal?.currentUTCTimeZoneTime
+        let endAvailabilityTime = EndTimeLocal?.currentUTCTimeZoneTime
+        
         //EndTimeLocal?.currentUTCTimeZoneTime
         let param =  [WebServicesClass.METHOD_NAME: "register","access_identifier":"","access_token":"","city":"\(txtCity.text!)","complement":"\(txtComplement.text!)","country":"\(txtCountry.text!)","country_code":"\(txtCountryCode.text!)","deviceId":UIDevice.current.identifierForVendor!.uuidString,"email":"\(txtEmail.text!)","lat":appdel.userLocationLat
-            ,"lng":appdel.userLocationLng,"name":"\(txtName.text!)","number":"\(txtNumber.text!)","password":"\(txtPassword.text!)","phone":"\(txtPhoneNo.text!)","registerWith":"email","state":"\(txtState.text!)","streetName":"\(txtStreetName.text!)","surname":"\(txtSurname.text!)","zipcode":"\(txtZipCode.text!)","language":"en","startAvailabilityTime":startTimeLocal?.currentUTCTimeZoneTime,"endAvailabilityTime":EndTimeLocal?.currentUTCTimeZoneTime,"timeZone":""] as [String : Any]
+            ,"lng":appdel.userLocationLng,"name":"\(txtName.text!)","number":"\(txtNumber.text!)","password":"\(txtPassword.text!)","phone":"\(txtPhoneNo.text!)","registerWith":"email","state":"\(txtState.text!)","streetName":"\(txtStreetName.text!)","surname":"\(txtSurname.text!)","zipcode":"\(txtZipCode.text!)","language":appdel.userLanguage,"startAvailabilityTime":startAvailabilityTime!,"endAvailabilityTime":endAvailabilityTime!,"local_diff":"\(getTimeZoneValue())"] as [String : Any]
+        
+        print("param is",param)
         
         global.callWebService(parameter: param as AnyObject!) { (Response:AnyObject, error:NSError?) in
             
@@ -1101,6 +1136,9 @@ class JobSignUpVC: UIViewController, UITextFieldDelegate, UITableViewDelegate,Pl
         let startTimeLocal = formatter.date(from: StartTime)
         let EndTimeLocal = formatter.date(from: EndTime)
         
+        let startAvailabilityTime = startTimeLocal?.currentUTCTimeZoneTime
+        let endAvailabilityTime = EndTimeLocal?.currentUTCTimeZoneTime
+        
         let param =  [WebServicesClass.METHOD_NAME: "register","access_identifier":"\(access_token)",
                       "access_token":"\(access_token)",
                       "city":"",
@@ -1120,10 +1158,10 @@ class JobSignUpVC: UIViewController, UITextFieldDelegate, UITableViewDelegate,Pl
             "streetName":"",
             "surname":lastName,
             "zipcode":"",
-            "language":"en",
+            "language":appdel.userLanguage,
             "socialType":"\(socialType)",
-            "startAvailabilityTime":startTimeLocal?.currentUTCTimeZoneTime,
-            "endAvailabilityTime":EndTimeLocal?.currentUTCTimeZoneTime,"timeZone":""] as [String : Any]
+            "startAvailabilityTime":startAvailabilityTime!,
+            "endAvailabilityTime":endAvailabilityTime!,"local_diff":"\(getTimeZoneValue())"] as [String : Any]
        
         print("param",param)
         

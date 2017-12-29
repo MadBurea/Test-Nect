@@ -9,85 +9,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PeopleNect/View Controllers/StartingVC.swift"
-            timestampString = "536163139.826055"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PeopleNect/Helper Class/Localisator/Localisator.swift"
-            timestampString = "536163139.826445"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
-            landmarkName = "Localisator"
-            landmarkType = "3">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "PeopleNect.Localisator.availableLanguagesArray.getter : Swift.Array&lt;Swift.String&gt;"
-                  moduleName = "PeopleNect"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/baps/Desktop/Election/peopleNect21:17_GIT/PeopleNect/Helper%20Class/Localisator/Localisator.swift"
-                  timestampString = "536138292.099344"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "26"
-                  endingLineNumber = "26"
-                  offsetFromSymbolStart = "81">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "PeopleNect.Localisator.availableLanguagesArray.setter : Swift.Array&lt;Swift.String&gt;"
-                  moduleName = "PeopleNect"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/baps/Desktop/Election/peopleNect21:17_GIT/PeopleNect/Helper%20Class/Localisator/Localisator.swift"
-                  timestampString = "536138292.101835"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "26"
-                  endingLineNumber = "26"
-                  offsetFromSymbolStart = "98">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "PeopleNect.Localisator.init() -&gt; PeopleNect.Localisator"
-                  moduleName = "PeopleNect"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/baps/Desktop/Election/peopleNect21:17_GIT/PeopleNect/Helper%20Class/Localisator/Localisator.swift"
-                  timestampString = "536138292.105728"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "26"
-                  endingLineNumber = "26"
-                  offsetFromSymbolStart = "168">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "PeopleNect/Helper Class/Localisator/Localisator.swift"
             timestampString = "536163139.826707"
             startingColumnNumber = "9223372036854775807"
@@ -121,54 +42,6 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PeopleNect/Helper Class/Localisator/Localisator.swift"
-            timestampString = "536163139.826919"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
-            landmarkName = "init()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PeopleNect/Helper Class/Localisator/Localisator.swift"
-            timestampString = "536163139.826997"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
-            landmarkName = "init()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PeopleNect/Helper Class/Localisator/Localisator.swift"
-            timestampString = "536163139.827076"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
-            landmarkName = "init()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PeopleNect/Helper Class/Localisator/Localisator.swift"
             timestampString = "536163139.827186"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
@@ -184,13 +57,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PeopleNect/Helper Class/Localisator/Localisator.swift"
-            timestampString = "536163139.827256"
+            filePath = "PeopleNect/View Controllers/Job Seeker/JobSignUpVC.swift"
+            timestampString = "536247647.313815"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
-            landmarkName = "loadDictionaryForLanguage(newLanguage:)"
+            startingLineNumber = "1026"
+            endingLineNumber = "1026"
+            landmarkName = "registerApi()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -200,13 +73,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PeopleNect/Helper Class/Localisator/Localisator.swift"
-            timestampString = "536163139.827338"
+            filePath = "PeopleNect/View Controllers/Job Seeker/JobSignUpVC.swift"
+            timestampString = "536247647.313977"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
-            landmarkName = "loadDictionaryForLanguage(newLanguage:)"
+            startingLineNumber = "1056"
+            endingLineNumber = "1056"
+            landmarkName = "registerApi()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -216,13 +89,61 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PeopleNect/Helper Class/Localisator/Localisator.swift"
-            timestampString = "536163139.827406"
+            filePath = "PeopleNect/View Controllers/Job Seeker/JobSignUpVC.swift"
+            timestampString = "536247647.314099"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
-            landmarkName = "loadDictionaryForLanguage(newLanguage:)"
+            startingLineNumber = "1085"
+            endingLineNumber = "1085"
+            landmarkName = "registerApi()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.AnyObject, Swift.Optional&lt;__ObjC.NSError&gt;) -&gt; () in PeopleNect.JobSignUpVC.registerApi() -&gt; ()"
+                  moduleName = "PeopleNect"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/baps/Desktop/Election/peopleNect21:17_GIT/PeopleNect/View%20Controllers/Job%20Seeker/JobSignUpVC.swift"
+                  timestampString = "536246605.20725"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "1086"
+                  endingLineNumber = "1086"
+                  offsetFromSymbolStart = "4830">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.AnyObject, Swift.Optional&lt;__ObjC.NSError&gt;) -&gt; () in PeopleNect.JobSignUpVC.registerApi() -&gt; ()"
+                  moduleName = "PeopleNect"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/baps/Desktop/Election/peopleNect21:17_GIT/PeopleNect/View%20Controllers/Job%20Seeker/JobSignUpVC.swift"
+                  timestampString = "536246605.209671"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "1086"
+                  endingLineNumber = "1086"
+                  offsetFromSymbolStart = "11537">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PeopleNect/View Controllers/Job Seeker/JobSignUpVC.swift"
+            timestampString = "536247647.314213"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1096"
+            endingLineNumber = "1096"
+            landmarkName = "registerApi()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -232,13 +153,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PeopleNect/Helper Class/Localisator/Localisator.swift"
-            timestampString = "536163139.827498"
+            filePath = "PeopleNect/Helper Class/WebServicesClass.swift"
+            timestampString = "536238883.508931"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
-            landmarkName = "loadDictionaryForLanguage(newLanguage:)"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "callWebService(parameter:completionHandler:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -248,13 +169,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PeopleNect/Helper Class/Localisator/Localisator.swift"
-            timestampString = "536163139.827579"
+            filePath = "PeopleNect/Helper Class/WebServicesClass.swift"
+            timestampString = "536238883.508993"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "121"
-            endingLineNumber = "121"
-            landmarkName = "localizedStringForKey(key:)"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "callWebService(parameter:completionHandler:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -264,13 +185,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PeopleNect/Helper Class/Localisator/Localisator.swift"
-            timestampString = "536163139.827646"
+            filePath = "PeopleNect/Helper Class/WebServicesClass.swift"
+            timestampString = "536238883.509053"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "117"
-            endingLineNumber = "117"
-            landmarkName = "localizedStringForKey(key:)"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "callWebService(parameter:completionHandler:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -280,13 +201,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PeopleNect/Helper Class/Localisator/Localisator.swift"
-            timestampString = "536163139.827757"
+            filePath = "PeopleNect/View Controllers/Job Seeker/JobSignUpVC.swift"
+            timestampString = "536247647.314691"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "139"
-            endingLineNumber = "139"
-            landmarkName = "setLanguage(newLanguage:)"
+            startingLineNumber = "1031"
+            endingLineNumber = "1031"
+            landmarkName = "registerApi()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -296,14 +217,46 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PeopleNect/Helper Class/Localisator/Localisator.swift"
-            timestampString = "536163139.827859"
+            filePath = "PeopleNect/View Controllers/Job Seeker/JobSignUpVC.swift"
+            timestampString = "536247647.314811"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "136"
-            endingLineNumber = "136"
-            landmarkName = "setLanguage(newLanguage:)"
+            startingLineNumber = "1045"
+            endingLineNumber = "1045"
+            landmarkName = "registerApi()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PeopleNect.JobSignUpVC.registerApi() -&gt; ()"
+                  moduleName = "PeopleNect"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/baps/Desktop/Election/peopleNect21:17_GIT/PeopleNect/View%20Controllers/Job%20Seeker/JobSignUpVC.swift"
+                  timestampString = "536246605.240013"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "1047"
+                  endingLineNumber = "1047"
+                  offsetFromSymbolStart = "19487">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.AnyObject, Swift.Optional&lt;__ObjC.NSError&gt;) -&gt; () in PeopleNect.JobSignUpVC.registerApi() -&gt; ()"
+                  moduleName = "PeopleNect"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/baps/Desktop/Election/peopleNect21:17_GIT/PeopleNect/View%20Controllers/Job%20Seeker/JobSignUpVC.swift"
+                  timestampString = "536246605.242674"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "1049"
+                  endingLineNumber = "1049"
+                  offsetFromSymbolStart = "32">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -312,13 +265,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PeopleNect/Helper Class/Localisator/Localisator.swift"
-            timestampString = "536163139.828005"
+            filePath = "PeopleNect/View Controllers/StartingVC.swift"
+            timestampString = "536247647.314914"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "143"
-            endingLineNumber = "143"
-            landmarkName = "setLanguage(newLanguage:)"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

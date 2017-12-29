@@ -10,6 +10,8 @@ import Foundation
 
 // MARK: Valdation String
 
+
+
 let strNameEmpty = "Enter name"
 let strSurnameEmpty = "Enter surname"
 let strEmailEmpty = "Enter email"
@@ -32,16 +34,18 @@ let strJobDescriptionEmpty = "Enter Job Description"
 let strRequiredFieldEmpty = "Required field"
 
 
-let strEmailInvalid = "Please, enter valid email."
-let strMobileInvalid = "Invalid phone"
-let strPasswordInvaild = "*Invalid password! Password must be 6 characters long and contains numbers and letters"
+let strEmailInvalid = Localization(string: "Please, enter valid email.")
+let strMobileInvalid = Localization(string: "Invalid phone")
+let strPasswordInvaild = Localization(string: "*Invalid password! Password must be 6 characters long and contains numbers and letters")
 
-let strOTPInvalid = "Please, enter your OTP."
+let strOTPInvalid = Localization(string: "Please, enter your OTP.")
 
 // MARK: Job Seeker Validation String
 
-let strExpYearsEmpty = "Enter Years"
-let strHourlyEmpty = "Enter hours"
+
+let strExpYearsEmpty = Localization(string: "Enter Years")
+let strHourlyEmpty = Localization(string: "Enter hours")
+
 
 // MARK: Employee login Dictonary
 
@@ -55,60 +59,101 @@ let kUserLoginDict = "UserLoginDict"
 let kCatagoryDict = "JobCatagoryDict"
 
 // MARK:-  Left Menu Strings
-let strSearchProfessionals = "Search professionals"
-let strPostnewJob = "Post new Job"
-let strSelectioninProgresss = "Selection in progress"
-let strBalance = "Balance"
-let strJobinprogress = "Job in progress"
-let strJobHistory = "Job history"
-let strSettings = "Settings"
-let strInviteFrnd = "Invite friends"
-let strLogout = "Exit"
+let strSearchProfessionals = Localization(string: "Search professionals")
+let strPostnewJob = Localization(string: "Post new Job")
 
 
-let strYearofExp = "years of experience"
-let strSearchJobs = "Search jobs"
-let strPendingInvitations = "Pending Invitations"
-let strPendingApplication = "Pending Applications"
-let strOngoingJob = "On going jobs"
-let strAvailibility = "Availability"
-let strNotAvailability = "Not Available"
-let strExit = "Exit"
-let strLogOut = "Log out"
+let strSelectioninProgresss = Localization(string: "Selection in progress")
+
+let strBalance = Localization(string: "Balance")
+
+let strJobinprogress = Localization(string: "Job in progress")
+
+let strJobHistory = Localization(string: "Job history")
+
+let strSettings = Localization(string: "Settings")
+
+let strInviteFrnd = Localization(string: "Invite friends")
+
+let strLogout = Localization(string: "Exit")
 
 
-let strExperanceEmpty = "Enter experience here"
-let strRateEmpty = "Enter rate here"
+let strYearofExp = Localization(string: "years of experience")
+let strSearchJobs = Localization(string: "Search jobs")
+
+let strPendingInvitations = Localization(string: "Pending Invitations")
+
+let strPendingApplication = Localization(string: "Pending Applications")
+
+let strOngoingJob = Localization(string: "On going jobs")
+
+let strAvailibility = Localization(string: "Availability")
+
+let strNotAvailability = Localization(string: "Not Available")
+
+let strExit = Localization(string: "Exit")
+
+let strLogOut = Localization(string: "Log out")
+
+
+
+
+let strExperanceEmpty = Localization(string: "Enter experience here")
+let strRateEmpty = Localization(string: "Enter rate here")
+
 
 // MARK:-  EmpJobSeekerDetailVC String 
+let strSun = Localization(string: "Sun")
 
-let strSun = "Sun"
-let strMon = "Mon"
-let strTue = "Tue"
-let strWed = "Wed"
-let strThu = "Thu"
-let strFri = "Fri"
-let strSat = "Sat"
-let strChat = "Chat"
-let strFree = "Free"
-let strInviteNewJob = "Invite for a new job"
-let strInvitePostedJob = "INVITE FOR A POSTED JOB"
-let strHired = "Hired"
-let strNoShow = "No Show"
+let strMon = Localization(string: "Mon")
+
+let strTue = Localization(string: "Tue")
+
+let strWed = Localization(string: "Wed")
+
+let strThu = Localization(string: "Thu")
+
+let strFri = Localization(string: "Fri")
+
+let strSat = Localization(string: "Sat")
+
+let strChat = Localization(string: "Chat")
+
+let strFree = Localization(string: "Free")
+
+let strInviteNewJob = Localization(string: "Invite for a new job")
+
+let strInvitePostedJob = Localization(string: "INVITE FOR A POSTED JOB")
+
+let strHired = Localization(string: "Hired")
+
+let strNoShow = Localization(string: "No Show")
+
 
 // MARK:-  EmpInvitedPostedJobVC String
-let strInvite = "Invite"
-let strFor = "For:"
-let strOK = "OK"
-let strCancel = "CANCEL"
-let strHour = "hour"
-let strJob = "job"
-let strDay = "day"
+
+
+let strInvite = Localization(string: "Invite")
+
+let strFor = Localization(string: "For:")
+
+let strOK = Localization(string: "OK")
+
+let strCancel = Localization(string: "CANCEL")
+
+let strHour = Localization(string: "hour")
+
+let strJob = Localization(string: "job")
+
+
+let strDay = Localization(string: "month")
 
 // MARK:-  EmpJobSelectionProgressVC String
-let strNone = "None"
-let strOnlyBussDays = "Only business days"
-let strIncludesNonBussDays = "Includes non Business days"
+let strNone = Localization(string: "None")
+
+
+let strOnlyBussDays = Localization(string: "Only business days")
+let strIncludesNonBussDays = Localization(string: "Includes non Business days")
 
 // MARK:- JobSeeker Profile PIC
 var ImgJobSeekerProfilepic = UIImage()

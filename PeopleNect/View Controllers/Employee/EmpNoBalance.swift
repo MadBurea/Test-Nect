@@ -138,7 +138,7 @@ class EmpNoBalance: UIViewController ,UICollectionViewDelegate,UICollectionViewD
         
         let param =  [WebServicesClass.METHOD_NAME: "packageListing",
                       "employerId":"\(appdel.loginUserDict.object(forKey: "employerId")!)",
-            "language":"en"] as [String : Any]
+            "language":appdel.userLanguage] as [String : Any]
         
         /*
          let param =  [WebServicesClass.METHOD_NAME: "packageListing",
@@ -200,7 +200,7 @@ class EmpNoBalance: UIViewController ,UICollectionViewDelegate,UICollectionViewD
     
         let param =  [WebServicesClass.METHOD_NAME: "addBalanceFromPayPal",
                       "employerId":"\(appdel.loginUserDict.object(forKey: "employerId")!)",
-            "language":"en", "paymentId":paymentId] as [String : Any]
+            "language":appdel.userLanguage, "paymentId":paymentId] as [String : Any]
         
         
         print("param for balance is",param)

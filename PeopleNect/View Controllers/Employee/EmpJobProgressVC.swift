@@ -387,7 +387,7 @@ class EmpJobProgressVC: UIViewController, UITableViewDelegate, UITableViewDataSo
         
         let param =  [WebServicesClass.METHOD_NAME: "jobInProgress",
                       "employerId":"\(loginDict.object(forKey: "employerId")!)",
-            "language":"en"] as [String : Any]
+            "language":appdel.userLanguage] as [String : Any]
         
         
         print("paramclosedJobsApi",param)

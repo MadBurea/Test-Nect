@@ -183,7 +183,7 @@ UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlo
        
         
         
-        let param =  [WebServicesClass.METHOD_NAME: "categoryList","userId":"\(appdel.loginUserDict.object(forKey: "userId")!)","language":"en"] as [String : Any]
+        let param =  [WebServicesClass.METHOD_NAME: "categoryList","userId":"\(appdel.loginUserDict.object(forKey: "userId")!)","language":appdel.userLanguage] as [String : Any]
         
         
         global.callWebService(parameter: param as AnyObject!) { (Response:AnyObject, error:NSError?) in

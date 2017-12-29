@@ -544,20 +544,24 @@ class EmpLastDetailsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFie
         
         if (self.txtJobTitle.text?.isBlank)!
         {
-            lblValidJobTitle.text = strRequiredFieldEmpty
+            lblValidJobTitle.text = Localization(string: "Required field")
+
             apiCall = false
         }
        if ((self.tfJobDescription.text?.isBlank)!){
-            lblValidJobDescription.text = strRequiredFieldEmpty
+        lblValidJobDescription.text = Localization(string: "Required field")
+
             apiCall = false
         }
         if ((self.txtStartDate.text?.isBlank)!){
-            lblValidationStartDate.text = strRequiredFieldEmpty
+            lblValidationStartDate.text = Localization(string: "Required field")
+
             apiCall = false
         }
          if ((self.txtEndDate.text?.isBlank)!){
             if txtEndDate.isHidden == false{
-                lblValidationEndDate.text = strRequiredFieldEmpty
+                lblValidationEndDate.text = Localization(string: "Required field")
+
                 apiCall = false
             }
         }
@@ -568,24 +572,29 @@ class EmpLastDetailsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFie
             }
         }
          if ((self.txtStartHour.text?.isBlank)!){
-            lblValidationStartTime.text = strRequiredFieldEmpty
+            lblValidationStartTime.text = Localization(string: "Required field")
+
             apiCall = false
         }
          if ((self.txtEndHour.text?.isBlank)!){
-            lblValidationEndTime.text = strRequiredFieldEmpty
+            lblValidationEndTime.text = Localization(string: "Required field")
+
             apiCall = false
 
         }
          if ((self.txtPerHourPerDay.text?.isBlank)!){
-            lblValidateHoursPerDay.text = strRequiredFieldEmpty
+            lblValidateHoursPerDay.text = Localization(string: "Required field")
+
             apiCall = false
         }
          if ((self.txtRsPerHours.text?.isBlank)!){
-            lblValidateRsPerHour.text = strRequiredFieldEmpty
+            lblValidateRsPerHour.text = Localization(string: "Required field")
+
             apiCall = false
         }
          if ((self.txtRsPerHours.text?.isBlank)!){
-            lblValidateRsPerHour.text = strRequiredFieldEmpty
+            lblValidateRsPerHour.text = Localization(string: "Required field")
+
             apiCall = false
         }
         if hourCount == 0 {
@@ -598,39 +607,48 @@ class EmpLastDetailsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFie
         }
           if  FreshJob == 1 && apiCall == false {
              if ((self.txtStartTypingAdd.text?.isBlank)!) && apiCall == false{
-                lblValidateStartTypingAdd.text = strRequiredFieldEmpty
+                lblValidateStartTypingAdd.text = Localization(string: "Required field")
+
                 apiCall = false
             }
              if ((self.txtStreetName.text?.isBlank)!) && apiCall == false{
-                lblValidateStreet.text = strRequiredFieldEmpty
+                lblValidateStreet.text = Localization(string: "Required field")
+
                 apiCall = false
             }
              if ((self.txtNumber.text?.isBlank)!) && apiCall == false{
-                lblValidateNumber.text = strRequiredFieldEmpty
+                lblValidateNumber.text = Localization(string: "Required field")
+
                 apiCall = false
             }
              if ((self.txtCompliment.text?.isBlank)!) && apiCall == false{
-                lblValidateCompliment.text = strRequiredFieldEmpty
+                lblValidateCompliment.text = Localization(string: "Required field")
+
                 apiCall = false
             }
              if ((self.txtCompliment.text?.isBlank)!) && apiCall == false{
-                lblValidateCompliment.text = strRequiredFieldEmpty
+                lblValidateCompliment.text = Localization(string: "Required field")
+
                 apiCall = false
             }
               if ((self.txtCity.text?.isBlank)!) && apiCall == false{
-                lblValidateCity.text = strRequiredFieldEmpty
+                lblValidateCity.text = Localization(string: "Required field")
+
                 apiCall = false
             }
               if ((self.txtZipCode.text?.isBlank)!) && apiCall == false{
-                lblValidateZipCode.text = strRequiredFieldEmpty
+                lblValidateZipCode.text = Localization(string: "Required field")
+
                 apiCall = false
             }
               if ((self.txtState.text?.isBlank)!) && apiCall == false{
-                lblValidateState.text = strRequiredFieldEmpty
+                lblValidateState.text = Localization(string: "Required field")
+
                 apiCall = false
             }
               if ((self.txtCountry.text?.isBlank)!) && apiCall == false{
-                lblValidateCountry.text = strRequiredFieldEmpty
+                lblValidateCountry.text = Localization(string: "Required field")
+
                 apiCall = false
              }
         }
@@ -959,7 +977,8 @@ class EmpLastDetailsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFie
         {
             if(txtJobTitle.text?.isBlank)!
             {
-                lblValidJobTitle.text = strRequiredFieldEmpty
+                lblValidJobTitle.text = Localization(string: "Required field")
+
             }
             else
             {
@@ -971,7 +990,8 @@ class EmpLastDetailsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFie
         {
             if(txtStartDate.text?.isBlank)!
             {
-                lblValidationStartDate.text = strRequiredFieldEmpty
+                lblValidationStartDate.text = Localization(string: "Required field")
+
             }
             else
             {
@@ -982,7 +1002,8 @@ class EmpLastDetailsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFie
         {
             if(txtEndDate.text?.isBlank)!
             {
-                lblValidationEndDate.text = strRequiredFieldEmpty
+                lblValidationEndDate.text = Localization(string: "Required field")
+
             }
             else
             {
@@ -993,7 +1014,8 @@ class EmpLastDetailsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFie
         {
             if(txtStartHour.text?.isBlank)!
             {
-                lblValidationStartTime.text = strRequiredFieldEmpty
+                lblValidationStartTime.text = Localization(string: "Required field")
+
             }
             else
             {
@@ -1005,7 +1027,8 @@ class EmpLastDetailsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFie
             if txtEndDate.isHidden == false {
                 if(txtEndHour.text?.isBlank)!
                 {
-                    lblValidationEndTime.text = strRequiredFieldEmpty
+                    lblValidationEndTime.text = Localization(string: "Required field")
+
                 }
                 else
                 {
@@ -1018,7 +1041,8 @@ class EmpLastDetailsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFie
         {
             if(txtPerHourPerDay.text?.isBlank)!
             {
-            lblValidateHoursPerDay.text = strRequiredFieldEmpty
+                lblValidateHoursPerDay.text = Localization(string: "Required field")
+
             }
             else
             {
@@ -1057,7 +1081,8 @@ class EmpLastDetailsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFie
         {
             if(txtRsPerHours.text?.isBlank)!
             {
-               lblValidateRsPerHour.text = strRequiredFieldEmpty
+                lblValidateRsPerHour.text = Localization(string: "Required field")
+
             }
             else
             {
@@ -1068,7 +1093,8 @@ class EmpLastDetailsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFie
         {
             if(txtStartTypingAdd.text?.isBlank)!
             {
-                lblValidateStartTypingAdd.text = strRequiredFieldEmpty
+                lblValidateStartTypingAdd.text = Localization(string: "Required field")
+
             }
             else
             {
@@ -1079,7 +1105,8 @@ class EmpLastDetailsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFie
         {
             if(txtStreetName.text?.isBlank)!
             {
-                lblValidateStreet.text = strRequiredFieldEmpty
+                lblValidateStreet.text = Localization(string: "Required field")
+
             }
             else
             {
@@ -1090,7 +1117,8 @@ class EmpLastDetailsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFie
         {
             if(txtNumber.text?.isBlank)!
             {
-                lblValidateNumber.text = strRequiredFieldEmpty
+                lblValidateNumber.text = Localization(string: "Required field")
+
             }
             else
             {
@@ -1102,7 +1130,8 @@ class EmpLastDetailsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFie
         {
             if(txtCompliment.text?.isBlank)!
             {
-                lblValidateCompliment.text = strRequiredFieldEmpty
+                lblValidateCompliment.text = Localization(string: "Required field")
+
             }
             else
             {
@@ -1114,7 +1143,8 @@ class EmpLastDetailsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFie
         {
             if(txtCity.text?.isBlank)!
             {
-                lblValidateCity.text = strRequiredFieldEmpty
+                lblValidateCity.text = Localization(string: "Required field")
+
             }
             else
             {
@@ -1126,7 +1156,8 @@ class EmpLastDetailsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFie
         {
             if(txtZipCode.text?.isBlank)!
             {
-               lblValidateZipCode.text = strRequiredFieldEmpty
+                lblValidateZipCode.text = Localization(string: "Required field")
+
             }
             else
             {
@@ -1138,7 +1169,8 @@ class EmpLastDetailsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFie
         {
             if(txtState.text?.isBlank)!
             {
-                lblValidateState.text = strRequiredFieldEmpty
+                lblValidateState.text = Localization(string: "Required field")
+
             }
             else
             {
@@ -1150,7 +1182,8 @@ class EmpLastDetailsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFie
         {
             if(txtCountry.text?.isBlank)!
             {
-                lblValidateCountry.text = strRequiredFieldEmpty
+                lblValidateCountry.text = Localization(string: "Required field")
+
             }
             else
             {
@@ -1273,7 +1306,8 @@ class EmpLastDetailsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFie
         if textView == tfJobDescription {
             if(textView.text?.isBlank)!
             {
-                lblValidJobDescription.text = strRequiredFieldEmpty
+                lblValidJobDescription.text = Localization(string: "Required field")
+
             }
             else
             {
@@ -1422,25 +1456,43 @@ class EmpLastDetailsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFie
     // MARK: - Class Method
     func validationShoW(status:Int,api:Bool,getFreshJob:Int)  {
         
-            lblValidJobTitle.text = strRequiredFieldEmpty
-            lblValidJobDescription.text = strRequiredFieldEmpty
-            lblValidationStartDate.text = strRequiredFieldEmpty
-            lblValidationEndDate.text = strRequiredFieldEmpty
-            lblValidationStartTime.text = strRequiredFieldEmpty
-            lblValidationEndTime.text = strRequiredFieldEmpty
-            lblValidateHoursPerDay.text = strRequiredFieldEmpty
-            lblValidateRsPerHour.text = strRequiredFieldEmpty
-            lblValidateRsPerHour.text = strRequiredFieldEmpty
+        lblValidJobTitle.text = Localization(string: "Required field")
+
+        lblValidJobDescription.text = Localization(string: "Required field")
+
+        lblValidationStartDate.text = Localization(string: "Required field")
+
+        lblValidationEndDate.text = Localization(string: "Required field")
+
+        lblValidationStartTime.text = Localization(string: "Required field")
+
+        lblValidationEndTime.text = Localization(string: "Required field")
+
+        lblValidateHoursPerDay.text = Localization(string: "Required field")
+
+        lblValidateRsPerHour.text = Localization(string: "Required field")
+
+        lblValidateRsPerHour.text = Localization(string: "Required field")
+
          if  getFreshJob == 1 && api == false {
-            lblValidateStartTypingAdd.text = strRequiredFieldEmpty
-            lblValidateStreet.text = strRequiredFieldEmpty
-            lblValidateNumber.text = strRequiredFieldEmpty
-            lblValidateCompliment.text = strRequiredFieldEmpty
-            lblValidateCompliment.text = strRequiredFieldEmpty
-            lblValidateCity.text = strRequiredFieldEmpty
-            lblValidateZipCode.text = strRequiredFieldEmpty
-            lblValidateState.text = strRequiredFieldEmpty
-            lblValidateCountry.text = strRequiredFieldEmpty
+            lblValidateStartTypingAdd.text = Localization(string: "Required field")
+
+            lblValidateStreet.text = Localization(string: "Required field")
+
+            lblValidateNumber.text = Localization(string: "Required field")
+
+            lblValidateCompliment.text = Localization(string: "Required field")
+
+            lblValidateCompliment.text = Localization(string: "Required field")
+
+            lblValidateCity.text = Localization(string: "Required field")
+
+            lblValidateZipCode.text = Localization(string: "Required field")
+
+            lblValidateState.text = Localization(string: "Required field")
+
+            lblValidateCountry.text = Localization(string: "Required field")
+
         }
         if status == 1 {
             lblValidJobTitle.text = ""
@@ -2094,7 +2146,7 @@ class EmpLastDetailsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFie
         let param =  [WebServicesClass.METHOD_NAME: "jobDetailbyId",
                       "jobId":self.jobid,
                       "userId":"\(appdel.loginUserDict.object(forKey: "employerId")!)",
-            "language":"en"] as [String : Any]
+            "language":appdel.userLanguage] as [String : Any]
         
         print("paramjobDetailbyIdApi",param)
         
@@ -2381,7 +2433,7 @@ class EmpLastDetailsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFie
         
         let param =  [WebServicesClass.METHOD_NAME: "jobPostingPriceAndBalance",
                       "employerId":"\(appdel.loginUserDict.object(forKey: "employerId")!)",
-            "language":"en"] as [String : Any]
+            "language":appdel.userLanguage] as [String : Any]
         
         global.callWebService(parameter: param as AnyObject!) { (Response:AnyObject, error:NSError?) in
             SwiftLoader.hide()

@@ -1433,7 +1433,7 @@ class JobDash: UIViewController,GMUClusterManagerDelegate, GMSMapViewDelegate,CL
                       "longitude":appdel.userLocationLng,
                       "serachType":"1",
                       "userId":"\(appdel.loginUserDict.object(forKey: "userId")!)",
-            "language":"en"] as [String : Any]
+            "language":appdel.userLanguage] as [String : Any]
         
         
         global.callWebService(parameter: param as AnyObject!) { (Response:AnyObject, error:NSError?) in
@@ -1505,7 +1505,7 @@ class JobDash: UIViewController,GMUClusterManagerDelegate, GMSMapViewDelegate,CL
                       "longitude":appdel.userLocationLng,
                       "serachType":"2",
                       "userId":"\(appdel.loginUserDict.object(forKey: "userId")!)",
-            "language":"en"] as [String : Any]
+            "language":appdel.userLanguage] as [String : Any]
         
         
         global.callWebService(parameter: param as AnyObject!) { (Response:AnyObject, error:NSError?) in

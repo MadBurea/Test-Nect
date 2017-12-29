@@ -59,6 +59,13 @@ extension Date {
 extension UIViewController {
     
     
+    func getTimeZoneValue() -> Int {
+        //var secondsFromGMT: Int { return TimeZone.current.secondsFromGMT() }
+        return TimeZone.current.secondsFromGMT() * 1000
+    }
+
+    
+    
     //MARK:- DateFormatter
     
     func convertDateFormater(_ date: String,hour:String) -> String

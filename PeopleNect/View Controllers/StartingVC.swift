@@ -32,14 +32,16 @@ class StartingVC: UIViewController {
 
         if appdel.deviceLanguage == "pt-BR"
         {
-            findJobLbl.text = Localization(string: "FIND A JOB")
+           // findJobLbl.text = Localization(string: "FIND A JOB")
         }
         else
         {
             findJobLbl.text =  "FIND \n A JOB"
         }
         
-        findProfessionalLbl.text = Localization(string: "FIND PROFESSIONALS")
+        print("timezone value is",getTimeZoneValue())
+
+       // findProfessionalLbl.text = Localization(string: "FIND PROFESSIONALS")
 
         // Do any additional setup after loading the view.
     }

@@ -312,9 +312,9 @@ UITableViewDelegate,UIGestureRecognizerDelegate
         
         
         if all {
-             param =  [WebServicesClass.METHOD_NAME: "allEmployeesList","employerId":"\(appdel.loginUserDict.object(forKey: "employerId")!)","language":"en","jobId":self.jobId,"latitude":appdel.userLocationLat,"longitude":appdel.userLocationLng] as [String : Any]
+             param =  [WebServicesClass.METHOD_NAME: "allEmployeesList","employerId":"\(appdel.loginUserDict.object(forKey: "employerId")!)","language":appdel.userLanguage,"jobId":self.jobId,"latitude":appdel.userLocationLat,"longitude":appdel.userLocationLng] as [String : Any]
         }else{
-             param =  [WebServicesClass.METHOD_NAME: "employeesHotList","employerId":"\(appdel.loginUserDict.object(forKey: "employerId")!)","language":"en","jobId":self.jobId,"latitude":appdel.userLocationLat,"longitude":appdel.userLocationLng] as [String : Any]
+             param =  [WebServicesClass.METHOD_NAME: "employeesHotList","employerId":"\(appdel.loginUserDict.object(forKey: "employerId")!)","language":appdel.userLanguage,"jobId":self.jobId,"latitude":appdel.userLocationLat,"longitude":appdel.userLocationLng] as [String : Any]
         }
         
         print("param is",param)
@@ -356,7 +356,7 @@ UITableViewDelegate,UIGestureRecognizerDelegate
         
         let param =  [WebServicesClass.METHOD_NAME: "jobPostingPriceAndBalance",
                       "employerId":"\(appdel.loginUserDict.object(forKey: "employerId")!)",
-            "language":"en"] as [String : Any]
+            "language":appdel.userLanguage] as [String : Any]
         
         global.callWebService(parameter: param as AnyObject!) { (Response:AnyObject, error:NSError?) in
             SwiftLoader.hide()
@@ -428,7 +428,7 @@ UITableViewDelegate,UIGestureRecognizerDelegate
         
         SwiftLoader.show(animated: true)
      
-        let param =  [WebServicesClass.METHOD_NAME: "inviteEmployees","employerId":"\(appdel.loginUserDict.object(forKey: "employerId")!)","language":"en","jobId":self.jobId,"allIds":allIds,"favIds":favIds] as [String : Any]
+        let param =  [WebServicesClass.METHOD_NAME: "inviteEmployees","employerId":"\(appdel.loginUserDict.object(forKey: "employerId")!)","language":appdel.userLanguage,"jobId":self.jobId,"allIds":allIds,"favIds":favIds] as [String : Any]
         
         print("param is",param)
         

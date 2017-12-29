@@ -181,7 +181,8 @@ class EmpSettingsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFieldD
         var isApiCall = true
         
         if (txtName.text?.isBlank)! {
-            lblNameValidation.text = strNameEmpty
+            lblNameValidation.text = Localization(string: "Enter name")
+
             isApiCall = false
         }
         else {
@@ -189,7 +190,8 @@ class EmpSettingsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFieldD
         }
         
         if (txtSurname.text?.isBlank)! {
-            lblSurnameValidation.text = strSurnameEmpty
+            lblSurnameValidation.text = Localization(string: "Enter surname")
+
             isApiCall = false
         }
         else {
@@ -197,7 +199,8 @@ class EmpSettingsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFieldD
         }
         
         if (txtEmail.text?.isBlank)! {
-            lblEmailValidation.text = strEmailEmpty
+            lblEmailValidation.text = Localization(string: "Enter email")
+
             isApiCall = false
         }
             
@@ -210,7 +213,8 @@ class EmpSettingsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFieldD
         }
         
         if(txtCountryCode.text?.isBlank)! {
-            lblCountryCodeValidation.text = strCountryCodeEmpty
+            lblCountryCodeValidation.text = Localization(string: "Enter country code")
+
             isApiCall = false
         }
         else {
@@ -218,7 +222,8 @@ class EmpSettingsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFieldD
         }
         
         if(txtMobile.text?.isBlank)! {
-            lblMobileValidation.text = strMobileEmpty
+            lblMobileValidation.text = Localization(string: "Enter mobile")
+
             isApiCall = false
         }
         else if((txtMobile.text?.characters.count)! < 10) {
@@ -242,7 +247,8 @@ class EmpSettingsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFieldD
 //        }
         
         if (txtCompanyName.text?.isBlank)! {
-            lblCompanyNameValidation.text = strCompanyNameEmpty
+            lblCompanyNameValidation.text = Localization(string: "Enter company name")
+
             isApiCall = false
         }
         else {
@@ -250,7 +256,8 @@ class EmpSettingsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFieldD
         }
         
         if (txtCountry.text?.isBlank)! {
-            lblCountryValidation.text = strCountryEmpty
+            lblCountryValidation.text = Localization(string: "Enter Country")
+
             isApiCall = false
         }
         else {
@@ -258,7 +265,8 @@ class EmpSettingsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFieldD
         }
         
         if (txtState.text?.isBlank)! {
-            lblStateValidation.text = strStateEmpty
+            lblStateValidation.text = Localization(string: "Enter State")
+
             isApiCall = false
         }
         else {
@@ -266,7 +274,8 @@ class EmpSettingsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFieldD
         }
         
         if (txtZipCode.text?.isBlank)! {
-            lblZipCodeValidation.text = strZipcodeEmpty
+            lblZipCodeValidation.text = Localization(string: "Enter Zipcode")
+
             isApiCall = false
         }
         else {
@@ -274,7 +283,8 @@ class EmpSettingsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFieldD
         }
         
         if (txtCity.text?.isBlank)! {
-            lblCityValidation.text = strCityEmpty
+            lblCityValidation.text = Localization(string: "Enter City")
+
             isApiCall = false
         }
         else {
@@ -282,7 +292,8 @@ class EmpSettingsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFieldD
         }
         
         if (txtComplement.text?.isBlank)! {
-            lblComplementValidation.text = strComplementEmpty
+            lblComplementValidation.text = Localization(string: "Enter complement")
+
             isApiCall = false
         }
         else {
@@ -290,7 +301,8 @@ class EmpSettingsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFieldD
         }
         
         if (txtNumber.text?.isBlank)! {
-            lblNumberValidation.text = strNumberEmpty
+            lblNumberValidation.text = Localization(string: "Enter number")
+
             isApiCall = false
         }
         else {
@@ -298,7 +310,8 @@ class EmpSettingsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFieldD
         }
         
         if (txtStreetName.text?.isBlank)! {
-            lblStreetNameValidation.text = strStreetEmpty
+            lblStreetNameValidation.text = Localization(string: "Enter street")
+
             isApiCall = false
         }
         else {
@@ -340,7 +353,7 @@ class EmpSettingsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFieldD
         
         let param =  [WebServicesClass.METHOD_NAME: "updateEmployersDetails",
                       "employerId":"\(appdel.loginUserDict.object(forKey: "employerId")!)",
-            "language":"en",
+            "language":appdel.userLanguage,
             "deviceId":UIDevice.current.identifierForVendor!.uuidString,
             "lat":self.lat,
             "lng":self.lng,
@@ -432,7 +445,7 @@ class EmpSettingsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFieldD
         
         let param =  [WebServicesClass.METHOD_NAME: "employersDetails",
                       "employerId":"\(appdel.loginUserDict.object(forKey: "employerId")!)",
-                      "language":"en"] as [String : Any]
+                      "language":appdel.userLanguage] as [String : Any]
         
         global.callWebService(parameter: param as AnyObject!) { (Response:AnyObject, error:NSError?) in
             
@@ -589,7 +602,8 @@ class EmpSettingsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFieldD
         
         if textField == txtName {
             if (txtName.text?.isBlank)! {
-                lblNameValidation.text = strNameEmpty
+                lblNameValidation.text = Localization(string: "Enter name")
+
             }
             else {
                 lblNameValidation.text = ""
@@ -598,7 +612,8 @@ class EmpSettingsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFieldD
         
         if textField == txtSurname {
             if (txtSurname.text?.isBlank)! {
-                lblSurnameValidation.text = strSurnameEmpty
+                lblSurnameValidation.text = Localization(string: "Enter surname")
+
             }
             else {
                 lblSurnameValidation.text = ""
@@ -607,7 +622,8 @@ class EmpSettingsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFieldD
         
         if textField == txtEmail {
             if (txtEmail.text?.isBlank)! {
-                lblEmailValidation.text = strEmailEmpty
+                lblEmailValidation.text = Localization(string: "Enter email")
+
             }
             else if !(txtEmail.text?.isEmail)! {
                 lblEmailValidation.text = strEmailInvalid
@@ -619,7 +635,8 @@ class EmpSettingsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFieldD
         
         if textField == txtCountryCode {
             if(txtCountryCode.text?.isBlank)! {
-                lblCountryCodeValidation.text = strCountryCodeEmpty
+                lblCountryCodeValidation.text = Localization(string: "Enter country code")
+
             }
             else {
                 lblCountryCodeValidation.text = ""
@@ -629,7 +646,8 @@ class EmpSettingsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFieldD
         
         if textField == txtMobile {
             if(txtMobile.text?.isBlank)! {
-                lblMobileValidation.text = strMobileEmpty
+                lblMobileValidation.text = Localization(string: "Enter mobile")
+
             }
             else if((txtMobile.text?.characters.count)! < 10) {
                 lblMobileValidation.text = strMobileInvalid
@@ -641,7 +659,8 @@ class EmpSettingsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFieldD
         
         if textField == txtPassword {
             if(txtPassword.text?.isBlank)! {
-                lblPasswordValidation.text = strPasswordEmpty
+                lblPasswordValidation.text = Localization(string: "Enter password")
+
             }
             else if(txtPassword.text?.characters.count)! < 6 {
                 lblPasswordValidation.text = strPasswordInvaild
@@ -653,7 +672,8 @@ class EmpSettingsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFieldD
         
         if textField == txtCompanyName {
             if (txtCompanyName.text?.isBlank)! {
-                lblCompanyNameValidation.text = strCompanyNameEmpty
+                lblCompanyNameValidation.text = Localization(string: "Enter company name")
+
             }
             else {
                 lblCompanyNameValidation.text = ""
@@ -662,7 +682,8 @@ class EmpSettingsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFieldD
         
         if textField == txtCity {
             if (txtCity.text?.isBlank)! {
-                lblCityValidation.text = strCityEmpty
+                lblCityValidation.text = Localization(string: "Enter City")
+
             }
             else {
                 lblCityValidation.text = ""
@@ -671,7 +692,8 @@ class EmpSettingsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFieldD
         
         if textField == txtState {
             if (txtState.text?.isBlank)! {
-                lblStateValidation.text = strStateEmpty
+                lblStateValidation.text = Localization(string: "Enter State")
+
             }
             else {
                 lblStateValidation.text = ""
@@ -680,7 +702,8 @@ class EmpSettingsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFieldD
         
         if textField == txtNumber {
             if (txtNumber.text?.isBlank)! {
-                lblNumberValidation.text = strNumberEmpty
+                lblNumberValidation.text = Localization(string: "Enter number")
+
             }
             else {
                 lblNumberValidation.text = ""
@@ -689,7 +712,8 @@ class EmpSettingsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFieldD
         
         if textField == txtCountry {
             if (txtCountry.text?.isBlank)! {
-                lblCountryCodeValidation.text = strCountryEmpty
+                lblCountryCodeValidation.text = Localization(string: "Enter Country")
+
             }
             else {
                 lblCountryCodeValidation.text = ""
@@ -698,7 +722,8 @@ class EmpSettingsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFieldD
         
         if textField == txtZipCode {
             if (txtZipCode.text?.isBlank)! {
-                lblZipCodeValidation.text = strZipcodeEmpty
+                lblZipCodeValidation.text = Localization(string: "Enter Zipcode")
+
             }
             else {
                 lblZipCodeValidation.text = ""
@@ -707,7 +732,8 @@ class EmpSettingsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFieldD
         
         if textField == txtComplement {
             if (txtComplement.text?.isBlank)! {
-                lblComplementValidation.text = strComplementEmpty
+                lblComplementValidation.text = Localization(string: "Enter complement")
+
             }
             else {
                 lblComplementValidation.text = ""
@@ -716,7 +742,8 @@ class EmpSettingsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFieldD
         
         if textField == txtStreetName {
             if (txtStreetName.text?.isBlank)! {
-                lblStreetNameValidation.text = strStreetEmpty
+                lblStreetNameValidation.text = Localization(string: "Enter street")
+
             }
             else {
                 lblStreetNameValidation.text = ""
@@ -725,7 +752,8 @@ class EmpSettingsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFieldD
         
         if textField == txtSearchAddress {
             if (txtSearchAddress.text?.isBlank)! {
-                lblSearchAddressValidation.text = strAddressEmpty
+                lblSearchAddressValidation.text = Localization(string: "Enter address")
+
             }
             else {
                 lblSearchAddressValidation.text = ""

@@ -643,7 +643,7 @@ class JobHistoryVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         
         let param =  [WebServicesClass.METHOD_NAME: "jobHistory",
                       "userId":"\(appdel.loginUserDict.object(forKey: "userId")!)",
-            "language":"en"] as [String : Any]
+            "language":appdel.userLanguage] as [String : Any]
         
         
         

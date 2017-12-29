@@ -150,7 +150,7 @@ class EmpBalanceVC: UIViewController,SlideNavigationControllerDelegate {
         
         let param =  [WebServicesClass.METHOD_NAME: "transactionHistory",
                       "employerId":"\(appdel.loginUserDict.object(forKey: "employerId")!)",
-            "language":"en"] as [String : Any]
+            "language":appdel.userLanguage] as [String : Any]
         
         global.callWebService(parameter: param as AnyObject!) { (Response:AnyObject, error:NSError?) in
             

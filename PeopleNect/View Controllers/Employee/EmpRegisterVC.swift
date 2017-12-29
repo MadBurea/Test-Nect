@@ -25,9 +25,9 @@ class EmpRegisterVC: UIViewController {
         
         self.navigationController?.navigationBar.isHidden = true
         
-        postJobLbl.text = Localization(string: "POST YOUR JOB")
-        btnRegister.setTitle(Localization(string: "REGISTER"), for: .normal)
-        btnAlreadyRegister.setTitle(Localization(string: "I'M ALREADY REGISTERED"), for: .normal)
+//        postJobLbl.text = Localization(string: "POST YOUR JOB")
+//        btnRegister.setTitle(Localization(string: "REGISTER"), for: .normal)
+//        btnAlreadyRegister.setTitle(Localization(string: "I'M ALREADY REGISTERED"), for: .normal)
         // Do any additional setup after loading the view.
     }
     

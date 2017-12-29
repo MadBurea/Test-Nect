@@ -848,7 +848,7 @@ UITableViewDelegate
         self.applicantsUserArray.removeAllObjects()
         self.rejectedUserArray.removeAllObjects()
         
-        let param =  [WebServicesClass.METHOD_NAME: "jobUsersList","employerId":"\(appdel.loginUserDict.object(forKey: "employerId")!)","language":"en","jobId":self.jobId] as [String : Any]
+        let param =  [WebServicesClass.METHOD_NAME: "jobUsersList","employerId":"\(appdel.loginUserDict.object(forKey: "employerId")!)","language":appdel.userLanguage,"jobId":self.jobId] as [String : Any]
         
        // let param =  [WebServicesClass.METHOD_NAME: "jobUsersList","employerId":"65","language":"en","jobId":"422"] as [String : Any]
 
@@ -937,7 +937,7 @@ UITableViewDelegate
         
         let param =  [WebServicesClass.METHOD_NAME: "jobPostingPriceAndBalance",
                       "employerId":"\(appdel.loginUserDict.object(forKey: "employerId")!)",
-            "language":"en"] as [String : Any]
+            "language":appdel.userLanguage] as [String : Any]
         
         global.callWebService(parameter: param as AnyObject!) { (Response:AnyObject, error:NSError?) in
             SwiftLoader.hide()
@@ -984,7 +984,7 @@ UITableViewDelegate
         
        
         
-        let param =  [WebServicesClass.METHOD_NAME: "publishJob","employerId":"\(appdel.loginUserDict.object(forKey: "employerId")!)","language":"en","jobId":self.jobId] as [String : Any]
+        let param =  [WebServicesClass.METHOD_NAME: "publishJob","employerId":"\(appdel.loginUserDict.object(forKey: "employerId")!)","language":appdel.userLanguage,"jobId":self.jobId] as [String : Any]
         
         global.callWebService(parameter: param as AnyObject!) { (Response:AnyObject, error:NSError?) in
             SwiftLoader.hide()
@@ -1011,7 +1011,7 @@ UITableViewDelegate
          */
         SwiftLoader.show(animated: true)
         
-        let param =  [WebServicesClass.METHOD_NAME: "cancelJob","language":"en","jobId":self.jobId] as [String : Any]
+        let param =  [WebServicesClass.METHOD_NAME: "cancelJob","language":appdel.userLanguage,"jobId":self.jobId] as [String : Any]
         
         global.callWebService(parameter: param as AnyObject!) { (Response:AnyObject, error:NSError?) in
             SwiftLoader.hide()
@@ -1049,7 +1049,7 @@ UITableViewDelegate
         SwiftLoader.show(animated: true)
         
         
-        let param =  [WebServicesClass.METHOD_NAME: "acceptEmployee","employerId":"\(appdel.loginUserDict.object(forKey: "employerId")!)","language":"en","jobId":self.jobId,"userId":userId,"type":type,"accept":accept] as [String : Any]
+        let param =  [WebServicesClass.METHOD_NAME: "acceptEmployee","employerId":"\(appdel.loginUserDict.object(forKey: "employerId")!)","language":appdel.userLanguage,"jobId":self.jobId,"userId":userId,"type":type,"accept":accept] as [String : Any]
         
         global.callWebService(parameter: param as AnyObject!) { (Response:AnyObject, error:NSError?) in
             SwiftLoader.hide()
@@ -1077,7 +1077,7 @@ UITableViewDelegate
         SwiftLoader.show(animated: true)
         
       
-        let param =  [WebServicesClass.METHOD_NAME: "hireEmployee","employerId":"\(appdel.loginUserDict.object(forKey: "employerId")!)","language":"en","jobId":self.jobId,"userId":userId,"type":type] as [String : Any]
+        let param =  [WebServicesClass.METHOD_NAME: "hireEmployee","employerId":"\(appdel.loginUserDict.object(forKey: "employerId")!)","language":appdel.userLanguage,"jobId":self.jobId,"userId":userId,"type":type] as [String : Any]
         
         global.callWebService(parameter: param as AnyObject!) { (Response:AnyObject, error:NSError?) in
             SwiftLoader.hide()

@@ -45,7 +45,8 @@ class NewPasswordVC: UIViewController {
         
         if(tfpassword.text?.isBlank)!
         {
-            validationLbl.text = strPasswordEmpty
+            validationLbl.text = Localization(string: "Enter password")
+
             isApiCall = false
         }
         else if(tfpassword.text?.characters.count)! < 6
@@ -151,7 +152,8 @@ class NewPasswordVC: UIViewController {
         {
             if(tfpassword.text?.isBlank)!
             {
-                validationLbl.text = strPasswordEmpty
+                validationLbl.text = Localization(string: "Enter password")
+
             }
             else if(tfpassword.text?.characters.count)! < 6
             {
@@ -178,7 +180,8 @@ class NewPasswordVC: UIViewController {
         {
             if (tfpassword.text?.isBlank)!
             {
-                validationLbl.text = strPasswordEmpty
+                validationLbl.text = Localization(string: "Enter password")
+
             }
             else
             {

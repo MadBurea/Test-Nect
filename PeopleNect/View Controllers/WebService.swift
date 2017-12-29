@@ -163,7 +163,7 @@ extension JobOnGoingDetailsVC {
         let param =  [WebServicesClass.METHOD_NAME: "jobDetailbyId",
                       "jobId":self.jobId,
                       "userId":"\(appdel.loginUserDict.object(forKey: "userId")!)",
-            "language":"en"] as [String : Any]
+            "language":appdel.userLanguage] as [String : Any]
         
         global.callWebService(parameter: param as AnyObject!) { (Response:AnyObject, error:NSError?) in
             

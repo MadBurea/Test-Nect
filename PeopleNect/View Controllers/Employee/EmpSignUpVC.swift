@@ -101,7 +101,8 @@ class EmpSignUpVC: UIViewController,UITextFieldDelegate {
     
         if (txtName.text?.isBlank)!
         {
-            lblNameValidation.text = strNameEmpty
+            lblNameValidation.text = Localization(string: "Enter name")
+
             isApiCall = false
         }
         else
@@ -111,7 +112,8 @@ class EmpSignUpVC: UIViewController,UITextFieldDelegate {
         
         if (txtSurname.text?.isBlank)!
         {
-           lblSurnameValidation.text = strSurnameEmpty
+            lblSurnameValidation.text = Localization(string: "Enter surname")
+
             isApiCall = false
         }
         else
@@ -121,7 +123,8 @@ class EmpSignUpVC: UIViewController,UITextFieldDelegate {
         
         if (txtEmail.text?.isBlank)!
         {
-           lblEmailValidation.text = strEmailEmpty
+            lblEmailValidation.text = Localization(string: "Enter email")
+
             isApiCall = false
         }
        
@@ -138,7 +141,8 @@ class EmpSignUpVC: UIViewController,UITextFieldDelegate {
         
         if(txtCountryCode.text?.isBlank)!
         {
-            lblCountryCodeValidation.text = strCountryCodeEmpty
+            lblCountryCodeValidation.text = Localization(string: "Enter country code")
+
             isApiCall = false
         }
         else
@@ -149,7 +153,8 @@ class EmpSignUpVC: UIViewController,UITextFieldDelegate {
         
         if(txtMobile.text?.isBlank)!
         {
-            lblMobileValidation.text = strMobileEmpty
+            lblMobileValidation.text = Localization(string: "Enter mobile")
+
             isApiCall = false
         }
         else if((txtMobile.text?.characters.count)! < 10)
@@ -164,7 +169,8 @@ class EmpSignUpVC: UIViewController,UITextFieldDelegate {
         
         if(txtPassword.text?.isBlank)!
         {
-            lblPasswordValidation.text = strPasswordEmpty
+            lblPasswordValidation.text = Localization(string: "Enter password")
+
             isApiCall = false
         }
         else if(txtPassword.text?.characters.count)! < 6
@@ -291,7 +297,8 @@ class EmpSignUpVC: UIViewController,UITextFieldDelegate {
         {
             if (txtName.text?.isBlank)!
             {
-                lblNameValidation.text = strNameEmpty
+                lblNameValidation.text = Localization(string: "Enter name")
+
             }
             else
             {
@@ -303,7 +310,8 @@ class EmpSignUpVC: UIViewController,UITextFieldDelegate {
         {
             if (txtSurname.text?.isBlank)!
             {
-                lblSurnameValidation.text = strSurnameEmpty
+                lblSurnameValidation.text = Localization(string: "Enter surname")
+
             }
             else
             {
@@ -315,7 +323,8 @@ class EmpSignUpVC: UIViewController,UITextFieldDelegate {
         {
             if (txtEmail.text?.isBlank)!
             {
-                lblEmailValidation.text = strEmailEmpty
+                lblEmailValidation.text = Localization(string: "Enter email")
+
             }
                 
             else if !(txtEmail.text?.isEmail)!
@@ -333,7 +342,8 @@ class EmpSignUpVC: UIViewController,UITextFieldDelegate {
         {
             if(txtCountryCode.text?.isBlank)!
             {
-                lblCountryCodeValidation.text = strCountryCodeEmpty
+                lblCountryCodeValidation.text = Localization(string: "Enter country code")
+
             }
             else
             {
@@ -347,7 +357,8 @@ class EmpSignUpVC: UIViewController,UITextFieldDelegate {
         {
             if(txtMobile.text?.isBlank)!
             {
-                lblMobileValidation.text = strMobileEmpty
+                lblMobileValidation.text = Localization(string: "Enter mobile")
+
             }
             else if((txtMobile.text?.characters.count)! < 14)
             {
@@ -377,7 +388,8 @@ class EmpSignUpVC: UIViewController,UITextFieldDelegate {
         {
             if(txtPassword.text?.isBlank)!
             {
-                lblPasswordValidation.text = strPasswordEmpty
+                lblPasswordValidation.text = Localization(string: "Enter password")
+
             }
             else if(txtPassword.text?.characters.count)! < 6
             {

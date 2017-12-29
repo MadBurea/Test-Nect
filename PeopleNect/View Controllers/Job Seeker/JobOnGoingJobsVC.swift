@@ -359,7 +359,7 @@ class JobOnGoingJobsVC: UIViewController, UITableViewDataSource , UITableViewDel
         let param =  [WebServicesClass.METHOD_NAME: "getOnGoingJobs",
                       "isHired":"1",
                       "userId":"\(appdel.loginUserDict.object(forKey: "userId")!)",
-            "language":"en"] as [String : Any]
+            "language":appdel.userLanguage] as [String : Any]
         
         
         print("paramgetApplicationJobsApi",param)

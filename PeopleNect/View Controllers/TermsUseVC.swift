@@ -16,11 +16,16 @@ class TermsUseVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Portuguese HTML
-        //let url1 = Bundle.main.url(forResource: "index_pt", withExtension:"html")
+        if appdel.deviceLanguage == "pt-BR"
+        {
+            let url1 = Bundle.main.url(forResource: "index_pt", withExtension:"html")
+            webViewObj.loadRequest(NSURLRequest.init(url: url1!) as URLRequest)
+        }else
+        {
+            let url1 = Bundle.main.url(forResource: "index", withExtension:"html")
+            webViewObj.loadRequest(NSURLRequest.init(url: url1!) as URLRequest)
+        }
         
-        let url1 = Bundle.main.url(forResource: "index", withExtension:"html")
-        webViewObj.loadRequest(NSURLRequest.init(url: url1!) as URLRequest)
         tapGesture.addTarget(self, action: #selector(self.dismissView))
         self.view.addGestureRecognizer(tapGesture)
         

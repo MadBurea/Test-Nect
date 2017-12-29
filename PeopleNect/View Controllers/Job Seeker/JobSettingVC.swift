@@ -465,7 +465,8 @@ class JobSettingVC: UIViewController, PlaceSearchTextFieldDelegate, UITextFieldD
         {
             if (txtName.text?.isBlank)!
             {
-                lblValidateName.text = strNameEmpty
+                lblValidateName.text = Localization(string: "Enter name")
+
             }
             else
             {
@@ -477,7 +478,8 @@ class JobSettingVC: UIViewController, PlaceSearchTextFieldDelegate, UITextFieldD
         {
             if (txtSurname.text?.isBlank)!
             {
-                lblValidateSurname.text = strSurnameEmpty
+                lblValidateSurname.text = Localization(string: "Enter surname")
+
             }
             else
             {
@@ -489,7 +491,8 @@ class JobSettingVC: UIViewController, PlaceSearchTextFieldDelegate, UITextFieldD
         {
             if (txtEmail.text?.isBlank)!
             {
-                lblValidateEmail.text = strEmailEmpty
+                lblValidateEmail.text = Localization(string: "Enter email")
+
             }
             else if !(txtEmail.text?.isEmail)!
             {
@@ -506,7 +509,8 @@ class JobSettingVC: UIViewController, PlaceSearchTextFieldDelegate, UITextFieldD
         {
             if(txtCountryCode.text?.isBlank)!
             {
-                lblValidateCountryCode.text = strCountryCodeEmpty
+                lblValidateCountryCode.text = Localization(string: "Enter country code")
+
             }
             else
             {
@@ -520,7 +524,8 @@ class JobSettingVC: UIViewController, PlaceSearchTextFieldDelegate, UITextFieldD
         {
             if(txtPhoneNo.text?.isBlank)!
             {
-                lblValidatePhoneNo.text = strMobileEmpty
+                lblValidatePhoneNo.text = Localization(string: "Enter mobile")
+
             }
             else if((txtPhoneNo.text?.characters.count)! < 10)
             {
@@ -536,7 +541,8 @@ class JobSettingVC: UIViewController, PlaceSearchTextFieldDelegate, UITextFieldD
         {
             if(txtPassword.text?.isBlank)!
             {
-                lblValidatePassword.text = strPasswordEmpty
+                lblValidatePassword.text = Localization(string: "Enter password")
+
             }
             else if(txtPassword.text?.characters.count)! < 6
             {
@@ -552,7 +558,8 @@ class JobSettingVC: UIViewController, PlaceSearchTextFieldDelegate, UITextFieldD
         {
             if (txtCity.text?.isBlank)!
             {
-                lblValidateCity.text = strCityEmpty
+                lblValidateCity.text = Localization(string: "Enter City")
+
             }
             else
             {
@@ -564,7 +571,8 @@ class JobSettingVC: UIViewController, PlaceSearchTextFieldDelegate, UITextFieldD
         {
             if (txtState.text?.isBlank)!
             {
-                lblValidateState.text = strStateEmpty
+                lblValidateState.text = Localization(string: "Enter State")
+
             }
             else
             {
@@ -576,7 +584,8 @@ class JobSettingVC: UIViewController, PlaceSearchTextFieldDelegate, UITextFieldD
         {
             if (txtNumber.text?.isBlank)!
             {
-                lblValidateNumber.text = strNumberEmpty
+                lblValidateNumber.text = Localization(string: "Enter number")
+
             }
             else
             {
@@ -588,7 +597,8 @@ class JobSettingVC: UIViewController, PlaceSearchTextFieldDelegate, UITextFieldD
         {
             if (txtCountry.text?.isBlank)!
             {
-                lblValidateCountry.text = strCountryEmpty
+                lblValidateCountry.text = Localization(string: "Enter Country")
+
             }
             else
             {
@@ -599,7 +609,8 @@ class JobSettingVC: UIViewController, PlaceSearchTextFieldDelegate, UITextFieldD
         {
             if (txtZipCode.text?.isBlank)!
             {
-                lblValidateZipCode.text = strZipcodeEmpty
+                lblValidateZipCode.text = Localization(string: "Enter Zipcode")
+
             }
             else
             {
@@ -610,7 +621,8 @@ class JobSettingVC: UIViewController, PlaceSearchTextFieldDelegate, UITextFieldD
         {
             if (txtComplement.text?.isBlank)!
             {
-                lblValidateComplement.text = strComplementEmpty
+                lblValidateComplement.text = Localization(string: "Enter complement")
+
             }
             else
             {
@@ -621,7 +633,8 @@ class JobSettingVC: UIViewController, PlaceSearchTextFieldDelegate, UITextFieldD
         {
             if (txtStreetName.text?.isBlank)!
             {
-                lblValidateStreetName.text = strStreetEmpty
+                lblValidateStreetName.text = Localization(string: "Enter street")
+
             }
             else
             {
@@ -632,7 +645,8 @@ class JobSettingVC: UIViewController, PlaceSearchTextFieldDelegate, UITextFieldD
         {
             if (txtAddress.text?.isBlank)!
             {
-                lblValidateStartTypingAdd.text = strAddressEmpty
+                lblValidateStartTypingAdd.text = Localization(string: "Enter address")
+
             }
             else
             {
@@ -1120,7 +1134,7 @@ class JobSettingVC: UIViewController, PlaceSearchTextFieldDelegate, UITextFieldD
         
         let param =  [WebServicesClass.METHOD_NAME: "userDetails",
                       "userId":"\(appdel.loginUserDict.object(forKey: "userId")!)",
-                      "language":"en"] as [String : Any]
+                      "language":appdel.userLanguage] as [String : Any]
         
         
         global.callWebService(parameter: param as AnyObject!) { (Response:AnyObject, error:NSError?) in
@@ -1286,7 +1300,7 @@ class JobSettingVC: UIViewController, PlaceSearchTextFieldDelegate, UITextFieldD
             "subCategoryId": strArrSubCatId,
             "userId": "\(appdel.loginUserDict.object(forKey: "userId")!)",
             "zipcode": "\(txtZipCode.text!)",
-            "language": "en"
+            "language": appdel.userLanguage
             ] as [String : Any]
         
         print("param",param)

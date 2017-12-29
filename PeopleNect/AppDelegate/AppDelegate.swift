@@ -29,6 +29,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate,CLLocat
     var isFromRegister = false
     var deviceToken = ""
     var fcmToken = ""
+    var userLanguage = ""
+    
+    // 1: portuguese, 2: English
+    var userLanguageForPassword = ""
+
     var userLocationLat = ""
     var userLocationLng = ""
     var loginUserDict: NSDictionary!
@@ -747,11 +752,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate,CLLocat
         {
             self.setUserDefault(ObjectToSave: kFR as AnyObject?, KeyToSave: kLanguage)
             _ = SetLanguage(language: Localisator.sharedInstance.availableLanguagesArray[1])
+            appdel.userLanguage = "pt"
+            appdel.userLanguageForPassword = "1"
         }
         else
         {
             self.setUserDefault(ObjectToSave: kEN as AnyObject?, KeyToSave: kLanguage)
             _ = SetLanguage(language: Localisator.sharedInstance.availableLanguagesArray[0])
+            appdel.userLanguage = "en"
+            appdel.userLanguageForPassword = "2"
+
         }
     }
     func setUserDefault(ObjectToSave : AnyObject?  , KeyToSave : String)

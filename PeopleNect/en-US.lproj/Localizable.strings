@@ -14,4 +14,100 @@
 "I'M ALREADY REGISTERED"                = "I'M ALREADY REGISTERED";
 "POST YOUR JOB"                         = "POST YOUR JOB";
 
+"Enter name"                             = "Enter name";
+"Enter surname"                          = "Enter surname";
+"Enter email"                            = "Enter email";
+"Enter country code"                     = "Enter country code";
+"Enter mobile"                           = "Enter mobile";
+"Enter password"                         = "Enter password";
+"Enter company name"                     = "Enter company name";
+"Enter address"                          = "Enter address";
+"Enter street"                           = "Enter street";
+"Enter number"                           = "Enter number";
+"Enter complement"                       = "Enter complement";
+"Enter City"                             = "Enter City";
+"Enter Zipcode"                          = "Enter Zipcode";
+"Enter State"                            = "Enter State";
+"Enter Country"                          = "Enter Country";
+"Enter OTP"                              = "Enter OTP";
+"Enter New Password"                     = "Enter New Password";
+"Enter Job Title"                        = "Enter Job Title";
+"Enter Job Description"                  = "Enter Job Description";
+"Required field"                         = "Required field";
+
+"Please, enter valid email."             = "Please, enter valid email.";
+"Invalid phone"                          = "Invalid phone";
+"*Invalid password! Password must be 6 characters long and contains numbers and letters" = "*Invalid password! Password must be 6 characters long and contains numbers and letters";
+
+"Please, enter your OTP."                = "Please, enter your OTP.";
+
+// MARK: Job Seeker Validation String
+
+"Enter Years"                            = "Enter Years";
+"Enter hours"                            = "Enter hours";
+
+// MARK:-  Left Menu Strings
+"Search professionals"                   = "Search professionals";
+"Post new Job"                           = "Post new Job";
+"Selection in progress"                  = "Selection in progress";
+"Balance"                                = "Balance";
+"Job in progress"                        = "Job in progress";
+"Job history"                            = "Job history";
+"Settings"                               = "Settings";
+"Invite friends"                         = "Invite friends";
+"Exit"                                   = "Exit";
+
+"years of experience"                    = "years of experience";
+
+"Search jobs"                              = "Search jobs";
+"Pending Invitations"                      = "Pending Invitations";
+"Pending Applications"                     = "Pending Applications";
+"On going jobs"                            = "On going jobs";
+"Availability"                             = "Availability";
+"Not Available"                             = "Not Available";
+"Log out"                                = "Log out";
+
+"Enter experience here"                    = "Enter experience here";
+"Enter rate here"                    = "Enter rate here";
+
+
+// MARK:-  EmpJobSeekerDetailVC String
+
+"Sun"                               = "Sun";
+"Mon"                               = "Mon";
+"Tue"                               = "Tue";
+"Wed"                               = "Wed";
+"Thu"                               = "Thu";
+"Fri"                               = "Fri";
+"Sat"                               = "Sat";
+"Chat"                              = "Chat";
+"Free"                              = "Free";
+"Invite for a new job"              = "Invite for a new job";
+"INVITE FOR A POSTED JOB"           = "INVITE FOR A POSTED JOB";
+"Hired"                             = "Hired";
+"No Show"                           = "No Show";
+
+// MARK:-  EmpInvitedPostedJobVC String
+
+"Invite"                           = "Invite";
+"For:"                             = "For:";
+"OK"                               = "OK";
+"CANCEL"                           = "CANCEL";
+"hour"                             = "hour";
+"job"                              = "job";
+"day"                              = "day";
+"month"                            = "month";
+
+// MARK:-  EmpJobSelectionProgressVC String
+"None"                            = "None";
+"Only business days"              = "Only business days";
+"Includes non Business days"      = "Includes non Business days";
+"Please Select an Image"          = "Please Select an Image";
+"Describe your profile"           = "Describe your profile";
+"Add Employer"                    = "Add Employer";
+"Enter Your Last Employer"        = "Enter Your Last Employer";
+"Add"                             = "Add";
+"Please, complete your profile. You may edit it later."   = "Please, complete your profile. You may edit it later.";
+"No expertise found for this business"        = "No expertise found for this business";
+
 

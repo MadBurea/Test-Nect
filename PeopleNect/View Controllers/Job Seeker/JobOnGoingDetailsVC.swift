@@ -193,7 +193,7 @@ class JobOnGoingDetailsVC: UIViewController {
        let param =  [WebServicesClass.METHOD_NAME: "jobDetailbyId",
                       "jobId":self.jobId,
                       "jobSeekerId":"\(appdel.loginUserDict.object(forKey: "userId")!)",
-            "language":"en"] as [String : Any]
+            "language":appdel.userLanguage] as [String : Any]
         
         
         global.callWebService(parameter: param as AnyObject!) { (Response:AnyObject, error:NSError?) in
@@ -319,7 +319,7 @@ class JobOnGoingDetailsVC: UIViewController {
         let param =  [WebServicesClass.METHOD_NAME: "acknowledge",
                       "jobId":self.jobId,"type":self.type,
                       "userId":"\(appdel.loginUserDict.object(forKey: "userId")!)",
-            "language":"en"] as [String : Any]
+            "language":appdel.userLanguage] as [String : Any]
         
         
         
@@ -359,7 +359,7 @@ class JobOnGoingDetailsVC: UIViewController {
         let param =  [WebServicesClass.METHOD_NAME: "cancelJobByEmployee",
                       "jobID":self.jobId,"userType":self.type,
                       "jobSeekerID":"\(appdel.loginUserDict.object(forKey: "userId")!)",
-            "language":"en"] as [String : Any]
+            "language":appdel.userLanguage] as [String : Any]
         
         print("parameter is",param)
         global.callWebService(parameter: param as AnyObject!) { (Response:AnyObject, error:NSError?) in

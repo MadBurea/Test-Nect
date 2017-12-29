@@ -86,7 +86,7 @@ class EmpSelectionProgressVC: UIViewController, UITableViewDelegate, UITableView
         
         let param =  [WebServicesClass.METHOD_NAME: "openJobs",
                       "employerId":"\(loginDict.object(forKey: "employerId")!)",
-            "language":"en"] as [String : Any]
+            "language":appdel.userLanguage] as [String : Any]
         
         
         print("paramopenJobsAPI",param)

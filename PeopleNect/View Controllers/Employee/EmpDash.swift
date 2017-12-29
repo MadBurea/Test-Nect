@@ -825,7 +825,7 @@ class EmpDash: UIViewController ,GMUClusterManagerDelegate, GMSMapViewDelegate,C
        
         
         
-        let param =  [WebServicesClass.METHOD_NAME: "categoryList","userId":"\(appdel.loginUserDict.object(forKey: "employerId")!)","language":"en"] as [String : Any]
+        let param =  [WebServicesClass.METHOD_NAME: "categoryList","userId":"\(appdel.loginUserDict.object(forKey: "employerId")!)","language":appdel.userLanguage] as [String : Any]
         
         
         global.callWebService(parameter: param as AnyObject!) { (Response:AnyObject, error:NSError?) in
@@ -878,7 +878,7 @@ class EmpDash: UIViewController ,GMUClusterManagerDelegate, GMSMapViewDelegate,C
          }"
          */
         
-        let param =  [WebServicesClass.METHOD_NAME: "nearByEmployees","language":"en","employerId":"\(appdel.loginUserDict.object(forKey: "employerId")!)","categoryId":"0","latitude":userLocation.latitude,"longitude":userLocation.longitude] as [String : Any]
+        let param =  [WebServicesClass.METHOD_NAME: "nearByEmployees","language":appdel.userLanguage,"employerId":"\(appdel.loginUserDict.object(forKey: "employerId")!)","categoryId":"0","latitude":userLocation.latitude,"longitude":userLocation.longitude] as [String : Any]
         
         print("param of user list is",param)
         
@@ -964,7 +964,7 @@ class EmpDash: UIViewController ,GMUClusterManagerDelegate, GMSMapViewDelegate,C
          */
        
         
-        let param =  [WebServicesClass.METHOD_NAME: "subCategoryList","categoryId":"\(categoryId)","userId":"\(appdel.loginUserDict.object(forKey: "employerId")!)","language":"en"] as [String : Any]
+        let param =  [WebServicesClass.METHOD_NAME: "subCategoryList","categoryId":"\(categoryId)","userId":"\(appdel.loginUserDict.object(forKey: "employerId")!)","language":appdel.userLanguage] as [String : Any]
         
         
         global.callWebService(parameter: param as AnyObject!) { (Response:AnyObject, error:NSError?) in

@@ -14,4 +14,100 @@
 "I'M ALREADY REGISTERED"                = "JÁ TENHO CADASTRO";
 "POST YOUR JOB"                         = "PUBLICAR VAGA";
 
+"Enter name"                             = "Digite o nome";
+"Enter surname"                          = "Digite o sobrenome";
+"Enter email"                            = "Digite o email";
+"Enter country code"                     = "Digite o código do país";
+"Enter mobile"                           = "Insira celular";
+"Enter password"                         = "Digite a senha";
+"Enter company name"                     = "Digite o nome da empresa";
+"Enter address"                          = "insira o endereço";
+"Enter street"                           = "Entre rua";
+"Enter number"                           = "Insira numeros";
+"Enter complement"                       = "Insira o complemento";
+"Enter City"                             = "Informe a cidade";
+"Enter Zipcode"                          = "Digite um CEP válido";
+"Enter State"                            = "Digite o Estado";
+"Enter Country"                          = "Digite o país";
+"Enter OTP"                              = "Digite o Código";
+"Enter New Password"                     = "Digite a nova senha.";
+"Enter Job Title"                        = "Digite o cargo";
+"Enter Job Description"                  = "Insira a Descrição do Trabalho";
+"Required field"                         = "Campo obrigatório";
+
+"Please, enter valid email."             = "Por favor, digite um email válido.";
+"Invalid phone"                          = "Telefone inválido";
+"*Invalid password! Password must be 6 characters long and contains numbers and letters" = "* Senha inválida! A senha deve conter 6 carateres utilizando letras e números.";
+
+"Please, enter your OTP."                = "Por favor, digite o código aqui.";
+
+// MARK: Job Seeker Validation String
+
+"Enter Years"                            = "Insira anos";
+"Enter hours"                            = "Insira horas";
+
+// MARK:-  Left Menu Strings
+"Search professionals"                   = "Buscar profissionais";
+"Post new Job"                           = "Criar uma nova vaga";
+"Selection in progress"                  = "Processo seletivo em andamento";
+"Balance"                                = "Saldo";
+"Job in progress"                        = "Trabalhos em andamento";
+"Job history"                            = "Trabalhos efetuados";
+"Settings"                               = "Configurações";
+"Invite friends"                         = "Convidar Amigos";
+"Exit"                                   = "Sair";
+
+"years of experience"                    = "ano(s) de experiência";
+
+"Search jobs"                              = "Buscar vagas";
+"Pending Invitations"                      = "Convites Pendentes";
+"Pending Applications"                     = "Candidaturas Pendentes";
+"On going jobs"                            = "Meus trabalhos";
+"Availability"                             = "Disponibilidade";
+"Not Available"                            = "Este aparelho não é compatível";
+"Log out"                                = "Sair";
+
+"Enter experience here"                    = "Digite sua experiência aqui";
+"Enter rate here"                    = "Digite o valor por hora";
+
+
+// MARK:-  EmpJobSeekerDetailVC String
+
+"Sun"                               = "Dom";
+"Mon"                               = "Seg";
+"Tue"                               = "Ter";
+"Wed"                               = "Qua";
+"Thu"                               = "Qui";
+"Fri"                               = "Sex";
+"Sat"                               = "Sáb";
+"Chat"                              = "Chat";
+"Free"                              = "Disponível";
+"Invite for a new job"              = "Convidar para uma vaga nova";
+"INVITE FOR A POSTED JOB"           = "CONVIDAR PARA UMA VAGA EXISTENTE";
+"Hired"                             = "Contratado";
+"No Show"                           = "Não compareceu";
+
+// MARK:-  EmpInvitedPostedJobVC String
+
+"Invite"                           = "Convidar";
+"For:"                             = "Para:";
+"OK"                               = "OK";
+"CANCEL"                           = "Cancelar";
+"hour"                             = "hora";
+"job"                              = "trabalho";
+"day"                              = "dia";
+"month"                            = "mês";
+
+// MARK:-  EmpJobSelectionProgressVC String
+"None"                            = "Nenhum";
+"Only business days"              = "Somente dias úteis";
+"Includes non Business days"      = "Inclui fim de semana";
+"Please Select an Image"          = "Selecione uma imagem";
+"Describe your profile"           = "Descreva seu perfil";
+"Add Employer"                    = "Adicionar Empregrador";
+"Enter Your Last Employer"        = "Insira o seu último empregador";
+"Add"                             = "Adicionar";
+"Please, complete your profile. You may edit it later."   = "Por favor, complete seu perfil . Você pode alterá-lo depois.";
+"No expertise found for this business"        = "Não encontramos especializações nessa área de negócio.";
+
 

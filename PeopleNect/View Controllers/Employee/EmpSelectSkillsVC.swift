@@ -292,7 +292,7 @@ class EmpSelectSkillsVC: UIViewController, UICollectionViewDelegate,UICollection
         print("userId",(appdel.loginUserDict.object(forKey: "employerId")!))
 
 
-        let param = [WebServicesClass.METHOD_NAME: "subCategoryList","categoryId":"\(categoryId)","userId":"\(appdel.loginUserDict.object(forKey: "employerId")!)","language":"en"] as [String : Any]
+        let param = [WebServicesClass.METHOD_NAME: "subCategoryList","categoryId":"\(categoryId)","userId":"\(appdel.loginUserDict.object(forKey: "employerId")!)","language":appdel.userLanguage] as [String : Any]
         
         
         global.callWebService(parameter: param as AnyObject!) { (Response:AnyObject, error:NSError?) in

@@ -21,8 +21,8 @@ class JobRegisterVC: UIViewController {
         // set up view
         self.setupView()
         
-        btnRegister.setTitle(Localization(string: "REGISTER"), for: .normal)
-        btnAlreadyRegister.setTitle(Localization(string: "I'M ALREADY REGISTERED"), for: .normal)
+//        btnRegister.setTitle(Localization(string: "REGISTER"), for: .normal)
+//        btnAlreadyRegister.setTitle(Localization(string: "I'M ALREADY REGISTERED"), for: .normal)
         
     }
     
@@ -64,7 +64,7 @@ class JobRegisterVC: UIViewController {
         btnAlreadyRegister.titleLabel?.minimumScaleFactor = 0.5
         btnAlreadyRegister.titleLabel?.adjustsFontSizeToFitWidth = true
         
-        findOpportunityLbl.text = Localization(string: "FIND OPPORTUNITIES NEAR YOU")
+       // findOpportunityLbl.text = Localization(string: "FIND OPPORTUNITIES NEAR YOU")
         
     }
     

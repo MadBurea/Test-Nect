@@ -154,7 +154,7 @@ class EmpRepostJobVC: UIViewController ,UITableViewDelegate,UITableViewDataSourc
         
         SwiftLoader.show(animated: true)
       
-        let param =  [WebServicesClass.METHOD_NAME: "closedJobs","employerId":"\(appdel.loginUserDict.object(forKey: "employerId")!)","language":"en"] as [String : Any]
+        let param =  [WebServicesClass.METHOD_NAME: "closedJobs","employerId":"\(appdel.loginUserDict.object(forKey: "employerId")!)","language":appdel.userLanguage] as [String : Any]
         
         global.callWebService(parameter: param as AnyObject!) { (Response:AnyObject, error:NSError?) in
             

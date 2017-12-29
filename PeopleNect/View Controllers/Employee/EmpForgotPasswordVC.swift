@@ -48,7 +48,8 @@ class EmpForgotPasswordVC: UIViewController, UITextFieldDelegate {
         
         if (txtEmail.text?.isBlank)!
         {
-            lblEmailValidation.text = strEmailEmpty
+            lblEmailValidation.text = Localization(string: "Enter email")
+
             isApiCall = false
         }
             
@@ -89,7 +90,7 @@ class EmpForgotPasswordVC: UIViewController, UITextFieldDelegate {
          
          
          */
-        let param =  [WebServicesClass.METHOD_NAME: "forgotEmployer","email":"\(txtEmail.text!)","language":"2"] as [String : Any]
+        let param =  [WebServicesClass.METHOD_NAME: "forgotEmployer","email":"\(txtEmail.text!)","language":appdel.userLanguageForPassword] as [String : Any]
         
         
         global.callWebService(parameter: param as AnyObject!) { (Response:AnyObject, error:NSError?) in
@@ -186,7 +187,8 @@ class EmpForgotPasswordVC: UIViewController, UITextFieldDelegate {
         {
             if (txtEmail.text?.isBlank)!
             {
-                lblEmailValidation.text = strEmailEmpty
+                lblEmailValidation.text = Localization(string: "Enter email")
+
             }
                 
             else if !(txtEmail.text?.isEmail)!

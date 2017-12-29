@@ -64,7 +64,8 @@ class JobResetPasswordVC: UIViewController, UITextFieldDelegate {
     
     if (txtEmail.text?.isBlank)!
     {
-    lblEmailValidation.text = strEmailEmpty
+        lblEmailValidation.text = Localization(string: "Enter email")
+
     isApiCall = false
     }
     
@@ -133,7 +134,8 @@ class JobResetPasswordVC: UIViewController, UITextFieldDelegate {
         {
             if (txtEmail.text?.isBlank)!
             {
-                lblEmailValidation.text = strEmailEmpty
+                lblEmailValidation.text = Localization(string: "Enter email")
+
             }
                 
             else if !(txtEmail.text?.isEmail)!
@@ -185,7 +187,7 @@ class JobResetPasswordVC: UIViewController, UITextFieldDelegate {
         SwiftLoader.show(animated: true)
         
             let param =  [WebServicesClass.METHOD_NAME: "forgotPassword",
-                          "language":"2",
+                          "language":appdel.userLanguageForPassword,
                           "email":"\(txtEmail.text!)"] as [String : Any]
         
          global.callWebService(parameter: param as AnyObject!) { (Response:AnyObject, error:NSError?) in

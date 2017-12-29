@@ -270,7 +270,7 @@ class CustomChatScene: UIViewController,UITableViewDataSource,UITableViewDelegat
         
         isReceiveCall = true
         
-        let param =  [WebServicesClass.METHOD_NAME: "sendMessage","userType":userType,"receiver_id": receiver_id,"sender_id": userID,"msg": message,"language":"en","token":""] as [String : Any]
+        let param =  [WebServicesClass.METHOD_NAME: "sendMessage","userType":userType,"receiver_id": receiver_id,"sender_id": userID,"msg": message,"language":appdel.userLanguage,"token":""] as [String : Any]
         
         print("param of sent message",param)
         
@@ -306,7 +306,7 @@ class CustomChatScene: UIViewController,UITableViewDataSource,UITableViewDelegat
     func receiverMessage(flag:String,latest_msg_id:String)  {
         
         isReceiveCall = true
-        let param =  [WebServicesClass.METHOD_NAME: "receiverMessage","flag":flag,"latest_msg_id": latest_msg_id,"receiver_id": receiver_id,"sender_id": userID,"language":"en","userType":userType] as [String : Any]
+        let param =  [WebServicesClass.METHOD_NAME: "receiverMessage","flag":flag,"latest_msg_id": latest_msg_id,"receiver_id": receiver_id,"sender_id": userID,"language":appdel.userLanguage,"userType":userType] as [String : Any]
         
         
         print("param for receive message is",param)

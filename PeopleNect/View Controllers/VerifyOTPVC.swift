@@ -47,7 +47,8 @@ class VerifyOTPVC: UIViewController, UITextFieldDelegate {
         
         if (txtVerifyOTP.text?.isBlank)!
         {
-            lblOTPValidation.text = strOTPEmpty
+            lblOTPValidation.text = Localization(string: "Enter OTP")
+
             isApiCall = false
         }
         else
@@ -119,7 +120,8 @@ class VerifyOTPVC: UIViewController, UITextFieldDelegate {
         {
             if (txtVerifyOTP.text?.isBlank)!
             {
-                lblOTPValidation.text = strOTPEmpty
+                lblOTPValidation.text = Localization(string: "Enter OTP")
+
             }
             else
             {

@@ -100,7 +100,8 @@ class JobLogInVC: UIViewController,UITextFieldDelegate,GIDSignInDelegate,GIDSign
         
         if (txtEmail.text?.isBlank)!
         {
-            lblValidateEmail.text = strEmailEmpty
+            lblValidateEmail.text = Localization(string: "Enter email")
+
             isApiCall = false
         }
             
@@ -117,7 +118,8 @@ class JobLogInVC: UIViewController,UITextFieldDelegate,GIDSignInDelegate,GIDSign
         
         if(txtPassword.text?.isBlank)!
         {
-            lblValidatePassword.text = strPasswordEmpty
+            lblValidatePassword.text = Localization(string: "Enter password")
+
             isApiCall = false
         }
         else if(txtPassword.text?.characters.count)! < 6
@@ -291,7 +293,8 @@ class JobLogInVC: UIViewController,UITextFieldDelegate,GIDSignInDelegate,GIDSign
         {
             if (txtEmail.text?.isBlank)!
             {
-                lblValidateEmail.text = strEmailEmpty
+                lblValidateEmail.text = Localization(string: "Enter email")
+
             }
                 
             else if !(txtEmail.text?.isEmail)!
@@ -310,7 +313,8 @@ class JobLogInVC: UIViewController,UITextFieldDelegate,GIDSignInDelegate,GIDSign
         {
             if(txtPassword.text?.isBlank)!
             {
-                lblValidatePassword.text = strPasswordEmpty
+                lblValidatePassword.text = Localization(string: "Enter password")
+
             }
             else if(txtPassword.text?.characters.count)! < 6
             {
@@ -418,7 +422,7 @@ class JobLogInVC: UIViewController,UITextFieldDelegate,GIDSignInDelegate,GIDSign
          */
         SwiftLoader.show(animated: true)
         
-        let param =  [WebServicesClass.METHOD_NAME: "login","deviceId":UIDevice.current.identifierForVendor!.uuidString,"password":"\(txtPassword.text!)","email": "\(txtEmail.text!)","loginWith": loginWith,"language":"en"] as [String : Any]
+        let param =  [WebServicesClass.METHOD_NAME: "login","deviceId":UIDevice.current.identifierForVendor!.uuidString,"password":"\(txtPassword.text!)","email": "\(txtEmail.text!)","loginWith": loginWith,"language":appdel.userLanguage] as [String : Any]
         
         print(param)
         
@@ -465,7 +469,6 @@ class JobLogInVC: UIViewController,UITextFieldDelegate,GIDSignInDelegate,GIDSign
                     
                     if (loginDict.object(forKey: "exp_years")) == nil
                     {
-                        
                         
                         let JobSelectCatagoryVC = self.storyboard?.instantiateViewController(withIdentifier: "JobSelectCatagoryVC") as! JobSelectCatagoryVC
                         JobSelectCatagoryVC.userDic = loginDict
@@ -535,6 +538,10 @@ class JobLogInVC: UIViewController,UITextFieldDelegate,GIDSignInDelegate,GIDSign
         let startTimeLocal = formatter.date(from: StartTime)
         let EndTimeLocal = formatter.date(from: EndTime)
         
+        
+        let startAvailabilityTime = startTimeLocal?.currentUTCTimeZoneTime
+        let endAvailabilityTime = EndTimeLocal?.currentUTCTimeZoneTime
+        
         let param =  [WebServicesClass.METHOD_NAME: "register","access_identifier":"\(access_token)",
             "access_token":"\(access_token)",
             "city":"",
@@ -554,10 +561,10 @@ class JobLogInVC: UIViewController,UITextFieldDelegate,GIDSignInDelegate,GIDSign
             "streetName":"",
             "surname":lastName,
             "zipcode":"",
-            "language":"en",
+            "language":appdel.userLanguage,
             "socialType":"\(socialType)",
-            "startAvailabilityTime":startTimeLocal?.currentUTCTimeZoneTime,
-            "endAvailabilityTime":EndTimeLocal?.currentUTCTimeZoneTime,"timeZone":""] as [String : Any]
+            "startAvailabilityTime":startAvailabilityTime!,
+            "endAvailabilityTime":endAvailabilityTime!,"local_diff":"\(getTimeZoneValue())"] as [String : Any]
         
         print("param",param)
         
