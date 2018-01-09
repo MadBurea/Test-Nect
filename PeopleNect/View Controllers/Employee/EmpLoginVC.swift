@@ -182,7 +182,17 @@ class EmpLoginVC: UIViewController,UITextFieldDelegate {
                             
                             appdel.loginUserDict = UserDefaults.standard.object(forKey: kEmpLoginDict) as! NSDictionary
                             
-                            self.UpdateDeviceToken(userId: "\(appdel.loginUserDict.object(forKey: "employerId")!)", userType: "1",message:"\(Response.object(forKey: "message") as! String)")
+                            
+                            if appdel.deviceLanguage == "pt-BR"
+                            {
+                                
+                                self.UpdateDeviceToken(userId: "\(appdel.loginUserDict.object(forKey: "employerId")!)", userType: "1",message:"\(Response.object(forKey: "pt_message") as! String)")
+                            }
+                            else
+                            {
+                                self.UpdateDeviceToken(userId: "\(appdel.loginUserDict.object(forKey: "employerId")!)", userType: "1",message:"\(Response.object(forKey: "message") as! String)")
+                            }
+                            
                         }
                         
                         
@@ -191,8 +201,15 @@ class EmpLoginVC: UIViewController,UITextFieldDelegate {
                 }
                 else
                 {
+                    if appdel.deviceLanguage == "pt-BR"
+                    {
+                        self.alertMessage.strMessage = "\(Response.object(forKey: "pt_message")!)"
+                    }
+                    else
+                    {
+                        self.alertMessage.strMessage = "\(Response.object(forKey: "message")!)"
+                    }
                     
-                    self.alertMessage.strMessage = "\(Response.object(forKey: "message")!)"
                     self.alertMessage.modalPresentationStyle = .overCurrentContext
                     self.present(self.alertMessage, animated: false, completion: nil)
                     

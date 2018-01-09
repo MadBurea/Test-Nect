@@ -994,11 +994,27 @@ UITableViewDelegate
             if status == 1
             {
                 self.postJobHeightConstraints.constant = 0
-                self.alertMessage.strMessage = "\(dictResponse.value(forKey: "message")!)"
+                
+                if appdel.deviceLanguage == "pt-BR"
+                {
+                    self.alertMessage.strMessage = "\(dictResponse.value(forKey: "pt_message")!)"
+                }
+                else
+                {
+                    self.alertMessage.strMessage = "\(dictResponse.value(forKey: "message")!)"
+                }
+                
                 self.alertMessage.modalPresentationStyle = .overCurrentContext
                 self.present(self.alertMessage, animated: false, completion: nil)
             }else{
-                self.alertMessage.strMessage = "\(dictResponse.value(forKey: "message")!)"
+                if appdel.deviceLanguage == "pt-BR"
+                {
+                    self.alertMessage.strMessage = "\(dictResponse.value(forKey: "pt_message")!)"
+                }
+                else
+                {
+                    self.alertMessage.strMessage = "\(dictResponse.value(forKey: "message")!)"
+                }
                 self.alertMessage.modalPresentationStyle = .overCurrentContext
                 self.present(self.alertMessage, animated: false, completion: nil)
             }
@@ -1030,7 +1046,14 @@ UITableViewDelegate
                     let selection = storyBoard.instantiateViewController(withIdentifier: "EmpSelectionProgressVC") as! EmpSelectionProgressVC
                     self.navigationController?.pushViewController(selection, animated: true)
                 }else{
-                    self.alertMessage.strMessage = "\(dictResponse.value(forKey: "message")!)"
+                    if appdel.deviceLanguage == "pt-BR"
+                    {
+                        self.alertMessage.strMessage = "\(dictResponse.value(forKey: "pt_message")!)"
+                    }
+                    else
+                    {
+                        self.alertMessage.strMessage = "\(dictResponse.value(forKey: "message")!)"
+                    }
                     self.alertMessage.modalPresentationStyle = .overCurrentContext
                     self.present(self.alertMessage, animated: false, completion: nil)
                 }
@@ -1061,7 +1084,14 @@ UITableViewDelegate
                 //self.dismiss(animated: true, completion: nil)
                 self.jobUsersList()
             }else{
-                self.alertMessage.strMessage = "\(dictResponse.value(forKey: "message")!)"
+                if appdel.deviceLanguage == "pt-BR"
+                {
+                    self.alertMessage.strMessage = "\(dictResponse.value(forKey: "pt_message")!)"
+                }
+                else
+                {
+                    self.alertMessage.strMessage = "\(dictResponse.value(forKey: "message")!)"
+                }
                 self.alertMessage.modalPresentationStyle = .overCurrentContext
                 self.present(self.alertMessage, animated: false, completion: nil)
             }
@@ -1088,7 +1118,14 @@ UITableViewDelegate
             {
                 self.jobUsersList()
             }else{
-                self.alertMessage.strMessage = "\(dictResponse.value(forKey: "message")!)"
+                if appdel.deviceLanguage == "pt-BR"
+                {
+                    self.alertMessage.strMessage = "\(dictResponse.value(forKey: "pt_message")!)"
+                }
+                else
+                {
+                    self.alertMessage.strMessage = "\(dictResponse.value(forKey: "message")!)"
+                }
                 self.alertMessage.modalPresentationStyle = .overCurrentContext
                 self.present(self.alertMessage, animated: false, completion: nil)
             }

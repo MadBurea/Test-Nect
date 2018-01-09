@@ -124,6 +124,7 @@
 		341B40641FF6082C00E46701 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 341B40661FF6082C00E46701 /* Main.storyboard */; };
 		342B37AD1FBB282B0031341E /* GoogleMaps.framework in Resources */ = {isa = PBXBuildFile; fileRef = 342B37AC1FBB282B0031341E /* GoogleMaps.framework */; };
 		342B37AF1FBC02AD0031341E /* chatList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342B37AE1FBC02AD0031341E /* chatList.swift */; };
+		342EE894200498C800672F73 /* Employee.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 342EE896200498C800672F73 /* Employee.storyboard */; };
 		345ECA121F625C3700F9715B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345ECA111F625C3700F9715B /* AppDelegate.swift */; };
 		345ECA171F625C7B00F9715B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345ECA161F625C7B00F9715B /* ViewController.swift */; };
 		34B06D451FF4BF9500BB43CA /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 34B06D441FF4BF9500BB43CA /* GoogleMaps.bundle */; };
@@ -154,7 +155,6 @@
 		4F4F26651F8E646D002D75C4 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4F26631F8E646D002D75C4 /* Extension.swift */; };
 		4F4F26661F8E646D002D75C4 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4F26641F8E646D002D75C4 /* WebService.swift */; };
 		4F5BEBA11F95CA95000EB208 /* EmpSelectSkillsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5BEBA01F95CA95000EB208 /* EmpSelectSkillsVC.swift */; };
-		4F77AA541F792DC200606419 /* Employee.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F77AA531F792DC200606419 /* Employee.storyboard */; };
 		4F77AA561F79302E00606419 /* JobSeeker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F77AA551F79302E00606419 /* JobSeeker.storyboard */; };
 		4F8A33371F8686FC0001FDDE /* JobFolloewUpStatusVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8A33361F8686FC0001FDDE /* JobFolloewUpStatusVC.swift */; };
 		4F8A333D1F8687BC0001FDDE /* JobSettingSelectCategoryCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8A33381F8687BC0001FDDE /* JobSettingSelectCategoryCollectionCell.swift */; };
@@ -393,6 +393,9 @@
 		341B406A1FF6085100E46701 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Main.strings"; sourceTree = "<group>"; };
 		342B37AC1FBB282B0031341E /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
 		342B37AE1FBC02AD0031341E /* chatList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = chatList.swift; sourceTree = "<group>"; };
+		342EE895200498C800672F73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Employee.storyboard; sourceTree = "<group>"; };
+		342EE898200498F400672F73 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Employee.strings"; sourceTree = "<group>"; };
+		342EE89A2004991900672F73 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Employee.strings; sourceTree = "<group>"; };
 		345ECA111F625C3700F9715B /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		345ECA161F625C7B00F9715B /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		34B06D441FF4BF9500BB43CA /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = GoogleMaps.framework/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
@@ -429,7 +432,6 @@
 		4F4F26631F8E646D002D75C4 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		4F4F26641F8E646D002D75C4 /* WebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		4F5BEBA01F95CA95000EB208 /* EmpSelectSkillsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmpSelectSkillsVC.swift; sourceTree = "<group>"; };
-		4F77AA531F792DC200606419 /* Employee.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Employee.storyboard; sourceTree = "<group>"; };
 		4F77AA551F79302E00606419 /* JobSeeker.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = JobSeeker.storyboard; sourceTree = "<group>"; };
 		4F8A33361F8686FC0001FDDE /* JobFolloewUpStatusVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobFolloewUpStatusVC.swift; sourceTree = "<group>"; };
 		4F8A33381F8687BC0001FDDE /* JobSettingSelectCategoryCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobSettingSelectCategoryCollectionCell.swift; sourceTree = "<group>"; };
@@ -899,8 +901,8 @@
 			children = (
 				34F4EF011FB06E30000B1CBA /* PeopleNect.entitlements */,
 				341B40661FF6082C00E46701 /* Main.storyboard */,
-				4F77AA531F792DC200606419 /* Employee.storyboard */,
 				4F77AA551F79302E00606419 /* JobSeeker.storyboard */,
+				342EE896200498C800672F73 /* Employee.storyboard */,
 				34B06D501FF4D03400BB43CA /* LaunchScreen.storyboard */,
 				34FBFBB31FB710A30004F095 /* rollingthin.gif */,
 				18F14E441F681511008019B2 /* nature_pic_1.jpeg */,
@@ -1139,6 +1141,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				342EE894200498C800672F73 /* Employee.storyboard in Resources */,
 				34B06D451FF4BF9500BB43CA /* GoogleMaps.bundle in Resources */,
 				342B37AD1FBB282B0031341E /* GoogleMaps.framework in Resources */,
 				184DE6D31F755A9200920501 /* slider-default-trackBackground.png in Resources */,
@@ -1173,7 +1176,6 @@
 				18D18ACC1F723552003CDEE2 /* EmpDashInnerCollectionViewCell.xib in Resources */,
 				184DE6D61F755A9200920501 /* slider-default_trackBackground@2x.png in Resources */,
 				184DE6D11F755A9200920501 /* slider-default-track.png in Resources */,
-				4F77AA541F792DC200606419 /* Employee.storyboard in Resources */,
 				184DE6D91F755A9200920501 /* slider-default7-track.png in Resources */,
 				18599BD41F6277A0007246FF /* Montserrat-UltraLight.otf in Resources */,
 				3407E7A31FC42CCA004D0279 /* index.html in Resources */,
@@ -1472,6 +1474,16 @@
 				341B406A1FF6085100E46701 /* pt-BR */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		342EE896200498C800672F73 /* Employee.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				342EE895200498C800672F73 /* Base */,
+				342EE898200498F400672F73 /* pt-BR */,
+				342EE89A2004991900672F73 /* en */,
+			);
+			name = Employee.storyboard;
 			sourceTree = "<group>";
 		};
 		34B06D501FF4D03400BB43CA /* LaunchScreen.storyboard */ = {

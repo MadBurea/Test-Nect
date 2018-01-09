@@ -209,7 +209,7 @@
                                 <rect key="frame" x="72.5" y="70" width="230" height="70"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="POST YOUR JOB" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="YgT-P5-Hix">
-                                <rect key="frame" x="128.5" y="426" width="119.5" height="18"/>
+                                <rect key="frame" x="128" y="426" width="119.5" height="18"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="15"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -2899,6 +2899,42 @@
             </objects>
             <point key="canvasLocation" x="-84" y="817"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="hi2-Aj-qQn">
+            <objects>
+                <viewController id="G0E-Ru-lkn" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gYh-WO-IZF"/>
+                        <viewControllerLayoutGuide type="bottom" id="z05-H8-52M"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1e7-4y-6Ma">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="96a-d4-hmb">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="AppIcon" translatesAutoresizingMaskIntoConstraints="NO" id="gEC-W4-s0e">
+                                        <rect key="frame" x="46" y="210" width="240" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="96a-d4-hmb" firstAttribute="top" secondItem="1e7-4y-6Ma" secondAttribute="top" id="OHg-G6-s7l"/>
+                            <constraint firstItem="96a-d4-hmb" firstAttribute="leading" secondItem="1e7-4y-6Ma" secondAttribute="leading" id="PRb-X8-DTl"/>
+                            <constraint firstItem="z05-H8-52M" firstAttribute="top" secondItem="96a-d4-hmb" secondAttribute="bottom" id="Q9D-Jm-iKi"/>
+                            <constraint firstAttribute="trailing" secondItem="96a-d4-hmb" secondAttribute="trailing" id="ihL-zb-mNM"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JBs-2f-hm1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-87" y="1562"/>
+        </scene>
         <!--Job Log InVC-->
         <scene sceneID="sWp-aW-0f2">
             <objects>
@@ -5196,7 +5232,7 @@
                                 </connections>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="none" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="igX-86-hmt" userLabel="Label No pending App">
-                                <rect key="frame" x="168" y="323" width="40.5" height="21"/>
+                                <rect key="frame" x="167.5" y="323" width="40.5" height="21"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -5332,7 +5368,7 @@
                                 </connections>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="none" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eKH-um-z7M" userLabel="Label No pending App">
-                                <rect key="frame" x="168" y="323" width="40.5" height="21"/>
+                                <rect key="frame" x="167.5" y="323" width="40.5" height="21"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -6441,7 +6477,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Verify OTP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iVq-PO-gAE">
-                                                <rect key="frame" x="150" y="168" width="75.5" height="19"/>
+                                                <rect key="frame" x="150.5" y="168" width="75.5" height="19"/>
                                                 <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="16"/>
                                                 <color key="textColor" red="0.37647058820000001" green="0.37649339440000001" blue="0.37642204759999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -6644,7 +6680,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6gq-KQ-nCU">
-                                                <rect key="frame" x="134.5" y="185" width="108" height="19"/>
+                                                <rect key="frame" x="135" y="185" width="108" height="19"/>
                                                 <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="16"/>
                                                 <color key="textColor" red="0.37647058820000001" green="0.37649339440000001" blue="0.37642204759999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -6714,6 +6750,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="AppIcon" width="16" height="16"/>
         <image name="arrow_left" width="34" height="60"/>
         <image name="bag" width="64" height="57"/>
         <image name="call_icon" width="22" height="22"/>

@@ -114,17 +114,30 @@ class NewPasswordVC: UIViewController {
                         
                         self.navigationController?.popToViewController((array?[2])!, animated: true)
                     
-                     self.view.makeToast("\(Response.object(forKey: "message")!)", duration: 3.0, position: .bottom)
+                    
+                    if appdel.deviceLanguage == "pt-BR"
+                    {
+                        self.view.makeToast("\(Response.object(forKey: "pt_message")!)", duration: 3.0, position: .bottom)
+                    }
+                    else
+                    {
+                        self.view.makeToast("\(Response.object(forKey: "message")!)", duration: 3.0, position: .bottom)
+                    }
 
                 }
                 else
                 {
-                    self.alertMessage.strMessage = "\(Response.object(forKey: "message")!)"
+                    if appdel.deviceLanguage == "pt-BR"
+                    {
+                        self.alertMessage.strMessage = "\(Response.object(forKey: "pt_message")!)"
+                    }
+                    else
+                    {
+                        self.alertMessage.strMessage = "\(Response.object(forKey: "message")!)"
+                    }
                     
                     self.alertMessage.modalPresentationStyle = .overCurrentContext
-                    
                     self.present(self.alertMessage, animated: false, completion: nil)
-                    
                 }
                 
             }

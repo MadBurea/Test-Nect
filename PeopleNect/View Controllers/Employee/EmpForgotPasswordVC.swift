@@ -120,7 +120,14 @@ class EmpForgotPasswordVC: UIViewController, UITextFieldDelegate {
                 if status == 1
                 {
                     
-                    self.alertMessage.strMessage = "\(Response.object(forKey: "message")!)"
+                    if appdel.deviceLanguage == "pt-BR"
+                    {
+                        self.alertMessage.strMessage = "\(Response.object(forKey: "pt_message")!)"
+                    }
+                    else
+                    {
+                        self.alertMessage.strMessage = "\(Response.object(forKey: "message")!)"
+                    }
                     
                     self.present(self.alertMessage, animated: false, completion: nil)
                     

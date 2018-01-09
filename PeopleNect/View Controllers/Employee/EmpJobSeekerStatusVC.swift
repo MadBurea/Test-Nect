@@ -819,7 +819,14 @@ class EmpJobSeekerStatusVC: UIViewController, UICollectionViewDelegate,UICollect
                 {
                     _ = self.navigationController?.popViewController(animated: true)
                 }else{
-                    self.alertMessage.strMessage = "\(dictResponse.value(forKey: "message")!)"
+                    if appdel.deviceLanguage == "pt-BR"
+                    {
+                        self.alertMessage.strMessage = "\(dictResponse.value(forKey: "pt_message")!)"
+                    }
+                    else
+                    {
+                        self.alertMessage.strMessage = "\(dictResponse.value(forKey: "message")!)"
+                    }
                     self.alertMessage.modalPresentationStyle = .overCurrentContext
                     self.present(self.alertMessage, animated: false, completion: nil)
                 }

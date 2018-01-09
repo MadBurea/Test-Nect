@@ -488,14 +488,29 @@ class JobLogInVC: UIViewController,UITextFieldDelegate,GIDSignInDelegate,GIDSign
                         print("appdel.loginUserDict login dic is",appdel.loginUserDict)
 
                         
-                        self.UpdateDeviceToken(userId: "\(appdel.loginUserDict.object(forKey: "userId")!)", userType: "2",message:"\(Response.object(forKey: "message") as! String)")
+                        if appdel.deviceLanguage == "pt-BR"
+                        {
+                            self.UpdateDeviceToken(userId: "\(appdel.loginUserDict.object(forKey: "userId")!)", userType: "2",message:"\(Response.object(forKey: "pt_message") as! String)")
+                        }
+                        else
+                        {
+                            self.UpdateDeviceToken(userId: "\(appdel.loginUserDict.object(forKey: "userId")!)", userType: "2",message:"\(Response.object(forKey: "message") as! String)")
+                        }
                     }
                     
                     
                 }
                 else
                 {
-                    self.alertMessage.strMessage = "\(Response.object(forKey: "message")!)"
+                    
+                    if appdel.deviceLanguage == "pt-BR"
+                    {
+                        self.alertMessage.strMessage = "\(Response.object(forKey: "pt_message")!)"
+                    }
+                    else
+                    {
+                        self.alertMessage.strMessage = "\(Response.object(forKey: "message")!)"
+                    }
                     
                     self.alertMessage.modalPresentationStyle = .overCurrentContext
                     
@@ -507,16 +522,20 @@ class JobLogInVC: UIViewController,UITextFieldDelegate,GIDSignInDelegate,GIDSign
                 }
                 else
                 {
-                    self.alertMessage.strMessage = "\(Response.object(forKey: "message")!)"
-                    
+                    if appdel.deviceLanguage == "pt-BR"
+                    {
+                        self.alertMessage.strMessage = "\(Response.object(forKey: "pt_message")!)"
+                    }
+                    else
+                    {
+                        self.alertMessage.strMessage = "\(Response.object(forKey: "message")!)"
+                    }
                     self.alertMessage.modalPresentationStyle = .overCurrentContext
                     
                     self.present(self.alertMessage, animated: false, completion: nil)
                     
                     print(Response.object(forKey: "message")!)
                 }
-
-                
             }
         }
         
@@ -683,14 +702,29 @@ class JobLogInVC: UIViewController,UITextFieldDelegate,GIDSignInDelegate,GIDSign
                             
                             appdel.loginUserDict = UserDefaults.standard.object(forKey: kUserLoginDict) as! NSDictionary
                             
-                            self.UpdateDeviceToken(userId: "\(appdel.loginUserDict.object(forKey: "userId")!)", userType: "2",message: "\(Response.object(forKey: "message") as! String)")
+                            
+                            if appdel.deviceLanguage == "pt-BR"
+                            {
+                                
+                                self.UpdateDeviceToken(userId: "\(appdel.loginUserDict.object(forKey: "userId")!)", userType: "2",message: "\(Response.object(forKey: "pt_message") as! String)")
+                            }
+                            else
+                            {
+                                self.UpdateDeviceToken(userId: "\(appdel.loginUserDict.object(forKey: "userId")!)", userType: "2",message: "\(Response.object(forKey: "message") as! String)")
+                            }
                          }
                     }
                 }
                 else
                 {
-                    
-                    self.alertMessage.strMessage = "\(Response.object(forKey: "message")!)"
+                    if appdel.deviceLanguage == "pt-BR"
+                    {
+                        self.alertMessage.strMessage = "\(Response.object(forKey: "pt_message")!)"
+                    }
+                    else
+                    {
+                        self.alertMessage.strMessage = "\(Response.object(forKey: "message")!)"
+                    }
                     self.alertMessage.modalPresentationStyle = .overCurrentContext
                     
                     self.present(self.alertMessage, animated: false, completion: nil)

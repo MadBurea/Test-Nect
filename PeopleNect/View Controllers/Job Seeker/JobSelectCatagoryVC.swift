@@ -303,7 +303,15 @@ class JobSelectCatagoryVC: UIViewController, UICollectionViewDelegate, UICollect
                 }
                 else
                 {
-                    self.alertMessage.strMessage = "\(Response.object(forKey: "message")!)"
+                    
+                    if appdel.deviceLanguage == "pt-BR"
+                    {
+                        self.alertMessage.strMessage = "\(Response.object(forKey: "pt_message")!)"
+                    }
+                    else
+                    {
+                        self.alertMessage.strMessage = "\(Response.object(forKey: "message")!)"
+                    }
                     
                     self.alertMessage.modalPresentationStyle = .overCurrentContext
                     

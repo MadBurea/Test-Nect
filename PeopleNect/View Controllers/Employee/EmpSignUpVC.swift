@@ -516,7 +516,16 @@ class EmpSignUpVC: UIViewController,UITextFieldDelegate {
                         }
                         
                        
-                        self.view.makeToast("\(Response.object(forKey: "message")!)", duration: 3.0, position: .bottom)
+                        
+                        if appdel.deviceLanguage == "pt-BR"
+                        {
+                            self.view.makeToast("\(Response.object(forKey: "pt_message")!)", duration: 3.0, position: .bottom)
+                        }
+                        else
+                        {
+                            self.view.makeToast("\(Response.object(forKey: "message")!)", duration: 3.0, position: .bottom)
+                        }
+                        
                         
                         let empsignupVC = self.storyboard?.instantiateViewController(withIdentifier: "EmpAddCompanyDetailsVC") as! EmpAddCompanyDetailsVC
                         
@@ -530,7 +539,14 @@ class EmpSignUpVC: UIViewController,UITextFieldDelegate {
                 else
                 {
                     
-                    self.alertMessage.strMessage = "\(Response.object(forKey: "message")!)"
+                    if appdel.deviceLanguage == "pt-BR"
+                    {
+                        self.alertMessage.strMessage = "\(Response.object(forKey: "pt_message")!)"
+                    }
+                    else
+                    {
+                        self.alertMessage.strMessage = "\(Response.object(forKey: "message")!)"
+                    }
                     
                     self.alertMessage.modalPresentationStyle = .overCurrentContext
                     

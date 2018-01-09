@@ -1617,6 +1617,24 @@ class JobDash: UIViewController,GMUClusterManagerDelegate, GMSMapViewDelegate,CL
         
         SwiftLoader.show(animated: true)
         
+        let  EndTime  = "23:59"
+        let StartTime = "00:00"
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm"
+        
+        let startTimeLocal = formatter.date(from: StartTime)
+        let EndTimeLocal = formatter.date(from: EndTime)
+        
+        
+        let startAvailabilityTime = startTimeLocal?.currentUTCTimeZoneTime
+        let endAvailabilityTime = EndTimeLocal?.currentUTCTimeZoneTime
+        
+        
+//        local_start_time,
+//        local_end_time,
+//        local_diff = Utility.getLocalDiff();
+        //"local_diff":"\(getTimeZoneValue())"
     
         let param =  [WebServicesClass.METHOD_NAME: "saveUserAvailability",
                       "availabilityStatus":"\(availabilityStatus)",
@@ -1624,8 +1642,11 @@ class JobDash: UIViewController,GMUClusterManagerDelegate, GMSMapViewDelegate,CL
             "end_time":end,
             "start_time":start,
             "type":"\(type)",
-            "userId":"\(appdel.loginUserDict.object(forKey: "userId")!)"]as [String : Any]
+            "userId":"\(appdel.loginUserDict.object(forKey: "userId")!)","local_start_time":startAvailabilityTime!,"local_end_time":endAvailabilityTime!,"local_diff":"\(getTimeZoneValue())"]as [String : Any]
         
+        
+        
+        print("param of saveUserAvailability is",param)
         
         global.callWebService(parameter: param as AnyObject!) { (Response:AnyObject, error:NSError?) in
             
@@ -1639,6 +1660,8 @@ class JobDash: UIViewController,GMUClusterManagerDelegate, GMSMapViewDelegate,CL
                 let dictResponse = Response as! NSDictionary
                 
                 
+                print("response of saveUserAvailability is",dictResponse)
+
                 let status = dictResponse.object(forKey: "status") as! Int
                 
                 SwiftLoader.hide()

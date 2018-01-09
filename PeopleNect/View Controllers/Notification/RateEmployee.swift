@@ -91,10 +91,7 @@ class RateEmployee: UIViewController {
                 }
                 else
                 {
-                    
-                    print(Response.object(forKey: "message")!)
                 }
-                
                 
             }
         }

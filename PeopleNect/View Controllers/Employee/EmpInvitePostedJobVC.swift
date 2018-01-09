@@ -209,7 +209,14 @@ class EmpInvitePostedJobVC: UIViewController,UITableViewDataSource,UITableViewDe
                 else
                 {
                     
-                    self.alertMessage.strMessage = "\(Response.object(forKey: "message")!)"
+                    if appdel.deviceLanguage == "pt-BR"
+                    {
+                        self.alertMessage.strMessage = "\(Response.object(forKey: "pt_message")!)"
+                    }
+                    else
+                    {
+                        self.alertMessage.strMessage = "\(Response.object(forKey: "message")!)"
+                    }
                     
                     self.alertMessage.modalPresentationStyle = .overCurrentContext
                     
@@ -315,7 +322,14 @@ class EmpInvitePostedJobVC: UIViewController,UITableViewDataSource,UITableViewDe
                     _ = self.navigationController?.popViewController(animated: true)
                     
                 }else{
-                    self.alertMessage.strMessage = "\(dictResponse.value(forKey: "message")!)"
+                    if appdel.deviceLanguage == "pt-BR"
+                    {
+                        self.alertMessage.strMessage = "\(dictResponse.value(forKey: "pt_message")!)"
+                    }
+                    else
+                    {
+                        self.alertMessage.strMessage = "\(dictResponse.value(forKey: "message")!)"
+                    }
                     self.alertMessage.modalPresentationStyle = .overCurrentContext
                     self.present(self.alertMessage, animated: false, completion: nil)
                 }

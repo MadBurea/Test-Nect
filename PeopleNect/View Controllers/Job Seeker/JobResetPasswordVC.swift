@@ -218,7 +218,14 @@ class JobResetPasswordVC: UIViewController, UITextFieldDelegate {
                 
                 if status == 1
                 {
-                    self.view.makeToast("\(String(describing: Response.object(forKey: "message")!))", duration: 3.0, position: .bottom)
+                    if appdel.deviceLanguage == "pt-BR"
+                    {
+                        self.view.makeToast("\(String(describing: Response.object(forKey: "pt_message")!))", duration: 3.0, position: .bottom)
+                    }
+                    else
+                    {
+                        self.view.makeToast("\(String(describing: Response.object(forKey: "message")!))", duration: 3.0, position: .bottom)
+                    }
                     
                     if dictResponse.object(forKey: "OTP") != nil
                     {
@@ -241,7 +248,15 @@ class JobResetPasswordVC: UIViewController, UITextFieldDelegate {
                 }
                 else
                 {
-                    self.alertMessage.strMessage = "\(Response.object(forKey: "message")!)"
+                    
+                    if appdel.deviceLanguage == "pt-BR"
+                    {
+                        self.alertMessage.strMessage = "\(Response.object(forKey: "pt_message")!)"
+                    }
+                    else
+                    {
+                        self.alertMessage.strMessage = "\(Response.object(forKey: "message")!)"
+                    }
                     
                     self.alertMessage.modalPresentationStyle = .overCurrentContext
                     
