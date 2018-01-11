@@ -186,7 +186,9 @@ class EmpLoginVC: UIViewController,UITextFieldDelegate {
                             if appdel.deviceLanguage == "pt-BR"
                             {
                                 
-                                self.UpdateDeviceToken(userId: "\(appdel.loginUserDict.object(forKey: "employerId")!)", userType: "1",message:"\(Response.object(forKey: "pt_message") as! String)")
+                                //self.UpdateDeviceToken(userId: "\(appdel.loginUserDict.object(forKey: "employerId")!)", userType: "1",message:"\(Response.object(forKey: "pt_message") as! String)")
+                                
+                                self.UpdateDeviceToken(userId: "\(appdel.loginUserDict.object(forKey: "employerId")!)", userType: "1",message:"Bem vindo!")
                             }
                             else
                             {

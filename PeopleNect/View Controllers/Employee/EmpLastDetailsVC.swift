@@ -162,7 +162,7 @@ class EmpLastDetailsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFie
 
     var global = WebServicesClass()
     let apiURL = "https://maps.googleapis.com/maps/api/geocode/json"
-    let apiKey = "AIzaSyBZV6Rtb7qIizc1yrGKbYQ1M"
+    let apiKey = "AIzaSyAg5YUbdJukqM_BY7yu_ZN6UOf1MvLH3Zw"
     var alertMessage = AlertMessageVC()
     var totalBalance = NSString()
     var postJobPrice = NSString()
@@ -1576,7 +1576,10 @@ class EmpLastDetailsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFie
         
         let btnNext: UIBarButtonItem = UIBarButtonItem(title: "Set", style: .plain, target: self, action: #selector(self.nextAction))
         
-        let cancelButton: UIBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(self.cancelAction))
+        
+        
+        
+        let cancelButton: UIBarButtonItem = UIBarButtonItem(title: Localization(string: "Cancel"), style: .plain, target: self, action: #selector(self.cancelAction))
 
         
         btnNext.tintColor = UIColor.white
@@ -2466,9 +2469,9 @@ class EmpLastDetailsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFie
                 
                 if totalDays > 0{
                     if self.alreadyWorked == "0"{
-                        let alertController = UIAlertController(title: "", message: "Inviting professionals has a cost of $\(self.postJobPrice) per Professionals & $\(self.postFavBalance) per favorite professional.", preferredStyle: UIAlertControllerStyle.alert)
-                        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel) { (result : UIAlertAction) -> Void in
-                            
+                        let alertController = UIAlertController(title: "", message: Localization(string: "per Professionals") + "$\(self.postJobPrice)" + Localization(string: "per Professionals") + "&" + "$\(self.postFavBalance)" + Localization(string: "per favorite professional."), preferredStyle: UIAlertControllerStyle.alert)
+                        
+                        let cancelAction = UIAlertAction(title: Localization(string: "Cancel"), style: UIAlertActionStyle.cancel) { (result : UIAlertAction) -> Void in
                         }
                         let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (result : UIAlertAction) -> Void in
                             self.postJob(param: parameter, edit: 3)
@@ -2477,9 +2480,9 @@ class EmpLastDetailsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFie
                         alertController.addAction(okAction)
                         self.present(alertController, animated: true, completion: nil)
                     }else{
-                        let alertController = UIAlertController(title: "", message: "Inviting professionals has a cost of $\(self.postJobPrice) per Professionals & $\(self.postFavBalance) per favorite professional.", preferredStyle: UIAlertControllerStyle.alert)
-                        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel) { (result : UIAlertAction) -> Void in
-                            
+                         let alertController = UIAlertController(title: "", message: Localization(string: "per Professionals") + "$\(self.postJobPrice)" + Localization(string: "per Professionals") + "&" + "$\(self.postFavBalance)" + Localization(string: "per favorite professional."), preferredStyle: UIAlertControllerStyle.alert)
+                        
+                        let cancelAction = UIAlertAction(title: Localization(string: "Cancel"), style: UIAlertActionStyle.cancel) { (result : UIAlertAction) -> Void in
                         }
                         let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (result : UIAlertAction) -> Void in
                             self.postJob(param: parameter, edit: 3)
@@ -2498,9 +2501,9 @@ class EmpLastDetailsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFie
                             // self.postJob(param: postJobParam)
                             // open the View of alert
                             
-                            let alertController = UIAlertController(title: "", message: "Inviting professionals has a cost of $\(self.postJobPrice) per Professionals & $\(self.postFavBalance) per favorite professional.", preferredStyle: UIAlertControllerStyle.alert)
-                            let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel) { (result : UIAlertAction) -> Void in
-                                
+                            let alertController = UIAlertController(title: "", message: Localization(string: "per Professionals") + "$\(self.postJobPrice)" + Localization(string: "per Professionals") + "&" + "$\(self.postFavBalance)" + Localization(string: "per favorite professional."), preferredStyle: UIAlertControllerStyle.alert)
+                            
+                            let cancelAction = UIAlertAction(title: Localization(string: "Cancel"), style: UIAlertActionStyle.cancel) { (result : UIAlertAction) -> Void in
                             }
                             let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (result : UIAlertAction) -> Void in
                                 self.postJob(param: parameter, edit: 3)
@@ -2518,9 +2521,9 @@ class EmpLastDetailsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFie
                             
                             // open the View of alert
                             
-                            let alertController = UIAlertController(title: "", message: "Inviting professionals has a cost of $\(self.postJobPrice) per Professionals & $\(self.postFavBalance) per favorite professional.", preferredStyle: UIAlertControllerStyle.alert)
-                            let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel) { (result : UIAlertAction) -> Void in
-                                
+                          let alertController = UIAlertController(title: "", message: Localization(string: "per Professionals") + "$\(self.postJobPrice)" + Localization(string: "per Professionals") + "&" + "$\(self.postFavBalance)" + Localization(string: "per favorite professional."), preferredStyle: UIAlertControllerStyle.alert)
+                            
+                            let cancelAction = UIAlertAction(title: Localization(string: "Cancel"), style: UIAlertActionStyle.cancel) { (result : UIAlertAction) -> Void in
                             }
                             let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (result : UIAlertAction) -> Void in
                                 self.postJob(param: parameter, edit: 3)

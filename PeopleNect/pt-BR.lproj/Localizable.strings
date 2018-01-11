@@ -48,8 +48,8 @@
 
 // MARK:-  Left Menu Strings
 "Search professionals"                   = "Buscar profissionais";
-"Post new Job"                           = "Criar uma nova vaga";
-"Selection in progress"                  = "Processo seletivo em andamento";
+"Post new Job"                           = "Publicar novo emprego";
+"Selection in progress"                  = "Seleção em andamento";
 "Balance"                                = "Saldo";
 "Job in progress"                        = "Trabalhos em andamento";
 "Job history"                            = "Trabalhos efetuados";
@@ -64,12 +64,17 @@
 "Pending Applications"                     = "Candidaturas Pendentes";
 "On going jobs"                            = "Meus trabalhos";
 "Availability"                             = "Disponibilidade";
-"Not Available"                            = "Este aparelho não é compatível";
+"Not Available"                            = "Não disponível";
 "Log out"                                = "Sair";
-
+"Great! Now You have 60 days to post your jobs for free" = "Ótimo! Agora você tem 60 dias para postar seus trabalhos gratuitamente";
 "Enter experience here"                    = "Digite sua experiência aqui";
 "Enter rate here"                    = "Digite o valor por hora";
-
+"Inviting professionals has a cost of" = "Profissionais convidados têm um custo de";
+"per Professionals" =  "por profissionais";
+"per favorite professional." = "por profissional favorito.";
+"Want to cancel this job?" =  "Confirme que deseja cancelar esta vaga";
+"Are You sure, you want to decline this Professional" = "Tem certeza, você quer recusar este profissional";
+"Are you sure you want to log out?" = "Tem certeza que deseja sair?";
 
 // MARK:-  EmpJobSeekerDetailVC String
 

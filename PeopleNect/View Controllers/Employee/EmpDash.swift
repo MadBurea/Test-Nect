@@ -900,7 +900,8 @@ class EmpDash: UIViewController ,GMUClusterManagerDelegate, GMSMapViewDelegate,C
                 let totalRecords = dictResponse.object(forKey: "totalRecords") as! Int
                 
                 if self.firstTimeRegistered {
-                    let alertController = UIAlertController(title: "", message: "Great! Now You have 60 days to post your jobs for free", preferredStyle: UIAlertControllerStyle.alert)
+                    
+                    let alertController = UIAlertController(title: "", message: Localization(string: "Great! Now You have 60 days to post your jobs for free"), preferredStyle: UIAlertControllerStyle.alert)
                     let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (result : UIAlertAction) -> Void in
                     }
                     alertController.addAction(okAction)

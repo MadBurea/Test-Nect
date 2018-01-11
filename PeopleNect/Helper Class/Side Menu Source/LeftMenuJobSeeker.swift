@@ -398,7 +398,10 @@ class LeftMenuJobSeeker: UIViewController,UITableViewDataSource,UITableViewDeleg
     func LooutAction()
     {
         
-        let alert = UIAlertController(title: "Logout", message: "Are you sure you want to logout?", preferredStyle: .alert)
+        
+        
+        
+        let alert = UIAlertController(title: Localization(string: "Log out"), message: Localization(string: "Are you sure you want to log out?"), preferredStyle: .alert)
         
         
         alert.addAction((UIAlertAction(title: "Ok", style: .default, handler: { action in
@@ -409,7 +412,7 @@ class LeftMenuJobSeeker: UIViewController,UITableViewDataSource,UITableViewDeleg
             
         })))
         
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: Localization(string: "Cancel"), style: .cancel, handler: nil))
        
         SlideNavigationController.sharedInstance().present(alert, animated: true, completion: nil)
         //appdel.window?.rootViewController?.present(alert, animated: true, completion: nil)

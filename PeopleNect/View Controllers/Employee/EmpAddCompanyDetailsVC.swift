@@ -38,8 +38,10 @@ class EmpAddCompanyDetailsVC: UIViewController, UITextFieldDelegate,PlaceSearchT
     @IBOutlet var btnCompanyImage: UIButton!
     
     let apiURL = "https://maps.googleapis.com/maps/api/geocode/json"
-     let apiKey = "AIzaSyDiXWJ49oge3PHLCzYbS464cDVg5QwOdes"
-  //  let apiKey = "AIzaSyBZV6Rtb7qIizc1yrGKbYQ1M"
+    //let apiKey = "AIzaSyBmAVuEWk6HKzILcIHRhgfBHrLj8r713ws"
+
+    let apiKey = "AIzaSyAg5YUbdJukqM_BY7yu_ZN6UOf1MvLH3Zw"
+
     var userLocationCoordinate = CLLocationCoordinate2D()
     var strAddress = ""
     var global = WebServicesClass()

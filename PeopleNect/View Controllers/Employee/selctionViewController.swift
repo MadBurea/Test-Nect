@@ -774,9 +774,11 @@ UITableViewDelegate
     @IBAction func cancelClicked(_ sender: Any) {
         print("cancel Clicked")
         
-        let alertController = UIAlertController(title: "", message: "Want to cancel this job?", preferredStyle: UIAlertControllerStyle.alert)
-
-        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel) { (result : UIAlertAction) -> Void in
+        
+        
+        let alertController = UIAlertController(title: "", message: Localization(string: "Want to cancel this job?"), preferredStyle: UIAlertControllerStyle.alert)
+        
+        let cancelAction = UIAlertAction(title: Localization(string: "Cancel"), style: UIAlertActionStyle.cancel) { (result : UIAlertAction) -> Void in
             self.animateView.isHidden = true
         }
         let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (result : UIAlertAction) -> Void in

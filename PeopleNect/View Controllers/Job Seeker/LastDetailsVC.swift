@@ -368,9 +368,9 @@ class LastDetailsVC: UIViewController, UITextFieldDelegate, UITextViewDelegate, 
     func alrtAddEmployer() {
         
         //last employer
+     
         
-
-        let alert = UIAlertController(title: Localization(string: "Add Employer"), message: "", preferredStyle: .alert)
+        let alert = UIAlertController(title: Localization(string: Localization(string: "Add Employer")), message: "", preferredStyle: .alert)
         
         alert.addTextField { (textField) in
             textField.placeholder = Localization(string: "Enter Your Last Employer")

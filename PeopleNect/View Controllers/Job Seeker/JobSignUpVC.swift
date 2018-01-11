@@ -56,8 +56,9 @@ class JobSignUpVC: UIViewController, UITextFieldDelegate, UITableViewDelegate,Pl
     
     var global = WebServicesClass()
     let apiURL = "https://maps.googleapis.com/maps/api/geocode/json"
-    let apiKey = "AIzaSyBZV6Rtb7qIizc1yrGKbYQ1M"
+    let apiKey = "AIzaSyAg5YUbdJukqM_BY7yu_ZN6UOf1MvLH3Zw"
 
+    
     @IBOutlet var btnRegister: UIButton!
     
     var termsOfUse = TermsUseVC()
@@ -1098,7 +1099,7 @@ class JobSignUpVC: UIViewController, UITextFieldDelegate, UITableViewDelegate,Pl
                             
                             if appdel.deviceLanguage == "pt-BR"
                             {
-                                self.UpdateDeviceToken(userId: "\(appdel.loginUserDict.object(forKey: "userId")!)", userType: "2",message:"\(Response.object(forKey: "pt_message") as! String)")
+                                self.UpdateDeviceToken(userId: "\(appdel.loginUserDict.object(forKey: "userId")!)", userType: "2",message:"Bem vindo!")
                             }
                             else
                             {
@@ -1277,7 +1278,7 @@ class JobSignUpVC: UIViewController, UITextFieldDelegate, UITableViewDelegate,Pl
                             
                             if appdel.deviceLanguage == "pt-BR"
                             {
-                                self.UpdateDeviceToken(userId: "\(appdel.loginUserDict.object(forKey: "userId")!)", userType: "2",message: "\(Response.object(forKey: "pt_message") as! String)")
+                                self.UpdateDeviceToken(userId: "\(appdel.loginUserDict.object(forKey: "userId")!)", userType: "2",message: "Bem vindo!")
                             }
                             else
                             {

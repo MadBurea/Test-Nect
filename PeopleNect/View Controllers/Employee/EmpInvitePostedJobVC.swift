@@ -265,9 +265,11 @@ class EmpInvitePostedJobVC: UIViewController,UITableViewDataSource,UITableViewDe
                 let totalDays = remainingDays.integerValue
                 
                 if totalDays > 0{
-                    let alertController = UIAlertController(title: "", message: "Inviting professionals has a cost of $\(self.postJobPrice) per Professionals & $\(self.postFavBalance) per favorite professional.", preferredStyle: UIAlertControllerStyle.alert)
-                    let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel) { (result : UIAlertAction) -> Void in
-                        
+                    
+                    
+                    let alertController = UIAlertController(title: "", message: Localization(string: "per Professionals") + "$\(self.postJobPrice)" + Localization(string: "per Professionals") + "&" + "$\(self.postFavBalance)" + Localization(string: "per favorite professional."), preferredStyle: UIAlertControllerStyle.alert)
+                    
+                    let cancelAction = UIAlertAction(title: Localization(string: "Cancel"), style: UIAlertActionStyle.cancel) { (result : UIAlertAction) -> Void in
                     }
                     let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (result : UIAlertAction) -> Void in
                         self.inviteEmployees(jobID: jobId)
@@ -282,9 +284,9 @@ class EmpInvitePostedJobVC: UIViewController,UITableViewDataSource,UITableViewDe
                         let noBalance = storyBoard.instantiateViewController(withIdentifier: "EmpNoBalance") as! EmpNoBalance
                         self.navigationController?.pushViewController(noBalance, animated: true)
                     }else{
-                        let alertController = UIAlertController(title: "", message: "Inviting professionals has a cost of $\(self.postJobPrice) per Professionals & $\(self.postFavBalance) per favorite professional.", preferredStyle: UIAlertControllerStyle.alert)
-                        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel) { (result : UIAlertAction) -> Void in
-                            
+                       let alertController = UIAlertController(title: "", message: Localization(string: "per Professionals") + "$\(self.postJobPrice)" + Localization(string: "per Professionals") + "&" + "$\(self.postFavBalance)" + Localization(string: "per favorite professional."), preferredStyle: UIAlertControllerStyle.alert)
+                        
+                        let cancelAction = UIAlertAction(title: Localization(string: "Cancel"), style: UIAlertActionStyle.cancel) { (result : UIAlertAction) -> Void in
                         }
                         let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (result : UIAlertAction) -> Void in
                             self.inviteEmployees(jobID: jobId)

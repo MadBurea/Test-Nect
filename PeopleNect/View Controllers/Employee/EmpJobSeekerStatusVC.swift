@@ -231,9 +231,10 @@ class EmpJobSeekerStatusVC: UIViewController, UICollectionViewDelegate,UICollect
         
         if sender.title(for: .normal) == "Professional decline" {
         
-            let alertController = UIAlertController(title: "", message: "Are You sure, you want to decline this Professional", preferredStyle: UIAlertControllerStyle.alert)
             
-            let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel) { (result : UIAlertAction) -> Void in
+            let alertController = UIAlertController(title: "", message: Localization(string: "Are You sure, you want to decline this Professional"), preferredStyle: UIAlertControllerStyle.alert)
+            
+            let cancelAction = UIAlertAction(title: Localization(string: "Cancel"), style: UIAlertActionStyle.cancel) { (result : UIAlertAction) -> Void in
             }
             let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (result : UIAlertAction) -> Void in
                 self.ProfessionalDecline()

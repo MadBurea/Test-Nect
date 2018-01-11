@@ -78,9 +78,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate,CLLocat
         config.spinnerLineWidth = 50.0
         
         
-        GMSPlacesClient.provideAPIKey("AIzaSyDWBdQY8qpV-ynGVeszgkSRQzlFph3U_0w")
+        GMSPlacesClient.provideAPIKey("AIzaSyAg5YUbdJukqM_BY7yu_ZN6UOf1MvLH3Zw")
         
-        GMSServices.provideAPIKey("AIzaSyDWBdQY8qpV-ynGVeszgkSRQzlFph3U_0w")
+        GMSServices.provideAPIKey("AIzaSyAg5YUbdJukqM_BY7yu_ZN6UOf1MvLH3Zw")
         
         PayPalMobile.initializeWithClientIds(forEnvironments: [PayPalEnvironmentProduction: "", PayPalEnvironmentSandbox: "AQ9YsiCP_QhToVAiOsQ96FZvZzlQfkhV85F4MtCTc4pOloURwbUBEyCoa3yzkSbnvh9w91CO9UL3T50B"])
         
@@ -156,6 +156,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate,CLLocat
         
         
         
+        /*
         
         /* Check to which kind user */
         if UserDefaults.standard.object(forKey: kUserLoginDict) != nil
@@ -205,6 +206,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate,CLLocat
             
             self.window!.rootViewController = navigationController
         }
+        */
         
         self.checkDevicelanguage()
         
@@ -723,12 +725,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate,CLLocat
     func logoutToSetStartView()
     {
         SlideNavigationController.removeSharedInstance()
-        
         let StartController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "StartingVC") as! StartingVC
-        
         let nav = UINavigationController(rootViewController: StartController)
         self.window!.rootViewController = nav
-        
     }
     
     

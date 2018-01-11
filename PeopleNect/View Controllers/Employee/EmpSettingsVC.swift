@@ -57,8 +57,8 @@ class EmpSettingsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFieldD
     var global = WebServicesClass()
     
     let apiURL = "https://maps.googleapis.com/maps/api/geocode/json"
-    let apiKey = "AIzaSyBZV6Rtb7qIizc1yrGKbYQ1M"
-    
+    let apiKey = "AIzaSyAg5YUbdJukqM_BY7yu_ZN6UOf1MvLH3Zw"
+
     
     var lat = ""
     var lng = ""

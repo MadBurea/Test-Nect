@@ -22,6 +22,8 @@ class addBalance: UIViewController ,UITextFieldDelegate,UIPickerViewDelegate,UIP
     //MARK: - View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tfBalance.isHidden = true
+
         packageListing()
 
          let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
@@ -61,18 +63,22 @@ class addBalance: UIViewController ,UITextFieldDelegate,UIPickerViewDelegate,UIP
   
     @IBAction func adBalanceClicked(_ sender: Any) {
         
-        let payment = PayPalPayment()
-        var balance = "\(tfBalance.text!)" as NSString
-        balance = balance.replacingOccurrences(of: "$", with: "") as NSString
-        print("balance is",balance)
-        payment.amount = NSDecimalNumber(string: balance as String)
-        
-        payment.currencyCode = "USD"
-        payment.shortDescription = "PeopleNect"
-        payment.items = nil
-        payment.paymentDetails = nil
-        let paymentViewController = PayPalPaymentViewController(payment: payment, configuration: payPalConfig, delegate: self)
-        present(paymentViewController as? UIViewController ?? UIViewController(), animated: true) { _ in }
+        if (tfBalance.text?.isBlank)!{
+            
+        }else{
+            let payment = PayPalPayment()
+            var balance = "\(tfBalance.text!)" as NSString
+            balance = balance.replacingOccurrences(of: "$", with: "") as NSString
+            print("balance is",balance)
+            payment.amount = NSDecimalNumber(string: balance as String)
+            
+            payment.currencyCode = "USD"
+            payment.shortDescription = "PeopleNect"
+            payment.items = nil
+            payment.paymentDetails = nil
+            let paymentViewController = PayPalPaymentViewController(payment: payment, configuration: payPalConfig, delegate: self)
+            present(paymentViewController as? UIViewController ?? UIViewController(), animated: true) { _ in }
+        }
     }
     
     //MARK: - Textfield  Delegate
@@ -156,8 +162,14 @@ class addBalance: UIViewController ,UITextFieldDelegate,UIPickerViewDelegate,UIP
                 self.packageListingArray  = (dictResponse.object(forKey: "data") as! NSArray)
                 
                 if self.packageListingArray.count > 0{
+                    self.tfBalance.isHidden = false
                      self.tfBalance.text = "$" + "\(((self.packageListingArray.object(at: 0)) as! NSDictionary).value(forKey: "amount")!)"
                 }
+                
+                if self.packageListingArray.count == 0{
+                    self.tfBalance.isHidden = true
+                }
+                
                 
                 print("dictResponse",self.packageListingArray)
             }

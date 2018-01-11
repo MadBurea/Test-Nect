@@ -68,7 +68,13 @@
 
 "Enter experience here"                    = "Enter experience here";
 "Enter rate here"                    = "Enter rate here";
-
+"Great! Now You have 60 days to post your jobs for free" = "Great! Now You have 60 days to post your jobs for free";
+"Inviting professionals has a cost of" = "Inviting professionals has a cost of";
+"per Professionals" =  "per Professionals";
+"per favorite professional." = "per favorite professional.";
+"Want to cancel this job?" =  "Want to cancel this job?";
+"Are You sure, you want to decline this Professional" = "Are You sure, you want to decline this Professional";
+"Are you sure you want to log out?" = "Are you sure you want to log out?";
 
 // MARK:-  EmpJobSeekerDetailVC String
 

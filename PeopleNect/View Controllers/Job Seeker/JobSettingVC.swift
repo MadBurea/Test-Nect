@@ -94,7 +94,7 @@ class JobSettingVC: UIViewController, PlaceSearchTextFieldDelegate, UITextFieldD
     var global = WebServicesClass()
     
     let apiURL = "https://maps.googleapis.com/maps/api/geocode/json"
-    let apiKey = "AIzaSyBZV6Rtb7qIizc1yrGKbYQ1M"
+    let apiKey = "AIzaSyAg5YUbdJukqM_BY7yu_ZN6UOf1MvLH3Zw"
 
     var alertMessage = AlertMessageVC()
     var arrLastEmp = NSArray()
@@ -941,12 +941,16 @@ class JobSettingVC: UIViewController, PlaceSearchTextFieldDelegate, UITextFieldD
     
     func alrtAddEmployer() {
         
-        let alert = UIAlertController(title: "Add Employer", message: "", preferredStyle: .alert)
         
+
+        
+        
+        let alert = UIAlertController(title: Localization(string: Localization(string: "Add Employer")), message: "", preferredStyle: .alert)
+
         alert.addTextField { (textField) in
-            textField.placeholder = "Enter Your Last Employer"
-            
-            alert.addAction(UIAlertAction(title: "ADD", style: .default, handler: { [weak alert] (_) in
+            textField.placeholder = Localization(string: "Enter Your Last Employer")
+
+            alert.addAction(UIAlertAction(title: Localization(string: "Add"), style: .default, handler: { [weak alert] (_) in
                 
                 if(textField.text?.characters.count != 0)
                 {
@@ -966,7 +970,9 @@ class JobSettingVC: UIViewController, PlaceSearchTextFieldDelegate, UITextFieldD
             
         }
         
-        alert.addAction(UIAlertAction(title: "CANCEL", style: .cancel, handler: nil))
+        
+        
+        alert.addAction(UIAlertAction(title: Localization(string: "CANCEL"), style: .cancel, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
     
