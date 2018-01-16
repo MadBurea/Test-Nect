@@ -86,9 +86,14 @@ class EmpJobProgressVC: UIViewController, UITableViewDelegate, UITableViewDataSo
             
             let expandcell = tableView.dequeueReusableCell(withIdentifier: "EmpHistoryInnerCell", for: indexPath) as! EmpHistoryInnerCell
 
+            expandcell.showHiredBtn.isHidden = false
+            expandcell.rateCandidateBorderLbl.isHidden = false
+            expandcell.RateCandidateBtn.isHidden = false
+            expandcell.RateCandidateBtn.setTitle(Localization(string: "Rate Candidate"), for: .normal)
+            expandcell.showHiredBtn.setTitle(Localization(string: "Show hired job seeker"), for: .normal)
+            expandcell.rateCandidateWidthConstraints.constant = 125
             
             expandcell.selectionStyle = .none
-            
             previousIndex = currentIndex
             
             expandcell.viewLeft.backgroundColor = ColorJobSelected
@@ -153,31 +158,25 @@ class EmpJobProgressVC: UIViewController, UITableViewDelegate, UITableViewDataSo
             
             
             
-            expandcell.lblProfessionalHired.isHidden = false
+            expandcell.lblProfessionalHired.isHidden = true
             expandcell.lblProfessionalHired.text = "No professional hired."
-            
             
             expandcell.lbCompanyAddress.text = "\(tempDict.object(forKey: "street_name")!), \(tempDict.object(forKey: "address")!), \(tempDict.object(forKey: "address1")!), \(tempDict.object(forKey: "city")!), \(tempDict.object(forKey: "state")!)"
             
-            
-            
-            
             let perDay = tempDict.object(forKey: "payment_type") as! String
-            
             if perDay == "1"
             {
-                expandcell.lblPerHour.text = "/hour"
+                expandcell.lblPerHour.text = "/" + "\(Localization(string: "hour"))"
             }
             else if perDay == "2"
             {
-                expandcell.lblPerHour.text = "/job"
-            } else{
-                expandcell.lblPerHour.text = "/month"
+                expandcell.lblPerHour.text = "/" + "\(Localization(string: "job"))"
+            }else{
+                expandcell.lblPerHour.text = "/" + "\(Localization(string: "month"))"
             }
             
             
           
-            
             // Start Date
             let StartTime = "\(tempDict.object(forKey: "startHour")!)"
             let StartDate = "\(tempDict.object(forKey: "startDate")!)"
@@ -188,7 +187,7 @@ class EmpJobProgressVC: UIViewController, UITableViewDelegate, UITableViewDataSo
             
             if endDate == "0000-00-00 00:00:00"
             {
-                endDate = "No end Date"
+                endDate = Localization(string: "No end Date")
             }
             else
             {
@@ -209,20 +208,16 @@ class EmpJobProgressVC: UIViewController, UITableViewDelegate, UITableViewDataSo
             }
             
             
-            
-            
             let workingDays = tempDict.object(forKey: "workingDay") as! String
-            
-            
             if workingDays == "0"
             {
-                expandcell.lblOnlyDays.text = "Only business days"
+                expandcell.lblOnlyDays.text =  Localization(string: "Only business days")
             }
             else if perDay == "1"
             {
-                expandcell.lblOnlyDays.text = "Includes non Business days"
+                expandcell.lblOnlyDays.text = Localization(string: "Includes non business days")
+                
             }
-            
             expandcell.contentView.layer.cornerRadius = 2.0
             
             expandcell.contentView.layer.shadowColor = UIColor.gray.cgColor
@@ -273,18 +268,17 @@ class EmpJobProgressVC: UIViewController, UITableViewDelegate, UITableViewDataSo
             
             
             let perDay = tempDict.object(forKey: "payment_type") as! String
-            
             if perDay == "1"
             {
-                mainCell.lblPerHour.text = "/hour"
+                mainCell.lblPerHour.text = "/" + "\(Localization(string: "hour"))"
             }
             else if perDay == "2"
             {
-                mainCell.lblPerHour.text = "/job"
+                mainCell.lblPerHour.text = "/" + "\(Localization(string: "job"))"
+            }else{
+                mainCell.lblPerHour.text = "/" + "\(Localization(string: "month"))"
             }
-            else{
-                mainCell.lblPerHour.text = "/month"
-            }
+            
             
             
             mainCell.contentView.layer.cornerRadius = 2.0
@@ -390,9 +384,6 @@ class EmpJobProgressVC: UIViewController, UITableViewDelegate, UITableViewDataSo
             "language":appdel.userLanguage] as [String : Any]
         
         
-        print("paramclosedJobsApi",param)
-        
-        
         global.callWebService(parameter: param as AnyObject!) { (Response:AnyObject, error:NSError?) in
             
             SwiftLoader.hide()
@@ -405,6 +396,8 @@ class EmpJobProgressVC: UIViewController, UITableViewDelegate, UITableViewDataSo
             {
                 let dictResponse = Response as! NSDictionary
                 
+                print("jobInProgress response is",dictResponse)
+
                 let status = dictResponse.object(forKey: "status") as! Int
                 
                 SwiftLoader.hide()

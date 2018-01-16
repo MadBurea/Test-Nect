@@ -91,6 +91,12 @@
 "INVITE FOR A POSTED JOB"           = "CONVIDAR PARA UMA VAGA EXISTENTE";
 "Hired"                             = "Contratado";
 "No Show"                           = "Não compareceu";
+"Declined jobs"                    = "Vagas que rejeitei";
+"Other jobs"                       =  "Vagas que fui rejeitado";
+"No end Date"                       = "Sem data final definida";
+"Rate Employer"                      = "Valor Empregador";
+"Rate Candidate"                    = "Valor Candidato";
+"Show hired job seeker"              = "Mostrar contratados";
 
 // MARK:-  EmpInvitedPostedJobVC String
 

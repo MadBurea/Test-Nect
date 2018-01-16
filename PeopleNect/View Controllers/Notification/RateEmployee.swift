@@ -23,25 +23,36 @@ class RateEmployee: UIViewController {
     @IBOutlet weak var btnRate: UIButton!
     @IBOutlet weak var lblLast: UILabel!
     
-    
     var userId = String()
     var employerId = String()
     var jobId = String()
-  
+    var companyName = String()
+    var jobTitle = String()
+    var fromNotification = false
+
     var userDic = [String: Any]()
     var global = WebServicesClass()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.userId = "\(userDic["jobseeker_id"]!)"
-        self.employerId = "\(userDic["employer_id"]!)"
-        self.jobId = "\(userDic["job_id"]!)"
-        self.viewRate.update()
+        viewRate.rating = 0
         
-        self.lblName.text = "\(userDic["company_name"]!)"
-        self.lblJobTitle.text = "\(userDic["job_title"]!)"
-        self.lblLast.text = ""
+        if fromNotification {
+            self.viewRate.update()
+            self.lblName.text = companyName
+            self.lblJobTitle.text = jobTitle
+            self.lblLast.text = ""
+        }else{
+            self.userId = "\(userDic["jobseeker_id"]!)"
+            self.employerId = "\(userDic["employer_id"]!)"
+            self.jobId = "\(userDic["job_id"]!)"
+            self.viewRate.update()
+            
+            self.lblName.text = "\(userDic["company_name"]!)"
+            self.lblJobTitle.text = "\(userDic["job_title"]!)"
+            self.lblLast.text = ""
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,10 +60,13 @@ class RateEmployee: UIViewController {
     }
     
     @IBAction func clickRateEmployee(_ sender: Any) {
-        
         self.rateEmployerApi()
     }
-
+    
+    @IBAction func backClicked(_ sender: Any) {
+        _ = self.navigationController?.popViewController(animated: true)
+    }
+    
     // MARK: - Api Call
     
     func rateEmployerApi()

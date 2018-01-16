@@ -21,11 +21,22 @@ class StartingVC: UIViewController {
         self.navigationController?.navigationBar.isHidden = true
         
         // change Status bar Color
-        let statusBar: UIView = UIApplication.shared.value(forKey: "statusBar") as! UIView
-        if statusBar.responds(to: #selector(setter: UIView.backgroundColor)) {
-            statusBar.backgroundColor = blueThemeColor
+        if UIDevice().userInterfaceIdiom == .phone {
+            switch UIScreen.main.nativeBounds.height {
+            case 1136:
+                self.changeStatusBarColor()
+            case 1334:
+                self.changeStatusBarColor()
+            case 2208:
+                self.changeStatusBarColor()
+            case 2436:
+                print("iPhone X")
+                //self.changeStatusBarColor()
+
+            default:
+                print("unknown")
+            }
         }
-        UIApplication.shared.statusBarStyle = .lightContent
         
         appdel.initLocation()
         appdel.checkDevicelanguage()
@@ -51,6 +62,14 @@ class StartingVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    func changeStatusBarColor()  {
+        let statusBar: UIView = UIApplication.shared.value(forKey: "statusBar") as! UIView
+        if statusBar.responds(to: #selector(setter: UIView.backgroundColor)) {
+            statusBar.backgroundColor = blueThemeColor
+        }
+        UIApplication.shared.statusBarStyle = .lightContent
+    }
     @IBAction func clickFindJob(_ sender: AnyObject) {
         
       let jobregisterVC = self.storyboard?.instantiateViewController(withIdentifier: "JobRegisterVC") as! JobRegisterVC

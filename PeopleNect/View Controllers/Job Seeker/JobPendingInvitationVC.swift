@@ -152,7 +152,7 @@ class JobPendingInvitationVC: UIViewController, UITableViewDataSource , UITableV
             
             if endDate == "0000-00-00 00:00:00"
             {
-                endDate = "No end Date"
+                endDate = Localization(string: "No end Date")
             }
             else
             {
@@ -176,31 +176,28 @@ class JobPendingInvitationVC: UIViewController, UITableViewDataSource , UITableV
 
 
             let perDay = tempDict.object(forKey: "payment_type") as! String
-
             if perDay == "1"
             {
-                expandcell.lblPerHour.text = "/hour"
+                expandcell.lblPerHour.text = "/" + "\(Localization(string: "hour"))"
             }
             else if perDay == "2"
             {
-                expandcell.lblPerHour.text = "/job"
+                expandcell.lblPerHour.text = "/" + "\(Localization(string: "job"))"
             }else{
-                expandcell.lblPerHour.text = "/month"
+                expandcell.lblPerHour.text = "/" + "\(Localization(string: "month"))"
             }
 
           
             let workingDays = tempDict.object(forKey: "workingDay") as! String
-
-
             if workingDays == "0"
             {
-                expandcell.lblOnlyDays.text = "Only business days"
+                expandcell.lblOnlyDays.text =  Localization(string: "Only business days")
             }
             else if perDay == "1"
             {
-                expandcell.lblOnlyDays.text = "Includes non Business days"
+                expandcell.lblOnlyDays.text = Localization(string: "Includes non business days")
+                
             }
-
             
             expandcell.btnApplyAlReadyInvited.tag = indexPath.row
             expandcell.btnApplyAlReadyInvited.addTarget(self, action: #selector(Accept(sender:)), for: .touchUpInside)
@@ -259,17 +256,15 @@ class JobPendingInvitationVC: UIViewController, UITableViewDataSource , UITableV
            // mainCell.lblPayment.text =  "$\(tempDict.object(forKey: "rate")!)"
 
             let perDay = tempDict.object(forKey: "payment_type") as! String
-
             if perDay == "1"
             {
-                mainCell.lblPerHour.text = "/hour"
+                mainCell.lblPerHour.text = "/" + "\(Localization(string: "hour"))"
             }
             else if perDay == "2"
             {
-                mainCell.lblPerHour.text = "/job"
-            }
-            else{
-                mainCell.lblPerHour.text = "/month"
+                mainCell.lblPerHour.text = "/" + "\(Localization(string: "job"))"
+            }else{
+                mainCell.lblPerHour.text = "/" + "\(Localization(string: "month"))"
             }
 
             mainCell.viewLeft.isHidden = false

@@ -10,6 +10,11 @@ import UIKit
 
 class JobOnGoingJobsInnerCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout  {
 
+    @IBOutlet weak var topBottomLblConstraints: NSLayoutConstraint!
+    @IBOutlet weak var empratingBtnWidthConstraints: NSLayoutConstraint!
+    @IBOutlet weak var empRatingBorderLbl: UILabel!
+    @IBOutlet weak var empRatingBtn: UIButton!
+    @IBOutlet weak var employerRatingLbl: UILabel!
     @IBOutlet var viewLeft: UIView!
     @IBOutlet var viewPayment: UIView!
     @IBOutlet var lblPayment: UILabel!

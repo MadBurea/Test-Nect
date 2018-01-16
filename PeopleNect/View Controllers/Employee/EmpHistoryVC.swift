@@ -87,6 +87,10 @@ class EmpHistoryVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         if indexPath.row == currentIndex
         {
             let expandcell = tableView.dequeueReusableCell(withIdentifier: "EmpHistoryInnerCell", for: indexPath) as! EmpHistoryInnerCell
+           
+            
+            expandcell.historyRateBtn.isHidden = false
+            expandcell.historyRateBtn.setTitle(Localization(string: "Rate Candidate"), for: .normal)
             
             expandcell.selectionStyle = .none
             previousIndex = currentIndex

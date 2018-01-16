@@ -77,15 +77,29 @@ class JobOnGoingJobsVC: UIViewController, UITableViewDataSource , UITableViewDel
         if indexPath.row == currentIndex
         {
             let expandcell = tableView.dequeueReusableCell(withIdentifier: "JobOnGoingJobsInnerCell", for: indexPath) as! JobOnGoingJobsInnerCell
-            
             expandcell.selectionStyle = .none
-            
             previousIndex = currentIndex
+            
+            expandcell.topBottomLblConstraints.constant = 0
+            expandcell.empRatingBorderLbl.isHidden = true
+            expandcell.empRatingBtn.isHidden = true
+            expandcell.employerRatingLbl.isHidden = true
+            
+
+            expandcell.empRatingBtn.setTitle(Localization(string: "Rate Employer"), for: .normal)
+            
+            if appdel.deviceLanguage == "pt-BR"
+            {
+                expandcell.empratingBtnWidthConstraints.constant = 160
+            }
+            else
+            {
+                expandcell.empratingBtnWidthConstraints.constant = 135
+            }
             
             
             var tempDict = NSDictionary()
             tempDict = arrOnGoingJobs.object(at: indexPath.row) as! NSDictionary
-            
             let categoryList = tempDict.object(forKey: "subCategory") as! String
             
             
@@ -150,7 +164,8 @@ class JobOnGoingJobsVC: UIViewController, UITableViewDataSource , UITableViewDel
             
             if endDate == "0000-00-00 00:00:00"
             {
-                endDate = "No end Date"
+                endDate = Localization(string: "No end Date")
+
             }
             else
             {
@@ -170,28 +185,28 @@ class JobOnGoingJobsVC: UIViewController, UITableViewDataSource , UITableViewDel
                 expandcell.lblFromEndDate.text =  "From \n \(self.convertDateFormaterUTC(UTCStartDate)) \n to \n \(endDate) \n | \n From \n \(self.UTCToLocal(date: tempDict.object(forKey: "startHour")! as! String))h \n to \n \(self.UTCToLocal(date:tempDict.object(forKey: "endTime")! as! String))h"
             }
 
+           
             let perDay = tempDict.object(forKey: "payment_type") as! String
-            
             if perDay == "1"
             {
-                expandcell.lblPerHour.text = "/hour"
+                expandcell.lblPerHour.text = "/" + "\(Localization(string: "hour"))"
             }
             else if perDay == "2"
             {
-                expandcell.lblPerHour.text = "/job"
+                expandcell.lblPerHour.text = "/" + "\(Localization(string: "job"))"
             }else{
-                expandcell.lblPerHour.text = "/month"
+                expandcell.lblPerHour.text = "/" + "\(Localization(string: "month"))"
             }
             
             let workingDays = tempDict.object(forKey: "workingDay") as! String
-            
             if workingDays == "0"
             {
-                expandcell.lblOnlyDays.text = "Only business days"
+                expandcell.lblOnlyDays.text =  Localization(string: "Only business days")
             }
             else if perDay == "1"
             {
-                expandcell.lblOnlyDays.text = "Includes non Business days"
+                expandcell.lblOnlyDays.text = Localization(string: "Includes non business days")
+                
             }
             
             expandcell.btnSeeDetails.tag = indexPath.row
@@ -202,6 +217,37 @@ class JobOnGoingJobsVC: UIViewController, UITableViewDataSource , UITableViewDel
             expandcell.contentView.layer.shadowOpacity = 0.5
             expandcell.contentView.layer.shadowOffset = CGSize(width: 0, height: 2)
             expandcell.contentView.layer.shadowRadius = 2.0
+            
+            
+            if let value = tempDict["is_rating_enable"]  {
+                let is_rating_enable = value  as? NSNumber
+                if tempDict.object(forKey: "is_rating_enable") is NSNull{
+                }else{
+                    if is_rating_enable == 1 {
+                        let rating = tempDict["rating"] as! NSString
+                        expandcell.topBottomLblConstraints.constant = 40
+                        if rating.length>0{
+                            let intValue = rating.integerValue
+                        if intValue == 0 {
+                            expandcell.empRatingBtn.tag = indexPath.row
+                            expandcell.empRatingBtn.accessibilityHint = "\(indexPath.section)"
+                            expandcell.empRatingBtn.addTarget(self, action: #selector(gotoRateEmployer(sender:)), for: .touchUpInside)
+                            expandcell.empRatingBtn.isHidden = false
+                            expandcell.empRatingBorderLbl.isHidden = false
+                        }else{
+                            expandcell.employerRatingLbl.isHidden = false
+                            expandcell.employerRatingLbl.text = "You have rated " + "\(rating)"
+                            }
+                        }else{
+                            expandcell.empRatingBtn.tag = indexPath.row
+                            expandcell.empRatingBtn.accessibilityHint = "\(indexPath.section)"
+                            expandcell.empRatingBtn.addTarget(self, action: #selector(gotoRateEmployer(sender:)), for: .touchUpInside)
+                            expandcell.empRatingBtn.isHidden = false
+                            expandcell.empRatingBorderLbl.isHidden = false
+                        }
+                    }
+                }
+            }
             
             return expandcell
             
@@ -246,17 +292,15 @@ class JobOnGoingJobsVC: UIViewController, UITableViewDataSource , UITableViewDel
            // mainCell.lblPayment.text =  "$\(tempDict.object(forKey: "rate")!)"
             
             let perDay = tempDict.object(forKey: "payment_type") as! String
-            
             if perDay == "1"
             {
-                mainCell.lblPerHour.text = "/hour"
+                mainCell.lblPerHour.text = "/" + "\(Localization(string: "hour"))"
             }
             else if perDay == "2"
             {
-                mainCell.lblPerHour.text = "/job"
-            }
-            else{
-                mainCell.lblPerHour.text = "/month"
+                mainCell.lblPerHour.text = "/" + "\(Localization(string: "job"))"
+            }else{
+                mainCell.lblPerHour.text = "/" + "\(Localization(string: "month"))"
             }
             
             mainCell.viewLeft.isHidden = false
@@ -307,7 +351,23 @@ class JobOnGoingJobsVC: UIViewController, UITableViewDataSource , UITableViewDel
         jobOnGoingDetailsVC.jobId = "\(tempDict.object(forKey: "jobId")!)"
         jobOnGoingDetailsVC.type = "\(tempDict.object(forKey: "type")!)"
         self.navigationController?.pushViewController(jobOnGoingDetailsVC, animated: true)
+    }
+    
+    @IBAction func gotoRateEmployer(sender :UIButton)
+    {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Employee", bundle:nil)
+        let rateEmp = storyBoard.instantiateViewController(withIdentifier: "RateEmployee") as! RateEmployee
         
+        var tempDict = NSDictionary()
+        tempDict = arrOnGoingJobs.object(at: sender.tag) as! NSDictionary
+        
+        rateEmp.userId = "\(appdel.loginUserDict.object(forKey: "userId")!)"
+        rateEmp.employerId = "\(tempDict.object(forKey: "employerId")!)"
+        rateEmp.jobId = "\(tempDict.object(forKey: "jobId")!)"
+        rateEmp.companyName = "\(tempDict.object(forKey: "companyName")!)"
+        rateEmp.jobTitle = "\(tempDict.object(forKey: "jobTitle")!)"
+        rateEmp.fromNotification = true
+        self.navigationController?.pushViewController(rateEmp, animated: true)
     }
     // MARK: - Slide Navigation Delegates -
     
@@ -362,7 +422,6 @@ class JobOnGoingJobsVC: UIViewController, UITableViewDataSource , UITableViewDel
             "language":appdel.userLanguage] as [String : Any]
         
         
-        print("paramgetApplicationJobsApi",param)
         
         
         global.callWebService(parameter: param as AnyObject!) { (Response:AnyObject, error:NSError?) in
@@ -377,7 +436,7 @@ class JobOnGoingJobsVC: UIViewController, UITableViewDataSource , UITableViewDel
                 SwiftLoader.hide()
                 let dictResponse = Response as! NSDictionary
                 
-                print("ResponseApplicationApi",dictResponse)
+                print("ResponseApplicationApi ongoing",dictResponse)
                 
                 let status = dictResponse.object(forKey: "status") as! Int
                 

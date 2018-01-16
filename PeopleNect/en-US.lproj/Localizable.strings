@@ -92,6 +92,10 @@
 "INVITE FOR A POSTED JOB"           = "INVITE FOR A POSTED JOB";
 "Hired"                             = "Hired";
 "No Show"                           = "No Show";
+"No end Date"                            = "No end Date";
+"Rate Employer"                          = "Rate Employer";
+"Rate Candidate"                    = "Rate Candidate";
+"Show hired job seeker"                    = "Show hired job seeker";
 
 // MARK:-  EmpInvitedPostedJobVC String
 
@@ -103,6 +107,8 @@
 "job"                              = "job";
 "day"                              = "day";
 "month"                            = "month";
+"Declined jobs"                    = "Declined jobs";
+"Other jobs"                            =  "Other jobs";
 
 // MARK:-  EmpJobSelectionProgressVC String
 "None"                            = "None";

@@ -73,7 +73,8 @@ class JobHistoryVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         self.tblJobHistory.backgroundColor = UIColor.clear
         
         
-        sectionNames = ["Job history", "Declined jobs", "Other jobs"];
+
+        sectionNames = [Localization(string: "Job history"), Localization(string: "Declined jobs"), Localization(string: "Other jobs")];
         
 
         self.tblJobHistory!.tableFooterView = UIView()
@@ -181,7 +182,20 @@ class JobHistoryVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         //header.backgroundColor = UIColor.green
 
         
-        let mainLbl = UILabel(frame: CGRect(x: 8, y: 10, width: 150, height: 20))
+        var mainLbl = UILabel()
+        if appdel.deviceLanguage == "pt-BR"
+        {
+            // findJobLbl.text = Localization(string: "FIND A JOB")
+            mainLbl = UILabel(frame: CGRect(x: 8, y: 10, width: 200, height: 20))
+        }
+        else
+        {
+            // findJobLbl.text =  "FIND \n A JOB"
+            mainLbl = UILabel(frame: CGRect(x: 8, y: 10, width: 150, height: 20))
+        }
+        
+        
+        
         mainLbl.textColor = UIColor.white
         mainLbl.text = self.sectionNames[section] as? String
         header.addSubview(mainLbl)
@@ -191,9 +205,20 @@ class JobHistoryVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         }
         let headerFrame = self.view.frame.size
         
-        let theImageView = UIImageView(frame: CGRect(x: headerFrame.width - 80, y: 10, width: 20, height: 20))
         
-        let thelblCount = UILabel(frame: CGRect(x: 120, y: 10, width: 50, height: 20))
+        var theImageView = UIImageView()
+        var thelblCount = UILabel()
+
+        if appdel.deviceLanguage == "pt-BR"
+        {
+            theImageView = UIImageView(frame: CGRect(x: headerFrame.width - 80, y: 10, width: 20, height: 20))
+            thelblCount = UILabel(frame: CGRect(x: 190, y: 10, width: 50, height: 20))
+        }
+        else
+        {
+             theImageView = UIImageView(frame: CGRect(x: headerFrame.width - 80, y: 10, width: 20, height: 20))
+            thelblCount = UILabel(frame: CGRect(x: 120, y: 10, width: 50, height: 20))
+        }
         
         thelblCount.backgroundColor = UIColor.clear
         theImageView.contentMode = .scaleAspectFit
@@ -260,14 +285,32 @@ class JobHistoryVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        
+        
+        
         if indexPath.row == currentIndex
         {
 
             let expandcell = tableView.dequeueReusableCell(withIdentifier: "JobHistoryInnerCell", for: indexPath) as! JobHistoryInnerCell
             
             expandcell.selectionStyle = .none
-            
+            expandcell.employerratingLbl.isHidden = true
+            expandcell.rateEmployerBtn.isHidden = true
+             expandcell.ratingBtnBorderLbl.isHidden = true
             previousIndex = currentIndex
+            
+            
+          expandcell.rateEmployerBtn.setTitle(Localization(string: "Rate Employer"), for: .normal)
+
+            if appdel.deviceLanguage == "pt-BR"
+            {
+               expandcell.RateBtnWidthConstraints.constant = 160
+
+            }
+            else
+            {
+                expandcell.RateBtnWidthConstraints.constant = 135
+            }
             
             var tempDict = NSDictionary()
             
@@ -295,7 +338,6 @@ class JobHistoryVC: UIViewController, UITableViewDelegate, UITableViewDataSource
                 
                 expandcell.borderBottomLbl.backgroundColor = ColorseperatorDarkRed
                 expandcell.borderTopLbl.backgroundColor = ColorseperatorDarkRed
-                
             }
             if indexPath.section == 2
             {
@@ -309,10 +351,6 @@ class JobHistoryVC: UIViewController, UITableViewDelegate, UITableViewDataSource
                 
                 let cancel  = "\(tempDict.object(forKey: "jobCanceledByEmployer")!)"
                 let tracking  = "\(tempDict.object(forKey: "jobTrackingStatus")!)"
-                
-                
-                print("cancel is",cancel)
-                print("tracking is",tracking)
                 
                 if cancel == "1" || tracking == "2" {
                     expandcell.viewLeft.backgroundColor = ColorJobRefused
@@ -340,7 +378,35 @@ class JobHistoryVC: UIViewController, UITableViewDelegate, UITableViewDataSource
                 }
             }
             
-
+            if let value = tempDict["is_rating_enable"]  {
+                let is_rating_enable = value  as? NSNumber
+                if tempDict.object(forKey: "is_rating_enable") is NSNull{
+                }else{
+                    if is_rating_enable == 1 {
+                        let rating = tempDict["rating"] as! NSString
+                        if rating.length>0{
+                            let intValue = rating.integerValue
+                            if intValue == 0 {
+                                expandcell.rateEmployerBtn.tag = indexPath.row
+                                expandcell.rateEmployerBtn.accessibilityHint = "\(indexPath.section)"
+                                expandcell.rateEmployerBtn.addTarget(self, action: #selector(gotoRateEmployer(sender:)), for: .touchUpInside)
+                                expandcell.rateEmployerBtn.isHidden = false
+                                expandcell.ratingBtnBorderLbl.isHidden = false
+                            }else{
+                                expandcell.employerratingLbl.isHidden = false
+                                expandcell.employerratingLbl.text = "You have rated " + "\(rating)"
+                            }
+                           
+                        }else{
+                            expandcell.rateEmployerBtn.tag = indexPath.row
+                            expandcell.rateEmployerBtn.accessibilityHint = "\(indexPath.section)"
+                            expandcell.rateEmployerBtn.addTarget(self, action: #selector(gotoRateEmployer(sender:)), for: .touchUpInside)
+                            expandcell.rateEmployerBtn.isHidden = false
+                            expandcell.ratingBtnBorderLbl.isHidden = false
+                        }
+                    }
+                }
+            }
             
             let categoryList = tempDict.object(forKey: "subCategory") as! String
             let categories = categoryList.characters.split{$0 == ","}.map(String.init)
@@ -384,12 +450,13 @@ class JobHistoryVC: UIViewController, UITableViewDelegate, UITableViewDataSource
             
             if endDate == "0000-00-00 00:00:00"
             {
-                endDate = "No end Date"
+                endDate = Localization(string: "No end Date")
+                // findJobLbl.text =
+
             }
             else
             {
                 endDate = tempDict.object(forKey: "endDate") as! String
-                
                 if  endTime == "" {
                     endTime = "00:00"
                 }
@@ -406,29 +473,27 @@ class JobHistoryVC: UIViewController, UITableViewDelegate, UITableViewDataSource
             
             
             let perDay = tempDict.object(forKey: "payment_type") as! String
-            
             if perDay == "1"
             {
-                expandcell.lblPerHour.text = "/hour"
+                expandcell.lblPerHour.text = "/" + "\(Localization(string: "hour"))"
             }
             else if perDay == "2"
             {
-                expandcell.lblPerHour.text = "/job"
+                expandcell.lblPerHour.text = "/" + "\(Localization(string: "job"))"
             }else{
-                expandcell.lblPerHour.text = "/month"
+                expandcell.lblPerHour.text = "/" + "\(Localization(string: "month"))"
             }
             
             
             let workingDays = tempDict.object(forKey: "workingDay") as! String
-            
-            
             if workingDays == "0"
             {
-                expandcell.lblOnlyDays.text = "Only business days"
+                expandcell.lblOnlyDays.text =  Localization(string: "Only business days")
             }
             else if perDay == "1"
             {
-                expandcell.lblOnlyDays.text = "Includes non business days"
+                expandcell.lblOnlyDays.text = Localization(string: "Includes non business days")
+
             }
             
             expandcell.contentView.layer.cornerRadius = 5.0
@@ -475,10 +540,7 @@ class JobHistoryVC: UIViewController, UITableViewDelegate, UITableViewDataSource
                 }else{
                     mainCell.viewLeft.backgroundColor = ColorJobAlRedyInvitedApplied
                     mainCell.lblBottomBorder.backgroundColor = ColorJobAlRedyInvitedApplied
-
                 }
-//
-                
                 
             }
             
@@ -509,15 +571,14 @@ class JobHistoryVC: UIViewController, UITableViewDelegate, UITableViewDataSource
             
             if perDay == "1"
             {
-                mainCell.lblPerHour.text = "/hour"
+                mainCell.lblPerHour.text = "/" + "\(Localization(string: "hour"))"
             }
             else if perDay == "2"
             {
-                mainCell.lblPerHour.text = "/job"
+                mainCell.lblPerHour.text = "/" + "\(Localization(string: "job"))"
             }else{
-                mainCell.lblPerHour.text = "/month"
+                mainCell.lblPerHour.text = "/" + "\(Localization(string: "month"))"
             }
-            
             
             mainCell.viewLeft.isHidden = false
 
@@ -626,6 +687,33 @@ class JobHistoryVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         }
     }
     
+    @IBAction func gotoRateEmployer(sender :UIButton)
+    {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Employee", bundle:nil)
+        let rateEmp = storyBoard.instantiateViewController(withIdentifier: "RateEmployee") as! RateEmployee
+        
+        var tempDict = NSDictionary()
+        if sender.accessibilityHint == "0"
+        {
+            tempDict = arrjobHistory.object(at: sender.tag) as! NSDictionary
+        }
+        else if sender.accessibilityHint == "1"
+        {
+            tempDict = arrDeclinedJobs.object(at: sender.tag) as! NSDictionary
+        }
+        else if sender.accessibilityHint == "2"
+        {
+            tempDict = arrOtherJobs.object(at: sender.tag) as! NSDictionary
+        }
+        
+        rateEmp.userId = "\(appdel.loginUserDict.object(forKey: "userId")!)"
+        rateEmp.employerId = "\(tempDict.object(forKey: "employerId")!)"
+        rateEmp.jobId = "\(tempDict.object(forKey: "jobId")!)"
+        rateEmp.companyName = "\(tempDict.object(forKey: "companyName")!)"
+        rateEmp.jobTitle = "\(tempDict.object(forKey: "jobTitle")!)"
+        rateEmp.fromNotification = true
+        self.navigationController?.pushViewController(rateEmp, animated: true)
+    }
     
     //MARK: - API call
     func jobHistoryAPI()
@@ -633,12 +721,6 @@ class JobHistoryVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         if  isForRefresh == false {
             SwiftLoader.show(animated: true)
         }
-        
-        /*
-         "userId": "77",
-         "language": "en",
-         "methodName": "jobHistory"
-         */
         
         
         let param =  [WebServicesClass.METHOD_NAME: "jobHistory",
@@ -659,10 +741,9 @@ class JobHistoryVC: UIViewController, UITableViewDelegate, UITableViewDataSource
             else
             {
                 let dictResponse = Response as! NSDictionary
-                
-                
                 let status = dictResponse.object(forKey: "status") as! Int
                 
+                print("dictResponse of job history is",dictResponse)
                 
                 if status == 1
                 {
@@ -726,7 +807,6 @@ class JobHistoryVC: UIViewController, UITableViewDelegate, UITableViewDataSource
                         }
                         
                         self.sectionItems = [self.arrjobHistory,self.arrDeclinedJobs,self.arrOtherJobs];
-                        
 
                         self.tblJobHistory.reloadData()
                         
@@ -734,13 +814,7 @@ class JobHistoryVC: UIViewController, UITableViewDelegate, UITableViewDataSource
                 }
                 else
                 {
-                    
-                   // self.alertMessage.strMessage = "\(Response.object(forKey: "message")!)"
-                    
-                   // self.alertMessage.modalPresentationStyle = .overCurrentContext
-                    
-                   // self.present(self.alertMessage, animated: false, completion: nil)
-                    
+                  
                 }
                 
                 

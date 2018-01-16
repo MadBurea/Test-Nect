@@ -55,18 +55,24 @@
 "Settings"                               = "Settings";
 "Invite friends"                         = "Invite friends";
 "Exit"                                   = "Exit";
+"Declined jobs"                         = "Declined jobs";
+"Other jobs"                            =  "Other jobs";
 
 "years of experience"                    = "years of experience";
 
+"No end Date"                            = "No end Date";
 "Search jobs"                              = "Search jobs";
 "Pending Invitations"                      = "Pending Invitations";
 "Pending Applications"                     = "Pending Applications";
 "On going jobs"                            = "On going jobs";
 "Availability"                             = "Availability";
-"Not Available"                             = "Not Available";
-"Log out"                                = "Log out";
-
+"Not Available"                            = "Not Available";
+"Log out"                                  = "Log out";
 "Enter experience here"                    = "Enter experience here";
+"Rate Employer"                            = "Rate Employer";
+"Rate Candidate"                           = "Rate Candidate";
+"Show hired job seeker"                    = "Show hired job seeker";
+
 "Enter rate here"                    = "Enter rate here";
 "Great! Now You have 60 days to post your jobs for free" = "Great! Now You have 60 days to post your jobs for free";
 "Inviting professionals has a cost of" = "Inviting professionals has a cost of";

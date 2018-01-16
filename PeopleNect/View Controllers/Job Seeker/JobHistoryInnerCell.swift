@@ -10,11 +10,15 @@ import UIKit
 
 class JobHistoryInnerCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
+    @IBOutlet weak var ratingBtnBorderLbl: UILabel!
+    @IBOutlet weak var employerratingLbl: UILabel!
+    @IBOutlet weak var rateEmployerBtn: UIButton!
     @IBOutlet var viewLeft: UIView!
     @IBOutlet var viewPayment: UIView!
     @IBOutlet var lblPayment: UILabel!
     @IBOutlet var lblPerHour: UILabel!
     
+    @IBOutlet weak var RateBtnWidthConstraints: NSLayoutConstraint!
     @IBOutlet weak var borderBottomLbl: UILabel!
     @IBOutlet weak var borderTopLbl: UILabel!
     @IBOutlet var viewFromEndDate: UIView!
@@ -46,6 +50,7 @@ class JobHistoryInnerCell: UITableViewCell, UICollectionViewDelegate, UICollecti
     
     var arrSubCatData = NSMutableArray()
     
+    let lblBorder = UILabel()
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -57,7 +62,6 @@ class JobHistoryInnerCell: UITableViewCell, UICollectionViewDelegate, UICollecti
         objJobHistoryCollectionView.delegate = self
         
         arrSubCatData = ["1","2"]
-
     }
     
     // MARK: - UICollectionView Delegate and DataSource Methods

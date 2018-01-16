@@ -10,6 +10,17 @@ import UIKit
 
 class EmpHistoryInnerCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
+    @IBOutlet weak var historyRateBtnHeightConstraints: NSLayoutConstraint!
+    @IBOutlet weak var historyUserTableHeight: NSLayoutConstraint!
+    @IBOutlet weak var historyUserTableView: UITableView!
+    @IBOutlet weak var historyRateBtn: UIButton!
+    @IBOutlet weak var showHiredHeightConstraints: NSLayoutConstraint!
+    @IBOutlet weak var rateCandidateWidthConstraints: NSLayoutConstraint!
+    @IBOutlet weak var rateCandidateBorderLbl: UILabel!
+    @IBOutlet weak var RateCandidateBtn: UIButton!
+    @IBOutlet weak var showHiredBtn: UIButton!
+    @IBOutlet weak var userRateTableheightConstraints: NSLayoutConstraint!
+    @IBOutlet weak var userRateTableView: UITableView!
     @IBOutlet var viewLeft: UIView!
     @IBOutlet var viewPayment: UIView!
     @IBOutlet var lblPayment: UILabel!
@@ -51,11 +62,34 @@ class EmpHistoryInnerCell: UITableViewCell, UICollectionViewDelegate, UICollecti
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        
       //  btnSeeDetails.isHidden = true
+        
+        let topVC = UIApplication.topViewController()
+        if topVC is EmpJobProgressVC {
+            self.rateCandidateBorderLbl.isHidden = true
+            self.RateCandidateBtn.isHidden = true
+            self.showHiredBtn.isHidden = true
+            self.userRateTableheightConstraints.constant = 0
+            self.userRateTableView.isHidden = true
+        }
+        if topVC is EmpHistoryVC {
+            self.rateCandidateBorderLbl.isHidden = true
+            self.RateCandidateBtn.isHidden = true
+            self.showHiredBtn.isHidden = true
+            self.userRateTableheightConstraints.constant = 0
+            self.userRateTableheightConstraints.constant = 0
+            self.historyUserTableView.isHidden = true
+            self.historyRateBtn.isHidden = true
+        }
+        
+        
+        
         self.lblProfessionalHired.isHidden = true
         objJobHistoryCollectionView.dataSource = self
         objJobHistoryCollectionView.delegate = self
+        
+     
+       
         
         self.lblLineA.backgroundColor = blueThemeColor
         self.lblLineB.backgroundColor = blueThemeColor
