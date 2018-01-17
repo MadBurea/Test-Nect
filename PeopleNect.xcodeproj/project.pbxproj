@@ -127,6 +127,8 @@
 		342EE894200498C800672F73 /* Employee.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 342EE896200498C800672F73 /* Employee.storyboard */; };
 		342FE1D020072D4E00F316DF /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342FE1CF20072D4E00F316DF /* SplashScreen.swift */; };
 		342FE1D120073E3D00F316DF /* JobSeeker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 342FE1D320073E3D00F316DF /* JobSeeker.storyboard */; };
+		34345EF0200F209E00D36434 /* EmpHistoryRatingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34345EEE200F209E00D36434 /* EmpHistoryRatingCell.swift */; };
+		34345EF1200F209E00D36434 /* EmpHistoryRatingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34345EEF200F209E00D36434 /* EmpHistoryRatingCell.xib */; };
 		345ECA121F625C3700F9715B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345ECA111F625C3700F9715B /* AppDelegate.swift */; };
 		345ECA171F625C7B00F9715B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345ECA161F625C7B00F9715B /* ViewController.swift */; };
 		34B06D451FF4BF9500BB43CA /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 34B06D441FF4BF9500BB43CA /* GoogleMaps.bundle */; };
@@ -401,6 +403,8 @@
 		342FE1D220073E3D00F316DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/JobSeeker.storyboard; sourceTree = "<group>"; };
 		342FE1D520073E5B00F316DF /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/JobSeeker.strings"; sourceTree = "<group>"; };
 		342FE1D720073E6C00F316DF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/JobSeeker.strings; sourceTree = "<group>"; };
+		34345EEE200F209E00D36434 /* EmpHistoryRatingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmpHistoryRatingCell.swift; sourceTree = "<group>"; };
+		34345EEF200F209E00D36434 /* EmpHistoryRatingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmpHistoryRatingCell.xib; sourceTree = "<group>"; };
 		345ECA111F625C3700F9715B /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		345ECA161F625C7B00F9715B /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		34B06D441FF4BF9500BB43CA /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = GoogleMaps.framework/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
@@ -605,6 +609,8 @@
 				4FA3AFFC1FA85D9D006BC92E /* EmpNoBalance.swift */,
 				4FA3AFFD1FA85D9D006BC92E /* EmpPostJob.swift */,
 				34F583881FAC4655007E312B /* EmpJobSeekerStatusVC.swift */,
+				34345EEE200F209E00D36434 /* EmpHistoryRatingCell.swift */,
+				34345EEF200F209E00D36434 /* EmpHistoryRatingCell.xib */,
 			);
 			path = Employee;
 			sourceTree = "<group>";
@@ -1164,6 +1170,7 @@
 				34B06D591FF4D0EB00BB43CA /* Localizable.strings in Resources */,
 				184DE6E21F755A9200920501 /* slider-metal-handle@2x.png in Resources */,
 				4F920DE81F7A293D00B3A5BC /* menu-button@2x.png in Resources */,
+				34345EF1200F209E00D36434 /* EmpHistoryRatingCell.xib in Resources */,
 				188261831F72A60100B33E0E /* index_pt.html in Resources */,
 				18D18AC81F7228F7003CDEE2 /* EmpDashboardMainCell.xib in Resources */,
 				18599BD11F6277A0007246FF /* Montserrat-Light.otf in Resources */,
@@ -1405,6 +1412,7 @@
 				18E22DF11F66976C001F0546 /* MLPAutoCompleteTextField.m in Sources */,
 				4FC062061F83AD6A00403465 /* LeftMenuJobSeeker.swift in Sources */,
 				4FA156311F8DE33D00343046 /* EmpJobProgressVC.swift in Sources */,
+				34345EF0200F209E00D36434 /* EmpHistoryRatingCell.swift in Sources */,
 				18DCC28E1F6A992B0021EB8F /* GMUFeature.m in Sources */,
 				4F920DE31F7A293D00B3A5BC /* SlideNavigationContorllerAnimatorScale.m in Sources */,
 				4FA0F80E1F8FA16500B2FC03 /* AlamofireJsonToObjects.swift in Sources */,

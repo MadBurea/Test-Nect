@@ -8,8 +8,9 @@
 
 import UIKit
 
-class EmpHistoryInnerCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class EmpHistoryInnerCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITableViewDelegate, UITableViewDataSource{
     
+    @IBOutlet weak var userTableTopConstraints: NSLayoutConstraint!
     @IBOutlet weak var historyRateBtnHeightConstraints: NSLayoutConstraint!
     @IBOutlet weak var historyUserTableHeight: NSLayoutConstraint!
     @IBOutlet weak var historyUserTableView: UITableView!
@@ -59,10 +60,13 @@ class EmpHistoryInnerCell: UITableViewCell, UICollectionViewDelegate, UICollecti
     @IBOutlet var lblProfessionalHired: UILabel!
     var arrSubCatData = NSMutableArray()
     
+    var jobSeekerRating = NSArray()
+
     override func awakeFromNib() {
         super.awakeFromNib()
         
-      //  btnSeeDetails.isHidden = true
+       let notification = Notification.Name("reloadRatingTable")
+        NotificationCenter.default.addObserver(self,selector: #selector(self.reloadRatingTable),name:notification,object:nil)
         
         let topVC = UIApplication.topViewController()
         if topVC is EmpJobProgressVC {
@@ -72,37 +76,47 @@ class EmpHistoryInnerCell: UITableViewCell, UICollectionViewDelegate, UICollecti
             self.userRateTableheightConstraints.constant = 0
             self.userRateTableView.isHidden = true
         }
-        if topVC is EmpHistoryVC {
-            self.rateCandidateBorderLbl.isHidden = true
-            self.RateCandidateBtn.isHidden = true
-            self.showHiredBtn.isHidden = true
+       else if topVC is EmpHistoryVC {
             self.userRateTableheightConstraints.constant = 0
-            self.userRateTableheightConstraints.constant = 0
-            self.historyUserTableView.isHidden = true
             self.historyRateBtn.isHidden = true
         }
+        else{
+            self.lblProfessionalHired.isHidden = true
+        }
         
+        self.userRateTableView.register(UINib(nibName: "EmpHistoryRatingCell", bundle: Bundle.main), forCellReuseIdentifier: "EmpHistoryRatingCell")
         
-        
-        self.lblProfessionalHired.isHidden = true
+        self.userRateTableView.rowHeight = UITableViewAutomaticDimension
+        self.userRateTableView.estimatedRowHeight = 20
+
+        self.userRateTableView.dataSource = self
+        self.userRateTableView.delegate = self
         objJobHistoryCollectionView.dataSource = self
         objJobHistoryCollectionView.delegate = self
-        
-     
        
-        
         self.lblLineA.backgroundColor = blueThemeColor
         self.lblLineB.backgroundColor = blueThemeColor
         arrSubCatData = ["1","2"]
-
-        // Initialization code
     }
+    // MARK: - Notification for reload Table
+    func reloadRatingTable()  {
+        
+        if jobSeekerRating.count > 0 {
+            self.userRateTableView.reloadData()
+            self.userRateTableheightConstraints.constant = 1000
+            let indexPath = NSIndexPath(row: jobSeekerRating.count-1, section: 0)
+            self.userRateTableView.scrollToRow(at: indexPath as IndexPath, at: .bottom, animated: false)
+            let startIndexPath = NSIndexPath(row: 0, section: 0)
+            self.userRateTableView.scrollToRow(at: startIndexPath as IndexPath, at: .top, animated: false)
+        }
+    }
+    
+
+    
     // MARK: - UICollectionView Delegate and DataSource Methods
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
         return arrSubCatData.count
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -137,5 +151,36 @@ class EmpHistoryInnerCell: UITableViewCell, UICollectionViewDelegate, UICollecti
         
     }
     
+    // MARK: - UITableView Delegate and DataSource Methods
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return jobSeekerRating.count
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let ratingCell = tableView.dequeueReusableCell(withIdentifier: "EmpHistoryRatingCell", for: indexPath)
+            as! EmpHistoryRatingCell
+        
+        var tempDict = NSDictionary()
+        tempDict = jobSeekerRating.object(at: indexPath.row) as! NSDictionary
+        
+        if let name = tempDict["JobseekerName"] {
+            ratingCell.userNameLbl.text = name as? String
+        }else{
+            ratingCell.userNameLbl.text = tempDict["name"] as? String
+        }
+        let rating = tempDict["rating"] as! NSString
+        
+        if rating.length > 0 {
+            let floatValue = rating.doubleValue
+            ratingCell.userRatingView.rating = floatValue
+        }else{
+            ratingCell.userRatingView.rating = 0
+        }
+       
+        if indexPath.row == jobSeekerRating.count - 1 {
+            self.userRateTableheightConstraints.constant = self.userRateTableView.contentSize.height
+        }
+        
+        return ratingCell
+    }
 }
 

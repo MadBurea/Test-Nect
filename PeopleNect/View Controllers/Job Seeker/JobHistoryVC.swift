@@ -363,20 +363,17 @@ class JobHistoryVC: UIViewController, UITableViewDelegate, UITableViewDataSource
                     expandcell.borderTopLbl.backgroundColor = ColorseperatorDarkRed
                     
                 }else{
-                    
-                    
                     expandcell.borderBottomLbl.backgroundColor = ColorseperatorDarkYellow
                     expandcell.borderTopLbl.backgroundColor = ColorseperatorDarkYellow
-
                     expandcell.viewLeft.backgroundColor = ColorJobAlRedyInvitedApplied
                     expandcell.lblBottomBorder.backgroundColor = ColorJobAlRedyInvitedApplied
                     expandcell.viewPayment.backgroundColor = ColorJobAlRedyInvitedApplied
                     expandcell.viewOnlyDays.backgroundColor = ColorJobAlRedyInvitedApplied
                     expandcell.viewFromEndDate.backgroundColor = ColorJobAlRedyInvitedApplied
-                    
-                    
                 }
             }
+            
+            
             
             if let value = tempDict["is_rating_enable"]  {
                 let is_rating_enable = value  as? NSNumber

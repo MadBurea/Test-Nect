@@ -43,26 +43,28 @@ class ReviewJobNotifierVC: UIViewController {
     var ratingText = ""
     var rating:Double = 0
     var profileImage = UIImage()
-    
-   
+    var fromRatingScreen = false
+    var JobseekerDataFromRating = NSArray()
+
     var global = WebServicesClass()
 
     // MARK: - VIEW LIFE CYCLE -
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         let corner = (UIScreen.main.bounds.size.height / 667) * 70
         imgProfrilePic.layer.cornerRadius = corner/2
         imgProfrilePic.layer.masksToBounds = true
 
-        
-        self.job_id = "\(userDic["job_id"]!)"
-        self.employerId = "\(appdel.loginUserDict.object(forKey: "employerId")!)"
-        
-//        self.job_id = "422"
-//        self.employerId = "65"
-        
+        if fromRatingScreen {
+            // from Employer history and job in Progress this block will executed
+            
+        }else{
+            // this block will be executed when notification arrive
+            self.job_id = "\(userDic["job_id"]!)"
+            self.employerId = "\(appdel.loginUserDict.object(forKey: "employerId")!)"
+        }
+
         if  fromSetPrice {
             lblTotalHours.text = totalHour
             lblAmountPerHour.text =  "$" + "\(totalPrice)"
@@ -90,7 +92,10 @@ class ReviewJobNotifierVC: UIViewController {
 
     @IBAction func JobInProgressEvl(_ sender: Any) {
         // got to home Page
-        _ = self.navigationController?.popViewController(animated: true)
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Employee", bundle:nil)
+        let empdashboardVC = storyBoard.instantiateViewController(withIdentifier: "EmpDash") as! EmpDash
+        self.navigationController?.pushViewController(empdashboardVC, animated: true)
+        
     }
 
     @IBAction func AdjustFinishAction(_ sender: Any) {
@@ -102,6 +107,7 @@ class ReviewJobNotifierVC: UIViewController {
         setPriceVC.profileImage = imgProfrilePic.image!
         
         setPriceVC.jobTitle = self.lblJob.text!
+        setPriceVC.fromRatingScreen = fromRatingScreen
 
         setPriceVC.userName = self.lblFullName.text!
         setPriceVC.ratingStatus = self.lblRateReview.text!
@@ -146,12 +152,20 @@ class ReviewJobNotifierVC: UIViewController {
                     let placeimage = UIImage(named: placeHolderImage)
                     self.imgProfrilePic.sd_setImage(with: url, placeholderImage: placeimage)
                     
+                
+                    
                     if assignedData.object(forKey: "rating")! is NSNumber {
                         self.viewRating.rating = Double((assignedData.object(forKey: "rating")!) as! NSNumber)
                     }else{
                         print("it's String")
-                        self.viewRating.rating = Double((assignedData.object(forKey: "rating")!) as! String)!
-                        self.viewRating.text = "(\(assignedData.object(forKey: "rating")!))"
+                        let rating = assignedData.object(forKey: "rating") as! NSString
+                        if rating.length > 0{
+                            self.viewRating.rating = Double((assignedData.object(forKey: "rating")!) as! String)!
+                            self.viewRating.text = "(\(assignedData.object(forKey: "rating")!))"
+                        }else{
+                            self.viewRating.rating = 0
+                            self.viewRating.text = "0"
+                        }
                     }
                 }
 
@@ -207,8 +221,9 @@ class ReviewJobNotifierVC: UIViewController {
                 
                 if status == 1
                 {
-                    _ = self.navigationController?.popViewController(animated: true)
-
+                    let storyBoard : UIStoryboard = UIStoryboard(name: "Employee", bundle:nil)
+                    let empdashboardVC = storyBoard.instantiateViewController(withIdentifier: "EmpDash") as! EmpDash
+                    self.navigationController?.pushViewController(empdashboardVC, animated: true)
                 }
                
             }

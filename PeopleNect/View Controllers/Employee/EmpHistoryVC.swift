@@ -88,15 +88,43 @@ class EmpHistoryVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         {
             let expandcell = tableView.dequeueReusableCell(withIdentifier: "EmpHistoryInnerCell", for: indexPath) as! EmpHistoryInnerCell
            
+            expandcell.historyRateBtn.isHidden = true
+            expandcell.userRateTableView.isHidden = true
+            expandcell.userRateTableheightConstraints.constant = 40
             
-            expandcell.historyRateBtn.isHidden = false
             expandcell.historyRateBtn.setTitle(Localization(string: "Rate Candidate"), for: .normal)
-            
             expandcell.selectionStyle = .none
             previousIndex = currentIndex
             var tempDict = NSDictionary()
             tempDict = arrResponseJobs.object(at: indexPath.row) as! NSDictionary
             let categoryList = tempDict.object(forKey: "subCategory") as! String
+            
+            //  For rating
+            let jobseekerRating =  tempDict.object(forKey: "jobseekerRating") as! NSArray
+            var showRating = false
+            if jobseekerRating.count > 0 {
+                expandcell.jobSeekerRating = jobseekerRating
+                expandcell.userRateTableView.isHidden = false
+            NotificationCenter.default.post(name:Notification.Name(rawValue:"reloadRatingTable"),object:nil)
+                for i in jobseekerRating {
+                    let userRating = i as! NSDictionary
+                    let rating = userRating["rating"] as! NSString
+                    if rating.length > 0 {
+                        let intValue = rating.integerValue
+                        if intValue == 0 {
+                            showRating = true
+                        }
+                    }else{
+                        showRating = true
+                    }
+                }
+            }
+            if showRating {
+                expandcell.historyRateBtnHeightConstraints.constant = 40
+                expandcell.historyRateBtn.isHidden = false
+                expandcell.historyRateBtn.tag = indexPath.row
+                expandcell.historyRateBtn.addTarget(self, action: #selector(self.gotToJobseekerRating), for: .touchUpInside)
+            }
             
             
             let categories = categoryList.characters.split{$0 == ","}.map(String.init)
@@ -115,11 +143,9 @@ class EmpHistoryVC: UIViewController, UITableViewDelegate, UITableViewDataSource
             }
 
             expandcell.objJobHistoryCollectionView.reloadData()
-            
             expandcell.lblJob.text = (self.arrResponseJobs.object(at: indexPath.row) as! NSDictionary).value(forKey: "jobTitle") as! String?
             expandcell.lblMiddelCompany.text =  "\(tempDict.object(forKey: "companyName")!)"
             expandcell.lblMiddelTrial.text = "\(tempDict.object(forKey: "description")!)"
-            
             
             
 
@@ -333,7 +359,19 @@ class EmpHistoryVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         SlideNavigationController.sharedInstance().leftMenuSelected(sender)
 
     }
-    
+    func gotToJobseekerRating(sender:UIButton)  {
+        var tempDict = NSDictionary()
+        let loginDict = UserDefaults.standard.object(forKey: kEmpLoginDict) as! NSDictionary
+        tempDict = arrResponseJobs.object(at: sender.tag) as! NSDictionary
+        let jobseekerRating =  tempDict.object(forKey: "jobseekerRating") as! NSArray
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Employee", bundle:nil)
+        let reviewJob = storyBoard.instantiateViewController(withIdentifier: "ReviewJobNotifierVC") as! ReviewJobNotifierVC
+        reviewJob.employerId = "\(loginDict.object(forKey: "employerId")!)"
+        reviewJob.job_id = "\(tempDict.object(forKey: "jobId")!)"
+        reviewJob.JobseekerDataFromRating = jobseekerRating
+        reviewJob.fromRatingScreen = true
+        self.navigationController?.pushViewController(reviewJob, animated: true)
+    }
     // MARK: - Slide Navigation Delegates -
     
     func slideNavigationControllerShouldDisplayLeftMenu() -> Bool {
@@ -366,10 +404,6 @@ class EmpHistoryVC: UIViewController, UITableViewDelegate, UITableViewDataSource
                       "employerId":"\(loginDict.object(forKey: "employerId")!)",
                         "language":appdel.userLanguage] as [String : Any]
         
-        
-        print("paramclosedJobsApi",param)
-        
-        
         global.callWebService(parameter: param as AnyObject!) { (Response:AnyObject, error:NSError?) in
             SwiftLoader.hide()
             
@@ -381,8 +415,9 @@ class EmpHistoryVC: UIViewController, UITableViewDelegate, UITableViewDataSource
             {
                 let dictResponse = Response as! NSDictionary
                 
-                let status = dictResponse.object(forKey: "status") as! Int
+                print("Employer History is",dictResponse)
                 
+                let status = dictResponse.object(forKey: "status") as! Int
                 SwiftLoader.hide()
                 
                 if status == 1

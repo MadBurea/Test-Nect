@@ -87,11 +87,20 @@ class EmpJobProgressVC: UIViewController, UITableViewDelegate, UITableViewDataSo
             let expandcell = tableView.dequeueReusableCell(withIdentifier: "EmpHistoryInnerCell", for: indexPath) as! EmpHistoryInnerCell
 
             expandcell.showHiredBtn.isHidden = false
-            expandcell.rateCandidateBorderLbl.isHidden = false
-            expandcell.RateCandidateBtn.isHidden = false
+            expandcell.rateCandidateBorderLbl.isHidden = true
+            expandcell.RateCandidateBtn.isHidden = true
+            expandcell.userRateTableView.isHidden = true
+            expandcell.userRateTableheightConstraints.constant = 0
+            
+            expandcell.userTableTopConstraints.constant = 100
+
             expandcell.RateCandidateBtn.setTitle(Localization(string: "Rate Candidate"), for: .normal)
             expandcell.showHiredBtn.setTitle(Localization(string: "Show hired job seeker"), for: .normal)
             expandcell.rateCandidateWidthConstraints.constant = 125
+            expandcell.showHiredBtn.tag = indexPath.row
+            expandcell.showHiredBtn.addTarget(self, action: #selector(self.showHiredJobseeker), for: .touchUpInside)
+            expandcell.RateCandidateBtn.tag = indexPath.row
+            expandcell.RateCandidateBtn.addTarget(self, action: #selector(self.rateCandidateAction), for: .touchUpInside)
             
             expandcell.selectionStyle = .none
             previousIndex = currentIndex
@@ -101,47 +110,75 @@ class EmpJobProgressVC: UIViewController, UITableViewDelegate, UITableViewDataSo
             expandcell.viewOnlyDays.backgroundColor = ColorJobSelected
             expandcell.viewFromEndDate.backgroundColor = ColorJobSelected
             expandcell.lblBottomBorder.backgroundColor = ColorJobSelected
-            
             expandcell.lblLineB.backgroundColor = ColorseperatorDarkGreen
             expandcell.lblLineA.backgroundColor = ColorseperatorDarkGreen
             
             
             
             var tempDict = NSDictionary()
-            
             tempDict = arrResponseJobs.object(at: indexPath.row) as! NSDictionary
-            
             let categoryList = tempDict.object(forKey: "subCategory") as! String
             
             
-            let categories = categoryList.characters.split{$0 == ","}.map(String.init)
             
+            //  For rating
+            let jobseekerRating =  tempDict.object(forKey: "JobSeekerData") as! NSArray
+            var showRating = false
+            if jobseekerRating.count > 0 {
+                expandcell.jobSeekerRating = jobseekerRating
+                expandcell.userRateTableView.isHidden = false
+            NotificationCenter.default.post(name:Notification.Name(rawValue:"reloadRatingTable"),object:nil)
+                for i in jobseekerRating {
+                    let userRating = i as! NSDictionary
+                    let rating = userRating["rating"] as! NSString
+                    if rating.length > 0 {
+                        let intValue = rating.integerValue
+                        if intValue == 0 {
+                            showRating = true
+                        }
+                    }else{
+                        showRating = true
+                    }
+                }
+            }
+            
+            if let value = tempDict["is_rating_enable"]  {
+                let is_rating_enable = value  as? NSNumber
+                if tempDict.object(forKey: "is_rating_enable") is NSNull{
+                }else{
+                    if is_rating_enable == 1 {
+                        showRating = true
+                    }
+                }
+            }
+                        
+          
+            if showRating {
+                expandcell.rateCandidateBorderLbl.isHidden = false
+                expandcell.RateCandidateBtn.isHidden = false
+               // expandcell.userTableTopConstraints.constant = 5
+            }
+            
+            
+            let categories = categoryList.characters.split{$0 == ","}.map(String.init)
             expandcell.arrSubCatData.removeAllObjects()
             
             if categories.count > 0
             {
-                
                 for i in 0...categories.count-1
                 {
                     if i <= 2
                     {
                         expandcell.arrSubCatData.add(categories[i])
                         
-                        print("mainCell.subCategoryArray",expandcell.arrSubCatData)
-                        
                     }
                 }
             }
             
             expandcell.objJobHistoryCollectionView.reloadData()
-            
             expandcell.lblJob.text = (self.arrResponseJobs.object(at: indexPath.row) as! NSDictionary).value(forKey: "jobTitle") as! String?
-            
-            
             expandcell.lblFromEndDate.text =  "\(tempDict.object(forKey: "date")!)"
-            
             expandcell.lblMiddelCompany.text =  "\(tempDict.object(forKey: "companyName")!)"
-            
             expandcell.lblMiddelTrial.text = "\(tempDict.object(forKey: "description")!)"
             
             
@@ -151,9 +188,6 @@ class EmpJobProgressVC: UIViewController, UITableViewDelegate, UITableViewDataSo
             var balanceRS = Int()
             balanceRS = balance.integerValue
             expandcell.lblPayment.text = "$\(balanceRS.withCommas())" + ".00"
-            
-            
-            
             expandcell.lblRatings.text =  "\(tempDict.object(forKey: "rating")!)"
             
             
@@ -351,7 +385,12 @@ class EmpJobProgressVC: UIViewController, UITableViewDelegate, UITableViewDataSo
         self.jobInProgressAPI()
         
     }
-
+    func showHiredJobseeker(sender:UIButton)  {
+        
+    }
+    func rateCandidateAction(sender:UIButton)  {
+        
+    }
     
     // MARK: - Slide Navigation Delegates -
     
@@ -396,7 +435,6 @@ class EmpJobProgressVC: UIViewController, UITableViewDelegate, UITableViewDataSo
             {
                 let dictResponse = Response as! NSDictionary
                 
-                print("jobInProgress response is",dictResponse)
 
                 let status = dictResponse.object(forKey: "status") as! Int
                 
@@ -430,6 +468,8 @@ class EmpJobProgressVC: UIViewController, UITableViewDelegate, UITableViewDataSo
                             self.lblNoHistory.isHidden = false
                         }
                         
+                    print("jobInProgress response is",self.arrResponseJobs)
+
                         self.tblJobHistory.delegate = self
                         self.tblJobHistory.dataSource = self
                         self.tblJobHistory.reloadData()

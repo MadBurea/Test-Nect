@@ -32,7 +32,7 @@ class ReviewSetPriceNotifyVC: UIViewController,UITextFieldDelegate {
     let _acceptableCharacters = "0123456789."
 
     var profileImage = UIImage()
-
+    var fromRatingScreen = false
     // MARK: - VIEW LIFE CYCLE -
 
     override func viewDidLoad() {
@@ -76,12 +76,12 @@ class ReviewSetPriceNotifyVC: UIViewController,UITextFieldDelegate {
             reviewJobVC.totalHour = totalHourTF.text!
             reviewJobVC.totalPrice = totalPriceTF.text!
             reviewJobVC.fromSetPrice = true
-            
             reviewJobVC.userName = userName
             reviewJobVC.ratingStatus = ratingStatus
             reviewJobVC.rating = rating
             reviewJobVC.profileImage = profileImage
             reviewJobVC.jobTitle = jobTitle
+            reviewJobVC.fromRatingScreen = fromRatingScreen
             reviewJobVC.ratingText = ratingText
             self.navigationController?.pushViewController(reviewJobVC, animated: true)
         }

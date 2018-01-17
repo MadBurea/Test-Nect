@@ -248,9 +248,7 @@ class JobOnGoingJobsVC: UIViewController, UITableViewDataSource , UITableViewDel
                     }
                 }
             }
-            
             return expandcell
-            
         }
         else
         {
