@@ -40,8 +40,10 @@ class EmpJobSeekerStatusVC: UIViewController, UICollectionViewDelegate,UICollect
 
     // MARK: - OUTLETS -
     @IBOutlet weak var objScrollView: UIScrollView!
+    @IBOutlet weak var noShowBtn: UIButton!
     @IBOutlet weak var availableTableView: UITableView!
     @IBOutlet weak var postedJobBorderLbl: UILabel!
+    @IBOutlet weak var noShowBtnWidthConstraints: NSLayoutConstraint!
     @IBOutlet weak var topTitleLbl: UILabel!
     @IBOutlet weak var chatImg: UIImageView!
     @IBOutlet weak var chatLbl: UILabel!
@@ -85,6 +87,7 @@ class EmpJobSeekerStatusVC: UIViewController, UICollectionViewDelegate,UICollect
     var arrDaysName = NSMutableArray()
     var arrDaysFull = NSMutableArray()
     var showprofessionalDecline = false
+    var fromJobRating = false
 
     // MARK: - View LifeCycle -
     override func viewDidLoad() {
@@ -92,12 +95,33 @@ class EmpJobSeekerStatusVC: UIViewController, UICollectionViewDelegate,UICollect
         // Do any additional setup after loading the view.
         hideNavigationBar()
         // Week Name
-        arrDaysName = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"]
+        arrDaysName = [ Localization(string: "Sun"),Localization(string: "Mon"),Localization(string: "Tue"),Localization(string: "Wed"),Localization(string: "Thu"),Localization(string: "Fri"),Localization(string: "Sat")]
+        
         
         //  for Profile UIImageView
-        let corner = (UIScreen.main.bounds.size.height / 676) * 90
-        userProfileImg.layer.cornerRadius = corner/2
+       
+        self.noShowBtn.isHidden = true
+        self.noShowBtn.setTitle(Localization(string: "NO SHOW"), for: .normal)
+        if appdel.deviceLanguage == "pt-BR"
+        {
+            self.noShowBtnWidthConstraints.constant = 160
+        }
+        else
+        {
+            self.noShowBtnWidthConstraints.constant = 120
+        }
+        
+        if  appdel.iPhone_X{
+            userProfileImg.layer.cornerRadius = 45
+        }else{
+            let corner = (UIScreen.main.bounds.size.height / 667) * 90
+            userProfileImg.layer.cornerRadius = corner/2
+        }
         userProfileImg.layer.masksToBounds = true
+
+       
+    
+
         
         // flowlayout
         let layout = KTCenterFlowLayout()
@@ -142,6 +166,15 @@ class EmpJobSeekerStatusVC: UIViewController, UICollectionViewDelegate,UICollect
         // hide the availability View
         self.availabilityView.isHidden = true
         
+        // Coming from Job in progress
+        if fromJobRating{
+            topTitleLbl.isHidden = true
+            mapImg.isHidden = true
+            mapLbl.isHidden = true
+            userStatusLbl.isHidden = true
+            userStatusImg.isHidden = true
+        }
+        
         self.setUpView()
         
         // alert
@@ -167,6 +200,8 @@ class EmpJobSeekerStatusVC: UIViewController, UICollectionViewDelegate,UICollect
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        userProfileImg.layer.cornerRadius = userProfileImg.frame.size.height/2
+        
         hideNavigationBar()
     }
     override func didReceiveMemoryWarning() {
@@ -174,13 +209,14 @@ class EmpJobSeekerStatusVC: UIViewController, UICollectionViewDelegate,UICollect
         // Dispose of any resources that can be recreated.
     }
     
+    
     // MARK: - UIACTION -
     @IBAction func chatClicked(_ sender: Any) {
         if chatWithUser {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Employee", bundle:nil)
         let ChatScene = storyBoard.instantiateViewController(withIdentifier: "CustomChatScene") as! CustomChatScene
-        var userDataDic = NSDictionary()
-           
+            var userDataDic = NSDictionary()
+            userDataDic = ArrayUserListing.object(at: currentIndex) as! NSDictionary
             ChatScene.userName = "\(userDataDic.object(forKey: "name")!)"
             if let val = userDataDic["image_url"] {
                 if userDataDic.object(forKey: "image_url") is NSNull{}
@@ -202,9 +238,15 @@ class EmpJobSeekerStatusVC: UIViewController, UICollectionViewDelegate,UICollect
 
         userDataDic = ArrayUserListing.object(at: currentIndex) as! NSDictionary
         ChatScene.userID = "\(appdel.loginUserDict.object(forKey: "employerId")!)"
-        ChatScene.receiver_id =  "\(userDataDic.object(forKey: "employeeId")!)"
         ChatScene.userType =  "0"
         ChatScene.receiver_Name = "\(userDataDic.object(forKey: "name")!)"
+            
+            if fromDash  || fromJobRating {
+                ChatScene.receiver_id =  "\(userDataDic.object(forKey: "employeeId")!)"
+            }else{
+                ChatScene.receiver_id =  "\(userDataDic.object(forKey: "userId")!)"
+            }
+            
         self.navigationController?.pushViewController(ChatScene, animated: true)
         }
     }
@@ -230,7 +272,6 @@ class EmpJobSeekerStatusVC: UIViewController, UICollectionViewDelegate,UICollect
     @IBAction func clickInviteNewJob(_ sender: UIButton) {
         
         if sender.title(for: .normal) == "Professional decline" {
-        
             
             let alertController = UIAlertController(title: "", message: Localization(string: "Are You sure, you want to decline this Professional"), preferredStyle: UIAlertControllerStyle.alert)
             
@@ -277,6 +318,23 @@ class EmpJobSeekerStatusVC: UIViewController, UICollectionViewDelegate,UICollect
         self.availabilityView.isHidden = true
     }
 
+    @IBAction func noShowClicked(_ sender: Any) {
+        
+//        "You have successfully set Jobseeker as No Show for your job" = "You have successfully set Jobseeker as No Show for your job";
+//        "Set this Professional as No Show?" = "Set this Professional as No Show?";
+        
+        let alertController = UIAlertController(title: "", message: Localization(string: "Set this Professional as No Show?"), preferredStyle: UIAlertControllerStyle.alert)
+        
+        let cancelAction = UIAlertAction(title: Localization(string: "NO"), style: UIAlertActionStyle.cancel) { (result : UIAlertAction) -> Void in
+        }
+        let okAction = UIAlertAction(title: "YES", style: UIAlertActionStyle.default) { (result : UIAlertAction) -> Void in
+            self.noShowApi()
+        }
+        alertController.addAction(cancelAction)
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
     @IBAction func ClickOnMap(_ sender: Any) {
         if fromDash {
             // Nothing to do with
@@ -422,6 +480,7 @@ class EmpJobSeekerStatusVC: UIViewController, UICollectionViewDelegate,UICollect
     func setUpView()  {
         
         print("ArrayUserListing is for profile pi",ArrayUserListing)
+        self.noShowBtn.isHidden = true
 
         var userDataDic = NSDictionary()
         userDataDic = ArrayUserListing.object(at: currentIndex) as! NSDictionary
@@ -500,7 +559,11 @@ class EmpJobSeekerStatusVC: UIViewController, UICollectionViewDelegate,UICollect
             let image1String = NSAttributedString(attachment: image1Attachment)
             
             fullString.append(image1String)
-            fullString.append(NSAttributedString(string: " \(userDataDic.object(forKey: "distance")!) km "))
+            if let userName = userDataDic["distance"] {
+                fullString.append(NSAttributedString(string: " \(userDataDic.object(forKey: "distance")!) km "))
+            }else{
+                fullString.append(NSAttributedString(string: "0.00 km "))
+            }
             
             userExpLbl.attributedText = fullString
         }else{
@@ -513,8 +576,11 @@ class EmpJobSeekerStatusVC: UIViewController, UICollectionViewDelegate,UICollect
             let image1String = NSAttributedString(attachment: image1Attachment)
             
             fullString.append(image1String)
+            if let userName = userDataDic["distance"] {
             fullString.append(NSAttributedString(string: " \(userDataDic.object(forKey: "distance")!) km "))
-            
+            }else{
+                fullString.append(NSAttributedString(string: "0.00 km "))
+            }
             userExpLbl.attributedText = fullString
             
         }
@@ -568,6 +634,7 @@ class EmpJobSeekerStatusVC: UIViewController, UICollectionViewDelegate,UICollect
             }
            clockImg.image = image
         }
+       
         // From Selection View Availability
         if userDataDic["availability"] != nil
         {
@@ -587,12 +654,53 @@ class EmpJobSeekerStatusVC: UIViewController, UICollectionViewDelegate,UICollect
             clockImg.image = image
         }
         
-        // chatting With User if already Worked then chat allowed
+        // From Job in Progress Rating view
+        if userDataDic["availabilityStatus"] != nil
+        {
+            var image = UIImage(named: "busy_clock")
+            let availabilityId = "\(userDataDic.object(forKey: "availabilityStatus")!)"
+            
+            if availabilityId == "0"
+            {
+                image = UIImage(named: "busy_clock")
+                self.freeLbl.text = "Busy"
+            }
+            else
+            {
+                image = UIImage(named: "clock_new_")
+                self.freeLbl.text = "Free"
+            }
+            clockImg.image = image
+        }
         
+        // chatting With User if already Worked then chat allowed
         if userDataDic["alreadyWorked"] != nil
         {
             var image = UIImage(named: "chatGray")
             let alreadyWorked = "\(userDataDic.object(forKey: "alreadyWorked")!)"
+            
+            if alreadyWorked == "1"
+            {
+                image = UIImage(named: "chat_blue")
+                chatWithUser = true
+                chatLbl.textColor = freeLbl.textColor
+
+            }
+            else
+            {
+                image = UIImage(named: "chatGray")
+                chatWithUser = false
+                chatLbl.textColor = UIColor.lightGray
+            }
+            chatImg.image = image
+        }
+        
+        // From Rating Job in Progress Chat
+        
+        if userDataDic["jobSeekerChatAvailable"] != nil
+        {
+            var image = UIImage(named: "chatGray")
+            let alreadyWorked = "\(userDataDic.object(forKey: "jobSeekerChatAvailable")!)"
             
             if alreadyWorked == "1"
             {
@@ -608,6 +716,25 @@ class EmpJobSeekerStatusVC: UIViewController, UICollectionViewDelegate,UICollect
             }
             chatImg.image = image
         }
+        
+        
+        // No Show from rating
+        
+        if userDataDic["is_noshow"] != nil
+        {
+            let is_noshow = "\(userDataDic.object(forKey: "is_noshow")!)"
+            self.noShowBtn.isHidden = false
+           
+            if is_noshow == "1"
+            {
+               
+            }
+            else
+            {
+                
+            }
+        }
+        
         
         //  User Subcategory
         let categoryList = userDataDic.object(forKey: "subCategoryName") as! String
@@ -703,6 +830,9 @@ class EmpJobSeekerStatusVC: UIViewController, UICollectionViewDelegate,UICollect
         }
         
         
+        
+        
+        
         let sorted =  (myTestArray as NSArray).sorted(by: { (($0 as! NSDictionary).object(forKey: "day") as! NSString).floatValue < (($1 as! NSDictionary).object(forKey: "day") as! NSString).floatValue })
         myTestArray.removeAllObjects()
         myTestArray.addObjects(from: sorted)
@@ -751,7 +881,7 @@ class EmpJobSeekerStatusVC: UIViewController, UICollectionViewDelegate,UICollect
         
         var param = [String : Any]()
         
-        if fromDash {
+        if fromDash  || fromJobRating {
              param =  [WebServicesClass.METHOD_NAME: "getUserAvailability",
                           "userId":"\(tempDict.object(forKey: "employeeId")!)"]as [String : Any]
 
@@ -760,7 +890,6 @@ class EmpJobSeekerStatusVC: UIViewController, UICollectionViewDelegate,UICollect
                           "userId":"\(tempDict.object(forKey: "userId")!)"]as [String : Any]
 
         }
-        
         
         global.callWebService(parameter: param as AnyObject!) { (Response:AnyObject, error:NSError?) in
             
@@ -831,6 +960,46 @@ class EmpJobSeekerStatusVC: UIViewController, UICollectionViewDelegate,UICollect
                     self.alertMessage.modalPresentationStyle = .overCurrentContext
                     self.present(self.alertMessage, animated: false, completion: nil)
                 }
+            }
+        }
+    }
+    
+    
+    // MARK: - No Show  -
+    func noShowApi()
+    {
+        var tempDict = NSDictionary()
+        tempDict = ArrayUserListing.object(at: currentIndex) as! NSDictionary
+        SwiftLoader.show(animated: true)
+        
+        let loginDict = UserDefaults.standard.object(forKey: kEmpLoginDict) as! NSDictionary
+        let param =  [WebServicesClass.METHOD_NAME: "noshowEmployee",
+                      "employerId":"\(loginDict.object(forKey: "employerId")!)",
+            "language":appdel.userLanguage,"userId":"\(tempDict.object(forKey: "userId")!)","jobId":self.jobID,"type":"\(tempDict.object(forKey: "usertype")!)"] as [String : Any]
+        
+        
+        global.callWebService(parameter: param as AnyObject!) { (Response:AnyObject, error:NSError?) in
+            
+            if error != nil
+            {
+                SwiftLoader.hide()
+            }
+            else
+            {
+                SwiftLoader.hide()
+                let dictResponse = Response as! NSDictionary
+                let status = dictResponse.object(forKey: "status") as! Int
+                print("dictResponse noshowEmployee ",dictResponse)
+                    if appdel.deviceLanguage == "pt-BR"
+                    {
+                        self.alertMessage.strMessage = "\(dictResponse.value(forKey: "pt_message")!)"
+                    }
+                    else
+                    {
+                        self.alertMessage.strMessage = "\(dictResponse.value(forKey: "message")!)"
+                    }
+                    self.alertMessage.modalPresentationStyle = .overCurrentContext
+                    self.present(self.alertMessage, animated: false, completion: nil)
             }
         }
     }

@@ -106,7 +106,7 @@
                   moduleName = "PeopleNect"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/baps/Desktop/Election/peopleNect21:17_GIT/PeopleNect/View%20Controllers/Job%20Seeker/JobSignUpVC.swift"
-                  timestampString = "537864816.5399261"
+                  timestampString = "537965602.270278"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "1086"
@@ -121,7 +121,7 @@
                   moduleName = "PeopleNect"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/baps/Desktop/Election/peopleNect21:17_GIT/PeopleNect/View%20Controllers/Job%20Seeker/JobSignUpVC.swift"
-                  timestampString = "537864816.543998"
+                  timestampString = "537965602.273343"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "1086"
@@ -154,39 +154,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PeopleNect/Helper Class/WebServicesClass.swift"
-            timestampString = "537362266.911263"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
-            landmarkName = "callWebService(parameter:completionHandler:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PeopleNect/Helper Class/WebServicesClass.swift"
-            timestampString = "537362266.911329"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
-            landmarkName = "callWebService(parameter:completionHandler:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PeopleNect/Helper Class/WebServicesClass.swift"
-            timestampString = "537362266.911386"
+            timestampString = "537956679.2518719"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "52"
@@ -234,7 +202,7 @@
                   moduleName = "PeopleNect"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/baps/Desktop/Election/peopleNect21:17_GIT/PeopleNect/View%20Controllers/Job%20Seeker/JobSignUpVC.swift"
-                  timestampString = "537864816.584778"
+                  timestampString = "537965602.296735"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "1047"
@@ -249,7 +217,7 @@
                   moduleName = "PeopleNect"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/baps/Desktop/Election/peopleNect21:17_GIT/PeopleNect/View%20Controllers/Job%20Seeker/JobSignUpVC.swift"
-                  timestampString = "537864816.587212"
+                  timestampString = "537965602.299872"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "1049"
@@ -346,13 +314,61 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PeopleNect/AppDelegate/AppDelegate.swift"
-            timestampString = "537883688.43032"
+            timestampString = "537970039.1776429"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "705"
-            endingLineNumber = "705"
+            startingLineNumber = "667"
+            endingLineNumber = "667"
             landmarkName = "tokenRefreshNotification(notification:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PeopleNect/View Controllers/Employee/EmpJobProgressVC.swift"
+            timestampString = "538404219.3905801"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "400"
+            endingLineNumber = "400"
+            landmarkName = "showHiredJobseeker(sender:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PeopleNect.EmpJobProgressVC.showHiredJobseeker(sender: __ObjC.UIButton) -&gt; ()"
+                  moduleName = "PeopleNect"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/baps/Desktop/Election/peopleNect21:17_GIT/PeopleNect/View%20Controllers/Employee/EmpJobProgressVC.swift"
+                  timestampString = "537965602.348341"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "401"
+                  endingLineNumber = "401"
+                  offsetFromSymbolStart = "927">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PeopleNect.EmpJobProgressVC.showHiredJobseeker(sender: __ObjC.UIButton) -&gt; ()"
+                  moduleName = "PeopleNect"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/baps/Desktop/Election/peopleNect21:17_GIT/PeopleNect/View%20Controllers/Employee/EmpJobProgressVC.swift"
+                  timestampString = "537965602.351697"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "401"
+                  endingLineNumber = "401"
+                  offsetFromSymbolStart = "1922">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

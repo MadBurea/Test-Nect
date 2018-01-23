@@ -27,9 +27,16 @@ class EmpLoginVC: UIViewController,UITextFieldDelegate {
         
         super.viewDidLoad()
         
-       txtEmail.text = "nirav.parmar@inexture.in"
-        txtPassword.text = "123456"
+       
         
+        if TARGET_IPHONE_SIMULATOR == 1 {
+            //simulator
+            txtEmail.text = "nirav.parmar@inexture.in"
+            txtPassword.text = "123456"
+        } else {
+            //device
+            
+        }
         
         alertMessage = self.storyboard?.instantiateViewController(withIdentifier: "AlertMessageVC") as! AlertMessageVC
 

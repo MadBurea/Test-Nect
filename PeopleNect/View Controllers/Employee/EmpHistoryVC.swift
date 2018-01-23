@@ -91,6 +91,8 @@ class EmpHistoryVC: UIViewController, UITableViewDelegate, UITableViewDataSource
             expandcell.historyRateBtn.isHidden = true
             expandcell.userRateTableView.isHidden = true
             expandcell.userRateTableheightConstraints.constant = 40
+            expandcell.userTableTopConstraints.constant = 45
+            expandcell.historyRateBtnHeightConstraints.constant = 0
             
             expandcell.historyRateBtn.setTitle(Localization(string: "Rate Candidate"), for: .normal)
             expandcell.selectionStyle = .none
@@ -105,6 +107,7 @@ class EmpHistoryVC: UIViewController, UITableViewDelegate, UITableViewDataSource
             if jobseekerRating.count > 0 {
                 expandcell.jobSeekerRating = jobseekerRating
                 expandcell.userRateTableView.isHidden = false
+                expandcell.userTableTopConstraints.constant = 55
             NotificationCenter.default.post(name:Notification.Name(rawValue:"reloadRatingTable"),object:nil)
                 for i in jobseekerRating {
                     let userRating = i as! NSDictionary
@@ -121,6 +124,7 @@ class EmpHistoryVC: UIViewController, UITableViewDelegate, UITableViewDataSource
             }
             if showRating {
                 expandcell.historyRateBtnHeightConstraints.constant = 40
+                expandcell.userTableTopConstraints.constant = 5
                 expandcell.historyRateBtn.isHidden = false
                 expandcell.historyRateBtn.tag = indexPath.row
                 expandcell.historyRateBtn.addTarget(self, action: #selector(self.gotToJobseekerRating), for: .touchUpInside)

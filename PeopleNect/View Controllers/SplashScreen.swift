@@ -89,7 +89,10 @@ class SplashScreen: UIViewController {
                 print("checkUserActive resposne is",dictResponse)
                 
                 let status = dictResponse.object(forKey: "status") as! Int
-                let is_loggedIn = dictResponse.object(forKey: "is_loggedIn") as! String
+                //let is_loggedIn = dictResponse.object(forKey: "is_loggedIn") as! Int
+                let is_loggedIn = "\(dictResponse.object(forKey: "is_loggedIn")!)"
+
+                print("checkUserActive is_loggedIn is",is_loggedIn)
 
                 if is_loggedIn == "0" && status == 1 {
                     if je_Type_Id == "J" {

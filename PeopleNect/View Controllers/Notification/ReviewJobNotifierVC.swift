@@ -84,6 +84,10 @@ class ReviewJobNotifierVC: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        imgProfrilePic.layer.cornerRadius =  imgProfrilePic.frame.size.height/2
+    }
     
     // MARK: - UIACTION -
     @IBAction func EvaluateFinish(_ sender: Any) {

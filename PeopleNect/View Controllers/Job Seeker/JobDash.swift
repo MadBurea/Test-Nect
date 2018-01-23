@@ -710,18 +710,9 @@ class JobDash: UIViewController,GMUClusterManagerDelegate, GMSMapViewDelegate,CL
                 
                
                 let StartTime = "\(tempDict.object(forKey: "start_hour")!)"
-                print("date StartTime expand is",StartTime)
-
                 let Time = "\(tempDict.object(forKey: "start_date")!)" + ":" + "\(StartTime)"
-                
-                print("date Time expand is",Time)
-                
                 let newDate = convertDateFormater(Time)
-                
-                print("date newDate expand is",newDate)
-
                 expandcell.lblDate.text = newDate
-                
                 expandcell.lblCompany.text =  "\(tempDict.object(forKey: "companyName")!)"
                 
                 
@@ -751,12 +742,7 @@ class JobDash: UIViewController,GMUClusterManagerDelegate, GMSMapViewDelegate,CL
                 
                 
                 var endTime = "\(tempDict.object(forKey: "end_hour")!)"
-                
-                print("date endTime expand is",endTime)
-
                 var endDate = tempDict.object(forKey: "end_date") as! String
-                
-                print("date endDate expand is",endDate)
 
                 if endDate == "0000-00-00"
                 {
@@ -765,9 +751,6 @@ class JobDash: UIViewController,GMUClusterManagerDelegate, GMSMapViewDelegate,CL
                 else
                 {
                     let Time = "\(tempDict.object(forKey: "end_date")!)" + ":" + "\(tempDict.object(forKey: "end_hour")!)"
-                    
-                    print("date Time expand is",Time)
-
                     endDate = convertDateFormater(Time)
                 }
 
@@ -945,9 +928,6 @@ class JobDash: UIViewController,GMUClusterManagerDelegate, GMSMapViewDelegate,CL
                 let start = myCurrentDict.object(forKey: "start_time") as! String
                 let end = myCurrentDict.object(forKey: "end_time") as! String
                 
-                print("start time is",start)
-                print("end time is",end)
-
                 if start.isEmpty && end.isEmpty
                 {
                     //cell.btnCancel.tag = indexPath.row + 100
@@ -1090,8 +1070,6 @@ class JobDash: UIViewController,GMUClusterManagerDelegate, GMSMapViewDelegate,CL
         
         let dict = arrJobInProgress.object(at: indexPath.row) as!NSDictionary
         
-        
-        print("dict is",dict)
 
         let perDay = dict.object(forKey: "PaymentType") as! String
         
@@ -1646,8 +1624,6 @@ class JobDash: UIViewController,GMUClusterManagerDelegate, GMSMapViewDelegate,CL
         
         
         
-        print("param of saveUserAvailability is",param)
-        
         global.callWebService(parameter: param as AnyObject!) { (Response:AnyObject, error:NSError?) in
             
             
@@ -1659,8 +1635,6 @@ class JobDash: UIViewController,GMUClusterManagerDelegate, GMSMapViewDelegate,CL
                 //  SwiftLoader.hide()
                 let dictResponse = Response as! NSDictionary
                 
-                
-                print("response of saveUserAvailability is",dictResponse)
 
                 let status = dictResponse.object(forKey: "status") as! Int
                 
@@ -2542,7 +2516,6 @@ class JobDash: UIViewController,GMUClusterManagerDelegate, GMSMapViewDelegate,CL
         isForRefresh = true
         if self.isForRefresh {
             
-            print("Called")
             if selectedTab == 1 {
                 self.jobsNearByAllSpecialityApi()
             }

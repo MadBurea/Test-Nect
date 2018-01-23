@@ -63,23 +63,14 @@ class JobHistoryVC: UIViewController, UITableViewDelegate, UITableViewDataSource
 
         self.tblJobHistory.delegate = self
         self.tblJobHistory.dataSource = self
-        
         self.tblJobHistory.rowHeight = UITableViewAutomaticDimension
         self.tblJobHistory.estimatedRowHeight = 80
-        
-        
-        self.jobHistoryAPI()
-        
         self.tblJobHistory.backgroundColor = UIColor.clear
-        
-        
 
         sectionNames = [Localization(string: "Job history"), Localization(string: "Declined jobs"), Localization(string: "Other jobs")];
         
 
         self.tblJobHistory!.tableFooterView = UIView()
-     
-        
         self.tblJobHistory.backgroundColor = UIColor.white
         
         viewTop.layer.shadowColor = UIColor.gray.cgColor
@@ -94,9 +85,14 @@ class JobHistoryVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = true
+        self.jobHistoryAPI()
     }
-    
-    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.arrjobHistory.removeAllObjects()
+        self.arrOtherJobs.removeAllObjects()
+        self.arrDeclinedJobs.removeAllObjects()
+    }
     //MARK:- Refresh Controller methods -
     
     func refreshContoller()  {
@@ -132,15 +128,7 @@ class JobHistoryVC: UIViewController, UITableViewDelegate, UITableViewDataSource
             tblJobHistory.backgroundView = nil
             return sectionNames.count
         } else {
-            
 
-//            let messageLabel = UILabel(frame: CGRect(x: 0, y: 0, width: view.bounds.size.width, height: view.bounds.size.height))
-//            messageLabel.text = "No Data"
-//            messageLabel.numberOfLines = 0;
-//            messageLabel.textAlignment = .center;
-//            messageLabel.font = UIFont(name: "HelveticaNeue", size: 20.0)!
-//            messageLabel.sizeToFit()
-//            self.tblJobHistory.backgroundView = messageLabel;
         }
         return 0
     }
@@ -166,12 +154,7 @@ class JobHistoryVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-       // recast your view as a UITableViewHeaderFooterView
-        
-        //let header: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
-        
-        
-        
+    
         let header = UIView()
 
         tableView.backgroundColor = UIColor.clear
@@ -179,7 +162,6 @@ class JobHistoryVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         header.backgroundColor = UIColor.clear
         
         header.backgroundColor = UIColor(red:155.0/255.0, green:155.0/255.0 ,blue:155.0/255.0 , alpha:1.00)
-        //header.backgroundColor = UIColor.green
 
         
         var mainLbl = UILabel()
@@ -804,7 +786,6 @@ class JobHistoryVC: UIViewController, UITableViewDelegate, UITableViewDataSource
                         }
                         
                         self.sectionItems = [self.arrjobHistory,self.arrDeclinedJobs,self.arrOtherJobs];
-
                         self.tblJobHistory.reloadData()
                         
                     }

@@ -72,6 +72,9 @@
 "Rate Employer"                            = "Rate Employer";
 "Rate Candidate"                           = "Rate Candidate";
 "Show hired job seeker"                    = "Show hired job seeker";
+"NO SHOW"                          = "NO SHOW";
+"You have successfully set Jobseeker as No Show for your job" = "You have successfully set Jobseeker as No Show for your job";
+"Set this Professional as No Show?" = "Set this Professional as No Show?";
 
 "Enter rate here"                    = "Enter rate here";
 "Great! Now You have 60 days to post your jobs for free" = "Great! Now You have 60 days to post your jobs for free";
@@ -97,7 +100,8 @@
 "INVITE FOR A POSTED JOB"           = "INVITE FOR A POSTED JOB";
 "Hired"                             = "Hired";
 "No Show"                           = "No Show";
-
+"YES"                              = "YES";
+"NO"                              = "NO";
 // MARK:-  EmpInvitedPostedJobVC String
 
 "Invite"                           = "Invite";

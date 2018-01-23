@@ -91,8 +91,13 @@ class EmpJobProgressVC: UIViewController, UITableViewDelegate, UITableViewDataSo
             expandcell.RateCandidateBtn.isHidden = true
             expandcell.userRateTableView.isHidden = true
             expandcell.userRateTableheightConstraints.constant = 0
+            expandcell.ProfessionalLblHeightConstant.constant = 0
+
+            expandcell.professionalLblBottomConstraints.constant = 8
+            expandcell.userTableTopConstraints.constant = 35
+
             
-            expandcell.userTableTopConstraints.constant = 100
+            
 
             expandcell.RateCandidateBtn.setTitle(Localization(string: "Rate Candidate"), for: .normal)
             expandcell.showHiredBtn.setTitle(Localization(string: "Show hired job seeker"), for: .normal)
@@ -156,7 +161,9 @@ class EmpJobProgressVC: UIViewController, UITableViewDelegate, UITableViewDataSo
             if showRating {
                 expandcell.rateCandidateBorderLbl.isHidden = false
                 expandcell.RateCandidateBtn.isHidden = false
-               // expandcell.userTableTopConstraints.constant = 5
+               expandcell.ProfessionalLblHeightConstant.constant = 20
+                expandcell.professionalLblBottomConstraints.constant = 35
+                expandcell.userTableTopConstraints.constant = 8
             }
             
             
@@ -386,7 +393,16 @@ class EmpJobProgressVC: UIViewController, UITableViewDelegate, UITableViewDataSo
         
     }
     func showHiredJobseeker(sender:UIButton)  {
+        var tempDict = NSDictionary()
+        tempDict = arrResponseJobs.object(at: sender.tag) as! NSDictionary
+        let jobseekerRating =  tempDict.object(forKey: "JobSeekerData") as! NSArray
         
+        let jobDetail = self.storyboard?.instantiateViewController(withIdentifier: "EmpJobSeekerStatusVC") as! EmpJobSeekerStatusVC
+        jobDetail.ArrayUserListing = jobseekerRating.mutableCopy() as! NSMutableArray
+        jobDetail.currentIndex = 0
+        jobDetail.fromJobRating = true
+        jobDetail.fromDash = false
+        self.navigationController?.pushViewController(jobDetail, animated: true)
     }
     func rateCandidateAction(sender:UIButton)  {
         

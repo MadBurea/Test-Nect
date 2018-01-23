@@ -10,6 +10,8 @@ import UIKit
 
 class EmpHistoryInnerCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITableViewDelegate, UITableViewDataSource{
     
+    @IBOutlet weak var professionalLblBottomConstraints: NSLayoutConstraint!
+    @IBOutlet weak var ProfessionalLblHeightConstant: NSLayoutConstraint!
     @IBOutlet weak var userTableTopConstraints: NSLayoutConstraint!
     @IBOutlet weak var historyRateBtnHeightConstraints: NSLayoutConstraint!
     @IBOutlet weak var historyUserTableHeight: NSLayoutConstraint!

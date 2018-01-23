@@ -27,6 +27,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate,CLLocat
     var config : SwiftLoader.Config = SwiftLoader.Config()
     var locationManager:CLLocationManager!
     var isFromRegister = false
+    var iPhone_X = false
+
     var deviceToken = ""
     var fcmToken = ""
     var userLanguage = ""
@@ -156,57 +158,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate,CLLocat
         
         
         
-        /*
+       
         
-        /* Check to which kind user */
-        if UserDefaults.standard.object(forKey: kUserLoginDict) != nil
-        {
-            appdel.loginUserDict = UserDefaults.standard.object(forKey: kUserLoginDict) as! NSDictionary
-            
-            
-            // Job Seeker Dashboard To Move
-            let storyBoard : UIStoryboard = UIStoryboard(name: "JobSeeker", bundle:nil)
-            
-            let empdashboardVC = storyBoard.instantiateViewController(withIdentifier: "JobDash") as! JobDash
-            
-            let navigationController = SlideNavigationController(rootViewController: empdashboardVC)
-            
-            let leftview = storyBoard.instantiateViewController(withIdentifier:"LeftMenuJobSeeker") as! LeftMenuJobSeeker
-            
-            SlideNavigationController.sharedInstance().leftMenu = leftview
-            
-            SlideNavigationController.sharedInstance().menuRevealAnimationDuration = 0.50
-            navigationController.navigationBar.isHidden = true
-        
-            self.window!.rootViewController = navigationController
-            
+        if UIDevice().userInterfaceIdiom == .phone {
+            switch UIScreen.main.nativeBounds.height {
+            case 2436:
+                print("iPhone X")
+                appdel.iPhone_X = true
+            default:
+                print("unknown")
+            }
         }
-        else if UserDefaults.standard.object(forKey: kEmpLoginDict) != nil
-        {
-            // Employee Dashboard To Move
-            
-            appdel.loginUserDict = UserDefaults.standard.object(forKey: kEmpLoginDict) as! NSDictionary
-            
-            let storyBoard : UIStoryboard = UIStoryboard(name: "Employee", bundle:nil)
-            
-            let empdashboardVC = storyBoard.instantiateViewController(withIdentifier: "EmpDash") as! EmpDash
-            
-            
-            let navigationController = SlideNavigationController(rootViewController: empdashboardVC)
-            
-            
-            let leftview = storyBoard.instantiateViewController(withIdentifier:"LeftMenuViewController") as! LeftMenuViewController
-            
-            SlideNavigationController.sharedInstance().leftMenu = leftview
-            
-            SlideNavigationController.sharedInstance().menuRevealAnimationDuration = 0.50
-            
-            navigationController.navigationBar.isHidden = true
-         
-            
-            self.window!.rootViewController = navigationController
-        }
-        */
         
         self.checkDevicelanguage()
         

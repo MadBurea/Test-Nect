@@ -60,6 +60,10 @@ class ReviewSetPriceNotifyVC: UIViewController,UITextFieldDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        userProfileImg.layer.cornerRadius =  userProfileImg.frame.size.height/2
+    }
     
     // MARK: - UIACTION -
     @IBAction func ClickOnAdjust(_ sender: Any) {

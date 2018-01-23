@@ -47,9 +47,7 @@ class EmpSignUpVC: UIViewController,UITextFieldDelegate {
         self.setupView()
         
         alertMessage = self.storyboard?.instantiateViewController(withIdentifier: "AlertMessageVC") as! AlertMessageVC
-        
         termsOfUse = self.storyboard?.instantiateViewController(withIdentifier: "TermsUseVC") as! TermsUseVC
-
         
      //   txtName.becomeFirstResponder()
        
@@ -72,10 +70,7 @@ class EmpSignUpVC: UIViewController,UITextFieldDelegate {
 //        self.present(termsuse, animated: false, completion: nil)
         
         self.termsOfUse.modalPresentationStyle = .overCurrentContext
-        
         self.present(self.termsOfUse, animated: false, completion: nil)
-        
-        
     }
     
     

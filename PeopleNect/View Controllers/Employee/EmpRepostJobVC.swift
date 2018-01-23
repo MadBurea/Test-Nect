@@ -32,8 +32,15 @@ class EmpRepostJobVC: UIViewController ,UITableViewDelegate,UITableViewDataSourc
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let corner = (UIScreen.main.bounds.size.height / 568) * 90
-        profileView.layer.cornerRadius = corner/2
+      
+        profileView.layer.masksToBounds = true
+        
+        if  appdel.iPhone_X{
+            profileView.layer.cornerRadius = 45
+        }else{
+            let corner = (UIScreen.main.bounds.size.height / 568) * 90
+            profileView.layer.cornerRadius = corner/2
+        }
         profileView.layer.masksToBounds = true
         
         if imageIsNull(imageName: ImgEmployerProfilepic )
@@ -51,6 +58,11 @@ class EmpRepostJobVC: UIViewController ,UITableViewDelegate,UITableViewDataSourc
         self.closedJobs()
         
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        profileView.layer.cornerRadius =  profileView.frame.size.height/2
     }
 
     override func didReceiveMemoryWarning() {

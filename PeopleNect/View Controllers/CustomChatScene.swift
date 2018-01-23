@@ -93,7 +93,10 @@ class CustomChatScene: UIViewController,UITableViewDataSource,UITableViewDelegat
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        timer.invalidate()
+    }
 
     // MARK: - UI Action -
     @IBAction func backAction(_ sender: Any) {

@@ -53,11 +53,18 @@ class JobLogInVC: UIViewController,UITextFieldDelegate,GIDSignInDelegate,GIDSign
         // Do any additional setup after loading the view.
         
         GIDSignIn.sharedInstance().uiDelegate = self
-        
         GIDSignIn.sharedInstance().delegate = self
         
-        txtEmail.text = "nirav.inexture@gmail.com"
-       txtPassword.text = "123456"
+        if TARGET_IPHONE_SIMULATOR == 1 {
+            //simulator
+            txtEmail.text = "nirav.inexture@gmail.com"
+            txtPassword.text = "123456"
+        } else {
+            //device
+           
+        }
+        
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
