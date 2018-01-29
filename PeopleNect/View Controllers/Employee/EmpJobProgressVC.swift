@@ -402,10 +402,23 @@ class EmpJobProgressVC: UIViewController, UITableViewDelegate, UITableViewDataSo
         jobDetail.currentIndex = 0
         jobDetail.fromJobRating = true
         jobDetail.fromDash = false
+        jobDetail.jobID = "\(tempDict.object(forKey: "jobId")!)"
         self.navigationController?.pushViewController(jobDetail, animated: true)
     }
     func rateCandidateAction(sender:UIButton)  {
+        var tempDict = NSDictionary()
+        let loginDict = UserDefaults.standard.object(forKey: kEmpLoginDict) as! NSDictionary
+        tempDict = arrResponseJobs.object(at: sender.tag) as! NSDictionary
+        let jobseekerRating =  tempDict.object(forKey: "JobSeekerData") as! NSArray
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Employee", bundle:nil)
+        let reviewJob = storyBoard.instantiateViewController(withIdentifier: "ReviewJobNotifierVC") as! ReviewJobNotifierVC
+        reviewJob.employerId = "\(loginDict.object(forKey: "employerId")!)"
+        reviewJob.job_id = "\(tempDict.object(forKey: "jobId")!)"
         
+        print("job is is","\(tempDict.object(forKey: "jobId")!)")
+        reviewJob.JobseekerDataFromRating = jobseekerRating
+        reviewJob.fromRatingScreen = true
+        self.navigationController?.pushViewController(reviewJob, animated: true)
     }
     
     // MARK: - Slide Navigation Delegates -
@@ -450,9 +463,9 @@ class EmpJobProgressVC: UIViewController, UITableViewDelegate, UITableViewDataSo
             else
             {
                 let dictResponse = Response as! NSDictionary
-                
-
                 let status = dictResponse.object(forKey: "status") as! Int
+                
+                print("jobInProgress response is",dictResponse)
                 
                 SwiftLoader.hide()
                 

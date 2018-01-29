@@ -88,18 +88,24 @@ class EmpJobSeekerStatusVC: UIViewController, UICollectionViewDelegate,UICollect
     var arrDaysFull = NSMutableArray()
     var showprofessionalDecline = false
     var fromJobRating = false
+    var checkNoShow = NSMutableArray()
 
     // MARK: - View LifeCycle -
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
         hideNavigationBar()
+        
+        //checkNoShow for Each index
+        for _ in ArrayUserListing {
+            checkNoShow.add("0")
+        }
+        
         // Week Name
         arrDaysName = [ Localization(string: "Sun"),Localization(string: "Mon"),Localization(string: "Tue"),Localization(string: "Wed"),Localization(string: "Thu"),Localization(string: "Fri"),Localization(string: "Sat")]
         
-        
         //  for Profile UIImageView
-       
         self.noShowBtn.isHidden = true
         self.noShowBtn.setTitle(Localization(string: "NO SHOW"), for: .normal)
         if appdel.deviceLanguage == "pt-BR"
@@ -119,9 +125,6 @@ class EmpJobSeekerStatusVC: UIViewController, UICollectionViewDelegate,UICollect
         }
         userProfileImg.layer.masksToBounds = true
 
-       
-    
-
         
         // flowlayout
         let layout = KTCenterFlowLayout()
@@ -133,8 +136,6 @@ class EmpJobSeekerStatusVC: UIViewController, UICollectionViewDelegate,UICollect
         self.subCategoryCollView.delegate = self
         self.subCategoryCollView.dataSource = self
         
-        
-        print("ArrayUserListing ",ArrayUserListing)
         
         // if it's from DashBoard
         if  fromDash {
@@ -182,7 +183,6 @@ class EmpJobSeekerStatusVC: UIViewController, UICollectionViewDelegate,UICollect
         alertMessage = storyBoard.instantiateViewController(withIdentifier: "AlertMessageVC") as! AlertMessageVC
         
         // add gesture for Scrolling
-        
         let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(self.clickLeftSwipe(_:)))
         swipeRight.direction = UISwipeGestureRecognizerDirection.right
         self.objScrollView.addGestureRecognizer(swipeRight)
@@ -192,6 +192,10 @@ class EmpJobSeekerStatusVC: UIViewController, UICollectionViewDelegate,UICollect
         swipeLeft.direction = UISwipeGestureRecognizerDirection.left
         swipeLeft.delegate = self
         self.objScrollView.addGestureRecognizer(swipeLeft)
+        
+        
+       
+        
 
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -201,7 +205,6 @@ class EmpJobSeekerStatusVC: UIViewController, UICollectionViewDelegate,UICollect
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         userProfileImg.layer.cornerRadius = userProfileImg.frame.size.height/2
-        
         hideNavigationBar()
     }
     override func didReceiveMemoryWarning() {
@@ -294,9 +297,7 @@ class EmpJobSeekerStatusVC: UIViewController, UICollectionViewDelegate,UICollect
     }
     
     @IBAction func clickRightSwipe(_ sender: Any) {
-        print(currentIndex)
-        print(ArrayUserListing.count)
-        
+      
         if currentIndex != ArrayUserListing.count-1
         {
              currentIndex = currentIndex + 1
@@ -319,20 +320,21 @@ class EmpJobSeekerStatusVC: UIViewController, UICollectionViewDelegate,UICollect
     }
 
     @IBAction func noShowClicked(_ sender: Any) {
-        
-//        "You have successfully set Jobseeker as No Show for your job" = "You have successfully set Jobseeker as No Show for your job";
-//        "Set this Professional as No Show?" = "Set this Professional as No Show?";
-        
-        let alertController = UIAlertController(title: "", message: Localization(string: "Set this Professional as No Show?"), preferredStyle: UIAlertControllerStyle.alert)
-        
-        let cancelAction = UIAlertAction(title: Localization(string: "NO"), style: UIAlertActionStyle.cancel) { (result : UIAlertAction) -> Void in
+        let checkNoShowValue = checkNoShow.object(at: currentIndex) as! String
+        if checkNoShowValue == "1"{
+            
+        }else{
+            let alertController = UIAlertController(title: "", message: Localization(string: "Set this Professional as No Show?"), preferredStyle: UIAlertControllerStyle.alert)
+            
+            let cancelAction = UIAlertAction(title: Localization(string: "NO"), style: UIAlertActionStyle.cancel) { (result : UIAlertAction) -> Void in
+            }
+            let okAction = UIAlertAction(title: "YES", style: UIAlertActionStyle.default) { (result : UIAlertAction) -> Void in
+                self.noShowApi()
+            }
+            alertController.addAction(cancelAction)
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true, completion: nil)
         }
-        let okAction = UIAlertAction(title: "YES", style: UIAlertActionStyle.default) { (result : UIAlertAction) -> Void in
-            self.noShowApi()
-        }
-        alertController.addAction(cancelAction)
-        alertController.addAction(okAction)
-        self.present(alertController, animated: true, completion: nil)
     }
     
     @IBAction func ClickOnMap(_ sender: Any) {
@@ -479,14 +481,11 @@ class EmpJobSeekerStatusVC: UIViewController, UICollectionViewDelegate,UICollect
 
     func setUpView()  {
         
-        print("ArrayUserListing is for profile pi",ArrayUserListing)
         self.noShowBtn.isHidden = true
-
         var userDataDic = NSDictionary()
         userDataDic = ArrayUserListing.object(at: currentIndex) as! NSDictionary
         
         
-        print("ArrayUserListing is for profile pi",ArrayUserListing)
         // user profile Image from two Side
         if let val = userDataDic["image_url"] {
             if userDataDic.object(forKey: "image_url") is NSNull
@@ -587,7 +586,6 @@ class EmpJobSeekerStatusVC: UIViewController, UICollectionViewDelegate,UICollect
         
        
         if let des = userDataDic["description"] {
-            print("exp is",des)
             userDescription.text = userDataDic.object(forKey: "description") as! String?
         }else{
             userDescription.text = userDataDic.object(forKey: "profileDescription") as! String?
@@ -684,7 +682,6 @@ class EmpJobSeekerStatusVC: UIViewController, UICollectionViewDelegate,UICollect
                 image = UIImage(named: "chat_blue")
                 chatWithUser = true
                 chatLbl.textColor = freeLbl.textColor
-
             }
             else
             {
@@ -719,19 +716,36 @@ class EmpJobSeekerStatusVC: UIViewController, UICollectionViewDelegate,UICollect
         
         
         // No Show from rating
-        
         if userDataDic["is_noshow"] != nil
         {
             let is_noshow = "\(userDataDic.object(forKey: "is_noshow")!)"
-            self.noShowBtn.isHidden = false
+            self.noShowBtn.layer.cornerRadius = 5.0
+            self.noShowBtn.layer.borderColor  =  UIColor.lightGray.cgColor
+            self.noShowBtn.layer.borderWidth = 1.0
+            self.noShowBtn.layer.shadowOpacity = 0.5
+            self.noShowBtn.layer.shadowColor =  UIColor.lightGray.cgColor
+            self.noShowBtn.layer.shadowRadius = 5.0
+            self.noShowBtn.layer.shadowOffset = CGSize(width:5, height: 5)
+            self.noShowBtn.layer.masksToBounds = true
            
+            let checkNoShowValue = checkNoShow.object(at: currentIndex) as! String
+
+            if checkNoShowValue == "1"{
+                self.noShowBtn.isUserInteractionEnabled = false
+                self.noShowBtn.backgroundColor = UIColor.clear
+            }else{
+                self.noShowBtn.isUserInteractionEnabled = true
+                self.noShowBtn.backgroundColor = UIColor.black
+            }
+            
+            //check to show no show Btn or not
             if is_noshow == "1"
             {
-               
+                self.noShowBtn.isHidden = true
             }
             else
             {
-                
+                self.noShowBtn.isHidden = false
             }
         }
         
@@ -794,7 +808,6 @@ class EmpJobSeekerStatusVC: UIViewController, UICollectionViewDelegate,UICollect
     
     func setGetAvailibilityResponse()
     {
-        print(self.arrDaysFull)
         var myTestArray = NSMutableArray()
         
         myTestArray = self.arrDaysFull.mutableCopy() as! NSMutableArray
@@ -877,7 +890,6 @@ class EmpJobSeekerStatusVC: UIViewController, UICollectionViewDelegate,UICollect
         var tempDict = NSDictionary()
         tempDict = ArrayUserListing.object(at: currentIndex) as! NSDictionary
         SwiftLoader.show(animated: true)
-        print("tempDict is",tempDict)
         
         var param = [String : Any]()
         
@@ -895,7 +907,6 @@ class EmpJobSeekerStatusVC: UIViewController, UICollectionViewDelegate,UICollect
             
             if error != nil
             {
-                print("ErrorgetUserAvailabilityApi",error?.description as String!)
                 SwiftLoader.hide()
             }
             else
@@ -909,7 +920,6 @@ class EmpJobSeekerStatusVC: UIViewController, UICollectionViewDelegate,UICollect
                     {
                         self.arrDaysFull = arrResponsegetUserAvailabilityDict.mutableCopy() as! NSMutableArray
                         self.setGetAvailibilityResponse()
-                        // print(self.arrayAvl.count)
                     }
                 }
             }
@@ -975,8 +985,7 @@ class EmpJobSeekerStatusVC: UIViewController, UICollectionViewDelegate,UICollect
         let loginDict = UserDefaults.standard.object(forKey: kEmpLoginDict) as! NSDictionary
         let param =  [WebServicesClass.METHOD_NAME: "noshowEmployee",
                       "employerId":"\(loginDict.object(forKey: "employerId")!)",
-            "language":appdel.userLanguage,"userId":"\(tempDict.object(forKey: "userId")!)","jobId":self.jobID,"type":"\(tempDict.object(forKey: "usertype")!)"] as [String : Any]
-        
+            "language":appdel.userLanguage,"userId":"\(tempDict.object(forKey: "employeeId")!)","jobId":self.jobID,"type":"\(tempDict.object(forKey: "usertype")!)"] as [String : Any]
         
         global.callWebService(parameter: param as AnyObject!) { (Response:AnyObject, error:NSError?) in
             
@@ -989,15 +998,11 @@ class EmpJobSeekerStatusVC: UIViewController, UICollectionViewDelegate,UICollect
                 SwiftLoader.hide()
                 let dictResponse = Response as! NSDictionary
                 let status = dictResponse.object(forKey: "status") as! Int
-                print("dictResponse noshowEmployee ",dictResponse)
-                    if appdel.deviceLanguage == "pt-BR"
-                    {
-                        self.alertMessage.strMessage = "\(dictResponse.value(forKey: "pt_message")!)"
-                    }
-                    else
-                    {
-                        self.alertMessage.strMessage = "\(dictResponse.value(forKey: "message")!)"
-                    }
+              
+                // added 1 for check no show when it has successfully set no show message
+                self.checkNoShow.replaceObject(at: self.currentIndex, with: "1")
+                
+                self.alertMessage.strMessage = Localization(string: "You have successfully set Jobseeker as No Show for your job")
                     self.alertMessage.modalPresentationStyle = .overCurrentContext
                     self.present(self.alertMessage, animated: false, completion: nil)
             }

@@ -93,14 +93,8 @@ extension UIViewController {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
         dateFormatter.timeZone = TimeZone.current
-
-        print("date is",date)
-        print("hour  is",hour)
-
         let timeStr = "\(date) \(hour)"
-        
         let dt = dateFormatter.date(from: timeStr)
-        print("dt is",dt)
         dateFormatter.dateFormat = "yyyy-MM-dd"
         dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
         return dateFormatter.string(from: dt!)

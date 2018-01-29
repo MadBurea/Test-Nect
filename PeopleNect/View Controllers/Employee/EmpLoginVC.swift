@@ -31,7 +31,7 @@ class EmpLoginVC: UIViewController,UITextFieldDelegate {
         
         if TARGET_IPHONE_SIMULATOR == 1 {
             //simulator
-            txtEmail.text = "nirav.parmar@inexture.in"
+            txtEmail.text = "dharmeshd.inexture@gmail.com"
             txtPassword.text = "123456"
         } else {
             //device

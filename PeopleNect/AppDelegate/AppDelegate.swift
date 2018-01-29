@@ -163,7 +163,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate,CLLocat
         if UIDevice().userInterfaceIdiom == .phone {
             switch UIScreen.main.nativeBounds.height {
             case 2436:
-                print("iPhone X")
                 appdel.iPhone_X = true
             default:
                 print("unknown")

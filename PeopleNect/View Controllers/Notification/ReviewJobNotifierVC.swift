@@ -55,6 +55,7 @@ class ReviewJobNotifierVC: UIViewController {
         let corner = (UIScreen.main.bounds.size.height / 667) * 70
         imgProfrilePic.layer.cornerRadius = corner/2
         imgProfrilePic.layer.masksToBounds = true
+        self.employerId = "\(appdel.loginUserDict.object(forKey: "employerId")!)"
 
         if fromRatingScreen {
             // from Employer history and job in Progress this block will executed
@@ -62,7 +63,6 @@ class ReviewJobNotifierVC: UIViewController {
         }else{
             // this block will be executed when notification arrive
             self.job_id = "\(userDic["job_id"]!)"
-            self.employerId = "\(appdel.loginUserDict.object(forKey: "employerId")!)"
         }
 
         if  fromSetPrice {
@@ -148,6 +148,8 @@ class ReviewJobNotifierVC: UIViewController {
                     let assignedData = self.assigned_jobseekerData.object(at: 0) as! NSDictionary
                     self.assigned_jobseeker =  assignedData.value(forKey: "id") as! String
                     
+                    print("closeJobDetail assigned_jobseeker", self.assigned_jobseeker)
+
                     let profilePic =  assignedData.value(forKey: "jobSeekerProfilePic") as! String
                     self.lblFullName.text = assignedData.value(forKey: "name") as? String
                     
