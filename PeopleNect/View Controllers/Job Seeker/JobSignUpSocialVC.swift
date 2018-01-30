@@ -386,9 +386,13 @@ class JobSignUpSocialVC: UIViewController, UITextFieldDelegate, UITableViewDeleg
             
             lblValidateCountryCode.text = ""
             if  (string.rangeOfCharacter(from: CharacterSet.decimalDigits.inverted) != nil){
-                
                 return false
             }
+            let maxLength = 5
+            let currentString: NSString = textField.text! as NSString
+            let newString: NSString =
+                currentString.replacingCharacters(in: range, with: string) as NSString
+            return newString.length <= maxLength
         }
             
         else if textField == txtPhoneNo{

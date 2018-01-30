@@ -462,12 +462,15 @@ class JobSignUpVC: UIViewController, UITextFieldDelegate, UITableViewDelegate,Pl
             
         else if textField == txtCountryCode
         {
-            
+            let maxLength = 5
             lblValidateCountryCode.text = ""
             if  (string.rangeOfCharacter(from: CharacterSet.decimalDigits.inverted) != nil){
-                
                 return false
             }
+            let currentString: NSString = textField.text! as NSString
+            let newString: NSString =
+                currentString.replacingCharacters(in: range, with: string) as NSString
+            return newString.length <= maxLength
         }
             
         else if textField == txtPhoneNo{
