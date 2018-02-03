@@ -285,7 +285,7 @@
 "I39-y5-3he.placeholder" = "Celular";
 
 /* Class = "UILabel"; text = "None"; ObjectID = "IFz-ex-iiz"; */
-"IFz-ex-iiz.text" = "Nenhum";
+"IFz-ex-iiz.text" = "Nenhum(a)";
 
 /* Class = "UILabel"; text = "qergqeg   f f bf b ghnghnjhjhyjnhgdjghjkdtukituje8 qergqeg   f f bf b ghnghnjhjhyjnhgdjghjkdtukituje8qergqeg   f f bf b ghnghnjhjhyjnhgdjghjkdtukituje8"; ObjectID = "INQ-wF-iDU"; */
 "INQ-wF-iDU.text" = "qergqeg   f f bf b ghnghnjhjhyjnhgdjghjkdtukituje8 qergqeg   f f bf b ghnghnjhjhyjnhgdjghjkdtukituje8qergqeg   f f bf b ghnghnjhjhyjnhgdjghjkdtukituje8";
@@ -681,7 +681,7 @@
 "kBm-k9-24h.text" = "4.5";
 
 /* Class = "UILabel"; text = "None"; ObjectID = "kGp-pZ-8OG"; */
-"kGp-pZ-8OG.text" = "Nenhum";
+"kGp-pZ-8OG.text" = "Nenhum(a)";
 
 /* Class = "UITextField"; placeholder = "Surname"; ObjectID = "kbT-jX-L2f"; */
 "kbT-jX-L2f.placeholder" = "Sobrenome";
@@ -819,7 +819,7 @@
 "rHZ-Ov-bse.placeholder" = "Data final";
 
 /* Class = "UILabel"; text = "None"; ObjectID = "rke-NU-tla"; */
-"rke-NU-tla.text" = "Nenhum";
+"rke-NU-tla.text" = "Nenhum(a)";
 
 /* Class = "UILabel"; text = "Exit"; ObjectID = "rqT-YA-Nnb"; */
 "rqT-YA-Nnb.text" = "Sair";
@@ -846,7 +846,7 @@
 "tYf-Dk-h98.placeholder" = "Email";
 
 /* Class = "UILabel"; text = "None"; ObjectID = "tyq-We-eda"; */
-"tyq-We-eda.text" = "Nenhum";
+"tyq-We-eda.text" = "Nenhum(a)";
 
 /* Class = "UILabel"; text = "Speciality Geographer"; ObjectID = "u6R-2H-hOV"; */
 "u6R-2H-hOV.text" = "Speciality Geographer";

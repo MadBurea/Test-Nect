@@ -213,7 +213,7 @@
 "Q7u-6b-K8u.text" = "Business";
 
 /* Class = "UILabel"; text = "None"; ObjectID = "QMY-xr-eH7"; */
-"QMY-xr-eH7.text" = "Nenhum";
+"QMY-xr-eH7.text" = "Nenhum(a)";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "Qa6-JH-Q4K"; */
 "Qa6-JH-Q4K.text" = "Label";
@@ -234,7 +234,7 @@
 "SfH-96-Ssd.text" = "Inxt";
 
 /* Class = "UILabel"; text = "none"; ObjectID = "TIZ-sU-h8u"; */
-"TIZ-sU-h8u.text" = "Nenhum";
+"TIZ-sU-h8u.text" = "Nenhum(a)";
 
 /* Class = "UILabel"; text = "Follow up on"; ObjectID = "TXb-BU-XIi"; */
 "TXb-BU-XIi.text" = "Acompanhamento";
@@ -252,7 +252,7 @@
 "UhJ-fO-QlW.text" = "Minhas Fotos";
 
 /* Class = "UILabel"; text = "none"; ObjectID = "VTy-1H-n8T"; */
-"VTy-1H-n8T.text" = "Nenhum";
+"VTy-1H-n8T.text" = "Nenhum(a)";
 
 /* Class = "UIButton"; normalTitle = "Search again"; ObjectID = "WOG-Ml-cbH"; */
 "WOG-Ml-cbH.normalTitle" = "Buscar de novo";
@@ -438,7 +438,7 @@
 "p5N-1a-uJE.text" = "/hora";
 
 /* Class = "UIButton"; normalTitle = "Available"; ObjectID = "pZK-JU-PoO"; */
-"pZK-JU-PoO.normalTitle" = "acessível";
+"pZK-JU-PoO.normalTitle" = "Disponível";
 
 /* Class = "UILabel"; text = "at"; ObjectID = "poe-By-5fK"; */
 "poe-By-5fK.text" = "em";

@@ -182,10 +182,13 @@ class JobDash: UIViewController,GMUClusterManagerDelegate, GMSMapViewDelegate,CL
         viewAvailibilityOnOff.isHidden = true
         viewTurnYourAvailibiltyOn.isHidden = true
         
-        arrDisplayDaysFull = ["Sunday","Monday","Tueday","Wednesday","Thursday","Friday","Saturday"]
         
-        arrDaysName = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"]
+        arrDisplayDaysFull = [ Localization(string: "Sunday"),Localization(string: "Monday"),Localization(string: "Tuesday"),Localization(string: "Wednesday"),Localization(string: "Thursday"),Localization(string: "Friday"),Localization(string: "Saturday")]
+
+     //   arrDaysName = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"]
         
+        arrDaysName = [ Localization(string: "Sun"),Localization(string: "Mon"),Localization(string: "Tue"),Localization(string: "Wed"),Localization(string: "Thu"),Localization(string: "Fri"),Localization(string: "Sat")]
+
         tblAvailibility.bounces = false
         tblAvailibility.separatorStyle = .none
     
@@ -935,7 +938,7 @@ class JobDash: UIViewController,GMUClusterManagerDelegate, GMSMapViewDelegate,CL
                     cell.btnCancel.tag =  (arrDaysFull.count - 1) + 100
 
                     
-                    cell.lblTime.text = "Not Available"
+                    cell.lblTime.text = strNotAvailability
                     
                     cell.btnCancel.setImage(#imageLiteral(resourceName: "plus_1"), for: .normal)
                     
@@ -979,7 +982,7 @@ class JobDash: UIViewController,GMUClusterManagerDelegate, GMSMapViewDelegate,CL
                     
                     cell.btnCancel.tag = 5 + 100
 
-                    cell.lblTime.text = "Not Available"
+                    cell.lblTime.text = strNotAvailability
                     
                     cell.btnCancel.setImage(#imageLiteral(resourceName: "plus_1"), for: .normal)
                     
@@ -1019,7 +1022,7 @@ class JobDash: UIViewController,GMUClusterManagerDelegate, GMSMapViewDelegate,CL
                 if start.isEmpty && end.isEmpty
                 {
                     cell.btnCancel.tag = indexPath.row-1 + 100
-                    cell.lblTime.text = "Not Available"
+                    cell.lblTime.text = strNotAvailability
                     
                     cell.btnCancel.setImage(#imageLiteral(resourceName: "plus_1"), for: .normal)
                     

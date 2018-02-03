@@ -94,7 +94,7 @@
 "Declined jobs"                    = "Vagas que rejeitei";
 "Other jobs"                       =  "Vagas que fui rejeitado";
 "No end Date"                       = "Sem data final definida";
-"Rate Employer"                      = "Valor Empregador";
+"Rate Employer"                      = "Valor empregrador";
 "Rate Candidate"                    = "Valor Candidato";
 "Show hired job seeker"              = "Mostrar contratados";
 "NO SHOW"                          = "Não compareceu";
@@ -115,16 +115,39 @@
 "YES"                              = "Sim";
 "No"                              = "Não";
 
+"Sunday"    =  "Domingo";
+"Monday"    =  "Segunda-feira";
+"Wednesday"    =  "Quarta-feira";
+"Thursday"    =  "Quinta-feira";
+"Tuesday"    =  "Terça-feira";
+"Friday"    =  "Sexta-feira";
+"Saturday"    =  "Sábado";
+
+
+
+
+
+
+
+
+
 // MARK:-  EmpJobSelectionProgressVC String
-"None"                            = "Nenhum";
+"None"                            = "Nenhum(a)";
 "Only business days"              = "Somente dias úteis";
 "Includes non Business days"      = "Inclui fim de semana";
 "Please Select an Image"          = "Selecione uma imagem";
 "Describe your profile"           = "Descreva seu perfil";
-"Add Employer"                    = "Adicionar Empregrador";
-"Enter Your Last Employer"        = "Insira o seu último empregador";
+"Add Employer"                    = "Adicionar empregrador";
+"Enter Your Last Employer"        = "Insira o seu último empregrador";
+"Last Employer"                   = "Últimos empregadores";
+
 "Add"                             = "Adicionar";
 "Please, complete your profile. You may edit it later."   = "Por favor, complete seu perfil . Você pode alterá-lo depois.";
 "No expertise found for this business"        = "Não encontramos especializações nessa área de negócio.";
+
+
+
+
+
 
 

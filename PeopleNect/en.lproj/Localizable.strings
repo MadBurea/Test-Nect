@@ -112,7 +112,14 @@
 "job"                              = "job";
 "day"                              = "day";
 "month"                            = "month";
-
+"Last Employer"                   = "Last Employer";
+"Sunday"    =  "Sunday";
+"Monday"    =  "Monday";
+"Wednesday"    =  "Wednesday";
+"Thursday"    =  "Thursday";
+"Tuesday"    =  "Tuesday";
+"Friday"    =  "Friday";
+"Saturday"    =  "Saturday";
 // MARK:-  EmpJobSelectionProgressVC String
 "None"                            = "None";
 "Only business days"              = "Only business days";

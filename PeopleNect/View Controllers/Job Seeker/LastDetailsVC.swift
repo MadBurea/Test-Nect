@@ -95,8 +95,7 @@ class LastDetailsVC: UIViewController, UITextFieldDelegate, UITextViewDelegate, 
             NSForegroundColorAttributeName : UIColor.darkGray,
             NSUnderlineStyleAttributeName : NSUnderlineStyle.styleSingle.rawValue]
         
-        let boldString = NSMutableAttributedString(string: btnAddLastEmployer.title(for: .normal)!, attributes:attrs)
-        
+        let boldString = NSMutableAttributedString(string: Localization(string: "Last Employer"), attributes:attrs)
         btnAddLastEmployer.setAttributedTitle(boldString, for: .normal)
     }
     

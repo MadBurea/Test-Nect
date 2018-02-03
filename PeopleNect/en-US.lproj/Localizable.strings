@@ -122,6 +122,16 @@
 "Describe your profile"           = "Describe your profile";
 "Add Employer"                    = "Add Employer";
 "Enter Your Last Employer"        = "Enter Your Last Employer";
+"Last Employer"                   = "Last Employer";
+
+"Sunday"    =  "Sunday";
+"Monday"    =  "Monday";
+"Wednesday"    =  "Wednesday";
+"Thursday"    =  "Thursday";
+"Tuesday"    =  "Tuesday";
+"Friday"    =  "Friday";
+"Saturday"    =  "Saturday";
+
 "Add"                             = "Add";
 "Please, complete your profile. You may edit it later."   = "Please, complete your profile. You may edit it later.";
 "No expertise found for this business"        = "No expertise found for this business";

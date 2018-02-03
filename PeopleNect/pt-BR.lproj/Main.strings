@@ -345,7 +345,7 @@
 "eBz-kq-7N7.placeholder" = "País";
 
 /* Class = "UILabel"; text = "none"; ObjectID = "eKH-um-z7M"; */
-"eKH-um-z7M.text" = "Nenhum";
+"eKH-um-z7M.text" = "Nenhum(a)";
 
 /* Class = "UIButton"; normalTitle = "Login"; ObjectID = "eOz-19-ZIp"; */
 "eOz-19-ZIp.normalTitle" = "Login";
@@ -360,7 +360,7 @@
 "exj-Kf-rvG.text" = "Label";
 
 /* Class = "UITextField"; placeholder = "Company Name"; ObjectID = "eyD-kZ-Qq2"; */
-"eyD-kZ-Qq2.placeholder" = "Nome da Empresa";
+"eyD-kZ-Qq2.placeholder" = "Nome da Empa";
 
 /* Class = "UITextField"; placeholder = "Password"; ObjectID = "ez5-mm-wPR"; */
 "ez5-mm-wPR.placeholder" = "Senha";
@@ -396,7 +396,7 @@
 "iVq-PO-gAE.text" = "Verificar Código";
 
 /* Class = "UILabel"; text = "none"; ObjectID = "igX-86-hmt"; */
-"igX-86-hmt.text" = "Nenhum";
+"igX-86-hmt.text" = "Nenhum(a)";
 
 /* Class = "UITextField"; placeholder = "Phone No"; ObjectID = "jRS-gv-Bz1"; */
 "jRS-gv-Bz1.placeholder" = "Telefone não";
@@ -405,7 +405,7 @@
 "jmT-VC-mWG.normalTitle" = "CADASTRE-SE";
 
 /* Class = "UIButton"; normalTitle = "Add Employer"; ObjectID = "k5I-Mv-HFh"; */
-"k5I-Mv-HFh.normalTitle" = "Adicionar empregrador";
+"k5I-Mv-HFh.normalTitle" = "Adicionar Empregador";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "k6h-ef-7bX"; */
 "k6h-ef-7bX.text" = "Label";
