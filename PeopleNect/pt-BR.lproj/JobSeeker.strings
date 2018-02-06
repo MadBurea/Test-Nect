@@ -183,7 +183,7 @@
 "KcM-Oy-ILF.text" = "User Name";
 
 /* Class = "UITextField"; placeholder = "Name"; ObjectID = "KpA-eE-a1A"; */
-"KpA-eE-a1A.placeholder" = "Name";
+"KpA-eE-a1A.placeholder" = "Nome";
 
 /* Class = "UILabel"; text = "Inxt"; ObjectID = "Kvj-A7-Wxw"; */
 "Kvj-A7-Wxw.text" = "Inxt";
@@ -210,7 +210,7 @@
 "P28-hX-mWS.text" = "4.5";
 
 /* Class = "UILabel"; text = "Business"; ObjectID = "Q7u-6b-K8u"; */
-"Q7u-6b-K8u.text" = "Business";
+"Q7u-6b-K8u.text" = "Negócio";
 
 /* Class = "UILabel"; text = "None"; ObjectID = "QMY-xr-eH7"; */
 "QMY-xr-eH7.text" = "Nenhum(a)";
@@ -372,7 +372,7 @@
 "iUX-zl-nfb.normalTitle" = "Fechar";
 
 /* Class = "UILabel"; text = "No Pending Invitations"; ObjectID = "ipZ-un-M7P"; */
-"ipZ-un-M7P.text" = "Não há convite pendente";
+"ipZ-un-M7P.text" = "Nenhum(a)";
 
 /* Class = "UILabel"; text = "On going jobs"; ObjectID = "j93-bb-7o8"; */
 "j93-bb-7o8.text" = "Meus trabalhos";
@@ -390,7 +390,7 @@
 "l7V-KT-x13.text" = "Ttrial";
 
 /* Class = "UILabel"; text = "No Pending Applications"; ObjectID = "lA3-WZ-0za"; */
-"lA3-WZ-0za.text" = "Não há aplicações pendentes";
+"lA3-WZ-0za.text" = "Nenhum(a)";
 
 /* Class = "UILabel"; text = "LabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabel"; ObjectID = "lAp-cz-x5A"; */
 "lAp-cz-x5A.text" = "LabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabel";
@@ -414,7 +414,7 @@
 "mCo-bL-BrU.text" = "Inx";
 
 /* Class = "UITextField"; placeholder = "Phone No"; ObjectID = "md1-Sb-vlW"; */
-"md1-Sb-vlW.placeholder" = "Telefone não";
+"md1-Sb-vlW.placeholder" = "DDD+Celular";
 
 /* Class = "UILabel"; text = "Max"; ObjectID = "mtR-m9-9Ui"; */
 "mtR-m9-9Ui.text" = "Máx";
@@ -426,7 +426,7 @@
 "nRd-zu-eyI.text" = "$35.00";
 
 /* Class = "UILabel"; text = "Turn your availability ON. it will increase your chances of being hired."; ObjectID = "nzc-2g-2Ot"; */
-"nzc-2g-2Ot.text" = "Ative sua disponibilidade. aumentará suas chances de ser contratado.";
+"nzc-2g-2Ot.text" = "Fique disponível e aumente as suas chances de ser contratado.";
 
 /* Class = "UILabel"; text = "at"; ObjectID = "o9p-Lf-ZZD"; */
 "o9p-Lf-ZZD.text" = "at";
@@ -456,7 +456,7 @@
 "rPw-ho-FSk.text" = "Candidatura enviada";
 
 /* Class = "UITextField"; placeholder = "Rate"; ObjectID = "rbz-d5-s9I"; */
-"rbz-d5-s9I.placeholder" = "Taxa";
+"rbz-d5-s9I.placeholder" = "Valor";
 
 /* Class = "UITextField"; placeholder = "Street name"; ObjectID = "rd6-7U-J6y"; */
 "rd6-7U-J6y.placeholder" = "Endereço";
@@ -498,7 +498,7 @@
 "uFw-s0-G9E.normalTitle" = "Aceitar";
 
 /* Class = "UILabel"; text = "Business"; ObjectID = "uhd-It-q1Y"; */
-"uhd-It-q1Y.text" = "Business";
+"uhd-It-q1Y.text" = "Negócio";
 
 /* Class = "UILabel"; text = "/hour"; ObjectID = "uoj-ea-K4s"; */
 "uoj-ea-K4s.text" = "/hora";
@@ -522,7 +522,7 @@
 "wjJ-AW-EIk.text" = "10/8";
 
 /* Class = "UILabel"; text = "No On Going Jobs"; ObjectID = "wo1-1Z-cft"; */
-"wo1-1Z-cft.text" = "Empregos não em viagem";
+"wo1-1Z-cft.text" = "Nenhum(a)";
 
 /* Class = "UILabel"; text = "4.5"; ObjectID = "wr2-wb-0xU"; */
 "wr2-wb-0xU.text" = "4.5";
@@ -533,7 +533,7 @@
 /* Class = "UILabel"; text = "LabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabel"; ObjectID = "xgu-QD-dUM"; */
 "xgu-QD-dUM.text" = "LabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabel";
 
-/* Class = "UITextField"; placeholder = "Experiance"; ObjectID = "xtf-Rz-zye"; */
+/* Class = "UITextField"; placeholder = "Experience"; ObjectID = "xtf-Rz-zye"; */
 "xtf-Rz-zye.placeholder" = "Experiência";
 
 /* Class = "UILabel"; text = "LabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabel"; ObjectID = "yIf-ht-VOW"; */

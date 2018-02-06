@@ -168,7 +168,7 @@ class JobHistoryVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         if appdel.deviceLanguage == "pt-BR"
         {
             // findJobLbl.text = Localization(string: "FIND A JOB")
-            mainLbl = UILabel(frame: CGRect(x: 8, y: 10, width: 200, height: 20))
+            mainLbl = UILabel(frame: CGRect(x: 8, y: 10, width: 210, height: 20))
         }
         else
         {
@@ -194,7 +194,7 @@ class JobHistoryVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         if appdel.deviceLanguage == "pt-BR"
         {
             theImageView = UIImageView(frame: CGRect(x: headerFrame.width - 80, y: 10, width: 20, height: 20))
-            thelblCount = UILabel(frame: CGRect(x: 190, y: 10, width: 50, height: 20))
+            thelblCount = UILabel(frame: CGRect(x: 210, y: 10, width: 50, height: 20))
         }
         else
         {

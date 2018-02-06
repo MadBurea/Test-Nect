@@ -371,7 +371,8 @@ class LeftMenuJobSeeker: UIViewController,UITableViewDataSource,UITableViewDeleg
 //            
 //            print("expNum",expNum!)
         
-            lblYearofExp.text = "\(exp!) years of experience"
+        
+        lblYearofExp.text = "\(exp!) \(Localization(string: "years of experience"))"
         
             
             lblUser.text = "\(loginDict.object(forKey: "first_name")!) \(loginDict.object(forKey: "last_name")!)"
@@ -512,7 +513,8 @@ class LeftMenuJobSeeker: UIViewController,UITableViewDataSource,UITableViewDeleg
                 
                 if status == 1
                 {
-                     self.lblHired.text = "Jobs: \(dictResponse.object(forKey: "jobSeekerHire")!), No show: \(dictResponse.object(forKey: "jobSeekerNoShow")!)"
+                    
+                     self.lblHired.text = "\(Localization(string: "Jobs")): \(dictResponse.object(forKey: "jobSeekerHire")!), \(Localization(string: "No show")): \(dictResponse.object(forKey: "jobSeekerNoShow")!)"
                     
                     self.ratingView.text = "(\(dictResponse.object(forKey: "ratingCount")!))"
                    

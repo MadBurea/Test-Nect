@@ -671,11 +671,11 @@ class EmpLastDetailsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFie
            
             if loadFrmOtherCtr == 1 && FreshJob == 1{
 
-                let startUTCDate = self.LocalToUTCDate(txtStartDate.text!,hour:txtStartHour.text!)
+                let startUTCDate = self.LocalToLastUTCDate(txtStartDate.text!,hour:txtStartHour.text!)
                 
                 var endUTCDate = ""
                 if !(txtEndDate.isHidden) {
-                    endUTCDate = self.LocalToUTCDate(txtEndDate.text!,hour:txtEndHour.text!)
+                    endUTCDate = self.LocalToLastUTCDate(txtEndDate.text!,hour:txtEndHour.text!)
                 }
                 
                 let formatter = DateFormatter()
@@ -741,11 +741,11 @@ class EmpLastDetailsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFie
             }else {
                 if apiCall {
                     
-                    let startUTCDate = self.LocalToUTCDate(txtStartDate.text!,hour:txtStartHour.text!)
+                    let startUTCDate = self.LocalToLastUTCDate(txtStartDate.text!,hour:txtStartHour.text!)
                    
                     var endUTCDate = ""
                     if !(txtEndDate.isHidden) {
-                        endUTCDate = self.LocalToUTCDate(txtEndDate.text!,hour:txtEndHour.text!)
+                        endUTCDate = self.LocalToLastUTCDate(txtEndDate.text!,hour:txtEndHour.text!)
                     }
                     
                     let parameter = NSMutableDictionary()
@@ -802,10 +802,10 @@ class EmpLastDetailsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFie
             // Invite Employee
             
             if apiCall {
-                let startUTCDate = self.LocalToUTCDate(txtStartDate.text!,hour:txtStartHour.text!)
+                let startUTCDate = self.LocalToLastUTCDate(txtStartDate.text!,hour:txtStartHour.text!)
                 var endUTCDate = ""
                 if !(txtEndDate.isHidden) {
-                    endUTCDate = self.LocalToUTCDate(txtEndDate.text!,hour:txtEndHour.text!)
+                    endUTCDate = self.LocalToLastUTCDate(txtEndDate.text!,hour:txtEndHour.text!)
                 }
                 let parameter = NSMutableDictionary()
                 parameter.setObject("postJobById", forKey: WebServicesClass.METHOD_NAME as NSCopying)
@@ -850,6 +850,9 @@ class EmpLastDetailsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFie
                 parameter.setObject("\(workingDay)", forKey: "workingDay" as NSCopying)
                 parameter.setObject(txtZipCode.text!, forKey: "zip" as NSCopying)
                 
+                
+                print("parameter for postJobById ",parameter)
+
                 self.jobPostingPriceAndBalance(parameter: parameter)
             }
 
@@ -1561,7 +1564,10 @@ class EmpLastDetailsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFie
         objEndHourPicker.locale = Locale(identifier: "en_GB")
 
         dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
+       // dateFormatter.dateFormat = "yyyy-MM-dd"
+        
+        dateFormatter.dateFormat = "dd-MM-yyyy"
+
         hourFormatter = DateFormatter()
         hourFormatter.dateFormat = "HH:mm"
         count = 1
@@ -1844,7 +1850,7 @@ class EmpLastDetailsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFie
         let dt = dateFormatter.date(from: date)
         
         dateFormatter.timeZone = TimeZone.current
-        dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.dateFormat = "dd-MM-yyyy"
         return dateFormatter.string(from: dt!)
     }
     
@@ -1863,10 +1869,7 @@ class EmpLastDetailsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFie
             objStartHourPicker.datePickerMode = .time
         }
         objEndDatePicker.minimumDate = sender.date
-        
-        
         startDate = hourFormatter.string(from: objStartHourPicker.date) as NSString
-
         endDate = hourFormatter.string(from: objEndHourPicker.date) as NSString
         
         if (txtStartDate.text?.count)!>0 && (txtEndDate.text?.count)!>0 && (txtStartHour.text?.count)!>0 && (txtEndHour.text?.count)! > 0 {

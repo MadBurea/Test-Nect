@@ -52,6 +52,8 @@ class StartingVC: UIViewController {
         
         print("timezone value is",getTimeZoneValue())
 
+        print("portueges Number is",convertEngNumToPortuGese(num: "1,0000.00"))
+        
        // findProfessionalLbl.text = Localization(string: "FIND PROFESSIONALS")
 
         // Do any additional setup after loading the view.

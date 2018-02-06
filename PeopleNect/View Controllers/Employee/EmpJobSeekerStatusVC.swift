@@ -90,6 +90,7 @@ class EmpJobSeekerStatusVC: UIViewController, UICollectionViewDelegate,UICollect
     var fromJobRating = false
     var checkNoShow = NSMutableArray()
 
+    @IBOutlet weak var postedjobWidthConstraints: NSLayoutConstraint!
     // MARK: - View LifeCycle -
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -111,10 +112,12 @@ class EmpJobSeekerStatusVC: UIViewController, UICollectionViewDelegate,UICollect
         if appdel.deviceLanguage == "pt-BR"
         {
             self.noShowBtnWidthConstraints.constant = 160
+            self.postedjobWidthConstraints.constant = 285
         }
         else
         {
             self.noShowBtnWidthConstraints.constant = 120
+            self.postedjobWidthConstraints.constant = 210
         }
         
         if  appdel.iPhone_X{
@@ -140,7 +143,7 @@ class EmpJobSeekerStatusVC: UIViewController, UICollectionViewDelegate,UICollect
         // if it's from DashBoard
         if  fromDash {
             topTitleLbl.isHidden = true
-            backLbl.text = "Back"
+            backLbl.text = Localization(string:"Back")
             mapImg.isHidden = true
             mapLbl.isHidden = true
             userStatusLbl.isHidden = true
@@ -152,10 +155,11 @@ class EmpJobSeekerStatusVC: UIViewController, UICollectionViewDelegate,UICollect
         }
         
         if showprofessionalDecline {
-            userStatusLbl.text = "This candidate is hired"
+            userStatusLbl.text = Localization(string:"This candidate is hired")
             userStatusImg.isHidden = true
             btnNewJob.isHidden = false
-            btnNewJob.setTitle("Professional decline", for: .normal)
+            btnNewJob.setTitle(Localization(string:"Professional decline"), for: .normal)
+            
         }
       
         // Hide the left and right Button for Scrolling when it's one Employee
@@ -394,7 +398,7 @@ class EmpJobSeekerStatusVC: UIViewController, UICollectionViewDelegate,UICollect
             let end = myCurrentDict.object(forKey: "end_time") as! String
             if start.isEmpty && end.isEmpty
             {
-                cell.timeLbl.text = "Not Available"
+                cell.timeLbl.text = strNotAvailability
                 cell.timeLbl.textColor = UIColor.white
                 cell.weekNameLbl.textColor = UIColor.white
                 cell.mainView.backgroundColor = UIColor.clear
@@ -423,7 +427,7 @@ class EmpJobSeekerStatusVC: UIViewController, UICollectionViewDelegate,UICollect
             let end = myCurrentDict.object(forKey: "end_time") as! String
             if start.isEmpty && end.isEmpty
             {
-                cell.timeLbl.text = "Not Available"
+                cell.timeLbl.text = strNotAvailability
                 cell.timeLbl.textColor = UIColor.white
                 cell.weekNameLbl.textColor = UIColor.white
                 cell.mainView.backgroundColor = UIColor.clear
@@ -447,7 +451,7 @@ class EmpJobSeekerStatusVC: UIViewController, UICollectionViewDelegate,UICollect
             let end = myCurrentDict.object(forKey: "end_time") as! String
             if start.isEmpty && end.isEmpty
             {
-                cell.timeLbl.text = "Not Available"
+                cell.timeLbl.text = strNotAvailability
                 cell.timeLbl.textColor = UIColor.white
                 cell.weekNameLbl.textColor = UIColor.white
                 cell.mainView.backgroundColor = UIColor.clear
@@ -539,7 +543,8 @@ class EmpJobSeekerStatusVC: UIViewController, UICollectionViewDelegate,UICollect
             userNameLbl.text = userDataDic["userName"] as? String
         }
         
-        noOfJobCountLbl.text = "Jobs: \(userDataDic.object(forKey: "jobSeekerHiredJob")!), No Show: \(userDataDic.object(forKey: "jobSeekerNoShowJob")!)"
+        noOfJobCountLbl.text = "\(Localization(string: "Jobs")): \(userDataDic.object(forKey: "jobSeekerHiredJob")!), \(Localization(string: "No show")): \(userDataDic.object(forKey: "jobSeekerNoShowJob")!)"
+        
         
         if userDataDic["categoryName"]  is NSNull {
             userCategoryLbl.text = ""
@@ -623,12 +628,12 @@ class EmpJobSeekerStatusVC: UIViewController, UICollectionViewDelegate,UICollect
             if availabilityId == "0"
             {
                 image = UIImage(named: "busy_clock")
-                self.freeLbl.text = "Busy"
+                self.freeLbl.text = Localization(string: "Busy")
             }
             else
             {
                 image = UIImage(named: "clock_new_")
-                self.freeLbl.text = "Free"
+                self.freeLbl.text = Localization(string: "Free")
             }
            clockImg.image = image
         }
@@ -642,12 +647,12 @@ class EmpJobSeekerStatusVC: UIViewController, UICollectionViewDelegate,UICollect
             if availabilityId == "0"
             {
                 image = UIImage(named: "busy_clock")
-                self.freeLbl.text = "Busy"
+                self.freeLbl.text = Localization(string: "Busy")
             }
             else
             {
                 image = UIImage(named: "clock_new_")
-                self.freeLbl.text = "Free"
+                self.freeLbl.text = Localization(string: "Free")
             }
             clockImg.image = image
         }
@@ -661,12 +666,12 @@ class EmpJobSeekerStatusVC: UIViewController, UICollectionViewDelegate,UICollect
             if availabilityId == "0"
             {
                 image = UIImage(named: "busy_clock")
-                self.freeLbl.text = "Busy"
+                self.freeLbl.text = Localization(string: "Busy")
             }
             else
             {
                 image = UIImage(named: "clock_new_")
-                self.freeLbl.text = "Free"
+                self.freeLbl.text = Localization(string: "Free")
             }
             clockImg.image = image
         }

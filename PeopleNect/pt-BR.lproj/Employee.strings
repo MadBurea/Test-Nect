@@ -213,7 +213,7 @@
 "DyE-51-wWd.text" = "Preço";
 
 /* Class = "UIButton"; normalTitle = "Post job"; ObjectID = "E0G-o1-IMq"; */
-"E0G-o1-IMq.normalTitle" = "Publicar Vaga";
+"E0G-o1-IMq.normalTitle" = "PUBLIQUE SUA VAGA";
 
 /* Class = "UILabel"; text = "04/07 at  10 am"; ObjectID = "EIV-Mc-7B4"; */
 "EIV-Mc-7B4.text" = "04/07 at  10 am";
@@ -636,7 +636,7 @@
 "fiQ-2i-CUN.text" = "Label";
 
 /* Class = "UIButton"; normalTitle = "Post Job"; ObjectID = "gOG-nh-t22"; */
-"gOG-nh-t22.normalTitle" = "Publicar Vaga";
+"gOG-nh-t22.normalTitle" = "PUBLIQUE SUA VAGA";
 
 /* Class = "UIButton"; normalTitle = "Edit Job"; ObjectID = "gUv-HU-yN3"; */
 "gUv-HU-yN3.normalTitle" = "Editar Vaga";

@@ -7,12 +7,12 @@
 */
 
 // Starting View Controller
-"FIND A JOB"                            = "ENCONTRE UM EMPREGO";
-"FIND PROFESSIONALS"                    = "ENCONTRAR PROFISSIONAIS";
-"FIND OPPORTUNITIES NEAR YOU"           = "ENCONTRAR OPORTUNIDADES PERTO DE VOCÊ";
+"FIND A JOB"                            = "ENCONTRE UM TRABALHO";
+"FIND PROFESSIONALS"                    = "ENCONTRE PROFISSIONAIS";
+"FIND OPPORTUNITIES NEAR YOU"           = "ENCONTRE VAGAS PRÓXIMAS DE VOCÊ";
 "REGISTER"                              = "CADASTRE-SE";
 "I'M ALREADY REGISTERED"                = "JÁ TENHO CADASTRO";
-"POST YOUR JOB"                         = "PUBLICAR VAGA";
+"POST YOUR JOB"                         = "PUBLIQUE SUA VAGA";
 
 "Enter name"                             = "Digite o nome";
 "Enter surname"                          = "Digite o sobrenome";
@@ -22,13 +22,13 @@
 "Enter password"                         = "Digite a senha";
 "Enter company name"                     = "Digite o nome da empresa";
 "Enter address"                          = "insira o endereço";
-"Enter street"                           = "Entre rua";
-"Enter number"                           = "Insira numeros";
-"Enter complement"                       = "Insira o complemento";
-"Enter City"                             = "Informe a cidade";
-"Enter Zipcode"                          = "Digite um CEP válido";
-"Enter State"                            = "Digite o Estado";
-"Enter Country"                          = "Digite o país";
+"Enter street"                           = "Campo obrigatório";
+"Enter number"                           = "Campo obrigatório";
+"Enter complement"                       = "Campo obrigatório";
+"Enter City"                             = "Campo obrigatório";
+"Enter Zipcode"                          = "Campo obrigatório";
+"Enter State"                            = "Campo obrigatório";
+"Enter Country"                          = "Campo obrigatório";
 "Enter OTP"                              = "Digite o Código";
 "Enter New Password"                     = "Digite a nova senha.";
 "Enter Job Title"                        = "Digite o cargo";
@@ -48,14 +48,19 @@
 
 // MARK:-  Left Menu Strings
 "Search professionals"                   = "Buscar profissionais";
-"Post new Job"                           = "Publicar novo emprego";
+"Post new Job"                           = "Criar uma nova vaga";
 "Selection in progress"                  = "Seleção em andamento";
 "Balance"                                = "Saldo";
 "Job in progress"                        = "Trabalhos em andamento";
-"Job history"                            = "Trabalhos efetuados";
+"Job history"                            = "Histórico de vagas";
 "Settings"                               = "Configurações";
 "Invite friends"                         = "Convidar Amigos";
 "Exit"                                   = "Sair";
+"Busy"                                   = "Indisponível";
+
+"Free"                                   = "Disponível";
+"Back"                                   = "Voltar";
+"This candidate is hired"             = "Este candidato está contratado.";
 
 "years of experience"                    = "ano(s) de experiência";
 
@@ -94,13 +99,18 @@
 "Declined jobs"                    = "Vagas que rejeitei";
 "Other jobs"                       =  "Vagas que fui rejeitado";
 "No end Date"                       = "Sem data final definida";
-"Rate Employer"                      = "Valor empregrador";
+"Rate Employer"                      = "Valor Empregador";
 "Rate Candidate"                    = "Valor Candidato";
 "Show hired job seeker"              = "Mostrar contratados";
 "NO SHOW"                          = "Não compareceu";
 "You have successfully set Jobseeker as No Show for your job" = "You have successfully set Jobseeker as No Show for your job";
 "Set this Professional as No Show?" = "Set this Professional as No Show?";
 
+"Jobs"                          = "Trabalhos";
+"No show"                           = "Não compareceu";
+"Professional decline"             = "Desistir do profissional";
+
+"years of experience"             = "ano(s) de experiência";
 
 // MARK:-  EmpInvitedPostedJobVC String
 
@@ -122,8 +132,9 @@
 "Tuesday"    =  "Terça-feira";
 "Friday"    =  "Sexta-feira";
 "Saturday"    =  "Sábado";
-
-
+"Your availability has been updated" = "Sua disponibilidade foi atualizada";
+"Availability updated"                   =  "Disponibilidade atualizada";
+"Business"                           = "Negócio";
 
 
 
@@ -136,10 +147,14 @@
 "Only business days"              = "Somente dias úteis";
 "Includes non Business days"      = "Inclui fim de semana";
 "Please Select an Image"          = "Selecione uma imagem";
-"Describe your profile"           = "Descreva seu perfil";
-"Add Employer"                    = "Adicionar empregrador";
-"Enter Your Last Employer"        = "Insira o seu último empregrador";
+"Describe your profile"           = "Resuma suas qualificações";
+"Add Employer"                    = "Adicionar Empregador";
+"Enter Your Last Employer"        = "Insira o seu último Empregador";
 "Last Employer"                   = "Últimos empregadores";
+"jobs in"                         = "Vagas em";
+
+"Rate"                           = "Valor";
+"Last Employers"                           = "Últimos empregadores";
 
 "Add"                             = "Adicionar";
 "Please, complete your profile. You may edit it later."   = "Por favor, complete seu perfil . Você pode alterá-lo depois.";

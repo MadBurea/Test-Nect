@@ -113,6 +113,9 @@ class JobSettingVC: UIViewController, PlaceSearchTextFieldDelegate, UITextFieldD
         self.txtPassword.isSecureTextEntry = true
         self.txtPassword.textColor = UIColor.lightGray
         
+       // self.tfBusiness.placeholder = Localization(string: "Business")
+        self.tfDescribeYourProfile.placeholder = Localization(string: "Describe your profile")
+
         if nameCategory != ""
         {
             lblBussiness.text = nameCategory
@@ -145,6 +148,8 @@ class JobSettingVC: UIViewController, PlaceSearchTextFieldDelegate, UITextFieldD
         viewTop.layer.shadowOpacity = 0.5
         viewTop.layer.shadowOffset = CGSize(width: 0, height: 2)
         viewTop.layer.shadowRadius = 2.0
+        
+        bynLastEmployer.setTitle(Localization(string: "Add Employer"), for: .normal)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -244,7 +249,7 @@ class JobSettingVC: UIViewController, PlaceSearchTextFieldDelegate, UITextFieldD
         
         txtExperiance.textColor = UIColor.black
         
-        txtExperiance.placeholder = "Experience"
+        //txtExperiance.placeholder = "Experience"
         txtExperiance.becomeFirstResponder()
         
        // self.btnEditExperiance.isUserInteractionEnabled = false
@@ -253,7 +258,6 @@ class JobSettingVC: UIViewController, PlaceSearchTextFieldDelegate, UITextFieldD
     
     @IBAction func clickEditBusiness(_ sender: Any) {
         
-       // self.tfBusiness.placeholder = "Business"
       //  tfBusiness.isUserInteractionEnabled = true
         
         let jobSettingSelectCategoryVC = self.storyboard?.instantiateViewController(withIdentifier: "JobSettingSelectCategoryVC") as! JobSettingSelectCategoryVC
@@ -278,7 +282,6 @@ class JobSettingVC: UIViewController, PlaceSearchTextFieldDelegate, UITextFieldD
         
         txtRate.textColor = UIColor.black
 
-        txtRate.placeholder = "Rate"
         txtRate.becomeFirstResponder()
         
        // self.btnEditRate.isUserInteractionEnabled = fals
@@ -1080,7 +1083,7 @@ class JobSettingVC: UIViewController, PlaceSearchTextFieldDelegate, UITextFieldD
         txtExperiance.underlined()
         txtRate.underlined()
         txtPassword.underlined()
-        
+        txtRate.placeholder = Localization(string: "Rate")
     }
     
     //  TextField Email Validation Method
@@ -1209,7 +1212,7 @@ class JobSettingVC: UIViewController, PlaceSearchTextFieldDelegate, UITextFieldD
                        
                         self.txtComplement.text = "\(dataDict.object(forKey: "complement")!)"
                         
-                        self.txtExperiance.placeholder = "Experience"
+                        //self.txtExperiance.placeholder = "Experience"
                         self.txtExperiance.text = "\(dataDict.object(forKey: "exp_years")!)"
                         self.txtExperiance.textColor = UIColor.lightGray
 

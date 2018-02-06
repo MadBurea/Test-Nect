@@ -509,7 +509,7 @@ class JobDash: UIViewController,GMUClusterManagerDelegate, GMSMapViewDelegate,CL
             self.noneLbl.isHidden = true
         }
         
-        self.totalJobCountLbl.text = ("\(ordered.count) jobs in \(self.CategoryName)")
+        self.totalJobCountLbl.text = ("\(ordered.count) \(Localization(string: "jobs in")) \(self.CategoryName)")
         CategoryTable.reloadData()
      }
     
@@ -1195,7 +1195,7 @@ class JobDash: UIViewController,GMUClusterManagerDelegate, GMSMapViewDelegate,CL
                 viewTurnYourAvailibiltyOn.isHidden = true
                 self.saveUserAvailabilityStatusApi(availabilityStatus: "0")
                 
-                self.view.makeToast("Your availability has been updated", duration: 1.0, position: .bottom)
+                self.view.makeToast(Localization(string: "Your availability has been updated"), duration: 1.0, position: .bottom)
                 
             }
             else if isAvailibilty == 0{
@@ -1207,8 +1207,8 @@ class JobDash: UIViewController,GMUClusterManagerDelegate, GMSMapViewDelegate,CL
                 viewTurnYourAvailibiltyOn.isHidden = false
                 self.saveUserAvailabilityStatusApi(availabilityStatus: "1")
                 isAvailibilty = 1
-                self.view.makeToast("Your availability has been updated", duration: 1.0, position: .bottom)
-                
+                self.view.makeToast(Localization(string: "Your availability has been updated"), duration: 1.0, position: .bottom)
+
             }
         }
         
@@ -1644,8 +1644,7 @@ class JobDash: UIViewController,GMUClusterManagerDelegate, GMSMapViewDelegate,CL
                 SwiftLoader.hide()
                 
                 
-                self.view.makeToast("Availability updated", duration: 1.0, position: .bottom)
-
+                self.view.makeToast(Localization(string: "Availability updated"), duration: 1.0, position: .bottom)
                 
                 if status == 1
                 {
@@ -2033,7 +2032,8 @@ class JobDash: UIViewController,GMUClusterManagerDelegate, GMSMapViewDelegate,CL
                 self.currentIndex = -1
                 
                 if self.arrayAllSpecJobs.count == 0 {
-                    self.totalJobCountLbl.text = ("0 jobs in \(self.CategoryName)")
+                    
+                    self.totalJobCountLbl.text = ("0 \(Localization(string: "jobs in")) \(self.CategoryName)")
                 }
                 
                 if self.arrayAllSpecJobs.count == 0 {
@@ -2064,7 +2064,7 @@ class JobDash: UIViewController,GMUClusterManagerDelegate, GMSMapViewDelegate,CL
                 self.status = status
                 self.currentIndex = -1
                 if self.arrayMySpecJobs.count == 0 {
-                    self.totalJobCountLbl.text = ("0 jobs in \(self.CategoryName)")
+                    self.totalJobCountLbl.text = ("0 \(Localization(string: "jobs in")) \(self.CategoryName)")
                 }
                 
                 if self.arrayMySpecJobs.count == 0 {

@@ -497,7 +497,7 @@ class JobLogInVC: UIViewController,UITextFieldDelegate,GIDSignInDelegate,GIDSign
                         
                         if appdel.deviceLanguage == "pt-BR"
                         {
-                            self.UpdateDeviceToken(userId: "\(appdel.loginUserDict.object(forKey: "userId")!)", userType: "2",message:"\(Response.object(forKey: "pt_message") as! String)")
+                            self.UpdateDeviceToken(userId: "\(appdel.loginUserDict.object(forKey: "userId")!)", userType: "2",message:"\(Response.object(forKey: "message") as! String)")
                         }
                         else
                         {
@@ -713,7 +713,7 @@ class JobLogInVC: UIViewController,UITextFieldDelegate,GIDSignInDelegate,GIDSign
                             if appdel.deviceLanguage == "pt-BR"
                             {
                                 
-                                self.UpdateDeviceToken(userId: "\(appdel.loginUserDict.object(forKey: "userId")!)", userType: "2",message: "\(Response.object(forKey: "pt_message") as! String)")
+                                self.UpdateDeviceToken(userId: "\(appdel.loginUserDict.object(forKey: "userId")!)", userType: "2",message: "\(Response.object(forKey: "message") as! String)")
                             }
                             else
                             {

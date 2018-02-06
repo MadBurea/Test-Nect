@@ -110,12 +110,20 @@ class EmpPostJob: UIViewController  {
             else
             {
                 let dictResponse = Response as! NSDictionary
+                
+                print("dictResponse is",dictResponse)
+                
                  self.lblPrice.text  = ((dictResponse.object(forKey: "data") as! NSDictionary).value(forKey: "jobPostingPrice") as! NSString) as String
                 
                 self.totalBalance = (((dictResponse.object(forKey: "data") as! NSDictionary).value(forKey: "balance") as! NSString) as String) as String as NSString
 
-                let remainingDays = (dictResponse.object(forKey: "data") as! NSDictionary).value(forKey: "remainingDays") as! NSString
-                let totalDays = remainingDays.integerValue
+                let remainingDays = "\((dictResponse.object(forKey: "data") as! NSDictionary).value(forKey: "remainingDays")!)"
+                
+                
+                //let totalDays = remainingDays.integerValue
+                
+                let totalDays = (remainingDays as NSString).integerValue
+
                 if totalDays > 0{
                     self.remainingDays = true
                 }

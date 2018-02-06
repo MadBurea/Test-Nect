@@ -185,25 +185,49 @@ class EmpSelectionProgressVC: UIViewController, UITableViewDelegate, UITableView
         headerView.backgroundColor = UIColor.clear
         
         let headerImageView = UIImageView(frame: CGRect(x: 5, y: 5, width: 30, height: 30))
-        
         let lblSection = UILabel(frame: CGRect(x: 50, y: 5, width: headerView.frame.size.width, height: 30))
         
         lblSection.backgroundColor = UIColor.clear
         lblSection.textAlignment = .left
-        lblSection.font = UIFont(name: "Montserrat-Bold", size: 20.0)
         lblSection.textColor = UIColor.darkGray
 
+        if appdel.deviceLanguage == "pt-BR"
+        {
+            lblSection.font = UIFont(name: "Montserrat-Bold", size: 15.0)
+        }
+        else
+        {
+            lblSection.font = UIFont(name: "Montserrat-Bold", size: 20.0)
+        }
         var image = UIImage()
         
         if(section == 0)
         {
             image = UIImage(named: "current_user")!
-            lblSection.text = "Selection in progress"
+            
+            
+            if appdel.deviceLanguage == "pt-BR"
+            {
+                lblSection.text = "Processo seletivo em andamento"
+            }
+            else
+            {
+                lblSection.text = "Selection in progress"
+            }
+            
         }
         else
         {
             image = UIImage(named: "userSelection")!
-            lblSection.text = "Invitation only jobs"
+            
+            if appdel.deviceLanguage == "pt-BR"
+            {
+                lblSection.text = "Vagas só para convidados"
+            }
+            else
+            {
+                lblSection.text = "Invitation only jobs"
+            }
         }
         
         headerImageView.image = image

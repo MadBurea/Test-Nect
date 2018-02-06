@@ -740,13 +740,13 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="aCj-HA-fRV">
-                                                            <rect key="frame" x="64" y="10.5" width="46" height="20"/>
+                                                            <rect key="frame" x="64" y="10.5" width="42" height="20"/>
                                                             <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="17"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dRL-L0-y7E">
-                                                            <rect key="frame" x="110" y="10.5" width="10" height="10"/>
+                                                            <rect key="frame" x="106" y="10.5" width="10" height="10"/>
                                                             <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="10" id="Gv2-kT-LRU"/>
@@ -4536,7 +4536,7 @@
                                                             <rect key="frame" x="0.0" y="237" width="217" height="60"/>
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IW4-4R-TtS">
-                                                                    <rect key="frame" x="16" y="10" width="185" height="40"/>
+                                                                    <rect key="frame" x="15.5" y="10" width="186" height="40"/>
                                                                     <color key="backgroundColor" red="0.10053835060000001" green="0.2667597532" blue="0.47336018089999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="40" id="qTm-eO-P6r"/>
@@ -5474,7 +5474,7 @@
                                                             <rect key="frame" x="0.0" y="237" width="217" height="60"/>
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IlM-54-fXf">
-                                                                    <rect key="frame" x="16" y="10" width="185" height="40"/>
+                                                                    <rect key="frame" x="15.5" y="10" width="186" height="40"/>
                                                                     <color key="backgroundColor" red="0.10053835060000001" green="0.2667597532" blue="0.47336018089999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="40" id="8XZ-xm-otW"/>
@@ -5981,7 +5981,7 @@
                                                             <rect key="frame" x="0.0" y="237" width="217" height="60"/>
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9mA-aM-gFQ">
-                                                                    <rect key="frame" x="16.5" y="10" width="185" height="40"/>
+                                                                    <rect key="frame" x="16" y="10" width="186" height="40"/>
                                                                     <color key="backgroundColor" red="0.10053835060000001" green="0.2667597532" blue="0.47336018089999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="40" id="qYo-N0-SHQ"/>

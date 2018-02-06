@@ -100,6 +100,29 @@ extension UIViewController {
         return dateFormatter.string(from: dt!)
     }
     
+    func LocalToLastUTCDate(_ date: String,hour:String) -> String
+    {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy HH:mm"
+        dateFormatter.timeZone = TimeZone.current
+        let timeStr = "\(date) \(hour)"
+        let dt = dateFormatter.date(from: timeStr)
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
+        return dateFormatter.string(from: dt!)
+    }
+    
+    func convertEngNumToPortuGese(num: String)->String{
+        //let number = NSNumber(value: Int(num)!)
+        let format = NumberFormatter()
+        format.locale = Locale(identifier: "pt-BR")
+        let number =   format.number(from: num)
+        print("num is",num)
+        print("number is",number)
+
+        let faNumber = format.string(from: number!)
+        return faNumber!
+    }
     
     func convertDateFormaterUTC(_ date: String) -> String
     {

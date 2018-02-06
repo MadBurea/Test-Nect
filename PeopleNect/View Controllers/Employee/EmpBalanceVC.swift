@@ -187,7 +187,6 @@ class EmpBalanceVC: UIViewController,SlideNavigationControllerDelegate {
 //                        {
 //                            self.view.makeToast("\(Response.object(forKey: "message")!)", duration: 3.0, position: .bottom)
 //                        }
-                        
                         self.arrayData = dataDict
                         self.tblView.reloadData()
                     }
@@ -195,7 +194,8 @@ class EmpBalanceVC: UIViewController,SlideNavigationControllerDelegate {
                 else {
                     if appdel.deviceLanguage == "pt-BR"
                     {
-                        self.alertMessage.strMessage = "\(Response.object(forKey: "pt_message")!)"
+                        //self.alertMessage.strMessage = "\(Response.object(forKey: "pt_message")!)"
+                        self.alertMessage.strMessage = "\(Response.object(forKey: "message")!)"
                     }
                     else
                     {

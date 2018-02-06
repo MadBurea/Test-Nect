@@ -51,7 +51,7 @@
 "4rA-tF-A59.normalTitle" = "Login";
 
 /* Class = "UILabel"; text = "With          Facebook"; ObjectID = "4vc-yu-Ifr"; */
-"4vc-yu-Ifr.text" = "Com          Facebook";
+"4vc-yu-Ifr.text" = "Acessar Com    Facebook";
 
 /* Class = "UILabel"; text = " Label"; ObjectID = "5Ef-ql-dzx"; */
 "5Ef-ql-dzx.text" = " Label";
@@ -102,7 +102,7 @@
 "AYB-tO-Q68.placeholder" = "Cidade";
 
 /* Class = "UITextField"; placeholder = "Zip code"; ObjectID = "Aed-ua-Jzk"; */
-"Aed-ua-Jzk.placeholder" = "Código postal";
+"Aed-ua-Jzk.placeholder" = "CEP";
 
 /* Class = "UITextField"; placeholder = "State"; ObjectID = "B78-IN-Vca"; */
 "B78-IN-Vca.placeholder" = "Estado";
@@ -171,7 +171,7 @@
 "JY1-jT-jGL.text" = "Ou";
 
 /* Class = "UILabel"; text = "With                  Google"; ObjectID = "Jn8-CR-hMJ"; */
-"Jn8-CR-hMJ.text" = "Com                  Google";
+"Jn8-CR-hMJ.text" = "Acessar Com Google";
 
 /* Class = "UITextField"; placeholder = "Surname"; ObjectID = "KID-5y-fpl"; */
 "KID-5y-fpl.placeholder" = "Sobrenome";
@@ -204,7 +204,7 @@
 "MtV-bG-0xW.placeholder" = "Cidade";
 
 /* Class = "UITextField"; placeholder = "Phone No"; ObjectID = "NMZ-6q-9lA"; */
-"NMZ-6q-9lA.placeholder" = "Telefone não";
+"NMZ-6q-9lA.placeholder" = "DDD+Celular";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "OGg-q1-j7s"; */
 "OGg-q1-j7s.text" = "Label";
@@ -222,7 +222,7 @@
 "Pq8-1p-wK0.normalTitle" = "Cadastre-se";
 
 /* Class = "UILabel"; text = "With          Facebook"; ObjectID = "Q5h-Ki-J0F"; */
-"Q5h-Ki-J0F.text" = "Com          Facebook";
+"Q5h-Ki-J0F.text" = "Acessar Com    Facebook";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "QOd-62-GkG"; */
 "QOd-62-GkG.text" = "Label";
@@ -234,13 +234,13 @@
 "R3l-Is-084.text" = "* Digite sua nova senha";
 
 /* Class = "UITextField"; placeholder = "Zip Code"; ObjectID = "R5N-Zl-DG3"; */
-"R5N-Zl-DG3.placeholder" = "Código postal";
+"R5N-Zl-DG3.placeholder" = "CEP";
 
 /* Class = "UIButton"; normalTitle = "FORGOT MY PASSWORD"; ObjectID = "RWn-S2-Btk"; */
 "RWn-S2-Btk.normalTitle" = "ESQUECI A SENHA";
 
 /* Class = "UILabel"; text = "FIND PROFESSIONALS"; ObjectID = "RsP-Vi-li9"; */
-"RsP-Vi-li9.text" = "ENCONTRAR PROFISSIONAIS";
+"RsP-Vi-li9.text" = "ENCONTRE PROFISSIONAIS";
 
 /* Class = "UITextField"; placeholder = "Company Name"; ObjectID = "RvK-Me-ZAe"; */
 "RvK-Me-ZAe.placeholder" = "Nome da Empresa";
@@ -261,7 +261,7 @@
 "UqA-jL-jJL.normalTitle" = "ESQUECI A SENHA";
 
 /* Class = "UILabel"; text = "FIND OPPORTUNITIES NEAR YOU"; ObjectID = "Vnd-fP-2J4"; */
-"Vnd-fP-2J4.text" = "ENCONTRAR OPORTUNIDADES PERTO DE VOCÊ";
+"Vnd-fP-2J4.text" = "ENCONTRE VAGAS PRÓXIMAS DE VOCÊ";
 
 /* Class = "UILabel"; text = " Label"; ObjectID = "Vv9-4m-c2A"; */
 "Vv9-4m-c2A.text" = " Label";
@@ -288,7 +288,7 @@
 "YRN-ft-Vny.text" = "Label";
 
 /* Class = "UILabel"; text = "POST YOUR JOB"; ObjectID = "YgT-P5-Hix"; */
-"YgT-P5-Hix.text" = "PUBLICAR VAGA";
+"YgT-P5-Hix.text" = "PUBLIQUE SUA VAGA";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "YrW-Zp-rGN"; */
 "YrW-Zp-rGN.text" = "Label";
@@ -300,7 +300,7 @@
 "YxE-Nw-Hsv.placeholder" = "Senha";
 
 /* Class = "UITextField"; placeholder = "Zip code"; ObjectID = "ZB3-OX-n9K"; */
-"ZB3-OX-n9K.placeholder" = "Código postal";
+"ZB3-OX-n9K.placeholder" = "CEP";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "ZBu-cS-JMH"; */
 "ZBu-cS-JMH.text" = "Label";
@@ -309,7 +309,7 @@
 "ZGm-ok-VKp.text" = "Label";
 
 /* Class = "UILabel"; text = "FIND   A JOB"; ObjectID = "Zg5-Ks-WXx"; */
-"Zg5-Ks-WXx.text" = "ENCONTRE UM EMPREGO";
+"Zg5-Ks-WXx.text" = "ENCONTRE UM TRABALHO";
 
 /* Class = "UITextField"; placeholder = "Number"; ObjectID = "ZqB-Lb-xdw"; */
 "ZqB-Lb-xdw.placeholder" = "Número";
@@ -399,7 +399,7 @@
 "igX-86-hmt.text" = "Nenhum(a)";
 
 /* Class = "UITextField"; placeholder = "Phone No"; ObjectID = "jRS-gv-Bz1"; */
-"jRS-gv-Bz1.placeholder" = "Telefone não";
+"jRS-gv-Bz1.placeholder" = "DDD+Celular";
 
 /* Class = "UIButton"; normalTitle = "REGISTER"; ObjectID = "jmT-VC-mWG"; */
 "jmT-VC-mWG.normalTitle" = "CADASTRE-SE";
@@ -429,7 +429,7 @@
 "mDT-bF-lGv.placeholder" = "Cód. País";
 
 /* Class = "UILabel"; text = "With                  Google"; ObjectID = "mEa-Uu-P7I"; */
-"mEa-Uu-P7I.text" = "Com                  Google";
+"mEa-Uu-P7I.text" = "Acessar Com Google";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "mqc-CF-HOG"; */
 "mqc-CF-HOG.text" = "Label";
@@ -519,10 +519,10 @@
 "vZk-le-81H.placeholder" = "Complemento";
 
 /* Class = "UITextField"; placeholder = "Zip Code"; ObjectID = "vsH-nb-ShO"; */
-"vsH-nb-ShO.placeholder" = "Código postal";
+"vsH-nb-ShO.placeholder" = "CEP";
 
 /* Class = "UITextField"; placeholder = "Mobile"; ObjectID = "wPf-UP-mXL"; */
-"wPf-UP-mXL.placeholder" = "Telefone não";
+"wPf-UP-mXL.placeholder" = "DDD+Celular";
 
 /* Class = "UITextField"; placeholder = "E-mail"; ObjectID = "wRF-mW-cQE"; */
 "wRF-mW-cQE.placeholder" = "E-mail";

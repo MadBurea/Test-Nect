@@ -82,7 +82,7 @@ class LastDetailsVC: UIViewController, UITextFieldDelegate, UITextViewDelegate, 
         tfDescibeYourProfile.placeholder = Localization(string: "Describe your profile")
         lblLastEmployers.isHidden = true
         
-        
+        lblLastEmployers.text = Localization(string: "Last Employers")
         alertMessage = self.storyboard?.instantiateViewController(withIdentifier: "AlertMessageVC") as! AlertMessageVC
         
         backJobSelectExpertices = self.storyboard?.instantiateViewController(withIdentifier: "JobSelectExpertisesVC") as! JobSelectExpertisesVC
@@ -95,7 +95,7 @@ class LastDetailsVC: UIViewController, UITextFieldDelegate, UITextViewDelegate, 
             NSForegroundColorAttributeName : UIColor.darkGray,
             NSUnderlineStyleAttributeName : NSUnderlineStyle.styleSingle.rawValue]
         
-        let boldString = NSMutableAttributedString(string: Localization(string: "Last Employer"), attributes:attrs)
+        let boldString = NSMutableAttributedString(string: Localization(string: Localization(string: "Add Employer")), attributes:attrs)
         btnAddLastEmployer.setAttributedTitle(boldString, for: .normal)
     }
     
@@ -369,7 +369,7 @@ class LastDetailsVC: UIViewController, UITextFieldDelegate, UITextViewDelegate, 
         //last employer
      
         
-        let alert = UIAlertController(title: Localization(string: Localization(string: "Add Employer")), message: "", preferredStyle: .alert)
+        let alert = UIAlertController(title: Localization(string: Localization(string: Localization(string: "Add Employer"))), message: "", preferredStyle: .alert)
         
         alert.addTextField { (textField) in
             textField.placeholder = Localization(string: "Enter Your Last Employer")
@@ -552,7 +552,6 @@ class LastDetailsVC: UIViewController, UITextFieldDelegate, UITextViewDelegate, 
                     }
                     else
                     {
-                        
                         if appdel.deviceLanguage == "pt-BR"
                         {
                             self.alertMessage.strMessage = "\((dict as AnyObject).object(forKey: "pt_message")!)"
@@ -564,14 +563,10 @@ class LastDetailsVC: UIViewController, UITextFieldDelegate, UITextViewDelegate, 
                         
                         self.alertMessage.modalPresentationStyle = .overCurrentContext
                         self.present((self.alertMessage), animated: false, completion: nil)
-                        
                     }
-                    
                 }
-                    
                 else
                 {
-                    
                     if appdel.deviceLanguage == "pt-BR"
                     {
                         self.alertMessage.strMessage = "\(Response.object(forKey: "pt_message")!)"

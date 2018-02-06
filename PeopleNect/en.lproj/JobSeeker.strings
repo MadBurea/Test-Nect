@@ -533,8 +533,8 @@
 /* Class = "UILabel"; text = "LabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabel"; ObjectID = "xgu-QD-dUM"; */
 "xgu-QD-dUM.text" = "LabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabel";
 
-/* Class = "UITextField"; placeholder = "Experiance"; ObjectID = "xtf-Rz-zye"; */
-"xtf-Rz-zye.placeholder" = "Experiance";
+/* Class = "UITextField"; placeholder = "Experience"; ObjectID = "xtf-Rz-zye"; */
+"xtf-Rz-zye.placeholder" = "Experience";
 
 /* Class = "UILabel"; text = "LabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabel"; ObjectID = "yIf-ht-VOW"; */
 "yIf-ht-VOW.text" = "LabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabel";

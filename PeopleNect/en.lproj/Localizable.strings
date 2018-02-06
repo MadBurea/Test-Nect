@@ -33,10 +33,12 @@
 "Enter Job Title"                        = "Enter Job Title";
 "Enter Job Description"                  = "Enter Job Description";
 "Required field"                         = "Required field";
-
+"jobs in"                                = "jobs in";
 "Please, enter valid email."             = "Please, enter valid email.";
 "Invalid phone"                          = "Invalid phone";
 "*Invalid password! Password must be 6 characters long and contains numbers and letters" = "*Invalid password! Password must be 6 characters long and contains numbers and letters";
+"Your availability has been updated" = "Your availability has been updated";
+"Availability updated"                   =  "Availability updated" ;
 
 "Please, enter your OTP."                = "Please, enter your OTP.";
 
@@ -57,9 +59,24 @@
 "Exit"                                   = "Exit";
 "Declined jobs"                         = "Declined jobs";
 "Other jobs"                            =  "Other jobs";
+"Jobs"                          = "Jobs";
+"No Show"                          = "No Show";
+"years of experience"             = "years of experience";
+"Busy"                                   = "Busy";
+"Free"                                   = "Free";
+
+"Back"                                   = "Back";
+"This candidate is hired"             = "This candidate is hired";
+"Professional decline"             = "Professional decline";
 
 "years of experience"                    = "years of experience";
+"Rate"                           = "Rate";
+"Last Employers"                           = "Last Employers";
 
+
+
+
+"No show"                           = "No show";
 "No end Date"                            = "No end Date";
 "Search jobs"                              = "Search jobs";
 "Pending Invitations"                      = "Pending Invitations";
@@ -75,6 +92,7 @@
 "NO SHOW"                          = "NO SHOW";
 "You have successfully set Jobseeker as No Show for your job" = "You have successfully set Jobseeker as No Show for your job";
 "Set this Professional as No Show?" = "Set this Professional as No Show?";
+"Business"                           = "Business";
 
 "Enter rate here"                    = "Enter rate here";
 "Great! Now You have 60 days to post your jobs for free" = "Great! Now You have 60 days to post your jobs for free";

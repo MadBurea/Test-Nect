@@ -81,18 +81,20 @@ class EmpHistoryInnerCell: UITableViewCell, UICollectionViewDelegate, UICollecti
        else if topVC is EmpHistoryVC {
             self.userRateTableheightConstraints.constant = 0
             self.historyRateBtn.isHidden = true
+            
+            self.userRateTableView.register(UINib(nibName: "EmpHistoryRatingCell", bundle: Bundle.main), forCellReuseIdentifier: "EmpHistoryRatingCell")
+            
+            self.userRateTableView.rowHeight = UITableViewAutomaticDimension
+            self.userRateTableView.estimatedRowHeight = 20
+            
+            self.userRateTableView.dataSource = self
+            self.userRateTableView.delegate = self
         }
         else{
             self.lblProfessionalHired.isHidden = true
         }
         
-        self.userRateTableView.register(UINib(nibName: "EmpHistoryRatingCell", bundle: Bundle.main), forCellReuseIdentifier: "EmpHistoryRatingCell")
-        
-        self.userRateTableView.rowHeight = UITableViewAutomaticDimension
-        self.userRateTableView.estimatedRowHeight = 20
-
-        self.userRateTableView.dataSource = self
-        self.userRateTableView.delegate = self
+     
         objJobHistoryCollectionView.dataSource = self
         objJobHistoryCollectionView.delegate = self
        

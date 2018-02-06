@@ -13,6 +13,13 @@
 "REGISTER"                              = "REGISTER";
 "I'M ALREADY REGISTERED"                = "I'M ALREADY REGISTERED";
 "POST YOUR JOB"                         = "POST YOUR JOB";
+"jobs in"                               = "jobs in";
+"Your availability has been updated"    = "Your availability has been updated";
+"Availability updated"                   =  "Availability updated" ;
+"Jobs"                          = "Jobs";
+"No Show"                          = "No Show";
+"years of experience"             = "years of experience";
+"Availability updated"                   =  "Availability updated" ;
 
 "Enter name"                             = "Enter name";
 "Enter surname"                          = "Enter surname";
@@ -56,8 +63,14 @@
 "Settings"                               = "Settings";
 "Invite friends"                         = "Invite friends";
 "Exit"                                   = "Exit";
+"Busy"                                   = "Busy";
+"Free"                                   = "Free";
+"Back"                                   = "Back";
+"This candidate is hired"             = "This candidate is hired";
+"Professional decline"             = "Professional decline";
 
 "years of experience"                    = "years of experience";
+"Last Employers"                           = "Last Employers";
 
 "Search jobs"                              = "Search jobs";
 "Pending Invitations"                      = "Pending Invitations";
@@ -102,6 +115,7 @@
 "YES"                              = "YES";
 "NO"                              = "NO";
 // MARK:-  EmpInvitedPostedJobVC String
+"No show"                           = "No show";
 
 "Invite"                           = "Invite";
 "For:"                             = "For:";
@@ -113,6 +127,9 @@
 "month"                            = "month";
 "Declined jobs"                    = "Declined jobs";
 "Other jobs"                            =  "Other jobs";
+"Rate"                           = "Rate";
+
+"Business"                           = "Business";
 
 // MARK:-  EmpJobSelectionProgressVC String
 "None"                            = "None";

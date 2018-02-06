@@ -54,7 +54,6 @@ class EmpSignUpVC: UIViewController,UITextFieldDelegate {
     }
    
     override func viewDidAppear(_ animated: Bool) {
-        
            self.textFieldSetUp()
     }
     
@@ -518,7 +517,7 @@ class EmpSignUpVC: UIViewController,UITextFieldDelegate {
                         
                         if appdel.deviceLanguage == "pt-BR"
                         {
-                            self.view.makeToast("\(Response.object(forKey: "pt_message")!)", duration: 3.0, position: .bottom)
+                           // self.view.makeToast("\(Response.object(forKey: "pt_message")!)", duration: 3.0, position: .bottom)
                         }
                         else
                         {
@@ -540,7 +539,8 @@ class EmpSignUpVC: UIViewController,UITextFieldDelegate {
                     
                     if appdel.deviceLanguage == "pt-BR"
                     {
-                        self.alertMessage.strMessage = "\(Response.object(forKey: "pt_message")!)"
+                        //self.alertMessage.strMessage = "\(Response.object(forKey: "pt_message")!)"
+                        self.alertMessage.strMessage = "\(Response.object(forKey: "message")!)"
                     }
                     else
                     {
