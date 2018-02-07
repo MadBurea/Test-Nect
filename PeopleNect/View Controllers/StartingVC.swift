@@ -32,7 +32,6 @@ class StartingVC: UIViewController {
             case 2436:
                 print("iPhone X")
                 //self.changeStatusBarColor()
-
             default:
                 print("unknown")
             }
@@ -52,11 +51,10 @@ class StartingVC: UIViewController {
         
         print("timezone value is",getTimeZoneValue())
 
-        print("portueges Number is",convertEngNumToPortuGese(num: "1,0000.00"))
-        
-       // findProfessionalLbl.text = Localization(string: "FIND PROFESSIONALS")
+        print("Number is",ConvertToPortuegeCurrency(number:100000))
 
         // Do any additional setup after loading the view.
+       
     }
 
     override func didReceiveMemoryWarning() {

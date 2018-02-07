@@ -106,7 +106,7 @@ class EmpDash: UIViewController ,GMUClusterManagerDelegate, GMSMapViewDelegate,C
     override func viewDidLoad() {
         super.viewDidLoad()
         hideNavigationBar()
-        
+
         mapHeightConstraints.constant = (UIScreen.main.bounds.size.height * 320)/667
         self.btnFilterExpertise.isHidden = true
         self.lblResultFrmAllCategory.isHidden = true
@@ -209,7 +209,7 @@ class EmpDash: UIViewController ,GMUClusterManagerDelegate, GMSMapViewDelegate,C
         
         // toast
         if SettingDetailUPdated {
-            self.view.makeToast("Details Updated.", duration: 3.0, position: .bottom)
+            self.view.makeToast(Localization(string:"Details Updated."), duration: 3.0, position: .bottom)
         }
         
       

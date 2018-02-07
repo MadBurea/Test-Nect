@@ -58,6 +58,14 @@ extension Date {
 
 extension UIViewController {
     
+    func ConvertToPortuegeCurrency(number:NSNumber) -> String{
+        let currencyFormatter = NumberFormatter()
+        currencyFormatter.numberStyle = .currency
+        currencyFormatter.currencySymbol = "$"
+        currencyFormatter.locale = NSLocale(localeIdentifier: "pt-BR") as Locale
+        let currency = currencyFormatter.string(from:number)
+        return currency!
+    }
     
     func getTimeZoneValue() -> Int {
         //var secondsFromGMT: Int { return TimeZone.current.secondsFromGMT() }
@@ -112,17 +120,9 @@ extension UIViewController {
         return dateFormatter.string(from: dt!)
     }
     
-    func convertEngNumToPortuGese(num: String)->String{
-        //let number = NSNumber(value: Int(num)!)
-        let format = NumberFormatter()
-        format.locale = Locale(identifier: "pt-BR")
-        let number =   format.number(from: num)
-        print("num is",num)
-        print("number is",number)
-
-        let faNumber = format.string(from: number!)
-        return faNumber!
-    }
+  
+    
+    
     
     func convertDateFormaterUTC(_ date: String) -> String
     {

@@ -1053,51 +1053,6 @@ class JobSignUpSocialVC: UIViewController, UITextFieldDelegate, UITableViewDeleg
                     
                     print(Response.object(forKey: "message")!)
                 }
-                
-                
-                
-//                if status == 1
-//                {
-//                    if let dataDict = (dictResponse as AnyObject).object(forKey: "data") as? NSDictionary
-//                    {
-//                        let loginDict =  NSMutableDictionary(dictionary: dataDict)
-//                        
-//                        let keys = loginDict.allKeys.filter({loginDict[$0] is NSNull})
-//                        
-//                        print(keys)
-//                        
-//                        for key in keys {
-//                            loginDict.removeObject(forKey:key)
-//                        }
-//                        
-//                        
-//                        UserDefaults.standard.removeObject(forKey: kJobSignUpDict)
-//                        
-//                        UserDefaults.standard.set(loginDict, forKey: kJobSignUpDict)
-//                        
-//                        self.view.makeToast("\(Response.object(forKey: "message") as! String)", duration: 1.0, position: .bottom)
-//                        
-//                    
-//                            let JobSelectCatagoryVC = self.storyboard?.instantiateViewController(withIdentifier: "JobSelectCatagoryVC") as! JobSelectCatagoryVC
-//                            
-//                            self.navigationController?.pushViewController(JobSelectCatagoryVC, animated: true)
-//                            
-//                       
-//                    }
-//                    
-//                }
-//                else
-//                {
-//                    self.alertMessage.strMessage = "\(Response.object(forKey: "message")!)"
-//                    
-//                    self.alertMessage.modalPresentationStyle = .overCurrentContext
-//
-//                    self.present(self.alertMessage, animated: false, completion: nil)
-//
-//                   // print(Response.object(forKey: "message"))
-//                }
-                
-                
             }
         }
         

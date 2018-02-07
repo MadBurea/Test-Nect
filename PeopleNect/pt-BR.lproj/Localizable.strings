@@ -140,6 +140,10 @@
 
 
 
+"You canceled job successfully"                           = "Você cancelou a vaga!";
+"Job in progress, you can't cancel it!"                 = "Trabalho em andamento. Não há como desistir!";
+"Dang! Something went wrong. Try again!"                 = "Algo deu errado! Tente de novamente";
+"Your Password has been changed."                 = "Sua senha foi alterada.";
 
 
 // MARK:-  EmpJobSelectionProgressVC String
@@ -160,7 +164,14 @@
 "Please, complete your profile. You may edit it later."   = "Por favor, complete seu perfil . Você pode alterá-lo depois.";
 "No expertise found for this business"        = "Não encontramos especializações nessa área de negócio.";
 
-
+"Job published!"        = "Vaga publicada!";
+"Select at least one expertise, then continue"        = "Selecione ao menos uma especialidade";
+"Select only 1 speciality"        = "Selecione apenas 1 especialidades";
+"Incorrect OTP"        = "Código incorreto";
+"Details Updated."        = "Dados atualizados.";
+"Invitation accepted!"        = "Convite aceito!";
+"Invitation refused!"        = "Convite recusado!";
+"Profile updated!"        = "Perfil atualizado!";
 
 
 

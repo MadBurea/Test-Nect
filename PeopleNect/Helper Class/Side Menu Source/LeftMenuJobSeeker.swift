@@ -344,7 +344,7 @@ class LeftMenuJobSeeker: UIViewController,UITableViewDataSource,UITableViewDeleg
             
            // let loginDict = UserDefaults.standard.object(forKey: kJobSignUpDict) as! NSDictionary
             
-            self.view.makeToast("Profile updated!", duration: 3.0, position: .bottom)
+            self.view.makeToast(Localization(string:"Profile updated!"), duration: 3.0, position: .bottom)
 
             let userID = "\(appdel.loginUserDict.object(forKey: "userId")!)"
             self.UploadImage(image: image, userID: userID,isEmployer:false)

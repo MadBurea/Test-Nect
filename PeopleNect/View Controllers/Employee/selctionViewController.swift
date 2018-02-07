@@ -130,7 +130,7 @@ UITableViewDelegate
         
         if isfromJobPubliush == true
         {
-            self.view.makeToast("Job published!", duration: 3.0, position: .bottom)
+            self.view.makeToast(Localization(string: "Job published!"), duration: 3.0, position: .bottom)
         }
         // Do any additional setup after loading the view.
         
@@ -895,7 +895,17 @@ UITableViewDelegate
                     let balance = "\(dictResponse.object(forKey: "hourly_rate")!)" as NSString
                     var balanceRS = Int()
                     balanceRS = balance.integerValue
-                    self.amountLabel.text = "$\(balanceRS.withCommas())" + ".00 \(perHour)"
+                    
+                   
+                    if appdel.deviceLanguage == "pt-BR"
+                    {
+                        let number = NSNumber(value: balance.floatValue)
+                        self.amountLabel.text = self.ConvertToPortuegeCurrency(number: number)
+                    }
+                    else
+                    {
+                        self.amountLabel.text = "$\(balanceRS.withCommas())" + ".00 \(perHour)"
+                    }
                     
                     
                    // self.amountLabel.text = "\(dictResponse.object(forKey: "hourly_rate")!)" + perHour

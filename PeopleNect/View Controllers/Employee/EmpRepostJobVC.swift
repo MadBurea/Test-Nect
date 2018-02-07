@@ -130,7 +130,16 @@ class EmpRepostJobVC: UIViewController ,UITableViewDelegate,UITableViewDataSourc
             var balanceRS = Int()
             balanceRS = balance.integerValue
             
-            cell.Jobprice.text = "$ \(balanceRS.withCommas())" + ".00" + perDayStr
+            if appdel.deviceLanguage == "pt-BR"
+            {
+                let number = NSNumber(value: balance.floatValue)
+                cell.Jobprice.text = ConvertToPortuegeCurrency(number: number)
+            }
+            else
+            {
+                cell.Jobprice.text = "$ \(balanceRS.withCommas())" + ".00" + perDayStr
+            }
+            
             
             //cell.Jobprice.text =  "$" + "\(tempDict.object(forKey: "rate")!)" + perDayStr
         }

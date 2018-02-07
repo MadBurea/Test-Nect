@@ -255,7 +255,6 @@ class EmpLoginVC: UIViewController,UITextFieldDelegate {
                 
                 if status == 1
                 {
-                 //   self.view.makeToast(message, duration: 1.0, position: .bottom)
 
                     let storyBoard : UIStoryboard = UIStoryboard(name: "Employee", bundle:nil)
                     let empdashboardVC = storyBoard.instantiateViewController(withIdentifier: "EmpDash") as! EmpDash

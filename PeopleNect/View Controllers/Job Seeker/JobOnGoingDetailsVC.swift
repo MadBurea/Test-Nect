@@ -282,8 +282,18 @@ class JobOnGoingDetailsVC: UIViewController {
                         let balance = "\(dataDict.object(forKey: "hourlyRate")!)" as NSString
                         var balanceRS = Int()
                         balanceRS = balance.integerValue
-                        self.lblPayment.text = "$\(balanceRS.withCommas())" + ".00"
+                       
+                       
                         
+                        if appdel.deviceLanguage == "pt-BR"
+                        {
+                            let number = NSNumber(value: balance.floatValue)
+                            self.lblPayment.text = self.ConvertToPortuegeCurrency(number: number)
+                        }
+                        else
+                        {
+                            self.lblPayment.text = "$\(balanceRS.withCommas())" + ".00"
+                        }
                         
                         
                         self.lblJob.text = dataDict.value(forKey: "jobTitle") as? String
@@ -378,16 +388,16 @@ class JobOnGoingDetailsVC: UIViewController {
                 
                 if status == 1
                 {
+                    self.view.makeToast(Localization(string: "You canceled job successfully"), duration: 3.0, position: .bottom)
+
                     _ = self.navigationController?.popViewController(animated: true)
-                }else{
                     
-                    if appdel.deviceLanguage == "pt-BR"
-                    {
-                        self.alertMessage.strMessage = "\(Response.object(forKey: "pt_message")!)"
-                    }
-                    else
-                    {
-                        self.alertMessage.strMessage = "\(Response.object(forKey: "message")!)"
+                }else{
+               
+                    if status == 2 {
+                         self.alertMessage.strMessage = Localization(string:  "Job in progress, you can't cancel it!")
+                    }else{
+                        self.alertMessage.strMessage = Localization(string:  "Dang! Something went wrong. Try again!")
                     }
                     self.alertMessage.modalPresentationStyle = .overCurrentContext
                     self.present(self.alertMessage, animated: false, completion: nil)

@@ -123,8 +123,7 @@ class EmpSelectSkillsVC: UIViewController, UICollectionViewDelegate,UICollection
         print("categoryId is",categoryId)
         
         if arrSelectedSubCategory.count == 0{
-          //  self.view.makeToast("Select at least one expertise, then continue", duration: 3.0, position: .bottom)
-            self.alertMessage.strMessage = "Select at least one expertise, then continue"
+            self.alertMessage.strMessage = Localization(string:"Select at least one expertise, then continue")
             self.alertMessage.modalPresentationStyle = .overCurrentContext
             self.present(self.alertMessage, animated: false, completion: nil)
         }else{
@@ -213,7 +212,7 @@ class EmpSelectSkillsVC: UIViewController, UICollectionViewDelegate,UICollection
             
             if arrSelectedSubCategory.count > 0
             {
-                self.view.makeToast("Select only 1 speciality", duration: 1.0, position: .bottom)
+                self.view.makeToast(Localization(string:"Select only 1 speciality"), duration: 1.0, position: .bottom)
                 
              cell.isUserInteractionEnabled = false
 

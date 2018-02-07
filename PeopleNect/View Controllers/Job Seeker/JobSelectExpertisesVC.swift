@@ -120,7 +120,7 @@ class JobSelectExpertisesVC: UIViewController,UICollectionViewDelegate,UICollect
 
         if arrSelectedSubCategory.count <= 0{
             
-            self.view.makeToast("Select at least one expertise, then continue", duration: 3.0, position: .bottom)
+            self.view.makeToast(Localization(string:"Select at least one expertise, then continue"), duration: 3.0, position: .bottom)
 
           //  print("Select any of SubCategory")
         }else{

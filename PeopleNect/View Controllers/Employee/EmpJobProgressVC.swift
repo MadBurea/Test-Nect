@@ -194,7 +194,20 @@ class EmpJobProgressVC: UIViewController, UITableViewDelegate, UITableViewDataSo
             let balance = "\(tempDict.object(forKey: "rate")!)" as NSString
             var balanceRS = Int()
             balanceRS = balance.integerValue
-            expandcell.lblPayment.text = "$\(balanceRS.withCommas())" + ".00"
+            
+          
+            if appdel.deviceLanguage == "pt-BR"
+            {
+                let number = NSNumber(value: balance.floatValue)
+                expandcell.lblPayment.text = ConvertToPortuegeCurrency(number: number)
+            }
+            else
+            {
+                expandcell.lblPayment.text = "$\(balanceRS.withCommas())" + ".00"
+            }
+            
+            
+            
             expandcell.lblRatings.text =  "\(tempDict.object(forKey: "rating")!)"
             
             
@@ -302,7 +315,16 @@ class EmpJobProgressVC: UIViewController, UITableViewDelegate, UITableViewDataSo
             let balance = "\(tempDict.object(forKey: "rate")!)" as NSString
             var balanceRS = Int()
             balanceRS = balance.integerValue
-            mainCell.lblPayment.text = "$\(balanceRS.withCommas())" + ".00"
+            
+            if appdel.deviceLanguage == "pt-BR"
+            {
+                let number = NSNumber(value: balance.floatValue)
+                mainCell.lblPayment.text = ConvertToPortuegeCurrency(number: number)
+            }
+            else
+            {
+                mainCell.lblPayment.text = "$\(balanceRS.withCommas())" + ".00"
+            }
             
             
             //mainCell.lblPayment.text =  "$\(tempDict.object(forKey: "rate")!)"

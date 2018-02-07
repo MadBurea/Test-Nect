@@ -134,7 +134,16 @@ class EmpInvitePostedJobVC: UIViewController,UITableViewDataSource,UITableViewDe
         let balance = "\(tempDict.object(forKey: "rate")!)" as NSString
         var balanceRS = Int()
         balanceRS = balance.integerValue
-        tablecell.lblPrice.text = "$ \(balanceRS.withCommas())" + ".00" + "\(afterRateString)"
+        
+        if appdel.deviceLanguage == "pt-BR"
+        {
+            let number = NSNumber(value: balance.floatValue)
+            tablecell.lblPrice.text = "\(ConvertToPortuegeCurrency(number: number))" + "\(afterRateString)"
+        }
+        else
+        {
+            tablecell.lblPrice.text = "$ \(balanceRS.withCommas())" + ".00" + "\(afterRateString)"
+        }
         
          //tablecell.lblPrice.text = "$\(tempDict.object(forKey: "rate")!)/\(afterRateString)"
         
@@ -209,6 +218,7 @@ class EmpInvitePostedJobVC: UIViewController,UITableViewDataSource,UITableViewDe
                 else
                 {
                     
+                   
                     if appdel.deviceLanguage == "pt-BR"
                     {
                         self.alertMessage.strMessage = "\(Response.object(forKey: "pt_message")!)"
@@ -324,14 +334,28 @@ class EmpInvitePostedJobVC: UIViewController,UITableViewDataSource,UITableViewDe
                     _ = self.navigationController?.popViewController(animated: true)
                     
                 }else{
-                    if appdel.deviceLanguage == "pt-BR"
-                    {
-                        self.alertMessage.strMessage = "\(dictResponse.value(forKey: "pt_message")!)"
+                   
+                    
+                    if Response.object(forKey:"pt_message") != nil {
+                        if appdel.deviceLanguage == "pt-BR"
+                        {
+                            self.alertMessage.strMessage = "\(dictResponse.value(forKey: "pt_message")!)"
+                        }
+                        else
+                        {
+                            self.alertMessage.strMessage = "\(dictResponse.value(forKey: "message")!)"
+                        }
+                    }else{
+                        if appdel.deviceLanguage == "pt-BR"
+                        {
+                            self.alertMessage.strMessage = "\(dictResponse.value(forKey: "message")!)"
+                        }
+                        else
+                        {
+                            self.alertMessage.strMessage = "\(dictResponse.value(forKey: "message")!)"
+                        }
                     }
-                    else
-                    {
-                        self.alertMessage.strMessage = "\(dictResponse.value(forKey: "message")!)"
-                    }
+                    
                     self.alertMessage.modalPresentationStyle = .overCurrentContext
                     self.present(self.alertMessage, animated: false, completion: nil)
                 }

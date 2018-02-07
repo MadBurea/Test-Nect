@@ -120,6 +120,7 @@ class EmpLastDetailsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFie
     
     @IBOutlet var imgCheckSameAdd: UIImageView!
     
+    var totalAmountProject = ""
     var profileImage = UIImage()
     
     //for edit allow
@@ -466,7 +467,11 @@ class EmpLastDetailsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFie
         var  longitude = "\(appdel.loginUserDict.object(forKey: "lng")!)"
 
         var sameLocationOfTheCompany = ""
-        var totalAmount =  self.lblPaymentRs.text as! NSString
+        
+        //var totalAmount =  self.lblPaymentRs.text as! NSString
+        
+        var totalAmount =  totalAmountProject as NSString
+        
         totalAmount =  totalAmount.replacingOccurrences(of: "$", with: "") as NSString
         var workingDay = ""
         var totalHour = 0
@@ -1635,7 +1640,6 @@ class EmpLastDetailsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFie
                 else
                 {
                     self.txtEndDate.text = dateFormatter.string(from: objEndDatePicker.date)
-                  // self.view.makeToast("Time must be greater than starttime", duration: 3.0, position: .bottom)
                 }
             self.txtEndDate.resignFirstResponder()
             self.txtStartHour.becomeFirstResponder()
@@ -1679,13 +1683,6 @@ class EmpLastDetailsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFie
                 self.txtPerHourPerDay.text = totalHourMessage as String
             }
             
-            
-//            if startDate.compare(endDate as String) == .orderedAscending {
-//                
-//            }
-//            else {
-//                self.view.makeToast("Time must be greater than starttime", duration: 3.0, position: .bottom)
-//            }
              self.txtEndHour.resignFirstResponder()
             self.txtRsPerHours.becomeFirstResponder()
         }
@@ -1733,16 +1730,53 @@ class EmpLastDetailsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFie
             let intRs = rs.intValue
             let amount = Float(intHours) * Float(intRs)
             if btnPaymentPerJob.isSelected  {
-                self.lblPaymentRs.text = "$\(self.txtRsPerHours.text!)"
+                let rsValue = (self.txtRsPerHours.text!) as NSString
+                let myNumber = NSNumber(value: rsValue.floatValue)
+
+                totalAmountProject = "$\(self.txtRsPerHours.text!)"
+                
+                if appdel.deviceLanguage == "pt-BR"
+                {
+                    self.lblPaymentRs.text = ConvertToPortuegeCurrency(number: myNumber)
+                }
+                else
+                {
+                    self.lblPaymentRs.text = totalAmountProject
+                }
+                
             }
             if btnPaymentPerHour.isSelected  {
                 if  self.imgCheckWeekend.isHidden == false {
                     let amountHour = Float(amount) * Float(includingWeekDay)
-                    self.lblPaymentRs.text = "$\(amountHour)"
+                    let number = NSNumber(value: amountHour)
+                    
+                    totalAmountProject = "$\(amountHour)"
+
+                    if appdel.deviceLanguage == "pt-BR"
+                    {
+                        self.lblPaymentRs.text = ConvertToPortuegeCurrency(number: number)
+                    }
+                    else
+                    {
+                        self.lblPaymentRs.text = totalAmountProject
+                    }
                 }
                 else{
                     let amountHour = Float(amount) * Float(excludingWeekDay)
-                    self.lblPaymentRs.text = "$\(amountHour)"
+                    
+                    let number = NSNumber(value: amountHour)
+                    
+                    totalAmountProject = "$\(amountHour)"
+
+                    if appdel.deviceLanguage == "pt-BR"
+                    {
+                        self.lblPaymentRs.text = ConvertToPortuegeCurrency(number: number)
+                    }
+                    else
+                    {
+                        self.lblPaymentRs.text = totalAmountProject
+                    }
+                    
                 }
             }
             if btnPaymentPerMonth.isSelected  {
@@ -1753,11 +1787,38 @@ class EmpLastDetailsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFie
                 if  self.imgCheckWeekend.isHidden == false {
                     let totalCost = Float(totalMonthprice) * Float(includingWeekDay)
                     let amountValue =  String(format: "%.2f", totalCost)
-                    self.lblPaymentRs.text = "$\(amountValue)"
+                    
+                    let number = NSNumber(value: totalCost)
+                    
+                    totalAmountProject = "$\(amountValue)"
+
+                    
+                    if appdel.deviceLanguage == "pt-BR"
+                    {
+                        self.lblPaymentRs.text = ConvertToPortuegeCurrency(number: number)
+                    }
+                    else
+                    {
+                        self.lblPaymentRs.text = totalAmountProject
+                    }
+                    
                 }else{
                     let totalCost = Float(totalMonthprice) * Float(excludingWeekDay)
                     let amountValue =  String(format: "%.2f", totalCost)
-                    self.lblPaymentRs.text = "$\(amountValue)"
+                    
+                    let number = NSNumber(value: totalCost)
+                    
+                    totalAmountProject = "$\(amountValue)"
+
+                    if appdel.deviceLanguage == "pt-BR"
+                    {
+                        self.lblPaymentRs.text = ConvertToPortuegeCurrency(number: number)
+                    }
+                    else
+                    {
+                        self.lblPaymentRs.text = totalAmountProject
+                    }
+                    
                 }
             }
         }
@@ -2307,7 +2368,18 @@ class EmpLastDetailsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFie
                         let balance = "\(dataDict.object(forKey: "hoursPerDay")!)" as NSString
                         var balanceRS = Int()
                         balanceRS = balance.integerValue
-                        self.txtPerHourPerDay.text = "\(balanceRS.withCommas())" + ".00"
+                        
+                       
+                        
+                        if appdel.deviceLanguage == "pt-BR"
+                        {
+                            let number = NSNumber(value: balance.floatValue)
+                            self.txtPerHourPerDay.text = self.ConvertToPortuegeCurrency(number: number)
+                        }
+                        else
+                        {
+                            self.txtPerHourPerDay.text = "\(balanceRS.withCommas())" + ".00"
+                        }
                         
                        // self.txtPerHourPerDay.text = dataDict.value(forKey: "hoursPerDay") as? String
                         

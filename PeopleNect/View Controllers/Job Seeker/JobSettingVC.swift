@@ -1169,7 +1169,6 @@ class JobSettingVC: UIViewController, PlaceSearchTextFieldDelegate, UITextFieldD
                 
                 if status == 1
                 {
-                   // self.view.makeToast("Details", duration: 3.0, position: .bottom)
 
                     if let dataDict = (dictResponse as AnyObject).object(forKey: "data") as? NSDictionary
                     {

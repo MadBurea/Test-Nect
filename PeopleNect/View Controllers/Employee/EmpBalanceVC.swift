@@ -172,21 +172,33 @@ class EmpBalanceVC: UIViewController,SlideNavigationControllerDelegate {
                 balanceRS = balance.integerValue
                 print("balance Rs is",balanceRS.withCommas())
                 
-                self.lblBalance.text = "$\(balanceRS.withCommas())" + ".00"
+               
+                
+                if appdel.deviceLanguage == "pt-BR"
+                {
+                    let number = NSNumber(value: balance.floatValue)
+                    self.lblBalance.text = self.ConvertToPortuegeCurrency(number: number)
+                }
+                else
+                {
+                    self.lblBalance.text = "$\(balanceRS.withCommas())" + ".00"
+                }
+                
+                
                 
                 if status == 1 {
                     
                     if let dataDict = dictResponse.object(forKey: "data") as? NSArray {
                         
                         
-//                        if appdel.deviceLanguage == "pt-BR"
-//                        {
-//                            self.view.makeToast("\(Response.object(forKey: "pt_message")!)", duration: 3.0, position: .bottom)
-//                        }
-//                        else
-//                        {
-//                            self.view.makeToast("\(Response.object(forKey: "message")!)", duration: 3.0, position: .bottom)
-//                        }
+                        if appdel.deviceLanguage == "pt-BR"
+                        {
+                            self.view.makeToast("\(Response.object(forKey: "pt_message")!)", duration: 3.0, position: .bottom)
+                        }
+                        else
+                        {
+                            self.view.makeToast("\(Response.object(forKey: "message")!)", duration: 3.0, position: .bottom)
+                        }
                         self.arrayData = dataDict
                         self.tblView.reloadData()
                     }
@@ -194,13 +206,13 @@ class EmpBalanceVC: UIViewController,SlideNavigationControllerDelegate {
                 else {
                     if appdel.deviceLanguage == "pt-BR"
                     {
-                        //self.alertMessage.strMessage = "\(Response.object(forKey: "pt_message")!)"
-                        self.alertMessage.strMessage = "\(Response.object(forKey: "message")!)"
+                        self.alertMessage.strMessage = "\(Response.object(forKey: "pt_message")!)"
                     }
                     else
                     {
                         self.alertMessage.strMessage = "\(Response.object(forKey: "message")!)"
                     }
+                   
                     self.alertMessage.modalPresentationStyle = .overCurrentContext
                     self.present(self.alertMessage, animated: false, completion: nil)
                 }

@@ -59,7 +59,7 @@
 "Exit"                                   = "Exit";
 "Declined jobs"                         = "Declined jobs";
 "Other jobs"                            =  "Other jobs";
-"Jobs"                          = "Jobs";
+"Jobs"                                  = "Jobs";
 "No Show"                          = "No Show";
 "years of experience"             = "years of experience";
 "Busy"                                   = "Busy";
@@ -70,8 +70,17 @@
 "Professional decline"             = "Professional decline";
 
 "years of experience"                    = "years of experience";
-"Rate"                           = "Rate";
+"Rate"                              = "Rate";
 "Last Employers"                           = "Last Employers";
+
+"You canceled job successfully"                           = "You canceled job successfully";
+"Job in progress, you can't cancel it!"                 = "Job in progress, you can't cancel it!";
+"Dang! Something went wrong. Try again!"                 = "Dang! Something went wrong. Try again!";
+
+
+"Your Password has been changed."                 = "Your Password has been changed.";
+
+
 
 
 
@@ -149,5 +158,19 @@
 "Add"                             = "Add";
 "Please, complete your profile. You may edit it later."   = "Please, complete your profile. You may edit it later.";
 "No expertise found for this business"        = "No expertise found for this business";
+
+
+"Job published!"        = "Job published!";
+"Select at least one expertise, then continue"        = "Select at least one expertise, then continue";
+"Select only 1 speciality"        = "Select only 1 speciality";
+"Incorrect OTP"        = "Incorrect OTP";
+"Details Updated."        = "Details Updated.";
+"Invitation accepted!"        = "Invitation accepted!";
+"Invitation refused!"        = "Invitation refused!";
+"Profile updated!"        = "Profile updated!";
+
+
+
+
 
 

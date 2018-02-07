@@ -152,6 +152,9 @@ class JobDash: UIViewController,GMUClusterManagerDelegate, GMSMapViewDelegate,CL
         self.refreshContoller()
         
         
+//        self.SliderTimingNM.lowerValue = "00:00"
+//        self.SliderTimingNM.upperValue
+        
         self.noneLbl.isHidden = true
         self.CategoryTable.rowHeight = UITableViewAutomaticDimension
         self.CategoryTable.estimatedRowHeight = 80
@@ -263,7 +266,6 @@ class JobDash: UIViewController,GMUClusterManagerDelegate, GMSMapViewDelegate,CL
         SliderTimingNM.maximumValue = Float(Int(24))
         
         
-        
         let algorithm = GMUNonHierarchicalDistanceBasedAlgorithm()
         
         let iconGenerator = CustomClusterIconGenerator()
@@ -286,7 +288,7 @@ class JobDash: UIViewController,GMUClusterManagerDelegate, GMSMapViewDelegate,CL
         
         // toast
         if SettingDetailUPdated {
-            self.view.makeToast("Details Updated.", duration: 3.0, position: .bottom)
+            self.view.makeToast(Localization(string:"Details Updated."), duration: 3.0, position: .bottom)
         }
         
        
@@ -406,7 +408,23 @@ class JobDash: UIViewController,GMUClusterManagerDelegate, GMSMapViewDelegate,CL
         viewTurnYourAvailibiltyOn.frame =  CGRect(x: 0 , y: 80, width: self.view.bounds.width, height: 200)
         
         
-        self.lblHigherTime.frame = CGRect(x: self.SliderTimingNM.frame.origin.x, y: self.SliderTimingNM.frame.origin.y + 20, width: 30, height: 25)
+        //upperHandle
+        
+        //self.lblHigherTime.frame = CGRect(x: self.SliderTimingNM.frame.origin.x, y: self.SliderTimingNM.frame.origin.y + 20, width: 30, height: 25)
+        
+        
+         self.SliderTimingNM.trackImage = #imageLiteral(resourceName: "slider-default7-track.png")
+       
+        self.lblHigherTime.text = "23:59"
+        
+        
+       self.SliderTimingNM.lowerValue = 0
+        self.SliderTimingNM.upperValue = 24
+        
+         //self.lblHigherTime.frame = CGRect(x: UIScreen.main.bounds.width - 50, y: self.lblLowerTime.frame.origin.y, width: 30, height: 25)
+        
+        
+        self.lblHigherTime.frame = CGRect(x: self.SliderTimingNM.frame.origin.x + self.SliderTimingNM.frame.width - 25 , y: self.lblLowerTime.frame.origin.y + 20, width: 30, height: 25)
         
       }
     
@@ -723,8 +741,16 @@ class JobDash: UIViewController,GMUClusterManagerDelegate, GMSMapViewDelegate,CL
                 
                 var balanceRS = Int()
                 balanceRS = balance.integerValue
-                expandcell.lblPayment.text = "$\(balanceRS.withCommas())" + ".00"
                 
+                if appdel.deviceLanguage == "pt-BR"
+                {
+                    let number = NSNumber(value: balance.floatValue)
+                    expandcell.lblPayment.text = ConvertToPortuegeCurrency(number: number)
+                }
+                else
+                {
+                    expandcell.lblPayment.text = "$\(balanceRS.withCommas())" + ".00"
+                }
                 
                 expandcell.lblRatings.text =  "\(tempDict.object(forKey: "rating")!)"
                 expandcell.lblLocation.text =  "\(tempDict.object(forKey: "distance")!)km"
@@ -886,7 +912,16 @@ class JobDash: UIViewController,GMUClusterManagerDelegate, GMSMapViewDelegate,CL
                 let balance = "\(tempDict.object(forKey: "rate")!)" as NSString
                 var balanceRS = Int()
                 balanceRS = balance.integerValue
-                mainCell.lblPayment.text = "$\(balanceRS.withCommas())" + ".00"
+                
+                if appdel.deviceLanguage == "pt-BR"
+                {
+                    let number = NSNumber(value: balance.floatValue)
+                    mainCell.lblPayment.text = ConvertToPortuegeCurrency(number: number)
+                }
+                else
+                {
+                    mainCell.lblPayment.text = "$\(balanceRS.withCommas())" + ".00"
+                }
                 
                 //mainCell.lblPayment.text =  "$\(tempDict.object(forKey: "rate")!)" + ".00"
                 
@@ -933,10 +968,11 @@ class JobDash: UIViewController,GMUClusterManagerDelegate, GMSMapViewDelegate,CL
                 
                 if start.isEmpty && end.isEmpty
                 {
-                    //cell.btnCancel.tag = indexPath.row + 100
+                    //
                     
                     cell.btnCancel.tag =  (arrDaysFull.count - 1) + 100
 
+                    cell.btnCancel.accessibilityHint = "\(indexPath.row + 100)"
                     
                     cell.lblTime.text = strNotAvailability
                     
@@ -978,9 +1014,11 @@ class JobDash: UIViewController,GMUClusterManagerDelegate, GMSMapViewDelegate,CL
                 
                 if start.isEmpty && end.isEmpty
                 {
-                  //  cell.btnCancel.tag = indexPath.row + 100
                     
                     cell.btnCancel.tag = 5 + 100
+
+
+                    cell.btnCancel.accessibilityHint = "\(indexPath.row + 100)"
 
                     cell.lblTime.text = strNotAvailability
                     
@@ -1022,9 +1060,15 @@ class JobDash: UIViewController,GMUClusterManagerDelegate, GMSMapViewDelegate,CL
                 if start.isEmpty && end.isEmpty
                 {
                     cell.btnCancel.tag = indexPath.row-1 + 100
+                    
                     cell.lblTime.text = strNotAvailability
                     
+                    
+                    cell.btnCancel.accessibilityHint = "\(indexPath.row + 100)"
+
                     cell.btnCancel.setImage(#imageLiteral(resourceName: "plus_1"), for: .normal)
+                    
+                    
                     
                     cell.viewTblCell.backgroundColor = UIColor.clear
                     cell.viewTblCell.layer.borderWidth = 1
@@ -1309,8 +1353,13 @@ class JobDash: UIViewController,GMUClusterManagerDelegate, GMSMapViewDelegate,CL
                     HourAppended = "0\(hours)"
                 }
                 
+
+                if HourAppended == "24" {
+                     self.lblLowerTime.text = "23:59"
+                }else{
+                    self.lblLowerTime.text = "\(HourAppended):\(minuteAppended)"
+                }
                 
-                self.lblLowerTime.text = "\(HourAppended):\(minuteAppended)"
                 
                 self.StartTime = self.lblLowerTime.text!
                 
@@ -1339,12 +1388,17 @@ class JobDash: UIViewController,GMUClusterManagerDelegate, GMSMapViewDelegate,CL
                 }
                 
                 
-                self.lblHigherTime.text = "\(HourAppended):\(minuteAppended)"
+                if HourAppended == "24" {
+                    self.lblHigherTime.text = "23:59"
+                }else{
+                    self.lblHigherTime.text = "\(HourAppended):\(minuteAppended)"
+                }
                 
+               // 9006752633
                 
                 self.EndTime = self.lblHigherTime.text!
                 
-                self.lblHigherTime.frame = CGRect(x: self.SliderTimingNM.upperCenter.x, y: self.SliderTimingNM.frame.origin.y + 20, width: 30, height: 25)
+                self.lblHigherTime.frame = CGRect(x: self.SliderTimingNM.upperCenter.x + 15, y: self.SliderTimingNM.frame.origin.y + 20, width: 30, height: 25)
             }
             
             
@@ -2331,13 +2385,14 @@ class JobDash: UIViewController,GMUClusterManagerDelegate, GMSMapViewDelegate,CL
         buttonTag = _sender.tag
         
         
+      
         
         if(buttonTag >= 100)
         {
             //  available
             
             buttonTag = buttonTag - 100
-            
+            print("Selected index is",buttonTag)
             let myCurrentDict = arrDaysFull.object(at: buttonTag) as! NSDictionary
             
             EndTime  = "23:59"
@@ -2348,11 +2403,13 @@ class JobDash: UIViewController,GMUClusterManagerDelegate, GMSMapViewDelegate,CL
             
             viewAvailiobilityPerDay.isHidden = false
             
-            self.lblAvaibilityTimeDay.text = arrDisplayDaysFull.object(at:buttonTag) as? String
-            
+            var buttonAceesibleHint = Int()
+            buttonAceesibleHint = Int(_sender.accessibilityHint!)!
+            buttonAceesibleHint = buttonAceesibleHint - 100
+
+            self.lblAvaibilityTimeDay.text = arrDisplayDaysFull.object(at:buttonAceesibleHint) as? String
             
             self.lblAvaibilityTimeDay.textColor = blueThemeColor
-            //self.view.makeToast("Availability updated", duration: 1.0, position: .bottom)
         }
         else
         {
@@ -2360,7 +2417,6 @@ class JobDash: UIViewController,GMUClusterManagerDelegate, GMSMapViewDelegate,CL
             
             
             // API CALL NOT
-            
             
             let myCurrentDict = arrDaysFull.object(at: buttonTag) as! NSDictionary
             

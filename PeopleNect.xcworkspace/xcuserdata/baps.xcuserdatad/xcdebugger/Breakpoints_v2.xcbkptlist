@@ -106,12 +106,12 @@
                   moduleName = "PeopleNect"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/baps/Desktop/Election/peopleNect21:17_GIT/PeopleNect/View%20Controllers/Job%20Seeker/JobSignUpVC.swift"
-                  timestampString = "538911908.282074"
+                  timestampString = "539696235.649961"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1086"
-                  endingLineNumber = "1086"
-                  offsetFromSymbolStart = "4830">
+                  startingLineNumber = "1089"
+                  endingLineNumber = "1089"
+                  offsetFromSymbolStart = "3592">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -121,12 +121,12 @@
                   moduleName = "PeopleNect"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/baps/Desktop/Election/peopleNect21:17_GIT/PeopleNect/View%20Controllers/Job%20Seeker/JobSignUpVC.swift"
-                  timestampString = "538911908.284868"
+                  timestampString = "539696235.653231"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1086"
-                  endingLineNumber = "1086"
-                  offsetFromSymbolStart = "14372">
+                  startingLineNumber = "1089"
+                  endingLineNumber = "1089"
+                  offsetFromSymbolStart = "10580">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -154,7 +154,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PeopleNect/Helper Class/WebServicesClass.swift"
-            timestampString = "539619759.280164"
+            timestampString = "539673736.6606539"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "52"
@@ -202,12 +202,12 @@
                   moduleName = "PeopleNect"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/baps/Desktop/Election/peopleNect21:17_GIT/PeopleNect/View%20Controllers/Job%20Seeker/JobSignUpVC.swift"
-                  timestampString = "538911908.3055"
+                  timestampString = "539696235.679499"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1047"
-                  endingLineNumber = "1047"
-                  offsetFromSymbolStart = "19866">
+                  startingLineNumber = "1050"
+                  endingLineNumber = "1050"
+                  offsetFromSymbolStart = "14604">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -217,12 +217,12 @@
                   moduleName = "PeopleNect"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/baps/Desktop/Election/peopleNect21:17_GIT/PeopleNect/View%20Controllers/Job%20Seeker/JobSignUpVC.swift"
-                  timestampString = "538911908.308171"
+                  timestampString = "539696235.682561"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1049"
-                  endingLineNumber = "1049"
-                  offsetFromSymbolStart = "32">
+                  startingLineNumber = "1052"
+                  endingLineNumber = "1052"
+                  offsetFromSymbolStart = "40">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -368,6 +368,38 @@
             startingLineNumber = "211"
             endingLineNumber = "211"
             landmarkName = "rateJobseeker()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PeopleNect/View Controllers/Job Seeker/JobOnGoingDetailsVC.swift"
+            timestampString = "539696230.607017"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "374"
+            endingLineNumber = "374"
+            landmarkName = "cancelJobByEmployee()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PeopleNect/View Controllers/Job Seeker/JobOnGoingDetailsVC.swift"
+            timestampString = "539696230.6072381"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "387"
+            endingLineNumber = "387"
+            landmarkName = "cancelJobByEmployee()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

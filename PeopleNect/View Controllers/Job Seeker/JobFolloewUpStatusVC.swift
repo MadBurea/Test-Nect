@@ -172,30 +172,12 @@ class JobFolloewUpStatusVC: UIViewController {
                 
                 if status == 1
                 {
-//                    if let dataDict = (dictResponse.object(forKey: "data")) as? NSDictionary
-//                    {
-//                        let acceptedInvitation = dataDict.object(forKey: "acceptedInvitation") as! [Any]
-//                        
-//                        self.view.makeToast("\(String(describing: Response.object(forKey: "message")))", duration: 3.0, position: .bottom)
-//                        
-//                        self.arrAcceptedInvitation.addObjects(from: acceptedInvitation)
-//                        
-//                        print("arrAcceptedInvitation",self.arrAcceptedInvitation)
-//                        
-//                        self.tblPendingApplication.reloadData()
-//                    }
-//                    
+
                 }
                 else
                 {
                     print("Error","\(Response.object(forKey: "message")!)")
-                    
-//                    self.alertMessage.strMessage = "\(Response.object(forKey: "message")!)"
-//                    
-//                    self.alertMessage.modalPresentationStyle = .overCurrentContext
-//                    
-//                    self.present(self.alertMessage, animated: false, completion: nil)
-//                    
+
                 }
                 
                 

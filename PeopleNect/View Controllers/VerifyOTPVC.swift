@@ -71,7 +71,7 @@ class VerifyOTPVC: UIViewController, UITextFieldDelegate {
             }
             else
             {
-            self.view.makeToast("Incorrect OTP", duration: 3.0, position: .bottom)
+                self.view.makeToast(Localization(string:"Incorrect OTP"), duration: 3.0, position: .bottom)
             }
           }
         

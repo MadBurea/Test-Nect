@@ -616,36 +616,6 @@ class JobLogInVC: UIViewController,UITextFieldDelegate,GIDSignInDelegate,GIDSign
                     {
                         let loginDict =  NSMutableDictionary(dictionary: dataDict)
                         
-                      /*  if (loginDict.object(forKey: "exp_years")) is NSNull
-                        {
-                            loginDict.setValue("", forKey: "exp_years")
-                        }
-                        if (loginDict.object(forKey: "profile_description")) is NSNull
-                        {
-                            loginDict.setValue("", forKey: "profile_description")
-                        }
-                        if (loginDict.object(forKey: "hourly_compensation")) is NSNull
-                        {
-                            loginDict.setValue("", forKey: "hourly_compensation")
-                        }
-                        
-                        if (loginDict.object(forKey: "availability")) is NSNull
-                        {
-                            loginDict.setValue("", forKey: "availability")
-                        }
-                        
-                        UserDefaults.standard.set(loginDict, forKey: kJobSignUpDict)
-                        
-                        self.view.makeToast("\(String(describing: Response.object(forKey: "message")))", duration: 3.0, position: .bottom)
-
-                        
-                        let storyBoard : UIStoryboard = UIStoryboard(name: "JobSeeker", bundle:nil)
-                        
-                        let JobDashBoardVC = storyBoard.instantiateViewController(withIdentifier: "JobDashBoardVC") as! JobDashBoardVC
-                        
-                        self.navigationController?.pushViewController(JobDashBoardVC, animated: true)
-                        
-                        */
                         
                         
                         let keys = loginDict.allKeys.filter({loginDict[$0] is NSNull})
@@ -767,8 +737,6 @@ class JobLogInVC: UIViewController,UITextFieldDelegate,GIDSignInDelegate,GIDSign
                 
                 if status == 1
                 {
-                    
-                    //self.view.makeToast(message, duration: 1.0, position: .bottom)
 
                     let storyBoard : UIStoryboard = UIStoryboard(name: "JobSeeker", bundle:nil)
                     

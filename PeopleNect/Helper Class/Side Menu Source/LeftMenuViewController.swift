@@ -325,7 +325,7 @@ class LeftMenuViewController: UIViewController,UITableViewDataSource,UITableView
             btnProfilePic.setImage(image, for: .normal)
             ImgEmployerProfilepic = image
             
-            self.view.makeToast("Profile updated!", duration: 3.0, position: .bottom)
+            self.view.makeToast(Localization(string:"Profile updated!"), duration: 3.0, position: .bottom)
 
             
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "changeImageEmployer"), object: nil)

@@ -97,7 +97,7 @@ class JobSettingSelectExperticesBVC: UIViewController, UICollectionViewDelegate,
         
         if arrSelectedSubCategory.count <= 0{
             
-            self.view.makeToast("Select at least one expertise, then continue", duration: 3.0, position: .bottom)
+            self.view.makeToast(Localization(string:"Select at least one expertise, then continue"), duration: 3.0, position: .bottom)
             
         }else{
             
