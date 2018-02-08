@@ -215,14 +215,12 @@ class gotInvitationNotifyVC: UIViewController {
                             
                             endTime = "00:00"
                             
-                            self.priceHourLbl.text =  "From \n \(self.UTCToLocal(date: dataDict.object(forKey: "start_hour")! as! String))h to \n No End Time"
+                            self.priceHourLbl.text =  "\(strFrom) \n \(self.UTCToLocal(date: dataDict.object(forKey: "start_hour")! as! String))h \(strTo) \n No End Time"
 
                         }else{
-                            self.priceHourLbl.text =  "From \n \(self.UTCToLocal(date: dataDict.object(forKey: "start_hour")! as! String)) h to \n \(self.UTCToLocal(date:dataDict.object(forKey: "end_hour")! as! String))h"
+                            self.priceHourLbl.text =  "\(strFrom) \n \(self.UTCToLocal(date: dataDict.object(forKey: "start_hour")! as! String)) h \(strTo) \n \(self.UTCToLocal(date:dataDict.object(forKey: "end_hour")! as! String))h"
                         }
 
-                        //self.priceHourLbl.text = "From " + "\(dataDict.value(forKey: "start_hour")!)" + "\n"  + "To " + "\(dataDict.value(forKey: "end_hour")!)"
-                        
                         self.jobTitleLbl.text =  "\(dataDict.value(forKey: "jobTitle")!)"
                         self.companyLbl.text =  "\(dataDict.value(forKey: "company_name")!)"
                         self.ratingLbl.text =  "\(dataDict.value(forKey: "rating")!)"

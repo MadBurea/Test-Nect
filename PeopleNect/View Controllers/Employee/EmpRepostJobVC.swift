@@ -114,14 +114,15 @@ class EmpRepostJobVC: UIViewController ,UITableViewDelegate,UITableViewDataSourc
             
             if perDay == "1"
             {
-                perDayStr = "/hour"
+                perDayStr = "/" + "\(Localization(string: "hour"))"
             }
             else if perDay == "2"
             {
-                perDayStr = "/job"
+                perDayStr = "/" + "\(Localization(string: "job"))"
             }else{
-                perDayStr = "/month"
+                perDayStr = "/" + "\(Localization(string: "month"))"
             }
+            
             
             
             

@@ -178,12 +178,6 @@ class JobResetPasswordVC: UIViewController, UITextFieldDelegate {
     
     func forgotPasswordApi()
     {
-        /*
-         "email": "dharmesh@gmail.com",
-         "language": "2",
-         "methodName": "forgotPassword"
-          */
-        
         SwiftLoader.show(animated: true)
         
             let param =  [WebServicesClass.METHOD_NAME: "forgotPassword",
@@ -198,8 +192,6 @@ class JobResetPasswordVC: UIViewController, UITextFieldDelegate {
             if error != nil
             {
                 print("Error",error?.description as String!)
-                
-                
                 self.alertMessage.strMessage = Localization(string:  "Dang! Something went wrong. Try again!")
                 self.alertMessage.modalPresentationStyle = .overCurrentContext
                 self.present(self.alertMessage, animated: false, completion: nil)
@@ -207,27 +199,15 @@ class JobResetPasswordVC: UIViewController, UITextFieldDelegate {
             else
             {
                 let dictResponse = Response as! NSDictionary
-                
-                print(dictResponse)
-                
                 let status = dictResponse.object(forKey: "status") as! Int
-                
                 
                 if status == 1
                 {
-                    if appdel.deviceLanguage == "pt-BR"
-                    {
-                        self.view.makeToast("\(String(describing: Response.object(forKey: "pt_message")!))", duration: 3.0, position: .bottom)
-                    }
-                    else
-                    {
-                        self.view.makeToast("\(String(describing: Response.object(forKey: "message")!))", duration: 3.0, position: .bottom)
-                    }
+                    self.view.makeToast(Localization(string:"Your Password has been changed."), duration: 3.0, position: .bottom)
                     
                     if dictResponse.object(forKey: "OTP") != nil
                     {
                         let OTP = dictResponse.object(forKey: "OTP") as! NSNumber
-                        
                         let userId = dictResponse.object(forKey: "userId") as! String
                         
                         let VerifyOTPVC = self.storyboard?.instantiateViewController(withIdentifier: "VerifyOTPVC") as! VerifyOTPVC

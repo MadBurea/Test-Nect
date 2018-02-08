@@ -178,5 +178,81 @@
 
 "End time should be after the start time"   = "End time should be after the start time";
 "This value cannot be greater than the difference between start hour and end hour"  = "This value cannot be greater than the difference between start hour and end hour";
-"End date can\'t be older than start date"  = "End date can\'t be older than start date";
+"End date can't be older than start date"  = "End date can't be older than start date";
+"From"   = "From";
+"to"   = "to";
+"No end Date"   = "No end Date";
+
+"Please enter Valid Time" = "Please enter Valid Time";
+"All fields are required" = "All fields are required";
+"Total Price Should not be blank" = "Total Price Should not be blank";
+"Total Hour Should not be blank" = "Total Hour Should not be blank";
+
+"Your Password has been changed."  =  "Your Password has been changed.";
+"You are not able to chat." = "You are not able to chat.";
+
+
+"Result from" =  "Result from";
+"sub-category" = "sub-category";
+
+"Result from All sub-category" = "Result from All sub-category";
+"Professionals" = "Professionals";
+
+"Available professionals" = "Available professionals";
+"Candidate who worked for you." = "Candidate who worked for you.";
+
+"Hired" = "Hired";
+"Selected" = "Selected";
+
+"Applicants" = "Applicants";
+
+"Refuse" = "Refuse";
+"Waiting" = "Waiting";
+
+"Accept/Hire" = "Accept/Hire";
+"X Rejected" = "X Rejected";
+
+"No professional hired." = "No professional hired.";
+"No expertise found for this business" = "No expertise found for this business";
+
+"Same as company address" = "Same as company address";
+
+"Last details" = "Last details";
+
+"Job details" = "Job details";
+
+"You are  invited" = "You are  invited";
+
+"Waiting for hiring manager to check your application" = "Waiting for hiring manager to check your application";
+"Waiting feedback" = "Waiting feedback";
+
+"You accepted an invitation" = "You accepted an invitation";
+"Hiring manager aware  of the application" = "Hiring manager aware  of the application";
+
+"You were  selected" = "You were  selected";
+"You are  invited" = "You are  invited";
+
+"Employer gave up hiring you" = "Employer gave up hiring you";
+"You gave up this job" = "You gave up this job";
+
+"Application sent" = "Application sent";
+
+"Waiting for hiring manager to check your application" = "Waiting for hiring manager to check your application";
+
+"Hiring manager received your application" = "Hiring manager received your application";
+
+"You were  selected" = "You were  selected";
+
+"You were  selected" = "You were  selected";
+
+"Save"   =  "Save";
+"See details"   =  "See details";
+"Follow up"   =  "Follow up";
+
+"Already invited"   =  "Already invited";
+
+"Apply"   =  "Apply";
+
+"Search again"   =  "Search again";
+
 

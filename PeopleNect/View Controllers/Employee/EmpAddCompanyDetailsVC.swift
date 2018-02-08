@@ -589,21 +589,17 @@ class EmpAddCompanyDetailsVC: UIViewController, UITextFieldDelegate,PlaceSearchT
                                     }
                                     else
                                     {
-
-                                        self.alertMessage.strMessage = Localization(string:  "Dang! Something went wrong. Try again!")
+                                        self?.alertMessage.strMessage = Localization(string:  "Dang! Something went wrong. Try again!")
                                         self?.alertMessage.modalPresentationStyle = .overCurrentContext
                                         
                                         self?.present((self?.alertMessage)!, animated: false, completion: nil)
 
-
                                     }
-
                             }
                     }
                             
                     catch {
                         
-                      
                         
                         let errorObj = error as NSError
                         print("ERROR : ",errorObj.localizedDescription)

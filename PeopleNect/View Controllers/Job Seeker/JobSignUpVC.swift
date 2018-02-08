@@ -1265,15 +1265,25 @@ class JobSignUpVC: UIViewController, UITextFieldDelegate, UITableViewDelegate,Pl
                             appdel.loginUserDict = UserDefaults.standard.object(forKey: kUserLoginDict) as! NSDictionary
                             
                             
-                            if appdel.deviceLanguage == "pt-BR"
-                            {
-                                self.UpdateDeviceToken(userId: "\(appdel.loginUserDict.object(forKey: "userId")!)", userType: "2",message: "Bem vindo!")
+                            if Response.object(forKey:"pt_message") != nil{
+                                if appdel.deviceLanguage == "pt-BR"
+                                {
+                                    self.UpdateDeviceToken(userId: "\(appdel.loginUserDict.object(forKey: "userId")!)", userType: "2",message: "\(Response.object(forKey: "pt_message") as! String)")
+                                }
+                                else
+                                {
+                                    self.UpdateDeviceToken(userId: "\(appdel.loginUserDict.object(forKey: "userId")!)", userType: "2",message: "\(Response.object(forKey: "message") as! String)")
+                                }
+                            }else{
+                                if appdel.deviceLanguage == "pt-BR"
+                                {
+                                    self.UpdateDeviceToken(userId: "\(appdel.loginUserDict.object(forKey: "userId")!)", userType: "2",message: "\(Response.object(forKey: "message") as! String)")
+                                }
+                                else
+                                {
+                                    self.UpdateDeviceToken(userId: "\(appdel.loginUserDict.object(forKey: "userId")!)", userType: "2",message: "\(Response.object(forKey: "message") as! String)")
+                                }
                             }
-                            else
-                            {
-                                self.UpdateDeviceToken(userId: "\(appdel.loginUserDict.object(forKey: "userId")!)", userType: "2",message: "\(Response.object(forKey: "message") as! String)")
-                            }
-                            
                         }
                         
                     }
@@ -1283,6 +1293,26 @@ class JobSignUpVC: UIViewController, UITextFieldDelegate, UITableViewDelegate,Pl
                 {
                     
                     self.alertMessage.strMessage = Localization(string:  "Dang! Something went wrong. Try again!")
+                    
+                    if Response.object(forKey:"pt_message") != nil {
+                        if appdel.deviceLanguage == "pt-BR"
+                        {
+                            self.alertMessage.strMessage = "\(Response.object(forKey: "pt_message") as! String)"
+                        }
+                        else
+                        {
+                            self.alertMessage.strMessage = "\(Response.object(forKey: "message") as! String)"
+                        }
+                    }else{
+                        if appdel.deviceLanguage == "pt-BR"
+                        {
+                            self.alertMessage.strMessage = "\(Response.object(forKey: "message") as! String)"
+                        }
+                        else
+                        {
+                            self.alertMessage.strMessage = "\(Response.object(forKey: "message") as! String)"
+                        }
+                    }
                     self.alertMessage.modalPresentationStyle = .overCurrentContext
                     
                     self.present(self.alertMessage, animated: false, completion: nil)

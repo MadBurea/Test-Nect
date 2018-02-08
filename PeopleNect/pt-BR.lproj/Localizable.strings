@@ -137,9 +137,6 @@
 "Business"                           = "Negócio";
 
 
-
-
-
 "You canceled job successfully"                           = "Você cancelou a vaga!";
 "Job in progress, you can't cancel it!"                 = "Trabalho em andamento. Não há como desistir!";
 "Dang! Something went wrong. Try again!"                 = "Algo deu errado! Tente de novamente";
@@ -185,10 +182,97 @@
 
 "End time should be after the start time"   = "Horário de término deve ser após o horário de início";
 "This value cannot be greater than the difference between start hour and end hour"  = "Por favor, selecione o total de horas apropriado";
-"End date can\'t be older than start date"  = "A data final não pode ser anterior à data de início";
+"End date can't be older than start date"  = "A data final não pode ser anterior à data de início";
+
+
+"From"   = "de";
+"to"   = "até";
+"No end Date"   = "Sem data final definida";
+
+"Please enter Valid Time" = "Digite o tempo válido";
+"All fields are required" = "Todos os campos são necessários";
+"Total Price Should not be blank" = "O preço total não deve estar em branco";
+"Total Hour Should not be blank" = "Hora total não deve estar em branco";
+
+
+
+"Your Password has been changed." =  "Sua senha foi alterada.";
+
+"You are not able to chat." = "Você não é capaz de conversar.";
 
 
 
 
+"Result from" =  "Resultado para";
+"sub-category" = "especialidade";
+
+"Result from All sub-category" = "Resultado de Todas as subcategoria";
+"Professionals" = "Profissionais";
+
+"Available professionals" = "Profissionais disponíveis";
+"Candidate who worked for you." = "Candidato que trabalhou para você.";
+
+"Hired" = "Contratado";
+"Selected" = "Selecionado";
+
+"Applicants" = "Candidatos";
+
+"Refuse" = "Recusado";
+"Waiting" = "Aguardando";
+
+"Accept/Hire" = "Aceitar/Contratar";
+"X Rejected" = "X rejeitado";
+
+"No professional hired." = "Nenhum contratado";
+"No expertise found for this business" = "Não encontramos especializações nessa área de negócio.";
+
+"Same as company address" = "Mesmo endereço da empresa";
+
+"Last details" = "Últimos detalhes";
+
+"Job details" = "Detalhes da vaga";
+
+"You are  invited" = "Você está convidado";
+
+"Waiting for hiring manager to check your application" = "Esperando o gerente de contratação para verificar sua aplicação";
+"Waiting feedback" = "Comentários em espera";
+
+"You accepted an invitation" = "Você aceitou o convite";
+"Hiring manager aware  of the application" = "Gerente de contratação ciente da aplicação";
 
 
+"You accepted an invitation" = "Você aceitou o convite";
+
+"Hiring manager aware  of the application" = "Gerente de contratação ciente da aplicação";
+
+"You were  selected" = "Você foi selecionado";
+
+"You are  invited" = "Você está convidado";
+
+"Employer gave up hiring you" = "Empregador desistiu de contratar você";
+"You gave up this job" = "Você desistiu desse trabalho";
+
+"Application sent" = "Aplicação enviada";
+
+"Waiting for hiring manager to check your application" = "Esperando o gerente de contratação para verificar sua aplicação";
+
+"Hiring manager received your application" = "Gerente de contratação recebeu seu pedido";
+
+"Save"   =  "Salvar";
+"See details"   =  "Ver detalhe";
+"Follow up"   =  "Acompanhar";
+
+"Already invited"   =  "Já convidado";
+
+"Apply"   =  "Candidatar-se";
+
+"Search again"   =  "Search again";
+
+
+
+"Application sent!"        = "Candidatura enviada!";
+"you have applied for this job already."        = "Você já se candidatou para esta vaga!";
+"Job already started or close"        = "Job already started or close";
+"Invited Successfully"        = "Convidado com sucesso!";
+"you have insufficient credit."        = "você tem crédito insuficiente.";
+"Error while sending invitation, please try again"   = "Erro ao enviar o convite. Tente novamente";

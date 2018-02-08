@@ -178,7 +178,6 @@ class EmpLoginVC: UIViewController,UITextFieldDelegate {
                             let empsignupVC = self.storyboard?.instantiateViewController(withIdentifier: "EmpAddCompanyDetailsVC") as! EmpAddCompanyDetailsVC
                             empsignupVC.loginDict = loginDict
                                 self.navigationController?.pushViewController(empsignupVC, animated: true)
-
                         }
                         else
                         {
@@ -189,15 +188,26 @@ class EmpLoginVC: UIViewController,UITextFieldDelegate {
                             
                             appdel.loginUserDict = UserDefaults.standard.object(forKey: kEmpLoginDict) as! NSDictionary
                             
-                            if appdel.deviceLanguage == "pt-BR"
-                            {
-                                self.UpdateDeviceToken(userId: "\(appdel.loginUserDict.object(forKey: "employerId")!)", userType: "1",message:"Bem vindo!")
-                            }
-                            else
-                            {
-                                self.UpdateDeviceToken(userId: "\(appdel.loginUserDict.object(forKey: "employerId")!)", userType: "1",message:"\(Response.object(forKey: "message") as! String)")
-                            }
                             
+                            if Response.object(forKey:"pt_message") != nil{
+                                if appdel.deviceLanguage == "pt-BR"
+                                {
+                                    self.UpdateDeviceToken(userId: "\(appdel.loginUserDict.object(forKey: "employerId")!)", userType: "1",message:"\(Response.object(forKey: "pt_message") as! String)")
+                                }
+                                else
+                                {
+                                    self.UpdateDeviceToken(userId: "\(appdel.loginUserDict.object(forKey: "employerId")!)", userType: "1",message:"\(Response.object(forKey: "message") as! String)")
+                                }
+                            }else{
+                                if appdel.deviceLanguage == "pt-BR"
+                                {
+                                    self.UpdateDeviceToken(userId: "\(appdel.loginUserDict.object(forKey: "employerId")!)", userType: "1",message:"\(Response.object(forKey: "message") as! String)")
+                                }
+                                else
+                                {
+                                    self.UpdateDeviceToken(userId: "\(appdel.loginUserDict.object(forKey: "employerId")!)", userType: "1",message:"\(Response.object(forKey: "message") as! String)")
+                                }
+                            }
                         }
                         
                     }
@@ -206,6 +216,28 @@ class EmpLoginVC: UIViewController,UITextFieldDelegate {
                 else
                 {
                     self.alertMessage.strMessage = Localization(string:  "Dang! Something went wrong. Try again!")
+                    
+                    if Response.object(forKey:"pt_message") != nil {
+                        if appdel.deviceLanguage == "pt-BR"
+                        {
+                            self.alertMessage.strMessage = "\(Response.object(forKey: "pt_message") as! String)"
+                        }
+                        else
+                        {
+                            self.alertMessage.strMessage = "\(Response.object(forKey: "message") as! String)"
+                        }
+                    }else{
+                        if appdel.deviceLanguage == "pt-BR"
+                        {
+                            self.alertMessage.strMessage = "\(Response.object(forKey: "message") as! String)"
+                        }
+                        else
+                        {
+                            self.alertMessage.strMessage = "\(Response.object(forKey: "message") as! String)"
+                        }
+                    }
+                    
+                    
                     self.alertMessage.modalPresentationStyle = .overCurrentContext
                     self.present(self.alertMessage, animated: false, completion: nil)
                     

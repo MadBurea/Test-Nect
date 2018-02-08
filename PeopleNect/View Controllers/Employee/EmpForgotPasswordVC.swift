@@ -114,7 +114,7 @@ class EmpForgotPasswordVC: UIViewController, UITextFieldDelegate {
                 
                 if status == 1
                 {
-                    self.view.makeToast(Localization(string:"Invitation accepted!"), duration: 3.0, position: .bottom)
+                    self.view.makeToast(Localization(string: "Your Password has been changed."), duration: 3.0, position: .bottom)
 
                     let VerifyOTPVC = self.storyboard?.instantiateViewController(withIdentifier: "VerifyOTPVC") as! VerifyOTPVC
                     self.navigationController?.pushViewController(VerifyOTPVC, animated: true)
@@ -125,10 +125,7 @@ class EmpForgotPasswordVC: UIViewController, UITextFieldDelegate {
                     self.alertMessage.strMessage = Localization(string:  "No user with this credential")
                     self.alertMessage.modalPresentationStyle = .overCurrentContext
                     self.present(self.alertMessage, animated: false, completion: nil)
-                    
                 }
-                
-                
             }
         }
         

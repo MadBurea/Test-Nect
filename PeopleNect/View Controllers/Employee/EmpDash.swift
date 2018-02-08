@@ -362,14 +362,17 @@ class EmpDash: UIViewController ,GMUClusterManagerDelegate, GMSMapViewDelegate,C
                     {
                         filterArray.add(dict)
                     }
-                    self.lblResultFrmAllCategory.text = "Result from \(selectedExpertiseCategory.count) sub-category"
+                    self.lblResultFrmAllCategory.text = "\(Localization(string: "Result from")) \(selectedExpertiseCategory.count) sub-category"
                 }
             }
             self.tempArrayUSerListing.removeAllObjects()
             self.tempArrayUSerListing = filterArray.mutableCopy() as! NSMutableArray
             self.prepareForMarker(array: self.tempArrayUSerListing)
         }else{
-            self.lblResultFrmAllCategory.text = "Result from All sub-category"
+            self.lblResultFrmAllCategory.text = Localization(string: "Result from All sub-category")
+            
+            
+            
         }
     }
     
@@ -448,7 +451,7 @@ class EmpDash: UIViewController ,GMUClusterManagerDelegate, GMSMapViewDelegate,C
         tempArrayUSerListing = ordered.mutableCopy() as! NSMutableArray
         print("sorted array is",tempArrayUSerListing)
 
-        self.totalJobLbl.text = "\(self.tempArrayUSerListing.count) Professionals"
+        self.totalJobLbl.text = "\(self.tempArrayUSerListing.count) \(Localization(string: "Professionals"))"
         self.userTableView.reloadData()
     }
     
@@ -479,7 +482,9 @@ class EmpDash: UIViewController ,GMUClusterManagerDelegate, GMSMapViewDelegate,C
             }
         }
         
-        self.totalJobLbl.text = "\(self.tempArrayUSerListing.count) Professionals"
+        self.totalJobLbl.text = "\(self.tempArrayUSerListing.count) \(Localization(string: "Professionals"))"
+        
+
         self.userTableView.reloadData()
         
     }
@@ -917,7 +922,7 @@ class EmpDash: UIViewController ,GMUClusterManagerDelegate, GMSMapViewDelegate,C
                         self.tempArrayUSerListing = self.employerrListarray
                         self.allJobUserArray = self.tempArrayUSerListing
                         
-                        self.totalJobLbl.text = "\(self.tempArrayUSerListing.count) Professionals"
+                        self.totalJobLbl.text = "\(self.tempArrayUSerListing.count) \(Localization(string: "Professionals"))"
                         
                         self.userTableView.reloadData()
                         

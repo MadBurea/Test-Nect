@@ -345,7 +345,7 @@ class CustomChatScene: UIViewController,UITableViewDataSource,UITableViewDelegat
                                 self.messageTextTv.text = ""
                                 self.messageTextTv.isUserInteractionEnabled = true
                             }else{
-                                self.messageTextTv.text = "You cannot send message"
+                                self.messageTextTv.text = Localization(string:"You are not able to chat.")
                                 self.messageTextTv.isUserInteractionEnabled = false
                             }
                             

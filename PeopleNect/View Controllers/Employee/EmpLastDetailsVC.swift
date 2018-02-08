@@ -184,13 +184,13 @@ class EmpLastDetailsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFie
         
          if appdel.loginUserDict["companyaddress"] != nil {
             
-            lblTextSameAsCompanyAdd.text = "Same as company address \n \(appdel.loginUserDict.object(forKey: "companyaddress")!)"
+            lblTextSameAsCompanyAdd.text = "\(Localization(string:"Same as company address")) \n \(appdel.loginUserDict.object(forKey: "companyaddress")!)"
             
             if appdel.loginUserDict["zip"] != nil{
-                lblTextSameAsCompanyAdd.text = "Same as company address \n \(appdel.loginUserDict.object(forKey: "companyaddress")!) \(appdel.loginUserDict.object(forKey: "zip")!)"
+                lblTextSameAsCompanyAdd.text = "\(Localization(string:"Same as company address")) \n \(appdel.loginUserDict.object(forKey: "companyaddress")!) \(appdel.loginUserDict.object(forKey: "zip")!)"
             }
          }else{
-             lblTextSameAsCompanyAdd.text = "Same as company address \n \(appdel.loginUserDict.object(forKey: "street_name")!)"
+             lblTextSameAsCompanyAdd.text = "\(Localization(string:"Same as company address")) \n \(appdel.loginUserDict.object(forKey: "street_name")!)"
         }
         
         let date = Date()
@@ -221,7 +221,7 @@ class EmpLastDetailsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFie
         alertMessage = storyBoard.instantiateViewController(withIdentifier: "AlertMessageVC") as! AlertMessageVC
         
         self.btnFInishPostJob.setTitle("Finish job Post ✔︎", for: .normal)
-        lblLastDetails.text = "Last details"
+        lblLastDetails.text = Localization(string:"Last details")
         if loadFrmOtherCtr == 1
         {
             self.jobDetailbyIdApi()
@@ -232,8 +232,8 @@ class EmpLastDetailsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFie
             }
             else
             {
-                self.btnFInishPostJob.setTitle("Save", for: .normal)
-                lblLastDetails.text = "Job details"
+                self.btnFInishPostJob.setTitle(Localization(string:"Save"), for: .normal)
+                lblLastDetails.text = Localization(string:"Job details")
             }
 
         }else {
@@ -668,7 +668,7 @@ class EmpLastDetailsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFie
                  self.view.makeToast(Localization(string: "This value cannot be greater than the difference between start hour and end hour"), duration: 1.0, position: .bottom)
             }
             else{
-                self.view.makeToast("All fields are required", duration: 1.0, position: .bottom)
+                self.view.makeToast(Localization(string: "All fields are required"), duration: 1.0, position: .bottom)
             }
         }
         
@@ -1058,7 +1058,7 @@ class EmpLastDetailsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFie
                 
                 hourDay = hourDay * 3600
                 if hourDay > diff {
-                    self.view.makeToast("Please enter Valid Time", duration: 3.0, position: .bottom)
+                    self.view.makeToast(Localization(string: "Please enter Valid Time"), duration: 3.0, position: .bottom)
                 }
             }
         }

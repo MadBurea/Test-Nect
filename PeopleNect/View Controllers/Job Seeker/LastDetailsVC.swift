@@ -540,13 +540,9 @@ class LastDetailsVC: UIViewController, UITextFieldDelegate, UITextViewDelegate, 
                             self.userDic[String(describing: key)] = String(describing: value)
                         }
                         
-                        print("self.userDic",self.userDic)
                         
                         UserDefaults.standard.set(self.userDic, forKey: kUserLoginDict)
                         appdel.loginUserDict = UserDefaults.standard.object(forKey: kUserLoginDict) as! NSDictionary
-                        
-                        print("dataDict is",dataDict)
-                        print("appdel.loginUserDict",appdel.loginUserDict)
                         
                         self.UpdateDeviceToken(userId: "\(appdel.loginUserDict.object(forKey: "userId")!)", userType: "2")
                     }

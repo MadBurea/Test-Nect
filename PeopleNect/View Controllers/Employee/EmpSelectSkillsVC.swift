@@ -61,7 +61,7 @@ class EmpSelectSkillsVC: UIViewController, UICollectionViewDelegate,UICollection
         
         btnProfilePic.isUserInteractionEnabled = false
        // btnProfilePic.setImage(ImgEmployerProfilepic, for: .normal)
-        lblNoData.text = "No expertise found for this business"
+        lblNoData.text = Localization(string:"No expertise found for this business")
 
         
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)

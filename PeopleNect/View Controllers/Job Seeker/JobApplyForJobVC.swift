@@ -65,14 +65,16 @@ class JobApplyForJobVC: UIViewController {
         
 
         if isFromMap {
-            btnSeachAgain.setTitle("Search again", for: .normal)
+            btnSeachAgain.setTitle(Localization(string:"Search again"), for: .normal)
             //btnSeachAgain.setTitle("See details", for: .normal)
             searchBtnHeight.constant = 50
             btnSeachAgain.isHidden = false
         }else{
             if employerStatus == "4" {
                 searchBtnHeight.constant = 50
-                btnSeachAgain.setTitle("See details", for: .normal)
+                
+                
+                btnSeachAgain.setTitle(Localization(string:"See details"), for: .normal)
                 btnSeachAgain.isHidden = false
             }else{
                 searchBtnHeight.constant = 0
@@ -139,9 +141,11 @@ class JobApplyForJobVC: UIViewController {
     func followUpInvitation()  {
         if jobseekerStatus ==  "0" && employerStatus == "0"{
             
-            lblApplicationSent.text = "You are  invited"
-            lblWaitingForHiringMngr.text = "Waiting for hiring manager to check your application"
-            lblWaitingFeedBack.text = "Waiting feedback"
+            lblApplicationSent.text = Localization(string:"You are  invited")
+            lblWaitingForHiringMngr.text = Localization(string:"Waiting for hiring manager to check your application")
+            lblWaitingFeedBack.text = Localization(string:"Waiting feedback")
+            
+            
             
             imgFirst.image = UIImage.init(named: "right_active")
             setConstraints(width: firstImgWidth, height: firstImgHeight, imageName: "right_active")
@@ -161,9 +165,12 @@ class JobApplyForJobVC: UIViewController {
             
         }else if jobseekerStatus ==  "1" && (employerStatus ==  "5" || employerStatus == "0" ){
             
-            lblApplicationSent.text = "You accepted an invitation"
-            lblWaitingForHiringMngr.text = "Hiring manager aware  of the application"
-            lblWaitingFeedBack.text = "Waiting feedback"
+            lblApplicationSent.text = Localization(string:"You accepted an invitation")
+            lblWaitingForHiringMngr.text = Localization(string:"Hiring manager aware  of the application")
+            lblWaitingFeedBack.text = Localization(string:"Waiting feedback")
+            
+            
+            
             
             imgFirst.image = UIImage.init(named: "right_active")
             setConstraints(width: firstImgWidth, height: firstImgHeight, imageName: "right_active")
@@ -183,14 +190,17 @@ class JobApplyForJobVC: UIViewController {
         }else if employerStatus ==  "4" {
             
             if jobseekerStatus == "0" {
-                lblApplicationSent.text = "You are  invited"
+                lblApplicationSent.text = Localization(string:"You are  invited")
             }
             if jobseekerStatus == "1" {
-                lblApplicationSent.text = "You accepted an invitation"
+                lblApplicationSent.text = Localization(string:"You accepted an invitation")
             }
             
-            lblWaitingForHiringMngr.text = "Hiring manager aware  of the application"
-            lblWaitingFeedBack.text = "You were  selected"
+            
+            
+            lblWaitingForHiringMngr.text = Localization(string:"Hiring manager aware  of the application")
+            lblWaitingFeedBack.text = Localization(string:"You were  selected")
+            
             
             imgFirst.image = UIImage.init(named: "right_active")
             setConstraints(width: firstImgWidth, height: firstImgHeight, imageName: "right_active")
@@ -211,13 +221,16 @@ class JobApplyForJobVC: UIViewController {
             
 
             if jobseekerStatus == "0" {
-                lblApplicationSent.text = "You are  invited"
+                lblApplicationSent.text = Localization(string:"You are  invited")
             }
             if jobseekerStatus == "1" {
-                lblApplicationSent.text = "You accepted an invitation"
+                lblApplicationSent.text = Localization(string:"You accepted an invitation")
             }
             
-            lblWaitingForHiringMngr.text = "Hiring manager aware  of the application"
+            
+            
+            
+            lblWaitingForHiringMngr.text = Localization(string:"Hiring manager aware  of the application")
             
             imgFirst.image = UIImage.init(named: "right_active")
             setConstraints(width: firstImgWidth, height: firstImgHeight, imageName: "right_active")
@@ -235,23 +248,25 @@ class JobApplyForJobVC: UIViewController {
             lblFour.changeColor(color: UIColor.init(colorLiteralRed:33.0/255.0 , green: 228.0/255.0, blue: 100.0/255.0, alpha: 0.4))
             
             if  employerStatus ==  "2"{
-                lblWaitingFeedBack.text = "Employer gave up hiring you"
+                lblWaitingFeedBack.text = Localization(string:"Employer gave up hiring you")
             }else{
-                lblWaitingFeedBack.text = "You gave up this job"
+                lblWaitingFeedBack.text = Localization(string:"You gave up this job")
+
             }
             
         }
-
         
     }
     func followUp()  {
        
         if jobseekerStatus ==  "0" && employerStatus == "0"{
             
-            lblApplicationSent.text = "Application sent"
-            lblWaitingForHiringMngr.text = "Waiting for hiring manager to check your application"
-            lblWaitingFeedBack.text = "Waiting feedback"
+            lblApplicationSent.text = Localization(string:"Application sent")
+            lblWaitingForHiringMngr.text = Localization(string:"Waiting for hiring manager to check your application")
+            lblWaitingFeedBack.text = Localization(string:"Waiting feedback")
             
+            
+
             imgFirst.image = UIImage.init(named: "right_active")
             setConstraints(width: firstImgWidth, height: firstImgHeight, imageName: "right_active")
             
@@ -270,9 +285,12 @@ class JobApplyForJobVC: UIViewController {
             
         }else if employerStatus ==  "5" || employerStatus == "1" {
             
-            lblApplicationSent.text = "Application sent"
-            lblWaitingForHiringMngr.text = "Hiring manager received your application"
-            lblWaitingFeedBack.text = "Waiting feedback"
+            lblApplicationSent.text = Localization(string:"Application sent")
+            lblWaitingForHiringMngr.text = Localization(string:"Hiring manager received your application")
+            lblWaitingFeedBack.text = Localization(string:"Waiting feedback")
+            
+            
+            
             
             imgFirst.image = UIImage.init(named: "right_active")
             setConstraints(width: firstImgWidth, height: firstImgHeight, imageName: "right_active")
@@ -291,9 +309,12 @@ class JobApplyForJobVC: UIViewController {
             
         }else if employerStatus ==  "4" {
             
-            lblApplicationSent.text = "Application sent"
-            lblWaitingForHiringMngr.text = "Hiring manager received your application"
-            lblWaitingFeedBack.text = "You were  selected"
+            lblApplicationSent.text = Localization(string:"Application sent")
+            lblWaitingForHiringMngr.text = Localization(string:"Hiring manager received your application")
+            lblWaitingFeedBack.text = Localization(string:"You were  selected")
+            
+            
+            
             
             imgFirst.image = UIImage.init(named: "right_active")
             setConstraints(width: firstImgWidth, height: firstImgHeight, imageName: "right_active")
@@ -311,15 +332,18 @@ class JobApplyForJobVC: UIViewController {
             lblFour.changeColor(color: UIColor.init(colorLiteralRed:33.0/255.0 , green: 228.0/255.0, blue: 100.0/255.0, alpha: 0.4))
             
             if jobseekerStatus == "2" {
-                lblWaitingFeedBack.text = "You gave up this job"
+                lblWaitingFeedBack.text = Localization(string:"You gave up this job")
                 imgWaitingFeedBack.image = UIImage.init(named: "refuse_green")
                 setConstraints(width: thirdImgwidth, height: thirdImgHeight, imageName: "refuse_green")
             }
             
+            
         }else if employerStatus ==  "2" || jobseekerStatus ==  "2" {
             
-            lblApplicationSent.text = "Application sent"
-            lblWaitingForHiringMngr.text = "Hiring manager received your application"
+            lblApplicationSent.text = Localization(string:"Application sent")
+            lblWaitingForHiringMngr.text = Localization(string:"Hiring manager received your application")
+            
+            
             
             imgFirst.image = UIImage.init(named: "right_active")
             setConstraints(width: firstImgWidth, height: firstImgHeight, imageName: "right_active")
@@ -337,15 +361,18 @@ class JobApplyForJobVC: UIViewController {
             lblFour.changeColor(color: UIColor.init(colorLiteralRed:33.0/255.0 , green: 228.0/255.0, blue: 100.0/255.0, alpha: 0.4))
             
             if  employerStatus ==  "2"{
-                lblWaitingFeedBack.text = "Employer gave up hiring you"
+                lblWaitingFeedBack.text = Localization(string:"Employer gave up hiring you")
             }else{
-                lblWaitingFeedBack.text = "You gave up this job"
+                lblWaitingFeedBack.text = Localization(string:"You gave up this job")
             }
             
         }else{
-            lblApplicationSent.text = "Application sent"
-            lblWaitingForHiringMngr.text = "Waiting for hiring manager to check your application"
-            lblWaitingFeedBack.text = "Waiting feedback"
+            lblApplicationSent.text = Localization(string:"Application sent")
+            lblWaitingForHiringMngr.text = Localization(string:"Waiting for hiring manager to check your application")
+            lblWaitingFeedBack.text = Localization(string:"Waiting feedback")
+            
+            
+            
             
             imgFirst.image = UIImage.init(named: "right_active")
             setConstraints(width: firstImgWidth, height: firstImgHeight, imageName: "right_active")

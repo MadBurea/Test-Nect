@@ -361,13 +361,13 @@ class EmpSelectionProgressVC: UIViewController, UITableViewDelegate, UITableView
                 let perDay = tempDict.object(forKey: "payment_type") as! String
                 if perDay == "1"
                 {
-                    expandcell.lblPerHour.text = "/hour"
+                    expandcell.lblPerHour.text = "/" + "\(Localization(string: "hour"))"
                 }
                 else if perDay == "2"
                 {
-                    expandcell.lblPerHour.text = "/job"
+                    expandcell.lblPerHour.text = "/" + "\(Localization(string: "job"))"
                 }else{
-                    expandcell.lblPerHour.text = "/month"
+                    expandcell.lblPerHour.text = "/" + "\(Localization(string: "month"))"
                 }
             
             
@@ -395,14 +395,14 @@ class EmpSelectionProgressVC: UIViewController, UITableViewDelegate, UITableView
                     endDate = self.convertDateFormaterUTC(endDate)
                 }
                 
+                
                 if endTime == "" {
                     endTime = "00:00"
-                    expandcell.lblFromEndDate.text =  "From \n \(self.convertDateFormaterUTC(UTCStartDate)) \n to \n \(endDate) \n | \n From \n \(self.UTCToLocal(date: tempDict.object(forKey: "startHour")! as! String))h \n to \n No End Time"
+                    expandcell.lblFromEndDate.text =  "\(strFrom) \n \(self.convertDateFormaterUTC(UTCStartDate)) \n \(strTo) \n \(endDate) \n | \n \(strFrom) \n \(self.UTCToLocal(date: tempDict.object(forKey: "startHour")! as! String))h \n to \n \(strNoEndDate)"
                 }else{
-                    expandcell.lblFromEndDate.text =  "From \n \(self.convertDateFormaterUTC(UTCStartDate)) \n to \n \(endDate) \n | \n From \n \(self.UTCToLocal(date: tempDict.object(forKey: "startHour")! as! String))h \n to \n \(self.UTCToLocal(date:tempDict.object(forKey: "endTime")! as! String))h"
+                    expandcell.lblFromEndDate.text =  "\(strFrom) \n \(self.convertDateFormaterUTC(UTCStartDate)) \n to \n \(endDate) \n | \n \(strFrom) \n \(self.UTCToLocal(date: tempDict.object(forKey: "startHour")! as! String))h \n \(strTo) \n \(self.UTCToLocal(date:tempDict.object(forKey: "endTime")! as! String))h"
                 }
 
-                
                 
             
                 let workingDays = tempDict.object(forKey: "workingDay") as! String
@@ -468,13 +468,13 @@ class EmpSelectionProgressVC: UIViewController, UITableViewDelegate, UITableView
                 let perDay = tempDict.object(forKey: "payment_type") as! String
                 if perDay == "1"
                 {
-                    mainCell.lblPerHour.text = "/hour"
+                    mainCell.lblPerHour.text = "/" + "\(Localization(string: "hour"))"
                 }
                 else if perDay == "2"
                 {
-                    mainCell.lblPerHour.text = "/job"
+                    mainCell.lblPerHour.text = "/" + "\(Localization(string: "job"))"
                 }else{
-                    mainCell.lblPerHour.text = "/month"
+                    mainCell.lblPerHour.text = "/" + "\(Localization(string: "month"))"
                 }
             
                 mainCell.viewLeft.isHidden = false

@@ -622,7 +622,7 @@ class JobDash: UIViewController,GMUClusterManagerDelegate, GMSMapViewDelegate,CL
                     
                     expandcell.textLabel?.textAlignment = .center
                     
-                    expandcell.btnApplyAlReadyInvited.setTitle("See details", for: .normal)
+                    expandcell.btnApplyAlReadyInvited.setTitle(Localization(string:"See details"), for: .normal)
                     expandcell.btnApplyAlReadyInvited.backgroundColor = ColorJobRefused
                     
                     expandcell.bottomLineB.backgroundColor = ColorseperatorDarkRed
@@ -643,7 +643,7 @@ class JobDash: UIViewController,GMUClusterManagerDelegate, GMSMapViewDelegate,CL
                     expandcell.lblBottomBorder.backgroundColor = ColorJobSelected
                     expandcell.textLabel?.textAlignment = .center
                     
-                    expandcell.btnApplyAlReadyInvited.setTitle("See details", for: .normal)
+                    expandcell.btnApplyAlReadyInvited.setTitle(Localization(string:"See details"), for: .normal)
                     
                     
                     expandcell.btnApplyAlReadyInvited.accessibilityHint = "RED"
@@ -667,7 +667,9 @@ class JobDash: UIViewController,GMUClusterManagerDelegate, GMSMapViewDelegate,CL
                     expandcell.viewFromEndDate.backgroundColor = ColorJobAlRedyInvitedApplied
                     expandcell.lblBottomBorder.backgroundColor = ColorJobAlRedyInvitedApplied
                     
-                    expandcell.btnApplyAlReadyInvited.setTitle( "Follow up", for: .normal)
+                    
+                    
+                    expandcell.btnApplyAlReadyInvited.setTitle( Localization(string:"Follow up"), for: .normal)
                     expandcell.textLabel?.textAlignment = .center
                     
                     expandcell.btnApplyAlReadyInvited.backgroundColor = ColorJobAlRedyInvitedApplied
@@ -689,7 +691,9 @@ class JobDash: UIViewController,GMUClusterManagerDelegate, GMSMapViewDelegate,CL
                     expandcell.viewFromEndDate.backgroundColor = ColorJobAlRedyInvitedApplied
                     expandcell.lblBottomBorder.backgroundColor = ColorJobAlRedyInvitedApplied
                     
-                    expandcell.btnApplyAlReadyInvited.setTitle("Already invited", for: .normal)
+                    
+                    
+                    expandcell.btnApplyAlReadyInvited.setTitle(Localization(string:"Already invited"), for: .normal)
                     
                     expandcell.textLabel?.textAlignment = .center
                     
@@ -711,7 +715,9 @@ class JobDash: UIViewController,GMUClusterManagerDelegate, GMSMapViewDelegate,CL
                     expandcell.viewOnlyDays.backgroundColor = blueThemeColor
                     expandcell.viewFromEndDate.backgroundColor = blueThemeColor
                     expandcell.lblBottomBorder.backgroundColor = blueThemeColor
-                    expandcell.btnApplyAlReadyInvited.setTitle("Apply", for: .normal)
+                    expandcell.btnApplyAlReadyInvited.setTitle(Localization(string:"Apply"), for: .normal)
+                    
+                    
                     
                     expandcell.btnApplyAlReadyInvited.backgroundColor = blueThemeColor
                     
@@ -760,13 +766,13 @@ class JobDash: UIViewController,GMUClusterManagerDelegate, GMSMapViewDelegate,CL
                 
                 if perDay == "1"
                 {
-                    expandcell.lblPerHour.text = "/hour"
+                    expandcell.lblPerHour.text = "/" + "\(Localization(string: "hour"))"
                 }
                 else if perDay == "2"
                 {
-                    expandcell.lblPerHour.text = "/job"
+                    expandcell.lblPerHour.text = "/" + "\(Localization(string: "job"))"
                 }else{
-                    expandcell.lblPerHour.text = "/month"
+                    expandcell.lblPerHour.text = "/" + "\(Localization(string: "month"))"
                 }
                 
                 
@@ -783,24 +789,27 @@ class JobDash: UIViewController,GMUClusterManagerDelegate, GMSMapViewDelegate,CL
                     endDate = convertDateFormater(Time)
                 }
 
+                
+
+                
                 if endTime == "" {
                     
                     endTime = "00:00"
-                    expandcell.lblFromEndDate.text =  "From \n \(newDate) \n to \n \(endDate) \n | \n From \n \(self.UTCToLocal(date: tempDict.object(forKey: "start_hour")! as! String))h \n to \n No End Time"
+                    expandcell.lblFromEndDate.text =  "\(strFrom) \n \(newDate) \n \(strTo) \n \(endDate) \n | \n \(strFrom) \n \(self.UTCToLocal(date: tempDict.object(forKey: "start_hour")! as! String))h \n to \n \(strNoEndDate)"
                 }else{
                     
-                    expandcell.lblFromEndDate.text =  "From \n \(newDate) \n to \n \(endDate) \n | \n From \n \(self.UTCToLocal(date: tempDict.object(forKey: "start_hour")! as! String))h \n to \n \(self.UTCToLocal(date:tempDict.object(forKey: "end_hour")! as! String))h"
+                    expandcell.lblFromEndDate.text =  "\(strFrom) \n \(newDate) \n to \n \(endDate) \n | \n \(strFrom) \n \(self.UTCToLocal(date: tempDict.object(forKey: "start_hour")! as! String))h \n \(strTo) \n \(self.UTCToLocal(date:tempDict.object(forKey: "end_hour")! as! String))h"
                 }
                 
                 let workingDays = tempDict.object(forKey: "working_day") as! String
                 
                 if workingDays == "0"
                 {
-                    expandcell.lblOnlyDays.text = "Only business days"
+                    expandcell.lblOnlyDays.text = strOnlyBussDays
                 }
                 else if workingDays == "1"
                 {
-                    expandcell.lblOnlyDays.text = "Includes non Business days"
+                    expandcell.lblOnlyDays.text = strIncludesNonBussDays
                 }
                 expandcell.btnApplyAlReadyInvited.tag = indexPath.row
                 expandcell.btnApplyAlReadyInvited.addTarget(self, action: #selector(self.applyStatus(sender:)), for: .touchUpInside)
@@ -929,14 +938,15 @@ class JobDash: UIViewController,GMUClusterManagerDelegate, GMSMapViewDelegate,CL
                 
                 if perDay == "1"
                 {
-                    mainCell.lblPerHour.text = "/hour"
+                    mainCell.lblPerHour.text = "/" + "\(Localization(string: "hour"))"
                 }
                 else if perDay == "2"
                 {
-                    mainCell.lblPerHour.text = "/job"
+                    mainCell.lblPerHour.text = "/" + "\(Localization(string: "job"))"
                 }else{
-                    mainCell.lblPerHour.text = "/month"
+                    mainCell.lblPerHour.text = "/" + "\(Localization(string: "month"))"
                 }
+                
                 mainCell.backgroundColor = UIColor.clear
                 mainCell.contentView.layer.cornerRadius = 2.0
                 mainCell.contentView.layer.shadowColor = UIColor.gray.cgColor

@@ -208,9 +208,9 @@ UITableViewDelegate
                 if indexPath.section == 0 {
                     
                     if hiredUserArray.count ==  0 {
-                        cell.titleLabel.text = "Hired (0)"
+                        cell.titleLabel.text = "\(Localization(string:"Hired")) (0)"
                     }else{
-                        cell.titleLabel.text = "Hired (\((hiredUserArray.object(at: 0) as! NSArray).count))"
+                        cell.titleLabel.text = "\(Localization(string:"Hired")) (\((hiredUserArray.object(at: 0) as! NSArray).count))"
                     }
                     
                     if appdel.isHiredNotification {
@@ -221,9 +221,9 @@ UITableViewDelegate
                     
                     
                     if selectedUserArray.count ==  0 {
-                        cell.titleLabel.text = "Selected (0)"
+                        cell.titleLabel.text = "\(Localization(string:"Selected")) (0)"
                     }else{
-                        cell.titleLabel.text = "Selected (\((selectedUserArray.object(at: 0) as! NSArray).count))"
+                        cell.titleLabel.text = "\(Localization(string:"Selected")) (\((selectedUserArray.object(at: 0) as! NSArray).count))"
                     }
 
                     
@@ -233,10 +233,11 @@ UITableViewDelegate
                 }
                 else if indexPath.section == 2 {
                     
+                    
                     if applicantsUserArray.count ==  0 {
-                        cell.titleLabel.text = "Applicants (0)"
+                        cell.titleLabel.text = "\(Localization(string:"Applicants")) (0)"
                     }else{
-                        cell.titleLabel.text = "Applicants (\((applicantsUserArray.object(at: 0) as! NSArray).count))"
+                        cell.titleLabel.text = "\(Localization(string:"Applicants")) (\((applicantsUserArray.object(at: 0) as! NSArray).count))"
                     }
                     
                     if appdel.isApplicantNotification {
@@ -244,10 +245,11 @@ UITableViewDelegate
                     }
                 }else {
                     
+                    
                     if rejectedUserArray.count ==  0 {
-                        cell.titleLabel.text = "Refuse (0)"
+                        cell.titleLabel.text = "\(Localization(string:"Refuse")) (0)"
                     }else{
-                        cell.titleLabel.text = "Refuse (\((rejectedUserArray.object(at: 0) as! NSArray).count))"
+                        cell.titleLabel.text = "\(Localization(string:"Refuse")) (\((rejectedUserArray.object(at: 0) as! NSArray).count))"
                     }
 
                     if appdel.isRejectedNotification {
@@ -398,12 +400,12 @@ UITableViewDelegate
                             cell.waitingLabel.isHidden = false
                             cell.waitingImg.isHidden = false
                             cell.waitingImg.image = UIImage(named: "clock")
-                            cell.waitingLabel.text = "Waiting"
+                            cell.waitingLabel.text = Localization(string:"Waiting")
                         } else if ES == "0" || JS == "1"  {
                             cell.acceptBtn.isHidden = false
                             cell.waitingLabel.isHidden = true
                             cell.waitingImg.isHidden = true
-                            cell.acceptBtn.setTitle("Accept/Hire", for: .normal)
+                            cell.acceptBtn.setTitle(Localization(string:"Accept/Hire"), for: .normal)
                             cell.acceptBtn.accessibilityHint = "1"
                             cell.acceptBtn.tag = indexPath.row - 1
                             cell.acceptBtn.backgroundColor = UIColor.clear
@@ -412,7 +414,7 @@ UITableViewDelegate
                         }else if ES == "1" && JS == "0" {
                             cell.acceptBtn.isHidden = false
                             cell.waitingLabel.isHidden = true
-                            cell.acceptBtn.setTitle("Hire", for: .normal)
+                            cell.acceptBtn.setTitle(Localization(string:"Hire"), for: .normal)
                            cell.acceptBtn.accessibilityHint = "0"
                             cell.waitingImg.isHidden = true
                             cell.acceptBtn.tag = indexPath.row - 1
@@ -590,7 +592,7 @@ UITableViewDelegate
                         let ES = tempDict.object(forKey: "employer_status") as! NSString
                         if ES == "2" {
                             cell.rateLbl.isHidden = false
-                            cell.rateLbl.text = "X Rejected"
+                            cell.rateLbl.text = Localization(string:"X Rejected")
                             cell.rateLbl.textColor = UIColor.white
                         }
                         

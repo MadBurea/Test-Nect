@@ -186,11 +186,12 @@ class JobPendingAppVC: UIViewController, UITableViewDelegate, UITableViewDataSou
                 endDate = self.convertDateFormaterUTC(endDate)
             }
             
+
             if endTime == "" {
                 endTime = "00:00"
-                expandcell.lblFromEndDate.text =  "From \n \(self.convertDateFormaterUTC(UTCStartDate)) \n to \n \(endDate) \n | \n From \n \(self.UTCToLocal(date: tempDict.object(forKey: "startHour")! as! String))h \n to \n No End Time"
+                expandcell.lblFromEndDate.text =  "\(strFrom) \n \(self.convertDateFormaterUTC(UTCStartDate)) \n \(strTo) \n \(endDate) \n | \n \(strFrom) \n \(self.UTCToLocal(date: tempDict.object(forKey: "startHour")! as! String))h \n to \n \(strNoEndDate)"
             }else{
-                expandcell.lblFromEndDate.text =  "From \n \(self.convertDateFormaterUTC(UTCStartDate)) \n to \n \(endDate) \n | \n From \n \(self.UTCToLocal(date: tempDict.object(forKey: "startHour")! as! String))h \n to \n \(self.UTCToLocal(date:tempDict.object(forKey: "endTime")! as! String))h"
+                expandcell.lblFromEndDate.text =  "\(strFrom) \n \(self.convertDateFormaterUTC(UTCStartDate)) \n \(strTo) \n \(endDate) \n | \n \(strFrom) \n \(self.UTCToLocal(date: tempDict.object(forKey: "startHour")! as! String))h \n to \n \(self.UTCToLocal(date:tempDict.object(forKey: "endTime")! as! String))h"
             }
             
 
@@ -223,7 +224,8 @@ class JobPendingAppVC: UIViewController, UITableViewDelegate, UITableViewDataSou
             expandcell.btnApplyAlReadyInvited.tag = indexPath.row
             expandcell.btnApplyAlReadyInvited.addTarget(self, action: #selector(detail(sender:)), for: .touchUpInside)
             
-            expandcell.btnApplyAlReadyInvited.setTitle("Follow Up", for: .normal)
+            
+            expandcell.btnApplyAlReadyInvited.setTitle(Localization(string:"Follow Up"), for: .normal)
             
             expandcell.contentView.layer.cornerRadius = 2.0
             expandcell.contentView.layer.shadowColor = UIColor.darkGray.cgColor

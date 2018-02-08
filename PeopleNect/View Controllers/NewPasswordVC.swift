@@ -115,8 +115,7 @@ class NewPasswordVC: UIViewController {
                 }
                 else
                 {
-                    
-                    self.alertMessage.strMessage = Localization(string:  "Dang! Something went wrong. Try again!")
+                    self.alertMessage.strMessage = Localization(string:  "No user with this credential")
                     self.alertMessage.modalPresentationStyle = .overCurrentContext
                     self.present(self.alertMessage, animated: false, completion: nil)
                 }

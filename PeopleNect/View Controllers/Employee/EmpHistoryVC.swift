@@ -177,13 +177,13 @@ class EmpHistoryVC: UIViewController, UITableViewDelegate, UITableViewDataSource
             
             if perDay == "1"
             {
-                expandcell.lblPerHour.text = "/hour"
+                expandcell.lblPerHour.text = "/" + "\(Localization(string: "hour"))"
             }
             else if perDay == "2"
             {
-                expandcell.lblPerHour.text = "/job"
+                expandcell.lblPerHour.text = "/" + "\(Localization(string: "job"))"
             }else{
-                expandcell.lblPerHour.text = "/month"
+                expandcell.lblPerHour.text = "/" + "\(Localization(string: "month"))"
             }
       
         
@@ -210,22 +210,25 @@ class EmpHistoryVC: UIViewController, UITableViewDelegate, UITableViewDataSource
                 endDate = self.convertDateFormaterUTC(endDate)
             }
             
+            
+
+            
             if endTime == "" {
                 endTime = "00:00"
-                expandcell.lblFromEndDate.text =  "From \n \(self.convertDateFormaterUTC(UTCStartDate)) \n to \n \(endDate) \n | \n From \n \(self.UTCToLocal(date: tempDict.object(forKey: "startHour")! as! String))h \n to \n No End Time"
+                expandcell.lblFromEndDate.text =  "\(strFrom) \n \(self.convertDateFormaterUTC(UTCStartDate)) \n \(strTo) \n \(endDate) \n | \n \(strFrom) \n \(self.UTCToLocal(date: tempDict.object(forKey: "startHour")! as! String))h \n to \n \(strNoEndDate)"
             }else{
-                expandcell.lblFromEndDate.text =  "From \n \(self.convertDateFormaterUTC(UTCStartDate)) \n to \n \(endDate) \n | \n From \n \(self.UTCToLocal(date: tempDict.object(forKey: "startHour")! as! String))h \n to \n \(self.UTCToLocal(date:tempDict.object(forKey: "endTime")! as! String))h"
+                expandcell.lblFromEndDate.text =  "\(strFrom) \n \(self.convertDateFormaterUTC(UTCStartDate)) \n \(strTo) \n \(endDate) \n | \n \(strFrom) \n \(self.UTCToLocal(date: tempDict.object(forKey: "startHour")! as! String))h \n to \n \(self.UTCToLocal(date:tempDict.object(forKey: "endTime")! as! String))h"
             }
             
             let workingDays = tempDict.object(forKey: "workingDay") as! String
             
             if workingDays == "0"
             {
-                expandcell.lblOnlyDays.text = "Only business days"
+                expandcell.lblOnlyDays.text = strOnlyBussDays
             }
             else if perDay == "1"
             {
-                expandcell.lblOnlyDays.text = "Includes non Business days"
+                expandcell.lblOnlyDays.text = strIncludesNonBussDays
             }
             
             let jobCanceledByEmployer = "\(tempDict.object(forKey: "jobCanceledByEmployer")!)"
@@ -304,15 +307,14 @@ class EmpHistoryVC: UIViewController, UITableViewDelegate, UITableViewDataSource
             
             if perDay == "1"
             {
-                mainCell.lblPerHour.text = "/hour"
+                mainCell.lblPerHour.text = "/" + "\(Localization(string: "hour"))"
             }
             else if perDay == "2"
             {
-                mainCell.lblPerHour.text = "/job"
+                mainCell.lblPerHour.text = "/" + "\(Localization(string: "job"))"
             }else{
-                mainCell.lblPerHour.text = "/month"
+                mainCell.lblPerHour.text = "/" + "\(Localization(string: "month"))"
             }
-            
             
           
             let jobCanceledByEmployer = "\(tempDict.object(forKey: "jobCanceledByEmployer")!)"

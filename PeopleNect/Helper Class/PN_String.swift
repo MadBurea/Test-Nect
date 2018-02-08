@@ -46,6 +46,10 @@ let strOTPInvalid = Localization(string: "Please, enter your OTP.")
 let strExpYearsEmpty = Localization(string: "Enter Years")
 let strHourlyEmpty = Localization(string: "Enter hours")
 
+let strFrom = Localization(string: "From")
+let strTo = Localization(string: "to")
+let strNoEndDate = Localization(string: "No end Date")
+let strNoEndTime = Localization(string: "No End Time")
 
 // MARK: Employee login Dictonary
 
@@ -142,10 +146,7 @@ let strOK = Localization(string: "OK")
 let strCancel = Localization(string: "CANCEL")
 
 let strHour = Localization(string: "hour")
-
 let strJob = Localization(string: "job")
-
-
 let strDay = Localization(string: "month")
 
 // MARK:-  EmpJobSelectionProgressVC String

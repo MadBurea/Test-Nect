@@ -233,7 +233,7 @@ UITableViewDelegate,UIGestureRecognizerDelegate
         favoriteImage.isHidden = true
         favoriteOutlet.setTitleColor(UIColor.lightGray, for: .normal)
         allImage.isHidden = false
-        self.availableLabel.text = "Available professionals"
+        self.availableLabel.text = Localization(string: "Available professionals")
         noProfLabel.isHidden = true
         if allEmployeeArray.count == 0 {
             noProfLabel.isHidden = false
@@ -252,7 +252,8 @@ UITableViewDelegate,UIGestureRecognizerDelegate
         allImage.isHidden = true
         allOutlet.setTitleColor(UIColor.lightGray, for: .normal)
         favoriteImage.isHidden = false
-        self.availableLabel.text = "Candidate who worked for you."
+        self.availableLabel.text = Localization(string: "Candidate who worked for you.")
+        
         noProfLabel.isHidden = true
         if hotEmployeeArray.count == 0 {
             noProfLabel.isHidden = false

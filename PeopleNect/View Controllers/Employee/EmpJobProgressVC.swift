@@ -133,6 +133,7 @@ class EmpJobProgressVC: UIViewController, UITableViewDelegate, UITableViewDataSo
                 expandcell.jobSeekerRating = jobseekerRating
                 expandcell.userRateTableView.isHidden = false
             NotificationCenter.default.post(name:Notification.Name(rawValue:"reloadRatingTable"),object:nil)
+                
                 for i in jobseekerRating {
                     let userRating = i as! NSDictionary
                     let rating = userRating["rating"] as! NSString
@@ -213,7 +214,7 @@ class EmpJobProgressVC: UIViewController, UITableViewDelegate, UITableViewDataSo
             
             
             expandcell.lblProfessionalHired.isHidden = true
-            expandcell.lblProfessionalHired.text = "No professional hired."
+            expandcell.lblProfessionalHired.text = Localization(string:"No professional hired.")
             
             expandcell.lbCompanyAddress.text = "\(tempDict.object(forKey: "street_name")!), \(tempDict.object(forKey: "address")!), \(tempDict.object(forKey: "address1")!), \(tempDict.object(forKey: "city")!), \(tempDict.object(forKey: "state")!)"
             
@@ -256,9 +257,9 @@ class EmpJobProgressVC: UIViewController, UITableViewDelegate, UITableViewDataSo
             
             if endTime == "" {
                 endTime = "00:00"
-                expandcell.lblFromEndDate.text =  "From \n \(self.convertDateFormaterUTC(UTCStartDate)) \n to \n \(endDate) \n | \n From \n \(self.UTCToLocal(date: tempDict.object(forKey: "startHour")! as! String))h \n to \n No End Time"
+                expandcell.lblFromEndDate.text =  "\(strFrom) \n \(self.convertDateFormaterUTC(UTCStartDate)) \n \(strTo) \n \(endDate) \n | \n \(strFrom) \n \(self.UTCToLocal(date: tempDict.object(forKey: "startHour")! as! String))h \n to \n \(strNoEndDate)"
             }else{
-                expandcell.lblFromEndDate.text =  "From \n \(self.convertDateFormaterUTC(UTCStartDate)) \n to \n \(endDate) \n | \n From \n \(self.UTCToLocal(date: tempDict.object(forKey: "startHour")! as! String))h \n to \n \(self.UTCToLocal(date:tempDict.object(forKey: "endTime")! as! String))h"
+                expandcell.lblFromEndDate.text =  "\(strFrom) \n \(self.convertDateFormaterUTC(UTCStartDate)) \n \(strTo) \n \(endDate) \n | \n \(strFrom) \n \(self.UTCToLocal(date: tempDict.object(forKey: "startHour")! as! String))h \n to \n \(self.UTCToLocal(date:tempDict.object(forKey: "endTime")! as! String))h"
             }
             
             

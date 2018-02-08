@@ -141,13 +141,13 @@ class MatchJobNotifyVC: UIViewController, UITableViewDelegate,UITableViewDataSou
         let perDay = tempDict.object(forKey: "payment_type") as! String
         if perDay == "1"
         {
-            expandcell.lblPerHour.text = "/hour"
+            expandcell.lblPerHour.text = "/" + "\(Localization(string: "hour"))"
         }
         else if perDay == "2"
         {
-            expandcell.lblPerHour.text = "/job"
+            expandcell.lblPerHour.text = "/" + "\(Localization(string: "job"))"
         }else{
-            expandcell.lblPerHour.text = "/month"
+            expandcell.lblPerHour.text = "/" + "\(Localization(string: "month"))"
         }
         
         
@@ -164,13 +164,15 @@ class MatchJobNotifyVC: UIViewController, UITableViewDelegate,UITableViewDataSou
             endDate = convertDateFormater(Time)
         }
         
+        
+        
         if endTime == "" {
             
             endTime = "00:00"
-            expandcell.lblFromEndDate.text =  "From \n \(newDate) \n to \n \(endDate) \n | \n From \n \(self.UTCToLocal(date: tempDict.object(forKey: "start_hour")! as! String))h \n to \n No End Time"
+            expandcell.lblFromEndDate.text =  "\(strFrom) \n \(newDate) \n \(strTo) \n \(endDate) \n | \n \(strFrom) \n \(self.UTCToLocal(date: tempDict.object(forKey: "start_hour")! as! String))h \n to \n \(strNoEndDate)"
         }else{
             
-            expandcell.lblFromEndDate.text =  "From \n \(newDate) \n to \n \(endDate) \n | \n From \n \(self.UTCToLocal(date: tempDict.object(forKey: "start_hour")! as! String))h \n to \n \(self.UTCToLocal(date:tempDict.object(forKey: "end_hour")! as! String))h"
+            expandcell.lblFromEndDate.text =  "\(strFrom) \n \(newDate) \n \(strTo) \n \(endDate) \n | \n \(strFrom) \n \(self.UTCToLocal(date: tempDict.object(forKey: "start_hour")! as! String))h \n to \n \(self.UTCToLocal(date:tempDict.object(forKey: "end_hour")! as! String))h"
         }
        
         
@@ -178,11 +180,11 @@ class MatchJobNotifyVC: UIViewController, UITableViewDelegate,UITableViewDataSou
         
         if workingDays == "0"
         {
-            expandcell.lblOnlyDays.text = "Only business days"
+            expandcell.lblOnlyDays.text = strOnlyBussDays
         }
         else if workingDays == "1"
         {
-            expandcell.lblOnlyDays.text = "Includes non Business days"
+            expandcell.lblOnlyDays.text = strIncludesNonBussDays
         }
         expandcell.btnApplyAlReadyInvited.tag = indexPath.row
         expandcell.btnApplyAlReadyInvited.addTarget(self, action: #selector(self.applyStatus(sender:)), for: .touchUpInside)

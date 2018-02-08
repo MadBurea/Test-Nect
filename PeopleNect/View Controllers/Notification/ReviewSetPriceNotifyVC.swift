@@ -69,10 +69,10 @@ class ReviewSetPriceNotifyVC: UIViewController,UITextFieldDelegate {
     @IBAction func ClickOnAdjust(_ sender: Any) {
         
         if (totalHourTF.text?.isBlank)! {
-              self.view.makeToast("Total Hour Should not be blank", duration: 1.0, position: .bottom)
+            self.view.makeToast(Localization(string:"Total Hour Should not be blank"), duration: 1.0, position: .bottom)
         }
         else if (totalPriceTF.text?.isBlank)! {
-            self.view.makeToast("Total Price Should not be blank", duration: 1.0, position: .bottom)
+            self.view.makeToast(Localization(string: "Total Price Should not be blank"), duration: 1.0, position: .bottom)
         }
         else {
             let storyBoard : UIStoryboard = UIStoryboard(name: "Employee", bundle:nil)
