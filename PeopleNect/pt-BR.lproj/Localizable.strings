@@ -173,6 +173,21 @@
 "Invitation refused!"        = "Convite recusado!";
 "Profile updated!"        = "Perfil atualizado!";
 
+"Job published!"   = "Vaga publicada!";
+"job has been closed"   = "Esta vaga ja foi preenchida.";
+"Invitation Accepted! or Invitation refused!"   = "Convite aceito!";
+"Job offer sent"   = "Oferta de trabalho feita";
+"No user with this credential"   = "Nenhum usuário com os dados fornecidos";
+"Balance already added."   = "Equilíbrio já adicionado.";
+"No business segment available"   = "Nenhuma área de negócio disponível";
+"You canceled job successfully"   = "Você cancelou a vaga!";
+
+
+"End time should be after the start time"   = "Horário de término deve ser após o horário de início";
+"This value cannot be greater than the difference between start hour and end hour"  = "Por favor, selecione o total de horas apropriado";
+"End date can\'t be older than start date"  = "A data final não pode ser anterior à data de início";
+
+
 
 
 

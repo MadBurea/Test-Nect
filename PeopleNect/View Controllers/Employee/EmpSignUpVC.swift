@@ -513,22 +513,9 @@ class EmpSignUpVC: UIViewController,UITextFieldDelegate {
                             loginDict.setValue("", forKey: "companyName")
                         }
                         
-                       
-                        
-                        if appdel.deviceLanguage == "pt-BR"
-                        {
-                            
-                        }
-                        else
-                        {
-                            self.view.makeToast("\(Response.object(forKey: "message")!)", duration: 3.0, position: .bottom)
-                        }
-                        
                         
                         let empsignupVC = self.storyboard?.instantiateViewController(withIdentifier: "EmpAddCompanyDetailsVC") as! EmpAddCompanyDetailsVC
-                        
                         empsignupVC.loginDict = loginDict
-                        
                          self.navigationController?.pushViewController(empsignupVC, animated: true)
 
                     }
@@ -536,22 +523,9 @@ class EmpSignUpVC: UIViewController,UITextFieldDelegate {
                 }
                 else
                 {
-                    
-                    if appdel.deviceLanguage == "pt-BR"
-                    {
-                        //self.alertMessage.strMessage = "\(Response.object(forKey: "pt_message")!)"
-                        self.alertMessage.strMessage = "\(Response.object(forKey: "message")!)"
-                    }
-                    else
-                    {
-                        self.alertMessage.strMessage = "\(Response.object(forKey: "message")!)"
-                    }
-                    
+                    self.alertMessage.strMessage = Localization(string:  "Dang! Something went wrong. Try again!")
                     self.alertMessage.modalPresentationStyle = .overCurrentContext
-                    
                     self.present(self.alertMessage, animated: false, completion: nil)
-                    
-                 //   print(Response.object(forKey: "message"))
                 }
                 
                 

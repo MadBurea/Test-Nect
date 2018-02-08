@@ -98,13 +98,8 @@ class EmpForgotPasswordVC: UIViewController, UITextFieldDelegate {
 
             if error != nil
             {
-                print("Error",error?.description as String!)
-                
-                
-                self.alertMessage.strMessage = "Dang! something went wrong. Try again!"
-                
+                self.alertMessage.strMessage = Localization(string:  "Dang! Something went wrong. Try again!")
                 self.alertMessage.modalPresentationStyle = .overCurrentContext
-                
                 self.present(self.alertMessage, animated: false, completion: nil)
             }
             else
@@ -119,26 +114,18 @@ class EmpForgotPasswordVC: UIViewController, UITextFieldDelegate {
                 
                 if status == 1
                 {
-                    
-                    if appdel.deviceLanguage == "pt-BR"
-                    {
-                        self.alertMessage.strMessage = "\(Response.object(forKey: "pt_message")!)"
-                    }
-                    else
-                    {
-                        self.alertMessage.strMessage = "\(Response.object(forKey: "message")!)"
-                    }
-                    
-                    self.present(self.alertMessage, animated: false, completion: nil)
-                    
+                    self.view.makeToast(Localization(string:"Invitation accepted!"), duration: 3.0, position: .bottom)
+
                     let VerifyOTPVC = self.storyboard?.instantiateViewController(withIdentifier: "VerifyOTPVC") as! VerifyOTPVC
                     self.navigationController?.pushViewController(VerifyOTPVC, animated: true)
                     
                 }
                 else
                 {
+                    self.alertMessage.strMessage = Localization(string:  "No user with this credential")
+                    self.alertMessage.modalPresentationStyle = .overCurrentContext
+                    self.present(self.alertMessage, animated: false, completion: nil)
                     
-                    print(Response.object(forKey: "message"))
                 }
                 
                 

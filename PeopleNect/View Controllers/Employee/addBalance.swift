@@ -226,19 +226,23 @@ class addBalance: UIViewController ,UITextFieldDelegate,UIPickerViewDelegate,UIP
             print("response is",Response)
             if error != nil
             {
-                print("Error",error?.description as String!)
+                self.alertMessage.strMessage = Localization(string:  "Dang! Something went wrong. Try again!")
+                self.alertMessage.modalPresentationStyle = .overCurrentContext
+                self.present(self.alertMessage, animated: false, completion: nil)
+                
             }
             else
             {
                 let dictResponse = Response as! NSDictionary
                 print("dictResponse",dictResponse)
-                if appdel.deviceLanguage == "pt-BR"
-                {
-                    self.alertMessage.strMessage = "\(dictResponse.value(forKey: "pt_message")!)"
-                }
-                else
-                {
-                    self.alertMessage.strMessage = "\(dictResponse.value(forKey: "message")!)"
+                
+                let status = dictResponse.object(forKey: "status") as! Int
+                if status == 1 {
+                    
+                }else if status == 2 {
+                    self.alertMessage.strMessage = Localization(string:  "Balance already added.")
+                }else{
+                    self.alertMessage.strMessage = Localization(string:  "Dang! Something went wrong. Try again!")
                 }
                 self.alertMessage.modalPresentationStyle = .overCurrentContext
                 self.present(self.alertMessage, animated: false, completion: nil)

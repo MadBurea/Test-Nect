@@ -334,13 +334,9 @@ class EmpSelectSkillsVC: UIViewController, UICollectionViewDelegate,UICollection
                         
                     else
                     {
-//                        self.alertMessage.strMessage = "\(Response.object(forKey: "message")!)"
-//                        
-//                        self.alertMessage.modalPresentationStyle = .overCurrentContext
-//                        
-//                        self.present(self.alertMessage, animated: false, completion: nil)
-                        
-                          print(Response.object(forKey: "message")!)
+                        self.alertMessage.strMessage = Localization(string:  "Dang! Something went wrong. Try again!")
+                        self.alertMessage.modalPresentationStyle = .overCurrentContext
+                        self.present(self.alertMessage, animated: false, completion: nil)
                         
                         self.lblNoData.isHidden = false
                     }

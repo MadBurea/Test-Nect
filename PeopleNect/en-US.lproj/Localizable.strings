@@ -167,3 +167,16 @@
 "Invitation refused!"        = "Invitation refused!";
 "Profile updated!"        = "Profile updated!";
 
+"Job published!"   = "Job published!";
+"job has been closed"   = "job has been closed";
+"Invitation Accepted! or Invitation refused!"   = "Invitation Accepted! or Invitation refused!";
+"Job offer sent"   = "Job offer sent";
+"No user with this credential"   = "No user with this credential";
+"Balance already added."   = "Balance already added.";
+"No business segment available"   = "No business segment available";
+"You canceled job successfully"   = "You canceled job successfully";
+
+"End time should be after the start time"   = "End time should be after the start time";
+"This value cannot be greater than the difference between start hour and end hour"  = "This value cannot be greater than the difference between start hour and end hour";
+"End date can\'t be older than start date"  = "End date can\'t be older than start date";
+

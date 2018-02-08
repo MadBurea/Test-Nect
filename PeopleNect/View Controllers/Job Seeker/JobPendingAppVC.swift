@@ -471,11 +471,9 @@ class JobPendingAppVC: UIViewController, UITableViewDelegate, UITableViewDataSou
                 else
                 {
                     
-//                    self.alertMessage.strMessage = "\(Response.object(forKey: "message")!)"
-//                    
-//                    self.alertMessage.modalPresentationStyle = .overCurrentContext
-//                    
-//                    self.present(self.alertMessage, animated: false, completion: nil)
+                    self.alertMessage.strMessage = Localization(string:  "Dang! Something went wrong. Try again!")
+                    self.alertMessage.modalPresentationStyle = .overCurrentContext
+                    self.present(self.alertMessage, animated: false, completion: nil)
                     
                     self.lblNoPendingApp.isHidden = false
 
@@ -543,16 +541,10 @@ class JobPendingAppVC: UIViewController, UITableViewDelegate, UITableViewDataSou
                 }
                 else
                 {
-                    print("Error","\(Response.object(forKey: "message")!)")
-//                    self.alertMessage.strMessage = "\(Response.object(forKey: "message")!)"
-//                    
-//                    self.alertMessage.modalPresentationStyle = .overCurrentContext
-//                    
-//                    self.present(self.alertMessage, animated: false, completion: nil)
-                    
+                    self.alertMessage.strMessage = Localization(string:  "Dang! Something went wrong. Try again!")
+                    self.alertMessage.modalPresentationStyle = .overCurrentContext
+                    self.present(self.alertMessage, animated: false, completion: nil)
                     self.lblNoPendingApp.isHidden = false
-
-                    
                 }
                 
                 

@@ -1006,26 +1006,15 @@ UITableViewDelegate
             if status == 1
             {
                 self.postJobHeightConstraints.constant = 0
-                
-                if appdel.deviceLanguage == "pt-BR"
-                {
-                    self.alertMessage.strMessage = "\(dictResponse.value(forKey: "pt_message")!)"
-                }
-                else
-                {
-                    self.alertMessage.strMessage = "\(dictResponse.value(forKey: "message")!)"
-                }
-                
+                self.alertMessage.strMessage = Localization(string:  "Job published!")
                 self.alertMessage.modalPresentationStyle = .overCurrentContext
                 self.present(self.alertMessage, animated: false, completion: nil)
+                
             }else{
-                if appdel.deviceLanguage == "pt-BR"
-                {
-                    self.alertMessage.strMessage = "\(dictResponse.value(forKey: "pt_message")!)"
-                }
-                else
-                {
-                    self.alertMessage.strMessage = "\(dictResponse.value(forKey: "message")!)"
+                if status == 2{
+                    self.alertMessage.strMessage = Localization(string:  "you have insufficient credit.")
+                }else{
+                    self.alertMessage.strMessage = Localization(string:  "Error while sending invitation, please try again")
                 }
                 self.alertMessage.modalPresentationStyle = .overCurrentContext
                 self.present(self.alertMessage, animated: false, completion: nil)
@@ -1057,15 +1046,11 @@ UITableViewDelegate
                     let storyBoard : UIStoryboard = UIStoryboard(name: "Employee", bundle:nil)
                     let selection = storyBoard.instantiateViewController(withIdentifier: "EmpSelectionProgressVC") as! EmpSelectionProgressVC
                     self.navigationController?.pushViewController(selection, animated: true)
+                    
+                    self.view.makeToast(Localization(string:"job has been closed"), duration: 3.0, position: .bottom)
+
                 }else{
-                    if appdel.deviceLanguage == "pt-BR"
-                    {
-                        self.alertMessage.strMessage = "\(dictResponse.value(forKey: "pt_message")!)"
-                    }
-                    else
-                    {
-                        self.alertMessage.strMessage = "\(dictResponse.value(forKey: "message")!)"
-                    }
+                    self.alertMessage.strMessage = Localization(string:  "Dang! Something went wrong. Try again!")
                     self.alertMessage.modalPresentationStyle = .overCurrentContext
                     self.present(self.alertMessage, animated: false, completion: nil)
                 }
@@ -1093,17 +1078,10 @@ UITableViewDelegate
             let status = dictResponse.object(forKey: "status") as! Int
             if status == 1
             {
-                //self.dismiss(animated: true, completion: nil)
+                self.view.makeToast(Localization(string:"Invitation Accepted! or Invitation refused!"), duration: 3.0, position: .bottom)
                 self.jobUsersList()
             }else{
-                if appdel.deviceLanguage == "pt-BR"
-                {
-                    self.alertMessage.strMessage = "\(dictResponse.value(forKey: "pt_message")!)"
-                }
-                else
-                {
-                    self.alertMessage.strMessage = "\(dictResponse.value(forKey: "message")!)"
-                }
+                self.alertMessage.strMessage = Localization(string:  "Dang! Something went wrong. Try again!")
                 self.alertMessage.modalPresentationStyle = .overCurrentContext
                 self.present(self.alertMessage, animated: false, completion: nil)
             }
@@ -1129,15 +1107,11 @@ UITableViewDelegate
             if status == 1
             {
                 self.jobUsersList()
+                
+                self.view.makeToast(Localization(string:"Job offer sent"), duration: 3.0, position: .bottom)
+
             }else{
-                if appdel.deviceLanguage == "pt-BR"
-                {
-                    self.alertMessage.strMessage = "\(dictResponse.value(forKey: "pt_message")!)"
-                }
-                else
-                {
-                    self.alertMessage.strMessage = "\(dictResponse.value(forKey: "message")!)"
-                }
+                self.alertMessage.strMessage = Localization(string:  "Dang! Something went wrong. Try again!")
                 self.alertMessage.modalPresentationStyle = .overCurrentContext
                 self.present(self.alertMessage, animated: false, completion: nil)
             }

@@ -190,7 +190,6 @@ class EmpInvitePostedJobVC: UIViewController,UITableViewDataSource,UITableViewDe
                         
                         if let arrjobsForGuest = (dataDict as AnyObject).object(forKey: "jobsForGuest") as? NSArray
                         {
-                            //self.arrayInvitedPost = arrjobsForGuest.mutableCopy() as! NSMutableArray
                             
                             if arrjobsForGuest.count > 0 {
                                 self.arrayInvitedPost.add(arrjobsForGuest.object(at: 0))
@@ -202,31 +201,18 @@ class EmpInvitePostedJobVC: UIViewController,UITableViewDataSource,UITableViewDe
                         {
                             
                             print("arrjobsCurrentJob is",arrjobsCurrentJob)
-                          //  self.arrayInvitedPost = arrjobsCurrentJob.mutableCopy() as! NSMutableArray
                             
                             if arrjobsCurrentJob.count > 0 {
                                 self.arrayInvitedPost.add(arrjobsCurrentJob.object(at: 0))
                             }
-                           // self.arrayInvitedPost.add(arrjobsCurrentJob)
                         }
-                        
-                        print("self.arrayInvitedPost is", self.arrayInvitedPost)
                         
                         self.tblInvited.reloadData()
                     }
                 }
                 else
                 {
-                    
-                   
-                    if appdel.deviceLanguage == "pt-BR"
-                    {
-                        self.alertMessage.strMessage = "\(Response.object(forKey: "pt_message")!)"
-                    }
-                    else
-                    {
-                        self.alertMessage.strMessage = "\(Response.object(forKey: "message")!)"
-                    }
+                    self.alertMessage.strMessage = Localization(string:  "Dang! Something went wrong. Try again!")
                     
                     self.alertMessage.modalPresentationStyle = .overCurrentContext
                     
@@ -323,7 +309,7 @@ class EmpInvitePostedJobVC: UIViewController,UITableViewDataSource,UITableViewDe
             SwiftLoader.hide()
             
             if error != nil {
-                print("error is",error?.localizedDescription)
+                self.view.makeToast(Localization(string:"Dang! Something went wrong. Try again!"), duration: 3.0, position: .bottom)
             }else{
                 let dictResponse = Response as! NSDictionary
                 let status = dictResponse.object(forKey: "status") as! Int
@@ -331,29 +317,21 @@ class EmpInvitePostedJobVC: UIViewController,UITableViewDataSource,UITableViewDe
                 print("dictResponse is",dictResponse)
                 if status == 1
                 {
+                    
+                    self.view.makeToast(Localization(string:"Invited Successfully"), duration: 3.0, position: .bottom)
+
                     _ = self.navigationController?.popViewController(animated: true)
                     
                 }else{
                    
-                    
-                    if Response.object(forKey:"pt_message") != nil {
-                        if appdel.deviceLanguage == "pt-BR"
-                        {
-                            self.alertMessage.strMessage = "\(dictResponse.value(forKey: "pt_message")!)"
-                        }
-                        else
-                        {
-                            self.alertMessage.strMessage = "\(dictResponse.value(forKey: "message")!)"
-                        }
+                    if status == 0 {
+                        self.alertMessage.strMessage = Localization(string:  "Dang! Something went wrong. Try again!")
+                    }
+                    if status == 2{
+                        self.alertMessage.strMessage = Localization(string:  "you have insufficient credit.")
                     }else{
-                        if appdel.deviceLanguage == "pt-BR"
-                        {
-                            self.alertMessage.strMessage = "\(dictResponse.value(forKey: "message")!)"
-                        }
-                        else
-                        {
-                            self.alertMessage.strMessage = "\(dictResponse.value(forKey: "message")!)"
-                        }
+                        
+                        self.alertMessage.strMessage = Localization(string:  "Error while sending invitation, please try again")
                     }
                     
                     self.alertMessage.modalPresentationStyle = .overCurrentContext

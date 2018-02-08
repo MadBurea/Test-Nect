@@ -371,7 +371,6 @@ class JobOnGoingDetailsVC: UIViewController {
                       "jobSeekerID":"\(appdel.loginUserDict.object(forKey: "userId")!)",
             "language":appdel.userLanguage] as [String : Any]
         
-        print("parameter is",param)
         global.callWebService(parameter: param as AnyObject!) { (Response:AnyObject, error:NSError?) in
             
             if error != nil
@@ -388,16 +387,15 @@ class JobOnGoingDetailsVC: UIViewController {
                 
                 if status == 1
                 {
-                    self.view.makeToast(Localization(string: "You canceled job successfully"), duration: 3.0, position: .bottom)
-
+                    self.view.makeToast(Localization(string:"You canceled job successfully"), duration: 3.0, position: .bottom)
                     _ = self.navigationController?.popViewController(animated: true)
                     
                 }else{
                
                     if status == 2 {
-                         self.alertMessage.strMessage = Localization(string:  "Job in progress, you can't cancel it!")
+                         self.alertMessage.strMessage = Localization(string:"Job in progress, you can't cancel it!")
                     }else{
-                        self.alertMessage.strMessage = Localization(string:  "Dang! Something went wrong. Try again!")
+                        self.alertMessage.strMessage = Localization(string:"Dang! Something went wrong. Try again!")
                     }
                     self.alertMessage.modalPresentationStyle = .overCurrentContext
                     self.present(self.alertMessage, animated: false, completion: nil)

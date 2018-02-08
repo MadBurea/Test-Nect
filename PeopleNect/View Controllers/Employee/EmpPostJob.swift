@@ -161,14 +161,14 @@ class EmpPostJob: UIViewController  {
                 selection.isfromJobPubliush = true
                 selection.jobTitle = self.jobTitle
                 self.navigationController?.pushViewController(selection, animated: true)
+                
+                self.view.makeToast(Localization(string:"Job published!"), duration: 3.0, position: .bottom)
+                
             }else{
-                if appdel.deviceLanguage == "pt-BR"
-                {
-                    self.alertMessage.strMessage = "\(dictResponse.value(forKey: "pt_message")!)"
-                }
-                else
-                {
-                    self.alertMessage.strMessage = "\(dictResponse.value(forKey: "message")!)"
+                if status == 2{
+                    self.alertMessage.strMessage = Localization(string:  "you have insufficient credit.")
+                }else{
+                    self.alertMessage.strMessage = Localization(string:  "Error while sending invitation, please try again")
                 }
                 self.alertMessage.modalPresentationStyle = .overCurrentContext
                 self.present(self.alertMessage, animated: false, completion: nil)

@@ -661,11 +661,11 @@ class EmpLastDetailsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFie
         if  apiCall == false{
             
             if startDateToast{
-                self.view.makeToast("End Date must be greater than start date", duration: 1.0, position: .bottom)
+                self.view.makeToast(Localization(string: "End date can\'t be older than start date"), duration: 1.0, position: .bottom)
             }
             else if startTimeToast {
                 self.txtPerHourPerDay.text = ""
-                 self.view.makeToast("Please select appropriate hour", duration: 1.0, position: .bottom)
+                 self.view.makeToast(Localization(string: "This value cannot be greater than the difference between start hour and end hour"), duration: 1.0, position: .bottom)
             }
             else{
                 self.view.makeToast("All fields are required", duration: 1.0, position: .bottom)
@@ -2475,9 +2475,7 @@ class EmpLastDetailsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFie
                 
                 if status == 1
                 {
-                  
                     if let dataDict = (dictResponse.object(forKey: "data")) as? NSDictionary {
-                        
                         if edit == 1{
                             _ = self.navigationController?.popViewController(animated: true)
                         }else if edit == 2{
@@ -2492,16 +2490,12 @@ class EmpLastDetailsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFie
                             self.navigationController?.pushViewController(empdashboardVC, animated: true)
                         }
                     }
-                    
-                   
                 }else{
-                    if appdel.deviceLanguage == "pt-BR"
-                    {
-                        self.alertMessage.strMessage = "\(dictResponse.value(forKey: "pt_message")!)"
-                    }
-                    else
-                    {
-                        self.alertMessage.strMessage = "\(dictResponse.value(forKey: "message")!)"
+                    
+                    if status == 2{
+                        self.alertMessage.strMessage = Localization(string:  "Dang! Something went wrong. Try again!")
+                    }else{
+                        self.alertMessage.strMessage = Localization(string:  "you have insufficient credit.")
                     }
                     self.alertMessage.modalPresentationStyle = .overCurrentContext
                     self.present(self.alertMessage, animated: false, completion: nil)

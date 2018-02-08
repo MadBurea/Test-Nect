@@ -350,8 +350,7 @@ class JobSignUpVC: UIViewController, UITextFieldDelegate, UITableViewDelegate,Pl
 
                     if error != nil
                     {
-                        self.alertMessage.strMessage = "Dang! something went wrong. Try again!"
-                        
+                        self.alertMessage.strMessage = Localization(string:  "Dang! Something went wrong. Try again!")
                         self.alertMessage.modalPresentationStyle = .overCurrentContext
                         
                         self.present(self.alertMessage, animated: false, completion: nil)
@@ -376,13 +375,9 @@ class JobSignUpVC: UIViewController, UITextFieldDelegate, UITableViewDelegate,Pl
                     else
                     {
                         
-                        self.alertMessage.strMessage = "Can't get your details, please login using Email."
-                        
+                        self.alertMessage.strMessage = Localization(string:  "Dang! Something went wrong. Try again!")
                         self.alertMessage.modalPresentationStyle = .overCurrentContext
-                        
                         self.present(self.alertMessage, animated: false, completion: nil)
-
-                        print("api will not call")
                     }
 
                 })
@@ -1117,16 +1112,7 @@ class JobSignUpVC: UIViewController, UITextFieldDelegate, UITableViewDelegate,Pl
                 }
                 else
                 {
-                    
-                    if appdel.deviceLanguage == "pt-BR"
-                    {
-                        self.alertMessage.strMessage = "\(Response.object(forKey: "pt_message")!)"
-                    }
-                    else
-                    {
-                        self.alertMessage.strMessage = "\(Response.object(forKey: "message")!)"
-                    }
-                    
+                    self.alertMessage.strMessage = Localization(string:  "Dang! Something went wrong. Try again!")
                     self.alertMessage.modalPresentationStyle = .overCurrentContext
 
                     self.present(self.alertMessage, animated: false, completion: nil)
@@ -1296,15 +1282,7 @@ class JobSignUpVC: UIViewController, UITextFieldDelegate, UITableViewDelegate,Pl
                 else
                 {
                     
-                    if appdel.deviceLanguage == "pt-BR"
-                    {
-                        self.alertMessage.strMessage = "\(Response.object(forKey: "pt_message")!)"
-                    }
-                    else
-                    {
-                        self.alertMessage.strMessage = "\(Response.object(forKey: "message")!)"
-                    }
-                    
+                    self.alertMessage.strMessage = Localization(string:  "Dang! Something went wrong. Try again!")
                     self.alertMessage.modalPresentationStyle = .overCurrentContext
                     
                     self.present(self.alertMessage, animated: false, completion: nil)

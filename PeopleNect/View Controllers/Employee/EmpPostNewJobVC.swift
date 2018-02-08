@@ -280,14 +280,9 @@ func categoryListApi()
             }
             else
             {
-//                self.alertMessage.strMessage = "\(Response.object(forKey: "message")!)"
-//                
-//                self.alertMessage.modalPresentationStyle = .overCurrentContext
-//                
-//                self.present(self.alertMessage, animated: false, completion: nil)
-                
-                print(Response.object(forKey: "message"))
-                
+                self.alertMessage.strMessage = Localization(string:  "No business segment available")
+                self.alertMessage.modalPresentationStyle = .overCurrentContext
+                self.present(self.alertMessage, animated: false, completion: nil)
                 self.lblNoData.isHidden = false
             }
             

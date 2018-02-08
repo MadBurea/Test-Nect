@@ -273,20 +273,23 @@ class MatchJobNotifyVC: UIViewController, UITableViewDelegate,UITableViewDataSou
                 
                 if status == 1
                 {
+                    
+                    self.view.makeToast(Localization(string:"Application sent!"), duration: 3.0, position: .bottom)
+
                     _ = self.navigationController?.popViewController(animated: true)
                 }
                 else
                 {
                     
-                    if appdel.deviceLanguage == "pt-BR"
-                    {
-                        self.alertMessage.strMessage = "\(Response.object(forKey: "pt_message")!)"
+                    if status == 0 {
+                        self.alertMessage.strMessage = Localization(string:  "Dang! Something went wrong. Try again!")
                     }
-                    else
-                    {
-                        self.alertMessage.strMessage = "\(Response.object(forKey: "message")!)"
+                    if status == 2 {
+                        self.alertMessage.strMessage = Localization(string:  "you have applied for this job already.")
                     }
-                   
+                    if status == 3 {
+                        self.alertMessage.strMessage = Localization(string:  "Job already started or close")
+                    }
                     
                     self.alertMessage.modalPresentationStyle = .overCurrentContext
                     self.present(self.alertMessage, animated: false, completion: nil)

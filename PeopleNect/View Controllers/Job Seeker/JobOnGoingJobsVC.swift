@@ -498,11 +498,9 @@ class JobOnGoingJobsVC: UIViewController, UITableViewDataSource , UITableViewDel
                 else
                 {
                     
-//                    self.alertMessage.strMessage = "\(Response.object(forKey: "message")!)"
-//                    
-//                    self.alertMessage.modalPresentationStyle = .overCurrentContext
-//                    
-//                    self.present(self.alertMessage, animated: false, completion: nil)
+                    self.alertMessage.strMessage = Localization(string:  "Dang! Something went wrong. Try again!")
+                    self.alertMessage.modalPresentationStyle = .overCurrentContext
+                    self.present(self.alertMessage, animated: false, completion: nil)
                     
                    // self.lblOnGoingJobs.isHidden = false
                     

@@ -200,12 +200,9 @@ class JobResetPasswordVC: UIViewController, UITextFieldDelegate {
                 print("Error",error?.description as String!)
                 
                 
-                self.alertMessage.strMessage = "Dang! something went wrong. Try again!"
-                
+                self.alertMessage.strMessage = Localization(string:  "Dang! Something went wrong. Try again!")
                 self.alertMessage.modalPresentationStyle = .overCurrentContext
-                
                 self.present(self.alertMessage, animated: false, completion: nil)
-                
             }
             else
             {
@@ -233,9 +230,6 @@ class JobResetPasswordVC: UIViewController, UITextFieldDelegate {
                         
                         let userId = dictResponse.object(forKey: "userId") as! String
                         
-                        print("OTP is",OTP)
-                        
-                        
                         let VerifyOTPVC = self.storyboard?.instantiateViewController(withIdentifier: "VerifyOTPVC") as! VerifyOTPVC
                         
                         VerifyOTPVC.OTP = OTP.stringValue
@@ -244,20 +238,11 @@ class JobResetPasswordVC: UIViewController, UITextFieldDelegate {
                         
                         self.navigationController?.pushViewController(VerifyOTPVC, animated: true)
                     }
-   
                 }
                 else
                 {
                     
-                    if appdel.deviceLanguage == "pt-BR"
-                    {
-                        self.alertMessage.strMessage = "\(Response.object(forKey: "pt_message")!)"
-                    }
-                    else
-                    {
-                        self.alertMessage.strMessage = "\(Response.object(forKey: "message")!)"
-                    }
-                    
+                    self.alertMessage.strMessage = Localization(string:  "Dang! Something went wrong. Try again!")
                     self.alertMessage.modalPresentationStyle = .overCurrentContext
                     
                     self.present(self.alertMessage, animated: false, completion: nil)

@@ -128,21 +128,16 @@ class gotInvitationNotifyVC: UIViewController {
                 let status = dictResponse.object(forKey: "status") as! Int
                 if status == 1
                 {
-                    print("success")
+                    
+                     self.view.makeToast(Localization(string:"Invitation accepted!"), duration: 3.0, position: .bottom)
+                    
                     _ = self.navigationController?.popViewController(animated: true)
                     
                 }else{
                     print("error")
                     
                     
-                    if appdel.deviceLanguage == "pt-BR"
-                    {
-                        self.alertMessage.strMessage = "\(dictResponse.value(forKey: "pt_message")!)"
-                    }
-                    else
-                    {
-                        self.alertMessage.strMessage = "\(dictResponse.value(forKey: "message")!)"
-                    }
+                    self.alertMessage.strMessage = Localization(string:"Invitation refused!")
                     
                     self.alertMessage.modalPresentationStyle = .overCurrentContext
                     self.present(self.alertMessage, animated: false, completion: nil)

@@ -170,6 +170,41 @@
 "Profile updated!"        = "Profile updated!";
 
 
+"Application sent!"        = "Application sent!";
+"Application sent!"        = "Candidatura enviada!";
+
+
+"you have applied for this job already."        = "you have applied for this job already.";
+"you have applied for this job already."        = "Você já se candidatou para esta vaga!";
+
+
+"Job already started or close"        = "Job already started or close";
+"Job already started or close"        = "Job already started or close";
+
+
+"Invited Successfully"        = "Invited Successfully";
+"Invited Successfully"        = "Convidado com sucesso!";
+
+"you have insufficient credit."        = "you have insufficient credit.";
+"you have insufficient credit."        = "você tem crédito insuficiente.";
+
+"Error while sending invitation, please try again"   = "Error while sending invitation, please try again";
+"Error while sending invitation, please try again"   = "Erro ao enviar o convite. Tente novamente";
+
+"Job published!"   = "Job published!";
+"job has been closed"   = "job has been closed";
+"Invitation Accepted! or Invitation refused!"   = "Invitation Accepted! or Invitation refused!";
+"Job offer sent"   = "Job offer sent";
+"No user with this credential"   = "No user with this credential";
+"Balance already added."   = "Balance already added.";
+"No business segment available"   = "No business segment available";
+"You canceled job successfully"   = "You canceled job successfully";
+
+"End time should be after the start time"   = "End time should be after the start time";
+"This value cannot be greater than the difference between start hour and end hour"  = "This value cannot be greater than the difference between start hour and end hour";
+"End date can\'t be older than start date"  = "End date can\'t be older than start date";
+
+
 
 
 

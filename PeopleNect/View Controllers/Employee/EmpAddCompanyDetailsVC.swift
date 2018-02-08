@@ -589,24 +589,8 @@ class EmpAddCompanyDetailsVC: UIViewController, UITextFieldDelegate,PlaceSearchT
                                     }
                                     else
                                     {
-//                                        self?.alertMessage.strMessage = "\(((dict as AnyObject).object(forKey: "message")))"
-//                                        
-//                                        self?.present((self?.alertMessage)!, animated: false, completion: nil)
-//                                        
-//                                        print((dict as AnyObject).object(forKey: "message"))
-                                        
-                                        
-                                        if appdel.deviceLanguage == "pt-BR"
-                                        {
-                                            self?.alertMessage.strMessage = "\(((dict as AnyObject).object(forKey: "pt_message")))"
-                                        }
-                                        else
-                                        {
-                                            self?.alertMessage.strMessage = "\(((dict as AnyObject).object(forKey: "message")))"
-                                        }
-                                        
-                                       
-                                        
+
+                                        self.alertMessage.strMessage = Localization(string:  "Dang! Something went wrong. Try again!")
                                         self?.alertMessage.modalPresentationStyle = .overCurrentContext
                                         
                                         self?.present((self?.alertMessage)!, animated: false, completion: nil)

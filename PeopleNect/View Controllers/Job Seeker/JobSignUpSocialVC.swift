@@ -1020,33 +1020,15 @@ class JobSignUpSocialVC: UIViewController, UITextFieldDelegate, UITableViewDeleg
                     }
                     else
                     {
-                        if appdel.deviceLanguage == "pt-BR"
-                        {
-                            self.alertMessage.strMessage = "\(Response.object(forKey: "pt_message")!)"
-                        }
-                        else
-                        {
-                            self.alertMessage.strMessage = "\(Response.object(forKey: "message")!)"
-                        }
-                        
+                        self.alertMessage.strMessage = Localization(string:  "Dang! Something went wrong. Try again!")
                         self.alertMessage.modalPresentationStyle = .overCurrentContext
-                        
                         self.present(self.alertMessage, animated: false, completion: nil)
-                        
-                        print(Response.object(forKey: "message")!)
                     }
                     
                 }
                 else
                 {
-                    if appdel.deviceLanguage == "pt-BR"
-                    {
-                        self.alertMessage.strMessage = "\(Response.object(forKey: "pt_message")!)"
-                    }
-                    else
-                    {
-                        self.alertMessage.strMessage = "\(Response.object(forKey: "message")!)"
-                    }
+                    self.alertMessage.strMessage = Localization(string:  "Dang! Something went wrong. Try again!")
                     self.alertMessage.modalPresentationStyle = .overCurrentContext
                     
                     self.present(self.alertMessage, animated: false, completion: nil)

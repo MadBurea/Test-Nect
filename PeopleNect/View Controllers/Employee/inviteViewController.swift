@@ -449,8 +449,8 @@ UITableViewDelegate,UIGestureRecognizerDelegate
                 if status == 1
                 {
                     
-                    self.view.makeToast("Your invitation has been sent", duration: 3.0, position: .bottom)
-                    
+                    self.view.makeToast(Localization(string:"Invited Successfully"), duration: 3.0, position: .bottom)
+
                     let when = DispatchTime.now() + 2 // change 2 to desired number of seconds
                     DispatchQueue.main.asyncAfter(deadline: when) {
                         self.back()
@@ -462,13 +462,14 @@ UITableViewDelegate,UIGestureRecognizerDelegate
                     self.selectedFavId.removeAllObjects()
                     self.listTableView.reloadData()
                     
-                    if appdel.deviceLanguage == "pt-BR"
-                    {
-                        self.alertMessage.strMessage = "\(dictResponse.value(forKey: "pt_message")!)"
+                    if status == 0 {
+                        self.alertMessage.strMessage = Localization(string:  "Dang! Something went wrong. Try again!")
                     }
-                    else
-                    {
-                        self.alertMessage.strMessage = "\(dictResponse.value(forKey: "message")!)"
+                    if status == 2{
+                        self.alertMessage.strMessage = Localization(string:  "you have insufficient credit.")
+                    }else{
+                        
+                        self.alertMessage.strMessage = Localization(string:  "Error while sending invitation, please try again")
                     }
                     
                     self.alertMessage.modalPresentationStyle = .overCurrentContext

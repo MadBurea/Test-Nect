@@ -189,8 +189,7 @@ class JobLogInVC: UIViewController,UITextFieldDelegate,GIDSignInDelegate,GIDSign
                     
                     if error != nil
                     {
-                        self.alertMessage.strMessage = "Dang! something went wrong. Try again!"
-                        
+                        self.alertMessage.strMessage = Localization(string:  "Dang! Something went wrong. Try again!")
                         self.alertMessage.modalPresentationStyle = .overCurrentContext
                         
                         self.present(self.alertMessage, animated: false, completion: nil)
@@ -214,33 +213,12 @@ class JobLogInVC: UIViewController,UITextFieldDelegate,GIDSignInDelegate,GIDSign
                     }
                     else
                     {
-                        self.alertMessage.strMessage = "Can't get your details, please login using Email."
-                        
+                        self.alertMessage.strMessage = Localization(string:  "Dang! Something went wrong. Try again!")
                         self.alertMessage.modalPresentationStyle = .overCurrentContext
-                        
                         self.present(self.alertMessage, animated: false, completion: nil)
-                        
-                        print("api will not call")
                     }
                     
                 })
-                
-//                self.getUserrInfo(completion: { (userInfo, error) in
-//                    if error != nil
-//                    {
-//                        print("error")
-//                    }
-//                    print("userInfo",userInfo)
-//                    self.registerSocialApi(socialType: "facebook", access_token: userInfo!["id"]! as! String,email: userInfo!["email"]! as! String,firstName: userInfo!["name"]! as! String,lastName: "")
-//                    
-//                    print("email",(userInfo?["email"])!)
-//                    
-//                    if let userInfo = userInfo, let name = userInfo["name"], let id = userInfo["id"], let email = userInfo["email"]
-//                    {
-//                        print("email",email)
-//                    }
-//                })
-                
             }
         }
         
@@ -509,39 +487,18 @@ class JobLogInVC: UIViewController,UITextFieldDelegate,GIDSignInDelegate,GIDSign
                 }
                 else
                 {
-                    
-                    if appdel.deviceLanguage == "pt-BR"
-                    {
-                        self.alertMessage.strMessage = "\(Response.object(forKey: "pt_message")!)"
-                    }
-                    else
-                    {
-                        self.alertMessage.strMessage = "\(Response.object(forKey: "message")!)"
-                    }
-                    
+                    self.alertMessage.strMessage = Localization(string:  "Dang! Something went wrong. Try again!")
                     self.alertMessage.modalPresentationStyle = .overCurrentContext
                     
                     self.present(self.alertMessage, animated: false, completion: nil)
-                    
-                    print(Response.object(forKey: "message")!)
                 }
                 
                 }
                 else
                 {
-                    if appdel.deviceLanguage == "pt-BR"
-                    {
-                        self.alertMessage.strMessage = "\(Response.object(forKey: "pt_message")!)"
-                    }
-                    else
-                    {
-                        self.alertMessage.strMessage = "\(Response.object(forKey: "message")!)"
-                    }
+                    self.alertMessage.strMessage = Localization(string:  "Dang! Something went wrong. Try again!")
                     self.alertMessage.modalPresentationStyle = .overCurrentContext
-                    
                     self.present(self.alertMessage, animated: false, completion: nil)
-                    
-                    print(Response.object(forKey: "message")!)
                 }
             }
         }
@@ -645,15 +602,8 @@ class JobLogInVC: UIViewController,UITextFieldDelegate,GIDSignInDelegate,GIDSign
                             phoneNo = loginDict.object(forKey: "phone") as! String
                         }
                         
-                        print(loginDict)
-                        
-                        print("strEmpty",strEmpty.characters.count)
-
-                        
-                        
                         if phoneNo.characters.count == 0
                         {
-                            
                             
                             let JobSignUpSocialVCObj = self.storyboard?.instantiateViewController(withIdentifier: "JobSignUpSocialVC") as! JobSignUpSocialVC
                             JobSignUpSocialVCObj.userDict = loginDict
@@ -661,14 +611,10 @@ class JobLogInVC: UIViewController,UITextFieldDelegate,GIDSignInDelegate,GIDSign
                             
                         }
                         else if strEmpty == "0.00"
-
                         {
-                           
-                            
                             let JobSelectCatagoryVC = self.storyboard?.instantiateViewController(withIdentifier: "JobSelectCatagoryVC") as! JobSelectCatagoryVC
                             JobSelectCatagoryVC.userDic = loginDict
                             self.navigationController?.pushViewController(JobSelectCatagoryVC, animated: true)
-                            
                         }
                         else
                         {
@@ -694,14 +640,8 @@ class JobLogInVC: UIViewController,UITextFieldDelegate,GIDSignInDelegate,GIDSign
                 }
                 else
                 {
-                    if appdel.deviceLanguage == "pt-BR"
-                    {
-                        self.alertMessage.strMessage = "\(Response.object(forKey: "pt_message")!)"
-                    }
-                    else
-                    {
-                        self.alertMessage.strMessage = "\(Response.object(forKey: "message")!)"
-                    }
+                    self.alertMessage.strMessage = Localization(string:  "Dang! Something went wrong. Try again!")
+
                     self.alertMessage.modalPresentationStyle = .overCurrentContext
                     
                     self.present(self.alertMessage, animated: false, completion: nil)
