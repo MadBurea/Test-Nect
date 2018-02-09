@@ -224,14 +224,14 @@ class JobOnGoingDetailsVC: UIViewController {
                         
                         let newDate = self.convertDateFormater(Time)
                         
-                        self.lblStartDate.text = "\(newDate)" + " to"
+                        self.lblStartDate.text = "\(newDate)" + "\(strTo)"
                         
                         let TimeEnd = "\(dataDict.object(forKey: "end_date")!)" + ":" + "\(dataDict.object(forKey: "end_hour")!)"
                         
                         let end_date = dataDict.value(forKey: "end_date") as? String
                         
                         if end_date == "0000-00-00" {
-                            self.lblEndDate.text = "No End Date"
+                            self.lblEndDate.text = strNoEndDate
                         }else{
                             self.lblEndDate.text = self.convertDateFormater(TimeEnd)
                         }
@@ -245,14 +245,14 @@ class JobOnGoingDetailsVC: UIViewController {
                         if endTime == "" {
                             
                             endTime = "00:00"
-                            self.lblEndTime.text = "To " + "No End Time"
+                            self.lblEndTime.text = "\(strTo) " + strNoEndDate
 
                         }else{
                             
-                            self.lblStartTime.text = "From " + "\(self.UTCToLocal(date: dataDict.value(forKey: "start_hour")! as! String))h "
+                            self.lblStartTime.text = "\(strFrom) " + "\(self.UTCToLocal(date: dataDict.value(forKey: "start_hour")! as! String))h "
 
                             
-                            self.lblEndTime.text = "To " + "\(self.UTCToLocal(date: dataDict.value(forKey: "end_hour")! as! String))h "
+                            self.lblEndTime.text = "\(strTo) " + "\(self.UTCToLocal(date: dataDict.value(forKey: "end_hour")! as! String))h "
                             
                         }
                         
@@ -268,15 +268,15 @@ class JobOnGoingDetailsVC: UIViewController {
                         
                         if perDay == "1"
                         {
-                            self.lblPerHour.text =    "/hour"
+                             self.lblPerHour.text = "/" + "\(Localization(string: "hour"))"
                         }
                         else if perDay == "2"
                         {
-                            self.lblPerHour.text =    "/job"
+                             self.lblPerHour.text = "/" + "\(Localization(string: "job"))"
                         }else{
-                            self.lblPerHour.text =    "/month"
+                             self.lblPerHour.text = "/" + "\(Localization(string: "month"))"
                         }
-
+                        
                         
                         
                         let balance = "\(dataDict.object(forKey: "hourlyRate")!)" as NSString

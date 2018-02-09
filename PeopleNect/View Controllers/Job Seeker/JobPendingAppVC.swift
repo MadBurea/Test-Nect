@@ -225,7 +225,7 @@ class JobPendingAppVC: UIViewController, UITableViewDelegate, UITableViewDataSou
             expandcell.btnApplyAlReadyInvited.addTarget(self, action: #selector(detail(sender:)), for: .touchUpInside)
             
             
-            expandcell.btnApplyAlReadyInvited.setTitle(Localization(string:"Follow Up"), for: .normal)
+            expandcell.btnApplyAlReadyInvited.setTitle(Localization(string:"Follow up"), for: .normal)
             
             expandcell.contentView.layer.cornerRadius = 2.0
             expandcell.contentView.layer.shadowColor = UIColor.darkGray.cgColor

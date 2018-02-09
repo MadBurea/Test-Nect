@@ -772,6 +772,14 @@ class JobSignUpSocialVC: UIViewController, UITextFieldDelegate, UITableViewDeleg
         /* let lat : NSNumber = NSNumber(value: userCurrentLocation.latitude)
          let lng : NSNumber = NSNumber(value: userCurrentLocation.longitude)*/
         
+        let geocoder = GMSGeocoder()
+        geocoder.reverseGeocodeCoordinate(responseDict.coordinate) { (respose, error ) in
+            
+            if respose?.firstResult()?.postalCode != nil {
+                self.txtZipCode.text = (respose?.firstResult()?.postalCode!  as! String)
+            }
+        }
+        
         for component in responseDict.addressComponents!
         {
             print(component.type)

@@ -1427,6 +1427,16 @@ class EmpLastDetailsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFie
         self.lat = "\(responseDict.coordinate.latitude)"
         self.lng = "\(responseDict.coordinate.longitude)"
         
+        
+        let geocoder = GMSGeocoder()
+        geocoder.reverseGeocodeCoordinate(responseDict.coordinate) { (respose, error ) in
+            
+            if respose?.firstResult()?.postalCode != nil {
+                self.txtZipCode.text = (respose?.firstResult()?.postalCode!  as! String)
+            }
+        }
+        
+        
         for component in responseDict.addressComponents! {
            // print(component.type)
             

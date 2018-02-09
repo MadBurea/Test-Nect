@@ -201,10 +201,11 @@ class JobResetPasswordVC: UIViewController, UITextFieldDelegate {
                 let dictResponse = Response as! NSDictionary
                 let status = dictResponse.object(forKey: "status") as! Int
                 
+                
+                print("forgot password",dictResponse)
+
                 if status == 1
                 {
-                    self.view.makeToast(Localization(string:"Your Password has been changed."), duration: 3.0, position: .bottom)
-                    
                     if dictResponse.object(forKey: "OTP") != nil
                     {
                         let OTP = dictResponse.object(forKey: "OTP") as! NSNumber

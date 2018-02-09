@@ -852,8 +852,13 @@ class JobSettingVC: UIViewController, PlaceSearchTextFieldDelegate, UITextFieldD
         
         print("selected lat lng is",self.lat,self.lng)
         
-        /* let lat : NSNumber = NSNumber(value: userCurrentLocation.latitude)
-         let lng : NSNumber = NSNumber(value: userCurrentLocation.longitude)*/
+        let geocoder = GMSGeocoder()
+        geocoder.reverseGeocodeCoordinate(responseDict.coordinate) { (respose, error ) in
+            
+            if respose?.firstResult()?.postalCode != nil {
+                self.txtZipCode.text = (respose?.firstResult()?.postalCode!  as! String)
+            }
+        }
         
         for component in responseDict.addressComponents!
         {

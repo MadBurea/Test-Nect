@@ -135,8 +135,16 @@ class EmpAddCompanyDetailsVC: UIViewController, UITextFieldDelegate,PlaceSearchT
         
         strAddress = (responseDict.formattedAddress as NSString!) as String
         
-        /* let lat : NSNumber = NSNumber(value: userCurrentLocation.latitude)
-         let lng : NSNumber = NSNumber(value: userCurrentLocation.longitude)*/
+        let geocoder = GMSGeocoder()
+        geocoder.reverseGeocodeCoordinate(responseDict.coordinate) { (respose, error ) in
+            
+            if respose?.firstResult()?.postalCode != nil {
+                self.txtZipCode.text = (respose?.firstResult()?.postalCode!  as! String)
+                self.lblZipCodeValidation.text = ""
+            }
+            
+           
+        }
         
         for component in responseDict.addressComponents!
         {
@@ -156,9 +164,9 @@ class EmpAddCompanyDetailsVC: UIViewController, UITextFieldDelegate,PlaceSearchT
             {
                 print("Postal Code : \(component.name)")
                 
-                txtZipCode.text = component.name
-                
-                lblZipCodeValidation.text = ""
+//                txtZipCode.text = component.name
+//
+//                lblZipCodeValidation.text = ""
 
             }
             

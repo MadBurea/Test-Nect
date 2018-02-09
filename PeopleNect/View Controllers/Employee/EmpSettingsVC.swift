@@ -926,6 +926,16 @@ class EmpSettingsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFieldD
         
         print("selected lat lng is",self.lat,self.lng)
 
+        
+        let geocoder = GMSGeocoder()
+        geocoder.reverseGeocodeCoordinate(responseDict.coordinate) { (respose, error ) in
+            
+            if respose?.firstResult()?.postalCode != nil {
+                self.txtZipCode.text = (respose?.firstResult()?.postalCode!  as! String)
+                self.lblZipCodeValidation.text = ""
+            }
+        }
+        
         for component in responseDict.addressComponents! {
             print(component.type)
             //print(component.name)
@@ -938,8 +948,8 @@ class EmpSettingsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFieldD
             
             if component.type == "postal_code" {
 //                print("Postal Code : \(component.name)")
-                txtZipCode.text = component.name
-                self.lblZipCodeValidation.text = ""
+//                txtZipCode.text = component.name
+//                self.lblZipCodeValidation.text = ""
 
             }
             

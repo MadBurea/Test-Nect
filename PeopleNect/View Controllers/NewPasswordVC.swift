@@ -84,16 +84,16 @@ class NewPasswordVC: UIViewController {
          ""language"": ""2"",
          ""methodName"": ""forgotEmployer""
          }"
-         
          */
+        
         let param =  [WebServicesClass.METHOD_NAME: "resetPassword","userId":userId,"newPassword":tfpassword.text!] as [String : Any]
         
         global.callWebService(parameter: param as AnyObject!) { (Response:AnyObject, error:NSError?) in
             
             
             if error != nil
-            {                SwiftLoader.hide()
-
+            {
+                SwiftLoader.hide()
                 print("Error",error?.description as String!)
             }
             else
@@ -102,7 +102,6 @@ class NewPasswordVC: UIViewController {
                 let dictResponse = Response as! NSDictionary
                 
                 print(dictResponse)
-                
                 
                 let status = dictResponse.object(forKey: "status") as! Int
                 SwiftLoader.hide()

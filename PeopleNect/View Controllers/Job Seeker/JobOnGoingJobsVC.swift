@@ -220,7 +220,7 @@ class JobOnGoingJobsVC: UIViewController, UITableViewDataSource , UITableViewDel
             }
             
             expandcell.btnSeeDetails.tag = indexPath.row
-            expandcell.btnSeeDetails.setTitle("See details", for: .normal)
+            expandcell.btnSeeDetails.setTitle(Localization(string: "See details"), for: .normal)
             expandcell.btnSeeDetails.addTarget(self, action: #selector(detail(sender:)), for: .touchUpInside)
             expandcell.contentView.layer.cornerRadius = 2.0
             expandcell.contentView.layer.shadowColor = UIColor.darkGray.cgColor

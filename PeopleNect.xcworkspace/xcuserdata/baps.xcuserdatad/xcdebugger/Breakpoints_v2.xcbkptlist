@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PeopleNect/View Controllers/Job Seeker/JobSignUpVC.swift"
-            timestampString = "539776711.2226011"
+            timestampString = "539869363.524074"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1025"
-            endingLineNumber = "1025"
+            startingLineNumber = "1035"
+            endingLineNumber = "1035"
             landmarkName = "registerApi()"
             landmarkType = "7">
          </BreakpointContent>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PeopleNect/View Controllers/Job Seeker/JobSignUpVC.swift"
-            timestampString = "539776711.222689"
+            timestampString = "539869363.524676"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1055"
-            endingLineNumber = "1055"
+            startingLineNumber = "1065"
+            endingLineNumber = "1065"
             landmarkName = "registerApi()"
             landmarkType = "7">
          </BreakpointContent>
@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PeopleNect/View Controllers/Job Seeker/JobSignUpVC.swift"
-            timestampString = "539776711.222755"
+            timestampString = "539869363.525059"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1084"
-            endingLineNumber = "1084"
+            startingLineNumber = "1094"
+            endingLineNumber = "1094"
             landmarkName = "registerApi()"
             landmarkType = "7">
             <Locations>
@@ -138,11 +138,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PeopleNect/View Controllers/Job Seeker/JobSignUpVC.swift"
-            timestampString = "539776711.222818"
+            timestampString = "539869363.52544"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1095"
-            endingLineNumber = "1095"
+            startingLineNumber = "1105"
+            endingLineNumber = "1105"
             landmarkName = "registerApi()"
             landmarkType = "7">
          </BreakpointContent>
@@ -170,11 +170,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PeopleNect/View Controllers/Job Seeker/JobSignUpVC.swift"
-            timestampString = "539776711.222926"
+            timestampString = "539869363.525877"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1030"
-            endingLineNumber = "1030"
+            startingLineNumber = "1040"
+            endingLineNumber = "1040"
             landmarkName = "registerApi()"
             landmarkType = "7">
          </BreakpointContent>
@@ -186,11 +186,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PeopleNect/View Controllers/Job Seeker/JobSignUpVC.swift"
-            timestampString = "539776711.2229919"
+            timestampString = "539869363.526248"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1044"
-            endingLineNumber = "1044"
+            startingLineNumber = "1054"
+            endingLineNumber = "1054"
             landmarkName = "registerApi()"
             landmarkType = "7">
             <Locations>

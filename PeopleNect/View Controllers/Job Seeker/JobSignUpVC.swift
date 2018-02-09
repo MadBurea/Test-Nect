@@ -862,9 +862,19 @@ class JobSignUpVC: UIViewController, UITextFieldDelegate, UITableViewDelegate,Pl
         txtState.text = ""
         txtCountry.text = ""
         
+        txtStreetName.text = responseDict.name
+        lblValidateStreetName.text = ""
+
         
-        /* let lat : NSNumber = NSNumber(value: userCurrentLocation.latitude)
-         let lng : NSNumber = NSNumber(value: userCurrentLocation.longitude)*/
+        let geocoder = GMSGeocoder()
+        geocoder.reverseGeocodeCoordinate(responseDict.coordinate) { (respose, error ) in
+
+                if respose?.firstResult()?.postalCode != nil {
+                    self.txtZipCode.text = (respose?.firstResult()?.postalCode!  as! String)
+                    self.lblValidateZipCode.text = ""
+                }
+        }
+
         
         for component in responseDict.addressComponents!
         {
@@ -875,29 +885,22 @@ class JobSignUpVC: UIViewController, UITextFieldDelegate, UITableViewDelegate,Pl
             {
                 print("Sub Locality : \(component.name)")
                 
-                txtStreetName.text = component.name
-                
+                //txtStreetName.text = component.name
                 lblValidateStreetName.text = ""
-
             }
             
             if component.type == "postal_code"
             {
                 print("Postal Code : \(component.name)")
                 
-                txtZipCode.text = component.name
-                lblValidateZipCode.text = ""
-
+//                txtZipCode.text = component.name
+//                lblValidateZipCode.text = ""
             }
-            
-            
             
             if component.type == "locality"
             {
                 print("Locality : \(component.name)")
             }
-            
-            
             
             if component.type == "administrative_area_level_2"
             {
@@ -905,7 +908,6 @@ class JobSignUpVC: UIViewController, UITextFieldDelegate, UITableViewDelegate,Pl
                 
                 txtCity.text = component.name
                 lblValidateCity.text = ""
-
             }
             
             if component.type == "administrative_area_level_1"
@@ -914,7 +916,6 @@ class JobSignUpVC: UIViewController, UITextFieldDelegate, UITableViewDelegate,Pl
                 
                 txtState.text = component.name
                 lblValidateState.text = ""
-
             }
             
             if component.type == "country"
@@ -923,9 +924,7 @@ class JobSignUpVC: UIViewController, UITextFieldDelegate, UITableViewDelegate,Pl
                 
                 txtCountry.text = component.name
                 lblValidateCountry.text = ""
-
             }
-            
         }
         
     }
