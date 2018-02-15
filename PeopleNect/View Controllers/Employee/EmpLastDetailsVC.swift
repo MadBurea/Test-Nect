@@ -251,8 +251,12 @@ class EmpLastDetailsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFie
             
             employeeName.text = selectUserDict.value(forKey: "name") as! String?
             employeeCategory_ExpLbl.text = "\(selectUserDict.value(forKey: "categoryName")!)" + " -" + "\(selectUserDict.value(forKey: "exp_years")!)" + " years."
-            inviteEmployeeLbl.text = "Invite " + "\(employeeName.text!)" + " to work"
             
+            let invite = Localization(string: "Invite")
+            let toWork = Localization(string: " to work")
+
+            inviteEmployeeLbl.text = "\(invite) \(employeeName.text!) \(toWork)"
+
             self.ratingView.text = ""
             self.ratingView.rating = Double(selectUserDict.value(forKey: "userRatingCount") as! String)!
             
@@ -1428,6 +1432,8 @@ class EmpLastDetailsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFie
         self.lng = "\(responseDict.coordinate.longitude)"
         
         
+        txtStreetName.text = responseDict.name
+        
         let geocoder = GMSGeocoder()
         geocoder.reverseGeocodeCoordinate(responseDict.coordinate) { (respose, error ) in
             
@@ -1442,7 +1448,7 @@ class EmpLastDetailsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFie
             
             if component.type == "sublocality_level_1" {
               //  print("Sub Locality : \(component.name)")
-                txtStreetName.text = component.name
+                //txtStreetName.text = component.name
             }
             
             if component.type == "postal_code" {
@@ -2539,16 +2545,15 @@ class EmpLastDetailsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFie
                 
                 self.totalBalance = (dictResponse.object(forKey: "data") as! NSDictionary).value(forKey: "balance") as! NSString
                 
-                let remainingDays = (dictResponse.object(forKey: "data") as! NSDictionary).value(forKey: "remainingDays") as! NSString
-                
-                let totalDays = remainingDays.integerValue
+                let remainingDays = "\((dictResponse.object(forKey: "data") as! NSDictionary).value(forKey: "remainingDays")!)"
+                let totalDays = (remainingDays as NSString).integerValue
                 
                 self.postJobPrice = (dictResponse.object(forKey: "data") as! NSDictionary).value(forKey: "jobInvitationPrice") as! NSString
                 self.postFavBalance = (dictResponse.object(forKey: "data") as! NSDictionary).value(forKey: "jobInvitationFavouritePrice") as! NSString
                 
                 if totalDays > 0{
                     if self.alreadyWorked == "0"{
-                        let alertController = UIAlertController(title: "", message: Localization(string: "per Professionals") + "$\(self.postJobPrice)" + Localization(string: "per Professionals") + "&" + "$\(self.postFavBalance)" + Localization(string: "per favorite professional."), preferredStyle: UIAlertControllerStyle.alert)
+                        let alertController = UIAlertController(title: "", message: Localization(string: "per Professionals") + " $ \(self.postJobPrice) " + Localization(string: "per Professionals") + "&" + " $ \(self.postFavBalance) " + Localization(string: "per favorite professional."), preferredStyle: UIAlertControllerStyle.alert)
                         
                         let cancelAction = UIAlertAction(title: Localization(string: "Cancel"), style: UIAlertActionStyle.cancel) { (result : UIAlertAction) -> Void in
                         }
@@ -2559,7 +2564,7 @@ class EmpLastDetailsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFie
                         alertController.addAction(okAction)
                         self.present(alertController, animated: true, completion: nil)
                     }else{
-                         let alertController = UIAlertController(title: "", message: Localization(string: "per Professionals") + "$\(self.postJobPrice)" + Localization(string: "per Professionals") + "&" + "$\(self.postFavBalance)" + Localization(string: "per favorite professional."), preferredStyle: UIAlertControllerStyle.alert)
+                         let alertController = UIAlertController(title: "", message: Localization(string: "per Professionals") + " $ \(self.postJobPrice) " + Localization(string: "per Professionals") + "&" + " $ \(self.postFavBalance) " + Localization(string: "per favorite professional."), preferredStyle: UIAlertControllerStyle.alert)
                         
                         let cancelAction = UIAlertAction(title: Localization(string: "Cancel"), style: UIAlertActionStyle.cancel) { (result : UIAlertAction) -> Void in
                         }
@@ -2580,7 +2585,7 @@ class EmpLastDetailsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFie
                             // self.postJob(param: postJobParam)
                             // open the View of alert
                             
-                            let alertController = UIAlertController(title: "", message: Localization(string: "per Professionals") + "$\(self.postJobPrice)" + Localization(string: "per Professionals") + "&" + "$\(self.postFavBalance)" + Localization(string: "per favorite professional."), preferredStyle: UIAlertControllerStyle.alert)
+                            let alertController = UIAlertController(title: "", message: Localization(string: "per Professionals") + " $ \(self.postJobPrice) " + Localization(string: "per Professionals") + "&" + " $ \(self.postFavBalance) " + Localization(string: "per favorite professional."), preferredStyle: UIAlertControllerStyle.alert)
                             
                             let cancelAction = UIAlertAction(title: Localization(string: "Cancel"), style: UIAlertActionStyle.cancel) { (result : UIAlertAction) -> Void in
                             }
@@ -2600,7 +2605,7 @@ class EmpLastDetailsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFie
                             
                             // open the View of alert
                             
-                          let alertController = UIAlertController(title: "", message: Localization(string: "per Professionals") + "$\(self.postJobPrice)" + Localization(string: "per Professionals") + "&" + "$\(self.postFavBalance)" + Localization(string: "per favorite professional."), preferredStyle: UIAlertControllerStyle.alert)
+                          let alertController = UIAlertController(title: "", message: Localization(string: "per Professionals") + " $ \(self.postJobPrice) " + Localization(string: "per Professionals") + "&" + " $ \(self.postFavBalance) " + Localization(string: "per favorite professional."), preferredStyle: UIAlertControllerStyle.alert)
                             
                             let cancelAction = UIAlertAction(title: Localization(string: "Cancel"), style: UIAlertActionStyle.cancel) { (result : UIAlertAction) -> Void in
                             }

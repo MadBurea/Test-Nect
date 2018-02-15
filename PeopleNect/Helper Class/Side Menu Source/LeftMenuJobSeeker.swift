@@ -118,12 +118,16 @@ class LeftMenuJobSeeker: UIViewController,UITableViewDataSource,UITableViewDeleg
             self.setImageForJobSeeker(btnProfilePic:btnProfilePic)
         }else{
             btnProfilePic.setImage(ImgJobSeekerProfilepic, for: .normal)
+            btnProfilePic.imageView?.contentMode = .scaleAspectFill
+            
+            //imageView.contentMode = UIViewContentModeScaleAspectFit;
+
         }
         
         
         btnProfilePic.layer.cornerRadius = btnProfilePic.bounds.size.width/2
         btnProfilePic.clipsToBounds = true
-        btnProfilePic.contentMode = .scaleAspectFit
+        btnProfilePic.contentMode = .scaleAspectFill
         //btnProfilePic.layer.borderWidth = 1
         //btnProfilePic.layer.borderColor = ColorProfilePicBorder.cgColor
         
@@ -341,7 +345,8 @@ class LeftMenuJobSeeker: UIViewController,UITableViewDataSource,UITableViewDeleg
             self.dismiss(animated: true, completion: nil)
             btnProfilePic.setImage(image, for: .normal)
             ImgJobSeekerProfilepic = image
-            
+            btnProfilePic.imageView?.contentMode = .scaleAspectFill
+
            // let loginDict = UserDefaults.standard.object(forKey: kJobSignUpDict) as! NSDictionary
             
             self.view.makeToast(Localization(string:"Profile updated!"), duration: 3.0, position: .bottom)
@@ -362,19 +367,18 @@ class LeftMenuJobSeeker: UIViewController,UITableViewDataSource,UITableViewDeleg
             print("leftloginDict",loginDict)
            
             
-            let exp = loginDict.object(forKey: "exp_years") as? String
-            
-            print("exp",exp!)
-            
-            
-//            let expNum = exp?.components(separatedBy: ".").first!
-//            
-//            print("expNum",expNum!)
+        
+//            print("exp",exp!)
         
         
-        lblYearofExp.text = "\(exp!) \(Localization(string: "years of experience"))"
+        let exp = "\(loginDict.object(forKey: "exp_years")!)" as NSString
+        let number = NSNumber(value: exp.floatValue)
+
         
-            
+           // lblYearofExp.text = "\(exp!) \(Localization(string: "years of experience"))"
+        
+            lblYearofExp.text = "\(ConvertToPortuegeNumber(number: number)) \(Localization(string: "years of experience"))"
+        
             lblUser.text = "\(loginDict.object(forKey: "first_name")!) \(loginDict.object(forKey: "last_name")!)"
             
         

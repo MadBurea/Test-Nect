@@ -215,8 +215,9 @@ class EmpLoginVC: UIViewController,UITextFieldDelegate {
                 }
                 else
                 {
-                    self.alertMessage.strMessage = Localization(string:  "Dang! Something went wrong. Try again!")
                     
+                    self.alertMessage.strMessage = Localization(string:  "Dang! Something went wrong. Try again!")
+
                     if Response.object(forKey:"pt_message") != nil {
                         if appdel.deviceLanguage == "pt-BR"
                         {
@@ -226,17 +227,7 @@ class EmpLoginVC: UIViewController,UITextFieldDelegate {
                         {
                             self.alertMessage.strMessage = "\(Response.object(forKey: "message") as! String)"
                         }
-                    }else{
-                        if appdel.deviceLanguage == "pt-BR"
-                        {
-                            self.alertMessage.strMessage = "\(Response.object(forKey: "message") as! String)"
-                        }
-                        else
-                        {
-                            self.alertMessage.strMessage = "\(Response.object(forKey: "message") as! String)"
-                        }
                     }
-                    
                     
                     self.alertMessage.modalPresentationStyle = .overCurrentContext
                     self.present(self.alertMessage, animated: false, completion: nil)

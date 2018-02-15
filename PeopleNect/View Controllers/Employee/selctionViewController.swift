@@ -91,11 +91,13 @@ UITableViewDelegate
     var isfromJobPubliush : Bool = false
     var refreshControl = UIRefreshControl()
     
+    @IBOutlet weak var postJobView: UIView!
     //MARK: - View Life Cycle -
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.postJobHeightConstraints.constant = 0
+        self.postJobView.isHidden = true
         animateView.layer.cornerRadius = 2.0
         animateView.layer.shadowColor = UIColor.gray.cgColor
         animateView.layer.shadowOpacity = 0.5
@@ -873,8 +875,10 @@ UITableViewDelegate
                     let publish_status = "\(dictResponse.object(forKey: "publish_status")!)"
 
                     if publish_status == "0" {
+                        self.postJobView.isHidden = false
                         self.postJobHeightConstraints.constant = 80
                     }else {
+                        self.postJobView.isHidden = true
                         self.postJobHeightConstraints.constant = 0
                     }
                    
@@ -967,9 +971,9 @@ UITableViewDelegate
                 self.totalBalance = (((dictResponse.object(forKey: "data") as! NSDictionary).value(forKey: "balance") as! NSString) as String) as String as NSString
                 self.postJobPrice = (((dictResponse.object(forKey: "data") as! NSDictionary).value(forKey: "jobPostingPrice") as! NSString) as String) as String as NSString
                 
-                let remainingDays = (dictResponse.object(forKey: "data") as! NSDictionary).value(forKey: "remainingDays") as! NSString
+                let remainingDays = "\((dictResponse.object(forKey: "data") as! NSDictionary).value(forKey: "remainingDays")!)"
+                let totalDays = (remainingDays as NSString).integerValue
                 
-                let totalDays = remainingDays.integerValue
                 if totalDays > 0{
                     self.publishJob()
                 }else{
@@ -1008,6 +1012,7 @@ UITableViewDelegate
             if status == 1
             {
                 self.postJobHeightConstraints.constant = 0
+                self.postJobView.isHidden = true
                 self.alertMessage.strMessage = Localization(string:  "Job published!")
                 self.alertMessage.modalPresentationStyle = .overCurrentContext
                 self.present(self.alertMessage, animated: false, completion: nil)

@@ -163,6 +163,8 @@ class JobSettingVC: UIViewController, PlaceSearchTextFieldDelegate, UITextFieldD
         }else{
             btnProfilePic.setImage(ImgJobSeekerProfilepic, for: .normal)
         }
+        btnProfilePic.imageView?.contentMode = .scaleAspectFill
+
         
         //  self.btnProfilePic.setImage(ImgJobSeekerProfilepic, for: .normal)
         
@@ -850,6 +852,9 @@ class JobSettingVC: UIViewController, PlaceSearchTextFieldDelegate, UITextFieldD
         self.lng = "\(responseDict.coordinate.longitude)"
         
         
+        
+        txtStreetName.text = responseDict.name
+        
         print("selected lat lng is",self.lat,self.lng)
         
         let geocoder = GMSGeocoder()
@@ -869,7 +874,7 @@ class JobSettingVC: UIViewController, PlaceSearchTextFieldDelegate, UITextFieldD
             {
                 print("Sub Locality : \(component.name)")
                 
-                txtStreetName.text = component.name
+               // txtStreetName.text = component.name
             }
             
             if component.type == "postal_code"

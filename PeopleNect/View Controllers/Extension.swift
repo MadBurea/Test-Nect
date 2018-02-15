@@ -66,6 +66,14 @@ extension UIViewController {
         let currency = currencyFormatter.string(from:number)
         return currency!
     }
+    func ConvertToPortuegeNumber(number:NSNumber) -> String{
+        let currencyFormatter = NumberFormatter()
+        currencyFormatter.numberStyle = .currency
+        currencyFormatter.currencySymbol = ""
+        currencyFormatter.locale = NSLocale(localeIdentifier: "pt-BR") as Locale
+        let currency = currencyFormatter.string(from:number)
+        return currency!
+    }
     
     func getTimeZoneValue() -> Int {
         //var secondsFromGMT: Int { return TimeZone.current.secondsFromGMT() }
@@ -258,7 +266,9 @@ extension UIViewController {
                 let placeHolderImage = "male-user"
                 let placeimage = UIImage(named: placeHolderImage)
                 btnProfilePic.sd_setImage(with: url, for: .normal, placeholderImage: placeimage)
+                btnProfilePic.imageView?.contentMode = .scaleAspectFill
 
+                
 //                if imageIsNull(imageName:ImgJobSeekerProfilepic) {
 //                }else{
 //                    btnProfilePic.setImage(ImgJobSeekerProfilepic, for: .normal)
@@ -281,6 +291,7 @@ extension UIViewController {
                 else{
                     btnProfilePic.setImage(ImgJobSeekerProfilepic, for: .normal)
                 }
+                btnProfilePic.imageView?.contentMode = .scaleAspectFill
             }
             
         }
@@ -314,7 +325,7 @@ extension UIViewController {
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
     func shareAppExtension() {
-        let someText:String = "Look at this awesome PeopleNect App for aspiring Job!"
+        let someText:String = Localization(string: "Install this app!")
         let objectsToShare:URL = URL(string: "http://www.google.com")!
         let sharedObjects:[AnyObject] = [objectsToShare as AnyObject,someText as AnyObject]
         let activityViewController = UIActivityViewController(activityItems : sharedObjects, applicationActivities: nil)

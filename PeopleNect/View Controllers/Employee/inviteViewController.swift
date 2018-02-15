@@ -29,6 +29,7 @@ class inviteViewController: UIViewController,
 UITableViewDataSource,
 UITableViewDelegate,UIGestureRecognizerDelegate
 {
+    @IBOutlet weak var inviteView: UIView!
     /* Views */
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var allOutlet: UIButton!
@@ -65,6 +66,7 @@ UITableViewDelegate,UIGestureRecognizerDelegate
         
         titleLabel.text = jobTitle
         self.inviteViewConstraints.constant = 0
+        self.inviteView.isHidden = true
         
         let leftGesture = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeGesture(sender:)))
         leftGesture.direction = .left
@@ -215,9 +217,11 @@ UITableViewDelegate,UIGestureRecognizerDelegate
         
         if selectedAllId.count > 0 || selectedFavId.count > 0{
             inviteViewConstraints.constant = 80
+            self.inviteView.isHidden = false
         }
         if selectedAllId.count == 0 && selectedFavId.count == 0 {
             inviteViewConstraints.constant = 0
+            self.inviteView.isHidden = true
         }
         print("selcted all id is",selectedAllId)
         print("selcted fav id is",selectedFavId)
@@ -375,11 +379,10 @@ UITableViewDelegate,UIGestureRecognizerDelegate
                 self.postJobPrice = (dictResponse.object(forKey: "data") as! NSDictionary).value(forKey: "jobInvitationPrice") as! NSString
                 self.postFavBalance = (dictResponse.object(forKey: "data") as! NSDictionary).value(forKey: "jobInvitationFavouritePrice") as! NSString
                
-                let remainingDays = (dictResponse.object(forKey: "data") as! NSDictionary).value(forKey: "remainingDays") as! NSString
-                
-                let totalDays = remainingDays.integerValue
+                let remainingDays = "\((dictResponse.object(forKey: "data") as! NSDictionary).value(forKey: "remainingDays")!)"
+                let totalDays = (remainingDays as NSString).integerValue
                 if totalDays > 0{
-                     let alertController = UIAlertController(title: "", message: Localization(string: "per Professionals") + "$\(self.postJobPrice)" + Localization(string: "per Professionals") + "&" + "$\(self.postFavBalance)" + Localization(string: "per favorite professional."), preferredStyle: UIAlertControllerStyle.alert)
+                     let alertController = UIAlertController(title: "", message: Localization(string: "per Professionals") + " $ \(self.postJobPrice) " + Localization(string: "per Professionals") + "&" + " $ \(self.postFavBalance) " + Localization(string: "per favorite professional."), preferredStyle: UIAlertControllerStyle.alert)
                     
                     
                     
@@ -399,7 +402,7 @@ UITableViewDelegate,UIGestureRecognizerDelegate
                         let noBalance = storyBoard.instantiateViewController(withIdentifier: "EmpNoBalance") as! EmpNoBalance
                         self.navigationController?.pushViewController(noBalance, animated: true)
                     }else{
-                         let alertController = UIAlertController(title: "", message: Localization(string: "per Professionals") + "$\(self.postJobPrice)" + Localization(string: "per Professionals") + "&" + "$\(self.postFavBalance)" + Localization(string: "per favorite professional."), preferredStyle: UIAlertControllerStyle.alert)
+                         let alertController = UIAlertController(title: "", message: Localization(string: "per Professionals") + " $ \(self.postJobPrice) " + Localization(string: "per Professionals") + "&" + " $ \(self.postFavBalance) " + Localization(string: "per favorite professional."), preferredStyle: UIAlertControllerStyle.alert)
                         
                         let cancelAction = UIAlertAction(title: Localization(string: "Cancel"), style: UIAlertActionStyle.cancel) { (result : UIAlertAction) -> Void in
                         }
@@ -459,6 +462,7 @@ UITableViewDelegate,UIGestureRecognizerDelegate
                     
                 }else{
                     self.inviteViewConstraints.constant = 0
+                    self.inviteView.isHidden = true
                     self.selectedAllId.removeAllObjects()
                     self.selectedFavId.removeAllObjects()
                     self.listTableView.reloadData()

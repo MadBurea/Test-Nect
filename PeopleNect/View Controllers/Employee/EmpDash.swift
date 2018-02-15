@@ -125,7 +125,8 @@ class EmpDash: UIViewController ,GMUClusterManagerDelegate, GMSMapViewDelegate,C
         {
             btnProfilePic.setImage(ImgEmployerProfilepic, for: .normal)
         }
-        
+        btnProfilePic.imageView?.contentMode = .scaleAspectFill
+
         addBtn.layer.cornerRadius = addBtn.frame.size.height / 2
         addBtn.layer.masksToBounds = true
 

@@ -769,6 +769,8 @@ class JobSignUpSocialVC: UIViewController, UITextFieldDelegate, UITableViewDeleg
         txtCountry.text = ""
         
         
+        txtStreetName.text = responseDict.name
+        
         /* let lat : NSNumber = NSNumber(value: userCurrentLocation.latitude)
          let lng : NSNumber = NSNumber(value: userCurrentLocation.longitude)*/
         
@@ -789,7 +791,7 @@ class JobSignUpSocialVC: UIViewController, UITextFieldDelegate, UITableViewDeleg
             {
                 print("Sub Locality : \(component.name)")
                 
-                txtStreetName.text = component.name
+               // txtStreetName.text = component.name
             }
             
             if component.type == "postal_code"
@@ -1049,15 +1051,6 @@ class JobSignUpSocialVC: UIViewController, UITextFieldDelegate, UITableViewDeleg
                             {
                                 self.alertMessage.strMessage = "\(Response.object(forKey: "message") as! String)"
                             }
-                        }else{
-                            if appdel.deviceLanguage == "pt-BR"
-                            {
-                                self.alertMessage.strMessage = "\(Response.object(forKey: "message") as! String)"
-                            }
-                            else
-                            {
-                                self.alertMessage.strMessage = "\(Response.object(forKey: "message") as! String)"
-                            }
                         }
                         self.alertMessage.modalPresentationStyle = .overCurrentContext
                         self.present(self.alertMessage, animated: false, completion: nil)
@@ -1072,15 +1065,6 @@ class JobSignUpSocialVC: UIViewController, UITextFieldDelegate, UITableViewDeleg
                         if appdel.deviceLanguage == "pt-BR"
                         {
                             self.alertMessage.strMessage = "\(Response.object(forKey: "pt_message") as! String)"
-                        }
-                        else
-                        {
-                            self.alertMessage.strMessage = "\(Response.object(forKey: "message") as! String)"
-                        }
-                    }else{
-                        if appdel.deviceLanguage == "pt-BR"
-                        {
-                            self.alertMessage.strMessage = "\(Response.object(forKey: "message") as! String)"
                         }
                         else
                         {

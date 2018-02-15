@@ -52,7 +52,7 @@
 "Selection in progress"                  = "Seleção em andamento";
 "Balance"                                = "Saldo";
 "Job in progress"                        = "Trabalhos em andamento";
-"Job history"                            = "Histórico de vagas";
+"Job history"                            = "Histórico de Candidaturas";
 "Settings"                               = "Configurações";
 "Invite friends"                         = "Convidar Amigos";
 "Exit"                                   = "Sair";
@@ -60,8 +60,8 @@
 
 "Free"                                   = "Disponível";
 "Back"                                   = "Voltar";
-"This candidate is hired"             = "Este candidato está contratado.";
-
+"This candidate is hired"               = "Este candidato está contratado.";
+"Install this app!"                     = "Baixe este applicativo!";
 "years of experience"                    = "ano(s) de experiência";
 
 "Search jobs"                              = "Buscar vagas";
@@ -71,7 +71,7 @@
 "Availability"                             = "Disponibilidade";
 "Not Available"                            = "Não disponível";
 "Log out"                                = "Sair";
-"Great! Now You have 60 days to post your jobs for free" = "Ótimo! Agora você tem 60 dias para postar seus trabalhos gratuitamente";
+"Great! Now You have 60 days to post your jobs for free" = "A partir de agora, você tem 60 dias para publicar suas vagas gratuitamente";
 "Enter experience here"                    = "Digite sua experiência aqui";
 "Enter rate here"                    = "Digite o valor por hora";
 "Inviting professionals has a cost of" = "Profissionais convidados têm um custo de";
@@ -136,6 +136,7 @@
 "Availability updated"                   =  "Disponibilidade atualizada";
 "Business"                           = "Negócio";
 
+" to work"   = " para trabalhar";
 
 "You canceled job successfully"                           = "Você cancelou a vaga!";
 "Job in progress, you can't cancel it!"                 = "Trabalho em andamento. Não há como desistir!";
@@ -276,3 +277,6 @@
 "Invited Successfully"        = "Convidado com sucesso!";
 "you have insufficient credit."        = "você tem crédito insuficiente.";
 "Error while sending invitation, please try again"   = "Erro ao enviar o convite. Tente novamente";
+
+"Internet Connection" = "Conexão de internet";
+"No Internet Connection" =  "Sem conexão à Internet";

@@ -100,9 +100,9 @@ class EmpSettingsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFieldD
             self.setImageForJobSeeker(btnProfilePic:btnProfilePic)
         }else{
             btnProfilePic.setImage(ImgEmployerProfilepic, for: .normal)
-            
         }
-        
+        btnProfilePic.imageView?.contentMode = .scaleAspectFill
+
         btnProfilePic.layer.cornerRadius = btnProfilePic.bounds.size.width/2
         btnProfilePic.clipsToBounds = true
         btnProfilePic.layer.borderWidth = 1
@@ -927,6 +927,10 @@ class EmpSettingsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFieldD
         print("selected lat lng is",self.lat,self.lng)
 
         
+        txtStreetName.text = responseDict.name
+        self.lblStreetNameValidation.text = ""
+        
+        
         let geocoder = GMSGeocoder()
         geocoder.reverseGeocodeCoordinate(responseDict.coordinate) { (respose, error ) in
             
@@ -942,7 +946,7 @@ class EmpSettingsVC: UIViewController,PlaceSearchTextFieldDelegate, UITextFieldD
             
             if component.type == "sublocality_level_1" {
 //                print("Sub Locality : \(component.name)")
-                txtStreetName.text = component.name
+                //txtStreetName.text = component.name
                 self.lblStreetNameValidation.text = ""
             }
             

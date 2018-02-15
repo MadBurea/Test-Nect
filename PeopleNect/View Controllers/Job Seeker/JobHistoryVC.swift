@@ -67,7 +67,18 @@ class JobHistoryVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         self.tblJobHistory.estimatedRowHeight = 80
         self.tblJobHistory.backgroundColor = UIColor.clear
 
-        sectionNames = [Localization(string: "Job history"), Localization(string: "Declined jobs"), Localization(string: "Other jobs")];
+        
+        
+        if appdel.deviceLanguage == "pt-BR"
+        {
+            sectionNames = ["Trabalhos efetuados", Localization(string: "Declined jobs"), Localization(string: "Other jobs")];
+        }
+        else
+        {
+            sectionNames = ["Job history", Localization(string: "Declined jobs"), Localization(string: "Other jobs")];
+        }
+        
+        
         
 
         self.tblJobHistory!.tableFooterView = UIView()

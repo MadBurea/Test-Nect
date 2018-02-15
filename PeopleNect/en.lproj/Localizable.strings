@@ -267,8 +267,11 @@
 "Already invited"   =  "Already invited";
 "Apply"   =  "Apply";
 "Search again"   =  "Search again";
+"Install this app!" = "Install this app!";
+" to work"   = " to work";
 
-
+"Internet Connection" = "Internet Connection";
+"No Internet Connection" =  "No Internet Connection"; 
 
 
 

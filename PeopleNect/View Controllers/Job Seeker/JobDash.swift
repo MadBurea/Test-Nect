@@ -175,6 +175,8 @@ class JobDash: UIViewController,GMUClusterManagerDelegate, GMSMapViewDelegate,CL
         {
             btnProfilePic.setImage(ImgJobSeekerProfilepic, for: .normal)
         }
+        btnProfilePic.imageView?.contentMode = .scaleAspectFill
+
         
         self.view.addSubview(viewAvailibilityOnOff)
         self.view.addSubview(viewAvailiobilityPerDay)
@@ -2362,7 +2364,7 @@ class JobDash: UIViewController,GMUClusterManagerDelegate, GMSMapViewDelegate,CL
         label.frame = CGRect(x: 0, y: 0, width: SizeOf_String(font:label.font,Text: label.text!)  + 20, height: SizeOf_String(font:label.font,Text: label.text!) + 20)
         let x: CGFloat = label.center.x - 8
         imageview.frame = CGRect(x: x, y: label.frame.size.height + 5, width: 15, height: 25)
-        imageview.contentMode = .scaleAspectFit
+        imageview.contentMode = .scaleAspectFill
         
         if green {
             imageview.image = UIImage(named: "map_marker_green")

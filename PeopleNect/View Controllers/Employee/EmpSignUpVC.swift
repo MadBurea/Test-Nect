@@ -534,15 +534,6 @@ class EmpSignUpVC: UIViewController,UITextFieldDelegate {
                         {
                             self.alertMessage.strMessage = "\(Response.object(forKey: "message") as! String)"
                         }
-                    }else{
-                        if appdel.deviceLanguage == "pt-BR"
-                        {
-                            self.alertMessage.strMessage = "\(Response.object(forKey: "message") as! String)"
-                        }
-                        else
-                        {
-                            self.alertMessage.strMessage = "\(Response.object(forKey: "message") as! String)"
-                        }
                     }
                     self.alertMessage.modalPresentationStyle = .overCurrentContext
                     self.present(self.alertMessage, animated: false, completion: nil)

@@ -49,7 +49,7 @@ extension UIViewController {
         print("parameters is",parameters)
         
         Alamofire.upload(multipartFormData: { (multipartFormData) in
-            multipartFormData.append(UIImagePNGRepresentation(image)!, withName: "profile_pic", fileName: "swift_file.jpeg", mimeType: "image/jpeg")
+            multipartFormData.append(UIImageJPEGRepresentation(image, 0.5)!, withName: "profile_pic", fileName: "swift_file.jpeg", mimeType: "image/jpeg")
             for (key, value) in parameters {
                 multipartFormData.append(value.data(using: String.Encoding.utf8)!, withName: key)
             }
@@ -81,7 +81,10 @@ extension UIViewController {
     
     func JobSeekerUploadImage(image:UIImage,userId:String)  {
         
-        let imageData = UIImagePNGRepresentation(image) as Data?
+        //let imageData = UIImagePNGRepresentation(image) as Data?
+        
+        let imageData = UIImageJPEGRepresentation(image, 0.5) as Data?
+
         
         print("image data is ",imageData)
         let parameters =

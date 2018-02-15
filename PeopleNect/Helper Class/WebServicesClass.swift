@@ -66,7 +66,7 @@ class WebServicesClass: NSObject {
     func alertNoInternetConnection()
     {
         let topController = UIApplication.topViewController()
-        self.ShowAlertDisplay(titleObj: "Internet Connection", messageObj: "No Internet Connection", viewcontrolelr: topController!)
+        self.ShowAlertDisplay(titleObj: Localization(string:"Internet Connection"), messageObj: Localization(string:"No Internet Connection"), viewcontrolelr: topController!)
     }
     
     //MARK: AlertView Display

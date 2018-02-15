@@ -257,13 +257,14 @@ class EmpInvitePostedJobVC: UIViewController,UITableViewDataSource,UITableViewDe
                 
                 self.postJobPrice = (dictResponse.object(forKey: "data") as! NSDictionary).value(forKey: "jobInvitationPrice") as! NSString
                 self.postFavBalance = (dictResponse.object(forKey: "data") as! NSDictionary).value(forKey: "jobInvitationFavouritePrice") as! NSString
-                let remainingDays = (dictResponse.object(forKey: "data") as! NSDictionary).value(forKey: "remainingDays") as! NSString
-                let totalDays = remainingDays.integerValue
+                
+                let remainingDays = "\((dictResponse.object(forKey: "data") as! NSDictionary).value(forKey: "remainingDays")!)"
+                let totalDays = (remainingDays as NSString).integerValue
                 
                 if totalDays > 0{
                     
                     
-                    let alertController = UIAlertController(title: "", message: Localization(string: "per Professionals") + "$\(self.postJobPrice)" + Localization(string: "per Professionals") + "&" + "$\(self.postFavBalance)" + Localization(string: "per favorite professional."), preferredStyle: UIAlertControllerStyle.alert)
+                    let alertController = UIAlertController(title: "", message: Localization(string: "per Professionals") + " $ \(self.postJobPrice) " + Localization(string: "per Professionals") + "&" + " $ \(self.postFavBalance) " + Localization(string: "per favorite professional."), preferredStyle: UIAlertControllerStyle.alert)
                     
                     let cancelAction = UIAlertAction(title: Localization(string: "Cancel"), style: UIAlertActionStyle.cancel) { (result : UIAlertAction) -> Void in
                     }
@@ -280,7 +281,7 @@ class EmpInvitePostedJobVC: UIViewController,UITableViewDataSource,UITableViewDe
                         let noBalance = storyBoard.instantiateViewController(withIdentifier: "EmpNoBalance") as! EmpNoBalance
                         self.navigationController?.pushViewController(noBalance, animated: true)
                     }else{
-                       let alertController = UIAlertController(title: "", message: Localization(string: "per Professionals") + "$\(self.postJobPrice)" + Localization(string: "per Professionals") + "&" + "$\(self.postFavBalance)" + Localization(string: "per favorite professional."), preferredStyle: UIAlertControllerStyle.alert)
+                       let alertController = UIAlertController(title: "", message: Localization(string: "per Professionals") + " $ \(self.postJobPrice) " + Localization(string: "per Professionals") + "&" + " $ \(self.postFavBalance) " + Localization(string: "per favorite professional."), preferredStyle: UIAlertControllerStyle.alert)
                         
                         let cancelAction = UIAlertAction(title: Localization(string: "Cancel"), style: UIAlertActionStyle.cancel) { (result : UIAlertAction) -> Void in
                         }

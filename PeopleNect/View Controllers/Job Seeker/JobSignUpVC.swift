@@ -1302,15 +1302,6 @@ class JobSignUpVC: UIViewController, UITextFieldDelegate, UITableViewDelegate,Pl
                         {
                             self.alertMessage.strMessage = "\(Response.object(forKey: "message") as! String)"
                         }
-                    }else{
-                        if appdel.deviceLanguage == "pt-BR"
-                        {
-                            self.alertMessage.strMessage = "\(Response.object(forKey: "message") as! String)"
-                        }
-                        else
-                        {
-                            self.alertMessage.strMessage = "\(Response.object(forKey: "message") as! String)"
-                        }
                     }
                     self.alertMessage.modalPresentationStyle = .overCurrentContext
                     

@@ -50,6 +50,12 @@ class JobPendingInvitationVC: UIViewController, UITableViewDataSource , UITableV
         viewTop.layer.shadowOffset = CGSize(width: 0, height: 2)
         viewTop.layer.shadowRadius = 2.0
         
+        if appdel.deviceLanguage == "pt-BR"
+        {
+            self.lblNoPendingInvitations.text = "Não há convite pendente"
+        }
+        
+        
         // refresh Controller
        self.refreshContoller()
     }
@@ -114,6 +120,19 @@ class JobPendingInvitationVC: UIViewController, UITableViewDataSource , UITableV
 
             expandcell.paymentViewBottomLbl.backgroundColor = ColorseperatorDarkGreen
             expandcell.dateBottomLbl.backgroundColor = ColorseperatorDarkGreen
+            
+            
+            
+            // Blue Color 
+            expandcell.viewLeft.backgroundColor = blueThemeColor
+            expandcell.lblBottomBorder.backgroundColor = blueThemeColor
+            expandcell.viewPayment.backgroundColor = blueThemeColor
+            expandcell.viewOnlyDays.backgroundColor = blueThemeColor
+            expandcell.viewFromEndDate.backgroundColor = blueThemeColor
+            expandcell.btnApplyAlReadyInvited.backgroundColor = blueThemeColor
+            expandcell.paymentViewBottomLbl.backgroundColor = ColorseperatorDarkBlue
+            expandcell.dateBottomLbl.backgroundColor = ColorseperatorDarkBlue
+            
             
             expandcell.objCollectionView.reloadData()
 

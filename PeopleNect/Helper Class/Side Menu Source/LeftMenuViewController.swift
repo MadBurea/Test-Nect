@@ -116,10 +116,11 @@ class LeftMenuViewController: UIViewController,UITableViewDataSource,UITableView
         else
         {
             btnProfilePic.setImage(ImgEmployerProfilepic, for: .normal)
+            btnProfilePic.imageView?.contentMode = .scaleAspectFill
         }
         btnProfilePic.layer.cornerRadius = btnProfilePic.frame.size.height/2
         btnProfilePic.clipsToBounds = true
-        btnProfilePic.contentMode = .scaleAspectFit
+        btnProfilePic.contentMode = .scaleAspectFill
        
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -323,6 +324,8 @@ class LeftMenuViewController: UIViewController,UITableViewDataSource,UITableView
             
             self.dismiss(animated: true, completion: nil)
             btnProfilePic.setImage(image, for: .normal)
+            btnProfilePic.imageView?.contentMode = .scaleAspectFill
+
             ImgEmployerProfilepic = image
             
             self.view.makeToast(Localization(string:"Profile updated!"), duration: 3.0, position: .bottom)

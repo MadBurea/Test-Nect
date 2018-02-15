@@ -135,6 +135,11 @@ class EmpAddCompanyDetailsVC: UIViewController, UITextFieldDelegate,PlaceSearchT
         
         strAddress = (responseDict.formattedAddress as NSString!) as String
         
+        
+        txtStreetName.text = responseDict.name
+        lblStreetValidation.text = ""
+
+        
         let geocoder = GMSGeocoder()
         geocoder.reverseGeocodeCoordinate(responseDict.coordinate) { (respose, error ) in
             
@@ -155,7 +160,7 @@ class EmpAddCompanyDetailsVC: UIViewController, UITextFieldDelegate,PlaceSearchT
             {
                 print("Sub Locality : \(component.name)")
                 
-                txtStreetName.text = component.name
+//                txtStreetName.text = component.name
                 
                 lblStreetValidation.text = ""
             }
@@ -547,10 +552,10 @@ class EmpAddCompanyDetailsVC: UIViewController, UITextFieldDelegate,PlaceSearchT
             
             if self.imageIsNull(imageName: ImgEmployerProfilepic) {
                 let currentImage = UIImage(named: "company_profile")
-                MultipartFormData.append(UIImageJPEGRepresentation(currentImage!, 1.0)!, withName: "profilepic", fileName: "file.png", mimeType: "image/png")
+                MultipartFormData.append(UIImageJPEGRepresentation(currentImage!, 0.5)!, withName: "profilepic", fileName: "file.png", mimeType: "image/png")
             }else{
                 
-                MultipartFormData.append(UIImageJPEGRepresentation(ImgEmployerProfilepic, 1.0)!, withName: "profilepic", fileName: "file.png", mimeType: "image/png")
+                MultipartFormData.append(UIImageJPEGRepresentation(ImgEmployerProfilepic, 0.5)!, withName: "profilepic", fileName: "file.png", mimeType: "image/png")
             }
             
             for (key, value) in param
